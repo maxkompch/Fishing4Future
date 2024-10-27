@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqlxdarw6fd3h"]
+
+[ext_resource type="Material" uid="uid://bm6sawcl2sw68" path="res://water_material.tres" id="1_8m7pe"]
+
+[node name="WaterScene" type="Node2D"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_8m7pe")
