@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b55ueqgmuc1oi"]
+
+[ext_resource type="Texture2D" uid="uid://epj3j6l2w24v" path="res://Icon_Example/Uhrwerk EP.png" id="1_4lkfg"]
+[ext_resource type="Script" path="res://Icon_Example/uhr.gd" id="2_uefil"]
+[ext_resource type="Script" path="res://Icon_Example/uhr_ursprung.gd" id="3_10820"]
+[ext_resource type="Texture2D" uid="uid://dky12fuehd7p3" path="res://Icon_Example/Uhrzeiger EP.png" id="4_otn1g"]
+
+[node name="Uhr" type="Sprite2D"]
+position = Vector2(1037, 98)
+scale = Vector2(0.433696, 0.433696)
+texture = ExtResource("1_4lkfg")
+script = ExtResource("2_uefil")
+
+[node name="UhrUrsprung" type="Node2D" parent="."]
+position = Vector2(1, -1)
+rotation = -0.00200354
+script = ExtResource("3_10820")
+
+[node name="UhrzeigerEp" type="Sprite2D" parent="UhrUrsprung"]
+position = Vector2(0, -47)
+texture = ExtResource("4_otn1g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="Uhrtimer"]

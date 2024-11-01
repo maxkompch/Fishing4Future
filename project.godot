@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="Fishing4Future"
-run/main_scene="res://scenes/water_scene.tscn"
+run/main_scene="res://100. TrashBin/Old Test/scenes/water_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"

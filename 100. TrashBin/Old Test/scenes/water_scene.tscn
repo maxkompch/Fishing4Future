@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqlxdarw6fd3h"]
 
-[ext_resource type="Material" uid="uid://bm6sawcl2sw68" path="res://water_material.tres" id="1_8m7pe"]
+[ext_resource type="Material" uid="uid://bm6sawcl2sw68" path="res://100. TrashBin/Old Test/water_material.tres" id="1_8m7pe"]
 [ext_resource type="Texture2D" uid="uid://b3m3cajogaho8" path="res://icon.svg" id="2_2b5yp"]
 
-[node name="WaterScene" type="Node2D"]
+[node name="Hello World" type="Node2D"]
 position = Vector2(208, 138)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
