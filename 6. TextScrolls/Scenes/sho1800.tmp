@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bms1rjhfymdgu"]
+[gd_scene load_steps=11 format=3 uid="uid://bms1rjhfymdgu"]
 
 [ext_resource type="Script" path="res://6. TextScrolls/Scripts/shop.gd" id="1_isw43"]
 [ext_resource type="Texture2D" uid="uid://px4xge4ebad4" path="res://5. Icons/shop assets/shop front.png" id="1_w1lam"]
 [ext_resource type="Script" path="res://6. TextScrolls/Scripts/LabelAnimation.gd" id="2_kvuht"]
+[ext_resource type="Script" path="res://6. TextScrolls/Scenes/change.gd" id="2_wwvrg"]
 
 [sub_resource type="Animation" id="Animation_nk7i5"]
 length = 0.001
@@ -31,6 +32,7 @@ font_color = Color(0.0179235, 0.399775, 1, 1)
 script = ExtResource("1_isw43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+script = ExtResource("2_wwvrg")
 
 [node name="PlayerCheer1" type="Sprite2D" parent="."]
 position = Vector2(589, 326)
@@ -54,7 +56,7 @@ vertical_alignment = 1
 script = ExtResource("2_kvuht")
 
 [node name="SceneTransitionTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 2.126
 one_shot = true
 autostart = true
 
