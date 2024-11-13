@@ -43,6 +43,7 @@ theme_override_font_sizes/font_size = 20
 text = "Buy - $100"
 
 [node name="Rod2" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 504.0
 offset_top = 231.0
 offset_right = 624.0
@@ -51,6 +52,7 @@ theme_override_font_sizes/font_size = 20
 text = "Buy - $200"
 
 [node name="Rod3" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 894.0
 offset_top = 229.0
 offset_right = 1014.0
@@ -59,6 +61,7 @@ theme_override_font_sizes/font_size = 20
 text = "Buy - $300"
 
 [node name="Net1" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 119.0
 offset_top = 540.0
 offset_right = 239.0
@@ -67,6 +70,7 @@ theme_override_font_sizes/font_size = 20
 text = "Buy - $100"
 
 [node name="Net2" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 500.0
 offset_top = 542.0
 offset_right = 620.0
@@ -75,6 +79,7 @@ theme_override_font_sizes/font_size = 20
 text = "Buy - $200"
 
 [node name="Net3" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 892.0
 offset_top = 543.0
 offset_right = 1012.0
@@ -112,6 +117,7 @@ offset_left = 392.0
 offset_top = 290.0
 offset_right = 797.0
 offset_bottom = 398.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 text = "Upgrade Successful!"
 
@@ -122,6 +128,7 @@ offset_left = 430.0
 offset_top = 295.0
 offset_right = 720.0
 offset_bottom = 386.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 text = "Not Enough $$"
 
