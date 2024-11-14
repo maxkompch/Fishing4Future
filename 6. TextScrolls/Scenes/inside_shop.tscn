@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bclcy4nao7giv"]
+[gd_scene load_steps=7 format=3 uid="uid://bclcy4nao7giv"]
 
 [ext_resource type="Texture2D" uid="uid://b06seno6kc631" path="res://5. Icons/shop assets/shop.png" id="1_1exa1"]
 [ext_resource type="Script" path="res://6. TextScrolls/Scripts/backtoshop.gd" id="2_qmvxl"]
 [ext_resource type="Script" path="res://6. TextScrolls/Scripts/control_inside.gd" id="3_xis08"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://5. Icons/font/joystix.otf" id="4_32hmx"]
 [ext_resource type="AudioStream" uid="uid://cbod4bo0gcvv1" path="res://5. Icons/shop assets/purchased.wav" id="4_p3ke8"]
 [ext_resource type="AudioStream" uid="uid://demvdgaw402x" path="res://5. Icons/shop assets/notenough.wav" id="5_g6srk"]
 
@@ -14,10 +15,6 @@ scale = Vector2(1.60833, 1.60247)
 texture = ExtResource("1_1exa1")
 script = ExtResource("2_qmvxl")
 
-[node name="Insideshop" type="Sprite2D" parent="."]
-position = Vector2(574.38, 323.5)
-scale = Vector2(1.57395, 1.5679)
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -27,73 +24,88 @@ script = ExtResource("3_xis08")
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 18.0
-offset_right = 118.0
-offset_bottom = 61.0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 147.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 30
 text = "Back"
 
 [node name="Rod1" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 226.0
-offset_right = 243.0
-offset_bottom = 266.0
+offset_left = 103.0
+offset_top = 216.0
+offset_right = 257.0
+offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Buy - $100"
+text = "Rod lV. 1
+$100"
 
 [node name="Rod2" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 504.0
-offset_top = 231.0
-offset_right = 624.0
-offset_bottom = 271.0
+offset_left = 482.0
+offset_top = 218.0
+offset_right = 636.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Buy - $200"
+text = "Rod lV. 2
+$200"
 
 [node name="Rod3" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 894.0
-offset_top = 229.0
-offset_right = 1014.0
-offset_bottom = 269.0
+offset_left = 873.0
+offset_top = 218.0
+offset_right = 1027.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Buy - $300"
+text = "Rod LV. 3
+$300"
 
 [node name="Net1" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 119.0
-offset_top = 540.0
-offset_right = 239.0
-offset_bottom = 580.0
+offset_left = 112.0
+offset_top = 527.0
+offset_right = 266.0
+offset_bottom = 583.0
+theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Buy - $100"
+text = "Net LV. 1
+$100"
 
 [node name="Net2" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 500.0
-offset_top = 542.0
-offset_right = 620.0
-offset_bottom = 582.0
+offset_left = 482.0
+offset_top = 524.0
+offset_right = 636.0
+offset_bottom = 580.0
+theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Buy - $200"
+text = "Net LV. 2
+$200"
 
 [node name="Net3" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 892.0
-offset_top = 543.0
-offset_right = 1012.0
-offset_bottom = 583.0
+offset_left = 875.0
+offset_top = 524.0
+offset_right = 1029.0
+offset_bottom = 580.0
+theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Buy - $300"
+text = "Net LV. 3
+$300"
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 996.0
-offset_top = 29.0
-offset_right = 1100.0
-offset_bottom = 67.0
-theme_override_font_sizes/font_size = 21
+offset_left = 999.0
+offset_top = 24.0
+offset_right = 1123.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 30
 text = "$1000"
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
@@ -113,23 +125,25 @@ color = Color(1, 0.425788, 0.357085, 1)
 [node name="purchased" type="Label" parent="Control"]
 visible = false
 layout_mode = 0
-offset_left = 392.0
-offset_top = 290.0
-offset_right = 797.0
-offset_bottom = 398.0
+offset_left = 189.0
+offset_top = 293.0
+offset_right = 976.0
+offset_bottom = 401.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 50
 text = "Upgrade Successful!"
 
 [node name="notenough" type="Label" parent="Control"]
 visible = false
 layout_mode = 0
-offset_left = 430.0
-offset_top = 295.0
-offset_right = 720.0
-offset_bottom = 386.0
+offset_left = 293.0
+offset_top = 296.0
+offset_right = 831.0
+offset_bottom = 387.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 50
 text = "Not Enough $$"
 
 [node name="purchasedaudio" type="AudioStreamPlayer2D" parent="Control"]

@@ -1,21 +1,22 @@
 extends Label
 
 var time_passed = 0.0
-var is_black = true
+var color_state = 1  # 0 for White, 1 for Blue, 2 for Black
 
 func _ready():
-	# Start the color animation
+	self.modulate = Color(0, 0, 1)
 	set_process(true)
 
 func _process(delta):
 	time_passed += delta
 	
-	# Change color every half second
 	if time_passed >= 0.5:
-		if is_black:
+		if color_state == 0:
 			self.modulate = Color(0, 0, 1)  # Blue
-		else:
+		elif color_state == 1:
 			self.modulate = Color(0, 0, 0)  # Black
+		else:
+			self.modulate = Color(1, 1, 1)  # White
 		
-		is_black = !is_black  # Toggle color
-		time_passed = 0.0  # Reset timer
+		color_state = (color_state + 1) % 3  # Loop between 0, 1, and 2
+		time_passed = 0.0 

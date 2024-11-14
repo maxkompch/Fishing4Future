@@ -8,11 +8,10 @@ var rod3_purchased = false
 var net1_purchased = false
 var net2_purchased = false
 var net3_purchased = false
-
+		
 func _ready():
 	$Label.text = "$1000"
 	$Label.visible = true
-	
 	$Rod2.disabled = true
 	$Rod3.disabled = true
 	$Net2.disabled = true
