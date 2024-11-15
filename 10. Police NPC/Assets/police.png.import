@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nmwajsaf2vy1"
-path="res://.godot/imported/Water_ani.png-456cc6d7f98c7cbf5be8a9212762c30e.ctex"
+uid="uid://duvbpt1jw6qb5"
+path="res://.godot/imported/police.png-508c4e41aed8f412b0a3c2333d2c65fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Water_ani.png"
-dest_files=["res://.godot/imported/Water_ani.png-456cc6d7f98c7cbf5be8a9212762c30e.ctex"]
+source_file="res://10. Police NPC/Assets/police.png"
+dest_files=["res://.godot/imported/police.png-508c4e41aed8f412b0a3c2333d2c65fa.ctex"]
 
 [params]
 
