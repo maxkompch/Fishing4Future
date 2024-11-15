@@ -10,12 +10,12 @@ extends CharacterBody2D
 @export var fishing_speed: float = 1.0
 @export var fishing_skill: float = 1.0
 
-# Speed modifier variables
+# Speed modifier
 var speed_modifier: float = 1.0
 var target_modifier: float = 1.0
 var modifier_change_rate: float = 2.0  # How fast the speed modifier changes
 
-# Rest of your variables...
+# Variables
 var current_plastics: float = 0.0
 var current_fish: float = 0.0
 var input_vector = Vector2.ZERO
