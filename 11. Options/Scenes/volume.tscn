@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bul5p3r3enwcp"]
 
-[ext_resource type="Script" path="res://scripts/volume.gd" id="1_ts2lv"]
-[ext_resource type="Script" path="res://scripts/h_slider.gd" id="2_oohal"]
-[ext_resource type="PackedScene" uid="uid://ckt5oaek0ekwe" path="res://scenes/water_backround.tscn" id="2_yk5ui"]
-[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://assets/wood_button.tres" id="3_8jorq"]
+[ext_resource type="Script" path="res://11. Options/Scripts/volume.gd" id="1_ts2lv"]
+[ext_resource type="Script" path="res://11. Options/Scripts/h_slider.gd" id="2_oohal"]
+[ext_resource type="PackedScene" uid="uid://ckt5oaek0ekwe" path="res://9. Start Menu/Assets/water_backround.tscn" id="2_yk5ui"]
+[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://9. Start Menu/Assets/wood_button.tres" id="3_8jorq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mpw1a"]
 

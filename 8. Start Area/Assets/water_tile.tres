@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=10 format=3 uid="uid://i1xgsiuwiucq"]
 
-[ext_resource type="Texture2D" uid="uid://nmwajsaf2vy1" path="res://assets/Water_ani.png" id="1_pp0v4"]
-[ext_resource type="Texture2D" uid="uid://r02l756q3bu2" path="res://assets/water.png" id="2_xpv4w"]
-[ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://assets/wooden_deck.png" id="3_gxx85"]
+[ext_resource type="Texture2D" uid="uid://nmwajsaf2vy1" path="res://8. Start Area/Assets/Water_ani.png" id="1_pp0v4"]
+[ext_resource type="Texture2D" uid="uid://r02l756q3bu2" path="res://8. Start Area/Assets/water.png" id="2_xpv4w"]
+[ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://8. Start Area/Assets/wooden_deck.png" id="3_gxx85"]
 [ext_resource type="Texture2D" uid="uid://ca2unuouhc4ia" path="res://assets/sky.png" id="4_gbwwg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h7c4m"]

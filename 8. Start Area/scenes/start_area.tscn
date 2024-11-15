@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://cwybpflbp4cuu"]
+[gd_scene load_steps=17 format=4 uid="uid://cwybpflbp4cuu"]
 
-[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://assets/water_tile.tres" id="1_e85y6"]
-[ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://scenes/player.tscn" id="1_hdbb7"]
-[ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://assets/wooden_deck.png" id="2_xxc4i"]
+[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://8. Start Area/Assets/water_tile.tres" id="1_e85y6"]
+[ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://7. Player/Scenes/player.tscn" id="1_hdbb7"]
+[ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://8. Start Area/Assets/wooden_deck.png" id="2_xxc4i"]
 [ext_resource type="Texture2D" uid="uid://ca2unuouhc4ia" path="res://assets/sky.png" id="3_3uwke"]
-[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://assets/wood_button.tres" id="5_534oe"]
-[ext_resource type="Script" path="res://back_game.gd" id="6_1mkv6"]
+[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://9. Start Menu/Assets/wood_button.tres" id="5_534oe"]
+[ext_resource type="Script" path="res://8. Start Area/Scripts/back_game.gd" id="6_1mkv6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2eite"]
 texture = ExtResource("3_3uwke")
@@ -124,7 +124,19 @@ sources/0 = SubResource("TileSetAtlasSource_w0uix")
 size = Vector2(4.16595, 249.993)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsuns"]
-size = Vector2(13.4331, 441.228)
+size = Vector2(5.71655, 441.228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6obj"]
+size = Vector2(3.38626, 63.0496)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3def"]
+size = Vector2(4, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3dlh"]
+size = Vector2(708, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cc3jf"]
+size = Vector2(10, 137)
 
 [node name="startArea" type="Node2D"]
 position = Vector2(55, 104)
@@ -171,8 +183,34 @@ shape = SubResource("RectangleShape2D_n2lvd")
 position = Vector2(241, 48)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(88, 72)
+position = Vector2(84.1417, 72)
 shape = SubResource("RectangleShape2D_rsuns")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(780, 334)
+rotation = -1.56351
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-8.30692, 21.5248)
+shape = SubResource("RectangleShape2D_t6obj")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(834, 437)
+shape = SubResource("RectangleShape2D_a3def")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(483, 539)
+shape = SubResource("RectangleShape2D_g3dlh")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(-69, 217.5)
+shape = SubResource("RectangleShape2D_cc3jf")
 
 [connection signal="pressed" from="Back" to="CharacterBody2D2" method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]
