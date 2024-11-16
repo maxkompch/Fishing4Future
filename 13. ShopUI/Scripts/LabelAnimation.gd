@@ -20,3 +20,4 @@ func _process(delta):
 		
 		color_state = (color_state + 1) % 3  # Loop between 0, 1, and 2
 		time_passed = 0.0 
+		

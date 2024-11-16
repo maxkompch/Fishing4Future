@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://demvdgaw402x"
-path="res://.godot/imported/notenough.wav-f71ecf1f2640caf664679683ee9c984a.sample"
+path="res://.godot/imported/notenough.wav-4bfcb0733a0e0fdb63ab5f3d80490a8c.sample"
 
 [deps]
 
-source_file="res://5. Icons/shop assets/notenough.wav"
-dest_files=["res://.godot/imported/notenough.wav-f71ecf1f2640caf664679683ee9c984a.sample"]
+source_file="res://13. ShopUI/Assets/shop assets/notenough.wav"
+dest_files=["res://.godot/imported/notenough.wav-4bfcb0733a0e0fdb63ab5f3d80490a8c.sample"]
 
 [params]
 
