@@ -3,7 +3,6 @@ extends Control
 var Dialog_text = ["You new here?", 
 			"Move with W,A,S,D.",
 			"Figure out the rest.",
-			"the speed can be set with ther Timer"
 			 ]
 var Anzahl_an_Dialog_text
 var DialogPlatz = 0
@@ -19,7 +18,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("action"):
+	if Input.is_action_just_released("action"):
 		wordCount = 0
 		Text.visible_characters = wordCount
 		DialogPlatz += 1
