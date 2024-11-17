@@ -1,0 +1,165 @@
+[gd_scene load_steps=8 format=3 uid="uid://bclcy4nao7giv"]
+
+[ext_resource type="Texture2D" uid="uid://b06seno6kc631" path="res://13. ShopUI/Assets/shop assets/shop.png" id="1_1exa1"]
+[ext_resource type="Script" path="res://13. ShopUI/Scripts/backtoshop.gd" id="2_qmvxl"]
+[ext_resource type="Script" path="res://13. ShopUI/Scripts/control_inside.gd" id="3_xis08"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://13. ShopUI/Assets/font/joystix.otf" id="4_32hmx"]
+[ext_resource type="AudioStream" uid="uid://cbod4bo0gcvv1" path="res://13. ShopUI/Assets/shop assets/purchased.wav" id="4_p3ke8"]
+[ext_resource type="AudioStream" uid="uid://demvdgaw402x" path="res://13. ShopUI/Assets/shop assets/notenough.wav" id="5_g6srk"]
+[ext_resource type="Script" path="res://13. ShopUI/Scripts/time_system.gd" id="7_jaayp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580, 324.5)
+scale = Vector2(1.60833, 1.60247)
+texture = ExtResource("1_1exa1")
+script = ExtResource("2_qmvxl")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_xis08")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 147.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="Rod1" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 216.0
+offset_right = 257.0
+offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 20
+text = "Rod lV. 1
+$100"
+
+[node name="Rod2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 218.0
+offset_right = 636.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 20
+text = "Rod lV. 2
+$200"
+
+[node name="Rod3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 218.0
+offset_right = 1027.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 20
+text = "Rod LV. 3
+$300"
+
+[node name="Net1" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 527.0
+offset_right = 266.0
+offset_bottom = 583.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 20
+text = "Net LV. 1
+$100"
+
+[node name="Net2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 524.0
+offset_right = 636.0
+offset_bottom = 580.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 20
+text = "Net LV. 2
+$200"
+
+[node name="Net3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 524.0
+offset_right = 1029.0
+offset_bottom = 580.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 20
+text = "Net LV. 3
+$300"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 24.0
+offset_right = 1123.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 30
+text = "$1000"
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 654.0
+color = Color(0.537786, 1, 0.506004, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 659.0
+color = Color(1, 0.425788, 0.357085, 1)
+
+[node name="purchased" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 189.0
+offset_top = 293.0
+offset_right = 976.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 50
+text = "Upgrade Successful!"
+
+[node name="notenough" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 293.0
+offset_top = 296.0
+offset_right = 831.0
+offset_bottom = 387.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 50
+text = "Not Enough $$"
+
+[node name="purchasedaudio" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("4_p3ke8")
+
+[node name="notenoughaudio" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("5_g6srk")
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("7_jaayp")
+
+[connection signal="button_up" from="Control/Button" to="Sprite2D" method="_on_button_button_up"]
+[connection signal="pressed" from="Control/Rod1" to="Control" method="_on_rod_1_pressed"]
+[connection signal="pressed" from="Control/Rod2" to="Control" method="_on_rod_2_pressed"]
+[connection signal="pressed" from="Control/Rod3" to="Control" method="_on_rod_3_pressed"]
+[connection signal="pressed" from="Control/Net1" to="Control" method="_on_net_1_pressed"]
+[connection signal="pressed" from="Control/Net2" to="Control" method="_on_net_2_pressed"]
+[connection signal="pressed" from="Control/Net3" to="Control" method="_on_net_3_pressed"]
