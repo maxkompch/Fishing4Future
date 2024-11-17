@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://chdqx1a3e1e2v"
-path="res://.godot/imported/joystix.otf-7a0714f41201ad1625c8f6d0068e65e6.fontdata"
+path="res://.godot/imported/joystix.otf-ac410fa03aa4adbb856e89ac95622cd1.fontdata"
 
 [deps]
 
-source_file="res://13. ShopUI/Assets/font/joystix.otf"
-dest_files=["res://.godot/imported/joystix.otf-7a0714f41201ad1625c8f6d0068e65e6.fontdata"]
+source_file="res://6. ShopUI/Assets/font/joystix.otf"
+dest_files=["res://.godot/imported/joystix.otf-ac410fa03aa4adbb856e89ac95622cd1.fontdata"]
 
 [params]
 

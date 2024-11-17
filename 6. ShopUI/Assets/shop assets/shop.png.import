@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dspsl73s284ea"
-path="res://.godot/imported/TrashcanIcons EP.png-211e9ab6591151ccd2957f93a433ca0e.ctex"
+uid="uid://b06seno6kc631"
+path="res://.godot/imported/shop.png-20acdf9b536a09cdd2269b7b32ec95ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://5. Icons/TrashcanIcons EP.png"
-dest_files=["res://.godot/imported/TrashcanIcons EP.png-211e9ab6591151ccd2957f93a433ca0e.ctex"]
+source_file="res://6. ShopUI/Assets/shop assets/shop.png"
+dest_files=["res://.godot/imported/shop.png-20acdf9b536a09cdd2269b7b32ec95ac.ctex"]
 
 [params]
 

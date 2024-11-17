@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg8e1vaew0ymm"
-path="res://.godot/imported/CaughtfishIcons EP.png-5c03d7e309b0bbaf5bdc8d86567edbde.ctex"
+uid="uid://px4xge4ebad4"
+path="res://.godot/imported/shop front.png-abd0e7e932462f13c180f15490b128bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://5. Icons/CaughtfishIcons EP.png"
-dest_files=["res://.godot/imported/CaughtfishIcons EP.png-5c03d7e309b0bbaf5bdc8d86567edbde.ctex"]
+source_file="res://6. ShopUI/Assets/shop assets/shop front.png"
+dest_files=["res://.godot/imported/shop front.png-abd0e7e932462f13c180f15490b128bd.ctex"]
 
 [params]
 

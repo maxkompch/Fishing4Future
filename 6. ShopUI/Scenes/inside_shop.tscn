@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bclcy4nao7giv"]
+[gd_scene load_steps=7 format=3 uid="uid://bclcy4nao7giv"]
 
-[ext_resource type="Texture2D" uid="uid://b06seno6kc631" path="res://13. ShopUI/Assets/shop assets/shop.png" id="1_1exa1"]
-[ext_resource type="Script" path="res://13. ShopUI/Scripts/backtoshop.gd" id="2_qmvxl"]
-[ext_resource type="Script" path="res://13. ShopUI/Scripts/control_inside.gd" id="3_xis08"]
-[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://13. ShopUI/Assets/font/joystix.otf" id="4_32hmx"]
-[ext_resource type="AudioStream" uid="uid://cbod4bo0gcvv1" path="res://13. ShopUI/Assets/shop assets/purchased.wav" id="4_p3ke8"]
-[ext_resource type="AudioStream" uid="uid://demvdgaw402x" path="res://13. ShopUI/Assets/shop assets/notenough.wav" id="5_g6srk"]
-[ext_resource type="Script" path="res://13. ShopUI/Scripts/time_system.gd" id="7_jaayp"]
+[ext_resource type="Texture2D" uid="uid://b06seno6kc631" path="res://6. ShopUI/Assets/shop assets/shop.png" id="1_1exa1"]
+[ext_resource type="Script" path="res://6. ShopUI/Scripts/backtoshop.gd" id="2_qmvxl"]
+[ext_resource type="Script" path="res://6. ShopUI/Scripts/control_inside.gd" id="3_xis08"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://6. ShopUI/Assets/font/joystix.otf" id="4_32hmx"]
+[ext_resource type="AudioStream" uid="uid://cbod4bo0gcvv1" path="res://6. ShopUI/Assets/shop assets/purchased.wav" id="4_p3ke8"]
+[ext_resource type="AudioStream" uid="uid://demvdgaw402x" path="res://6. ShopUI/Assets/shop assets/notenough.wav" id="5_g6srk"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -152,9 +151,6 @@ stream = ExtResource("4_p3ke8")
 
 [node name="notenoughaudio" type="AudioStreamPlayer2D" parent="Control"]
 stream = ExtResource("5_g6srk")
-
-[node name="TimeSystem" type="Node" parent="."]
-script = ExtResource("7_jaayp")
 
 [connection signal="button_up" from="Control/Button" to="Sprite2D" method="_on_button_button_up"]
 [connection signal="pressed" from="Control/Rod1" to="Control" method="_on_rod_1_pressed"]

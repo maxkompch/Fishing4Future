@@ -48,10 +48,10 @@ func _on_rod_1_pressed() -> void:
 		$Rod1.disabled = true
 		$Rod2.disabled = false
 		$Rod1.text = "Bought"
-		print(Global.date_time.formatted_time + ": Bought Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 	else:
 		show_notenough_popup()
-		print(Global.date_time.formatted_time + ": Unsuccessful upgrade of Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 
 func _on_rod_2_pressed() -> void:
 	var item_cost = 200 
@@ -64,10 +64,10 @@ func _on_rod_2_pressed() -> void:
 		$Rod2.disabled = true
 		$Rod3.disabled = false
 		$Rod2.text = "Bought"
-		print(Global.date_time.formatted_time + ": Bought Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 	else:
 		show_notenough_popup()
-		print(Global.date_time.formatted_time + ": Unsuccessful upgrade of Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 		
 func _on_rod_3_pressed() -> void:
 	var item_cost = 300
@@ -79,10 +79,10 @@ func _on_rod_3_pressed() -> void:
 		show_purchase_popup()
 		$Rod3.disabled = true
 		$Rod3.text = "Bought"
-		print(Global.date_time.formatted_time + ": Bought Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 	else:
 		show_notenough_popup()
-		print(Global.date_time.formatted_time + ": Unsuccessful upgrade of Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 		
 
 
@@ -97,10 +97,10 @@ func _on_net_1_pressed() -> void:
 		$Net1.disabled = true
 		$Net2.disabled = false
 		$Net1.text = "Bought"
-		print(Global.date_time.formatted_time + ": Bought Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 	else:
 		show_notenough_popup()
-		print(Global.date_time.formatted_time + ": Unsuccessful upgrade of Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 		
 func _on_net_2_pressed() -> void:
 	var item_cost = 200
@@ -113,10 +113,10 @@ func _on_net_2_pressed() -> void:
 		$Net2.disabled = true
 		$Net3.disabled = false
 		$Net2.text = "Bought"
-		print(Global.date_time.formatted_time + ": Bought Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 	else:
 		show_notenough_popup()
-		print(Global.date_time.formatted_time + ": Unsuccessful upgrade of Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 	
 func _on_net_3_pressed() -> void:
 	var item_cost = 300
@@ -128,7 +128,7 @@ func _on_net_3_pressed() -> void:
 		show_purchase_popup()
 		$Net3.disabled = true
 		$Net3.text = "Bought"
-		print(Global.date_time.formatted_time + ": Bought Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
 	else:
 		show_notenough_popup()
-		print(Global.date_time.formatted_time + ": Unsuccessful upgrade of Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
