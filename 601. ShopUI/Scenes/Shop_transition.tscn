@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5cfjl35w35es"]
+
+[ext_resource type="Texture2D" uid="uid://bdn2uhh574u2r" path="res://601. ShopUI/Assets/shop assets/pixel_Shop.png" id="1_p14gd"]
+[ext_resource type="Script" path="res://601. ShopUI/Scripts/shop_transition.gd" id="1_wor23"]
+[ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="2_ecqtw"]
+[ext_resource type="Script" path="res://601. ShopUI/Scripts/LabelAnimation.gd" id="4_y4g8u"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wor23")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(541, 296)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_p14gd")
+
+[node name="Shoptext" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(515, 117)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_ecqtw")
+script = ExtResource("4_y4g8u")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bms1rjhfymdgu"]
+
+[ext_resource type="Script" path="res://601. ShopUI/Scripts/shop_transition.gd" id="1_isw43"]
+[ext_resource type="Texture2D" uid="uid://bdn2uhh574u2r" path="res://601. ShopUI/Assets/shop assets/pixel_Shop.png" id="2_ni17y"]
+[ext_resource type="Script" path="res://601. ShopUI/Scripts/LabelAnimation.gd" id="4_j6b2n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_02s1m"]
+load_path = "res://.godot/imported/Shoptext.png-94a08a71dade8f30af5ba6ff42344ddf.ctex"
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_isw43")
+
+[node name="PlayerCheer1" type="Sprite2D" parent="."]
+position = Vector2(603, 313)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_ni17y")
+
+[node name="Shop_Text" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(576.625, 134.125)
+scale = Vector2(2.51087, 2.58333)
+texture = SubResource("CompressedTexture2D_02s1m")
+script = ExtResource("4_j6b2n")
+
+[node name="SceneTransitionTimer" type="Timer" parent="."]
+wait_time = 2.211
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SceneTransitionTimer" to="." method="_on_scene_transition_timer_timeout"]

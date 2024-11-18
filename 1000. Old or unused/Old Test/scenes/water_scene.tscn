@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqlxdarw6fd3h"]
+
+[ext_resource type="Material" uid="uid://bm6sawcl2sw68" path="res://1000. Old or unused/Old Test/water_material.tres" id="1_8m7pe"]
+[ext_resource type="Texture2D" uid="uid://b3m3cajogaho8" path="res://icon.svg" id="2_2b5yp"]
+
+[node name="Hello World" type="Node2D"]
+position = Vector2(208, 138)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_8m7pe")
+texture = ExtResource("2_2b5yp")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -62.0
+offset_top = 70.0
+offset_right = 5.0
+offset_bottom = 93.0
+text = "Hello World"
