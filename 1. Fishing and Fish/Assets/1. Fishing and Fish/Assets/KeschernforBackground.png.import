@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf0bk3kc54oda"
-path="res://.godot/imported/Bubbles.png-2ca3fd7044bc73e0aa64fbf776e0550e.ctex"
+uid="uid://dhm0itk3bn2qi"
+path="res://.godot/imported/KeschernforBackground.png-ae0c2af36c70a730283fa26098f90029.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1. Fishing and Fish/Assets/Bubbles.png"
-dest_files=["res://.godot/imported/Bubbles.png-2ca3fd7044bc73e0aa64fbf776e0550e.ctex"]
+source_file="res://1. Fishing and Fish/Assets/1. Fishing and Fish/Assets/KeschernforBackground.png"
+dest_files=["res://.godot/imported/KeschernforBackground.png-ae0c2af36c70a730283fa26098f90029.ctex"]
 
 [params]
 

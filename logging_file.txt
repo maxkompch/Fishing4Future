@@ -1,0 +1,11 @@
+2024-11-15T09:32:19,tes1,test2
+2024-11-15T09:32:19,0,winposition,5
+2024-11-15T09:32:19,1,minigamestart,start
+2024-11-15T09:32:19,2,playerhit,you win
+2024-11-15T09:32:19,3,minigamestart,restart
+2024-11-15T09:32:19,4,playerhit,you lose
+2024-11-15T09:32:19,5,minigamestart,restart
+2024-11-15T09:32:19,6,playerhit,you lose
+2024-11-15T09:32:19,7,minigamestart,restart
+2024-11-15T09:32:19,8,playerhit,you lose
+2024-11-15T09:32:19,9,minigamestart,restart

@@ -7,6 +7,7 @@ var winposition = 0
 @onready var hook = $Hook
 @onready var label = $Label
 @onready var mytimer = $Timer
+@onready var logger = $Logger
 enum Ministate{running, stopped}
 var currentState = Ministate.running
 
@@ -14,14 +15,16 @@ var currentState = Ministate.running
 func _ready() -> void:
 	HookPosition.append_array(find_children("Position*","",true,true))
 	Positionamount = HookPosition.size()
-	winposition = 0#floor(Positionamount * randf())
+	winposition = floor(Positionamount * randf())
 	print(str(winposition) + "is the Winpositon")
+	logger.logdata("winposition",str(winposition))
 	HookPosition[winposition].modulate = Color(0,1,0,1)
-	
+	logger.logdata("minigamestart","start")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	hook.position = HookPosition[currentPosition].position
 	match currentState:
 		Ministate.running:
 			pass
@@ -33,14 +36,16 @@ func _on_timer_timeout() -> void:
 	currentPosition += 1
 	if(currentPosition >= Positionamount):
 		currentPosition = 0
-	hook.position = HookPosition[currentPosition].position
+	
 	pass # Replace with function body.
 
 func Fishfang() -> void:
 	if(currentPosition == winposition):
 		label.text = "you won"
+		logger.logdata("playerhit","you win")
 	else:
 		label.text = "you lose"
+		logger.logdata("playerhit","you lose")
 
 func _on_hook_the_fish_button_up() -> void:
 	match currentState:
@@ -51,6 +56,7 @@ func _on_hook_the_fish_button_up() -> void:
 		Ministate.stopped:
 			label.text = "MiniGame running"
 			currentState = Ministate.running
+			logger.logdata("minigamestart","restart")
 			mytimer.start()
 			pass
 	pass # Replace with function body.

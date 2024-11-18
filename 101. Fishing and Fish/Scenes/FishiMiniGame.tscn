@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dycu68liw4y6w"]
 
-[ext_resource type="Script" path="res://1. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
-[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1. Fishing and Fish/Assets/violet fish.png" id="3_5cpbh"]
-[ext_resource type="Texture2D" uid="uid://cf0bk3kc54oda" path="res://1. Fishing and Fish/Assets/Bubbles.png" id="3_mr5ou"]
-[ext_resource type="Texture2D" uid="uid://ctv1wl1h6sulm" path="res://1. Fishing and Fish/Assets/angel.png" id="4_vmjyu"]
+[ext_resource type="Script" path="res://101. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
+[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://101. Fishing and Fish/Assets/violet fish.png" id="3_5cpbh"]
+[ext_resource type="Texture2D" uid="uid://cf0bk3kc54oda" path="res://101. Fishing and Fish/Assets/Bubbles.png" id="3_mr5ou"]
+[ext_resource type="Texture2D" uid="uid://ctv1wl1h6sulm" path="res://101. Fishing and Fish/Assets/angel.png" id="4_vmjyu"]
 
 [node name="FishiMiniGame" type="Node2D"]
 script = ExtResource("1_pvdyh")
@@ -11,7 +11,7 @@ script = ExtResource("1_pvdyh")
 [node name="Hook" type="Sprite2D" parent="."]
 modulate = Color(0.889578, 0, 0.179171, 1)
 z_index = 1
-position = Vector2(736, 0)
+position = Vector2(757, 10)
 scale = Vector2(3, 3)
 texture = ExtResource("3_mr5ou")
 hframes = 2
@@ -81,7 +81,7 @@ vframes = 2
 metadata/_edit_lock_ = true
 
 [node name="Position7" type="Node2D" parent="Node2D"]
-position = Vector2(328, 168)
+position = Vector2(361, 176)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Position7"]
 scale = Vector2(3, 3.024)
@@ -157,7 +157,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VioletFish" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(892, 236)
+position = Vector2(894, 242)
 scale = Vector2(5, 5)
 texture = ExtResource("3_5cpbh")
 

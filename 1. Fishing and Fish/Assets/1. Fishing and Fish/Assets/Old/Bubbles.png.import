@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctv1wl1h6sulm"
-path="res://.godot/imported/angel.png-aeb7cf16cea817308b59241df9a8875a.ctex"
+uid="uid://cf0bk3kc54oda"
+path="res://.godot/imported/Bubbles.png-10448733eea7a6ed808155cbd56fef3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1. Fishing and Fish/Assets/angel.png"
-dest_files=["res://.godot/imported/angel.png-aeb7cf16cea817308b59241df9a8875a.ctex"]
+source_file="res://1. Fishing and Fish/Assets/1. Fishing and Fish/Assets/Old/Bubbles.png"
+dest_files=["res://.godot/imported/Bubbles.png-10448733eea7a6ed808155cbd56fef3e.ctex"]
 
 [params]
 
