@@ -14,6 +14,10 @@ config/name="Fishing4Future"
 run/main_scene="res://100. TrashBin/Old Test/scenes/water_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
+[autoload]
+
+GameData="*res://6. ShopUI/Scripts/GameData.gd"
+
 [debug]
 
 file_logging/max_log_files=3

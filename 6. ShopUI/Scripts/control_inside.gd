@@ -1,23 +1,30 @@
 extends Node
-var player_coins = 1000
-
-var rod1_purchased = false
-var rod2_purchased = false
-var rod3_purchased = false
-var net1_purchased = false
-var net2_purchased = false
-var net3_purchased = false
 		
 func _ready():
-	$Label.text = "$1000"
+	GameData.load_data()
+	$Label.text = "$" + str(GameData.player_money)
 	$Label.visible = true
-	$Rod2.disabled = true
-	$Rod3.disabled = true
-	$Net2.disabled = true
-	$Net3.disabled = true
+	$Rod1.disabled = GameData.rod1_purchased
+	$Rod2.disabled = not GameData.rod1_purchased or GameData.rod2_purchased
+	$Rod3.disabled = not GameData.rod2_purchased or GameData.rod3_purchased
+	$Net1.disabled = GameData.net1_purchased
+	$Net2.disabled = not GameData.net1_purchased or GameData.net2_purchased
+	$Net3.disabled = not GameData.net2_purchased or GameData.net3_purchased
+	if GameData.rod1_purchased:
+		$Rod1.text = "Bought" 
+	if GameData.rod2_purchased:
+		$Rod2.text = "Bought"
+	if GameData.rod3_purchased:
+		$Rod3.text = "Bought"
+	if GameData.net1_purchased:
+		$Net1.text = "Bought"
+	if GameData.net2_purchased:
+		$Net2.text = "Bought"
+	if GameData.net3_purchased:
+		$Net3.text = "Bought"
 
 func update_coin_display() -> void:
-	$Label.text = "$" + str(player_coins)
+	$Label.text = "$" + str(GameData.player_money)
 	$ColorRect.visible = false
 	$ColorRect2.visible = false
 
@@ -39,96 +46,101 @@ func show_notenough_popup() -> void:
 	
 func _on_rod_1_pressed() -> void:
 	var item_cost = 100
-	
-	if player_coins >= item_cost and not rod1_purchased:
-		player_coins -= item_cost
-		rod1_purchased = true
+	if GameData.player_money >= item_cost and not GameData.rod1_purchased:
+		GameData.subtract_money(item_cost)
+		GameData.purchase_rod1()
+		GameData.save_data()
 		update_coin_display()
 		show_purchase_popup()
 		$Rod1.disabled = true
 		$Rod2.disabled = false
 		$Rod1.text = "Bought"
-		print("timestamp: Bought Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 	else:
 		show_notenough_popup()
-		print("timestamp: Unsuccessful upgrade of Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 
 func _on_rod_2_pressed() -> void:
 	var item_cost = 200 
 	
-	if player_coins >= item_cost and rod1_purchased and not rod2_purchased:
-		player_coins -= item_cost
-		rod2_purchased = true
+	if GameData.player_money >= item_cost and GameData.rod1_purchased and not GameData.rod2_purchased:
+		GameData.subtract_money(item_cost)
+		GameData.purchase_rod2()
+		GameData.save_data()
 		update_coin_display()
 		show_purchase_popup()
 		$Rod2.disabled = true
 		$Rod3.disabled = false
 		$Rod2.text = "Bought"
-		print("timestamp: Bought Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 	else:
 		show_notenough_popup()
-		print("timestamp: Unsuccessful upgrade of Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 		
 func _on_rod_3_pressed() -> void:
 	var item_cost = 300
 	
-	if player_coins >= item_cost and rod1_purchased and rod2_purchased and not rod3_purchased:
-		player_coins -= item_cost
-		rod3_purchased = true
+	if GameData.player_money >= item_cost and GameData.rod1_purchased and GameData.rod2_purchased and not GameData.rod3_purchased:
+		GameData.subtract_money(item_cost)
+		GameData.purchase_rod3()
+		GameData.save_data()
 		update_coin_display()
 		show_purchase_popup()
 		$Rod3.disabled = true
 		$Rod3.text = "Bought"
-		print("timestamp: Bought Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 	else:
 		show_notenough_popup()
-		print("timestamp: Unsuccessful upgrade of Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 		
 
 
 func _on_net_1_pressed() -> void:
 	var item_cost = 100
 	
-	if player_coins >= item_cost and not net1_purchased:
-		player_coins -= item_cost
-		net1_purchased = true
+	if GameData.player_money >= item_cost and not GameData.net1_purchased:
+		GameData.subtract_money(item_cost)
+		GameData.purchase_net1()
+		GameData.save_data()
 		update_coin_display()
 		show_purchase_popup()
 		$Net1.disabled = true
 		$Net2.disabled = false
 		$Net1.text = "Bought"
-		print("timestamp: Bought Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 	else:
 		show_notenough_popup()
-		print("timestamp: Unsuccessful upgrade of Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 		
 func _on_net_2_pressed() -> void:
 	var item_cost = 200
 	
-	if player_coins >= item_cost and net1_purchased and not net2_purchased:
-		player_coins -= item_cost
-		net2_purchased = true
+	if GameData.player_money >= item_cost and GameData.net1_purchased and not GameData.net2_purchased:
+		GameData.subtract_money(item_cost)
+		GameData.purchase_net2()
+		GameData.save_data()
 		update_coin_display()
 		show_purchase_popup()
 		$Net2.disabled = true
 		$Net3.disabled = false
 		$Net2.text = "Bought"
-		print("timestamp: Bought Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 	else:
 		show_notenough_popup()
-		print("timestamp: Unsuccessful upgrade of Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 	
 func _on_net_3_pressed() -> void:
 	var item_cost = 300
 	
-	if player_coins >= item_cost and net1_purchased and net2_purchased and not net3_purchased:
-		player_coins -= item_cost
-		net3_purchased = true
+	if GameData.player_money >= item_cost and GameData.net1_purchased and GameData.net2_purchased and not GameData.net3_purchased:
+		GameData.subtract_money(item_cost)
+		GameData.purchase_net3()
+		GameData.save_data()
 		update_coin_display()
 		show_purchase_popup()
 		$Net3.disabled = true
 		$Net3.text = "Bought"
-		print("timestamp: Bought Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Bought Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
 	else:
 		show_notenough_popup()
-		print("timestamp: Unsuccessful upgrade of Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(player_coins))
+		print("timestamp: Unsuccessful upgrade of Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
