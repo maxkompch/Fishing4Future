@@ -64,8 +64,7 @@ func enter_slow_area(slow_factor: float):
 func exit_slow_area():
 	target_modifier = 1.0
 	emit_signal("exited_slow_area")
-
-
+	
 # Function to be called from UI to set movement
 func set_movement_input(new_input: Vector2):
 	input_vector = new_input.normalized()  # Normalize to prevent faster diagonal movement
