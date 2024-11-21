@@ -20,6 +20,7 @@ var current_plastics: float = 0.0
 var current_fish: float = 0.0
 var input_vector = Vector2.ZERO
 var current_speed = Vector2.ZERO
+var whirl_vector = Vector2.ZERO
 
 # Signals
 signal capacity_full
@@ -32,6 +33,7 @@ signal exited_slow_area
 var is_fishing: bool = false
 var fishing_timer: float = 0.0
 
+
 func _ready():
 	add_to_group("player")
 
@@ -40,7 +42,7 @@ func _physics_process(delta):
 	speed_modifier = move_toward(speed_modifier, target_modifier, modifier_change_rate * delta)
 	
 	# Handle acceleration and deceleration with modifier
-	var target_velocity = input_vector * (max_speed * speed_modifier)
+	var target_velocity = (input_vector + whirl_vector) * (max_speed * speed_modifier)
 	
 	if input_vector != Vector2.ZERO:
 		# Accelerate
@@ -64,6 +66,16 @@ func enter_slow_area(slow_factor: float):
 func exit_slow_area():
 	target_modifier = 1.0
 	emit_signal("exited_slow_area")
+	
+func enter_whirl_area(center: Vector2, whirl_factor: float, acc_factor: float):
+	whirl_vector =  center.direction_to($CollisionShape2D.position)* whirl_factor
+	target_modifier = 1 + (acc_factor / (center.distance_to($CollisionShape2D.position)))
+	emit_signal("enter_whirl_area")
+
+func exit_whirl_area():
+	target_modifier = 1.0
+	whirl_vector = Vector2.ZERO
+	emit_signal("exit_whirl_area")
 	
 # Function to be called from UI to set movement
 func set_movement_input(new_input: Vector2):

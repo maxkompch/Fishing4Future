@@ -15,7 +15,7 @@ size = Vector2(37, 32)
 radius = 26.0768
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k7co1"]
-radius = 123.147
+radius = 86.6417
 
 [sub_resource type="Gradient" id="Gradient_kcxno"]
 offsets = PackedFloat32Array(0, 0.351351, 0.594595, 1)
@@ -115,7 +115,6 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="FishingArea" type="Area2D" parent="."]
-visible = false
 light_mask = 2
 visibility_layer = 2
 position = Vector2(-415, -109)
@@ -128,7 +127,6 @@ shape = SubResource("CircleShape2D_6vuf8")
 [node name="Sprite2D" type="Sprite2D" parent="FishingArea"]
 
 [node name="FishingArea2" type="Area2D" parent="."]
-visible = false
 position = Vector2(-430, 214)
 script = ExtResource("4_gfy3y")
 
@@ -137,7 +135,6 @@ position = Vector2(2, 35)
 shape = SubResource("CircleShape2D_6vuf8")
 
 [node name="WasteArea" type="Area2D" parent="."]
-visible = false
 position = Vector2(333, 116)
 script = ExtResource("4_gfy3y")
 
@@ -146,7 +143,6 @@ position = Vector2(0, 42)
 shape = SubResource("CircleShape2D_6vuf8")
 
 [node name="WasteArea2" type="Area2D" parent="."]
-visible = false
 position = Vector2(325, -141)
 script = ExtResource("4_gfy3y")
 
