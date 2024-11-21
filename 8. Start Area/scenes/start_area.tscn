@@ -158,7 +158,7 @@ tile_map_data = PackedByteArray("AAACAP7/AAABAAAAAAADAP7/AAABAAAAAAACAP//AAABAAA
 tile_set = SubResource("TileSet_wvf3u")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("1_hdbb7")]
-position = Vector2(73, -128)
+position = Vector2(126, -129)
 
 [node name="Back" type="Button" parent="."]
 offset_left = -39.0
