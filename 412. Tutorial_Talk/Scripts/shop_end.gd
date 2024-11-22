@@ -1,8 +1,8 @@
 extends Control
 
-var Dialog_text = ["You new here?", 
-			"Move with W,A,S,D.",
-			"Figure out the rest.",
+var Dialog_text = ["This our last station", 
+			"This is a shop. You can sell your fish here if you want", 
+			"Press E to enter. I'll leave now. Wasted too much time with you", 
 			 ]
 var Anzahl_an_Dialog_text
 var DialogPlatz = 0

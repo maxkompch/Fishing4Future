@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://chmyj6b15gp8t"]
+
+[ext_resource type="PackedScene" uid="uid://cwybpflbp4cuu" path="res://405. Start Area/scenes/start_area.tscn" id="1_puil3"]
+[ext_resource type="Script" path="res://413. Tutorial/Scripts/police_npc_route_start.gd" id="2_q22yy"]
+[ext_resource type="PackedScene" uid="uid://6a1e0e6i15s1" path="res://403. Options/Scenes/10. Police NPC/Scenes/police_npc.tscn" id="2_u0418"]
+[ext_resource type="PackedScene" uid="uid://b3c3hb5pplv1p" path="res://412. Tutorial_Talk/Scenes/walking.tscn" id="4_q8xp0"]
+[ext_resource type="PackedScene" uid="uid://rsa63sb5nqjg" path="res://412. Tutorial_Talk/Scenes/showing_boat.tscn" id="5_xdp0d"]
+
+[sub_resource type="Curve2D" id="Curve2D_tgplg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 227, 56, 0, 0, 0, 0, 376, 484, 0, 0, 0, 0, 843, 473)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8v2c"]
+size = Vector2(5, 284)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc1ww"]
+size = Vector2(188.75, 8)
+
+[node name="StartAreaTutorial" type="Node2D"]
+
+[node name="startArea" parent="." instance=ExtResource("1_puil3")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_tgplg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(227, 56)
+rotation = 1.23579
+rotates = false
+loop = false
+script = ExtResource("2_q22yy")
+
+[node name="PoliceNpc" parent="Path2D/PathFollow2D" instance=ExtResource("2_u0418")]
+position = Vector2(-190.414, 66.6284)
+rotation = -1.13446
+
+[node name="WalkingTutorial" parent="." instance=ExtResource("4_q8xp0")]
+
+[node name="ShowBoat" parent="." instance=ExtResource("5_xdp0d")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(193.5, 512)
+shape = SubResource("RectangleShape2D_g8v2c")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(85.625, 374)
+shape = SubResource("RectangleShape2D_lc1ww")

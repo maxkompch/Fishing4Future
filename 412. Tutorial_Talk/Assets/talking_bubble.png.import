@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duvbpt1jw6qb5"
-path="res://.godot/imported/police.png-415e6ec25bf6078b84a6c867f4303cdd.ctex"
+uid="uid://coccu3n8pxs8f"
+path="res://.godot/imported/talking_bubble.png-20ee7c24da183b42f3e9823e372acfaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://401. Tutorial/Assets/police.png"
-dest_files=["res://.godot/imported/police.png-415e6ec25bf6078b84a6c867f4303cdd.ctex"]
+source_file="res://412. Tutorial_Talk/Assets/talking_bubble.png"
+dest_files=["res://.godot/imported/talking_bubble.png-20ee7c24da183b42f3e9823e372acfaf.ctex"]
 
 [params]
 
