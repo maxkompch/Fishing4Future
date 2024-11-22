@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://daf5role61hd3"]
+
+[ext_resource type="Script" path="res://9. Start Menu/Scripts/start_menu.gd" id="1_cf6rw"]
+[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://9. Start Menu/Assets/wood_button.tres" id="1_p7jfe"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.5
+offset_top = 180.25
+offset_right = 184.5
+offset_bottom = 230.25
+grow_horizontal = 2
+script = ExtResource("1_cf6rw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+focus_neighbor_left = NodePath("NewGame")
+focus_neighbor_top = NodePath("Option")
+focus_neighbor_right = NodePath("Exit")
+
+[node name="ContinueGame" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_p7jfe")
+text = "     Continue      "
+
+[node name="NewGame" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_p7jfe")
+text = "    New Game    "
+
+[node name="Option" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_p7jfe")
+text = "       Options      "
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_p7jfe")
+text = "           Exit            "
+
+[connection signal="pressed" from="HBoxContainer/ContinueGame" to="." method="_on_continue_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

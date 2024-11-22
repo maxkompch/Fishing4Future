@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Fishing4Future"
-run/main_scene="res://403. Start Menu/Scenes/start_menu.tscn"
+run/main_scene="res://9. Start Menu/Scenes/start_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://407. Tutorial/Scripts/global.gd"
+Global="*res://13. Tutorial/Scripts/global.gd"
 
 [display]
 

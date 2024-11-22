@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://bul5p3r3enwcp"]
+
+[ext_resource type="Script" path="res://11. Options/Scripts/volume.gd" id="1_ts2lv"]
+[ext_resource type="Script" path="res://11. Options/Scripts/h_slider.gd" id="2_oohal"]
+[ext_resource type="PackedScene" uid="uid://ckt5oaek0ekwe" path="res://9. Start Menu/Assets/water_backround.tscn" id="2_yk5ui"]
+[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://9. Start Menu/Assets/wood_button.tres" id="3_8jorq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpw1a"]
+
+[node name="volume_slider" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ts2lv")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_yk5ui")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.5
+offset_right = 95.5
+offset_bottom = 190.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="master_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_mpw1a")
+
+[node name="master" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_oohal")
+bus_name = "Master"
+
+[node name="music_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="music" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_oohal")
+bus_name = "Music"
+
+[node name="sfx_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sound Effects Volume"
+
+[node name="sfx" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_oohal")
+bus_name = "sfx"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_8jorq")
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
