@@ -21,6 +21,9 @@ var current_fish: float = 0.0
 var input_vector = Vector2.ZERO
 var current_speed = Vector2.ZERO
 var whirl_vector = Vector2.ZERO
+var whirl_center = Vector2.ZERO
+var in_whirl = false
+var whirl_strength = 0.0
 
 # Signals
 signal capacity_full
@@ -42,20 +45,30 @@ func _physics_process(delta):
 	# Get input vector from the built-in actions
 	input_vector.x = Input.get_axis("ui_left", "ui_right")
 	input_vector.y = Input.get_axis("ui_up", "ui_down")
+	
 	# Normalize the vector to prevent faster diagonal movement
 	input_vector = input_vector.normalized()
+	
 	# Update speed modifier
 	speed_modifier = move_toward(speed_modifier, target_modifier, modifier_change_rate * delta)
 	
+	# Update whirl effect if in whirl
+	if in_whirl:
+		var direction_to_center = global_position.direction_to(whirl_center)
+		var distance_to_center = global_position.distance_to(whirl_center)
+		# Increase pull strength as boat gets closer to center
+		var pull_strength = whirl_strength * (1.0 + 1.0 / max(distance_to_center, 1.0))
+		whirl_vector = direction_to_center * pull_strength
+	
 	# Handle acceleration and deceleration with modifier
-	var target_velocity = (input_vector + whirl_vector) * (max_speed * speed_modifier)
+	var target_velocity = input_vector * (max_speed * speed_modifier)
 	
 	if input_vector != Vector2.ZERO:
 		# Accelerate
-		current_speed = current_speed.move_toward(target_velocity+whirl_vector, acceleration * delta)
+		current_speed = current_speed.move_toward(target_velocity + whirl_vector * max_speed, acceleration * delta)
 	else:
-		# Decelerate
-		current_speed = current_speed.move_toward(Vector2.ZERO+whirl_vector, deceleration * delta)
+		# Apply whirl force even when no input
+		current_speed = current_speed.move_toward(whirl_vector * max_speed, acceleration * delta)
 	
 	# Apply movement
 	velocity = current_speed
@@ -72,18 +85,18 @@ func enter_slow_area(slow_factor: float):
 func exit_slow_area():
 	target_modifier = 1.0
 	emit_signal("exited_slow_area")
-	
-func enter_whirl_area(center: Vector2, whirl_factor: float, acc_factor: float):
-	whirl_vector =  -($CollisionShape2D.position.direction_to(center)).normalized()
-	target_modifier = 1 + (acc_factor / (center.distance_to($CollisionShape2D.position)))
-	deceleration = -deceleration
-	emit_signal("enter_whirl_area")
+
+func enter_whirl_area(center: Vector2, whirl_factor: float):
+	whirl_center = center
+	whirl_strength = whirl_factor
+	in_whirl = true
+	emit_signal("entered_whirl_area")
 
 func exit_whirl_area():
-	target_modifier = 1.0
+	in_whirl = false
 	whirl_vector = Vector2.ZERO
-	deceleration = -deceleration
-	emit_signal("exit_whirl_area")
+	target_modifier = 1.0
+	emit_signal("exited_whirl_area")
 
 func start_fishing():
 	if not is_fishing:
