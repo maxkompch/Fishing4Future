@@ -1,6 +1,7 @@
 extends Area2D
 
-@export var whirl_factor: float = 0.5 # Force of acceleration towards center
+@export var acc_factor: float = 0.4 # Force of acceleration towards center
+@export var vmax_factor: float = 1.5  # How much to slow the player (0.5 = 50% speed)
 
 # Store the global center position
 var center: Vector2 = Vector2.ZERO
@@ -24,7 +25,7 @@ func _process(_delta):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		# Pass the current global center position
-		body.enter_whirl_area(center, whirl_factor)
+		body.enter_whirl_area(center, acc_factor, vmax_factor)
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):

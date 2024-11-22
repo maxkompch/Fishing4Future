@@ -78,17 +78,18 @@ func _physics_process(delta):
 	if is_fishing:
 		process_fishing(delta)
 
-func enter_slow_area(slow_factor: float):
-	target_modifier = slow_factor
+func enter_slow_area(vmax_factor: float):
+	target_modifier = vmax_factor
 	emit_signal("entered_slow_area")
 
 func exit_slow_area():
 	target_modifier = 1.0
 	emit_signal("exited_slow_area")
 
-func enter_whirl_area(center: Vector2, whirl_factor: float):
+func enter_whirl_area(center: Vector2, acc_factor: float, vmax_factor: float):
 	whirl_center = center
-	whirl_strength = whirl_factor
+	whirl_strength = acc_factor
+	target_modifier = vmax_factor
 	in_whirl = true
 	emit_signal("entered_whirl_area")
 
