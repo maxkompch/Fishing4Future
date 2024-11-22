@@ -28,16 +28,22 @@ signal health_changed(new_health: float)
 signal catch_successful(item_type: String)
 signal entered_slow_area
 signal exited_slow_area
+signal entered_whirl_area
+signal exited_whirl_area
 
 # State tracking
 var is_fishing: bool = false
 var fishing_timer: float = 0.0
 
-
 func _ready():
 	add_to_group("player")
 
 func _physics_process(delta):
+	# Get input vector from the built-in actions
+	input_vector.x = Input.get_axis("ui_left", "ui_right")
+	input_vector.y = Input.get_axis("ui_up", "ui_down")
+	# Normalize the vector to prevent faster diagonal movement
+	input_vector = input_vector.normalized()
 	# Update speed modifier
 	speed_modifier = move_toward(speed_modifier, target_modifier, modifier_change_rate * delta)
 	
@@ -46,10 +52,10 @@ func _physics_process(delta):
 	
 	if input_vector != Vector2.ZERO:
 		# Accelerate
-		current_speed = current_speed.move_toward(target_velocity, acceleration * delta)
+		current_speed = current_speed.move_toward(target_velocity+whirl_vector, acceleration * delta)
 	else:
 		# Decelerate
-		current_speed = current_speed.move_toward(Vector2.ZERO, deceleration * delta)
+		current_speed = current_speed.move_toward(Vector2.ZERO+whirl_vector, deceleration * delta)
 	
 	# Apply movement
 	velocity = current_speed
@@ -68,18 +74,16 @@ func exit_slow_area():
 	emit_signal("exited_slow_area")
 	
 func enter_whirl_area(center: Vector2, whirl_factor: float, acc_factor: float):
-	whirl_vector =  center.direction_to($CollisionShape2D.position)* whirl_factor
+	whirl_vector =  -($CollisionShape2D.position.direction_to(center)).normalized()
 	target_modifier = 1 + (acc_factor / (center.distance_to($CollisionShape2D.position)))
+	deceleration = -deceleration
 	emit_signal("enter_whirl_area")
 
 func exit_whirl_area():
 	target_modifier = 1.0
 	whirl_vector = Vector2.ZERO
+	deceleration = -deceleration
 	emit_signal("exit_whirl_area")
-	
-# Function to be called from UI to set movement
-func set_movement_input(new_input: Vector2):
-	input_vector = new_input.normalized()  # Normalize to prevent faster diagonal movement
 
 func start_fishing():
 	if not is_fishing:
