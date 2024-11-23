@@ -1,13 +1,16 @@
-[gd_scene load_steps=22 format=4 uid="uid://cwybpflbp4cuu"]
+[gd_scene load_steps=25 format=4 uid="uid://cwybpflbp4cuu"]
 
-[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://201. BoatNavigation/Assets/water_tile.tres" id="1_1hdie"]
+[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_1hdie"]
 [ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://402. Player/Scenes/player.tscn" id="1_hdbb7"]
 [ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://405. Start Area/Assets/wooden_deck.png" id="2_xxc4i"]
 [ext_resource type="Texture2D" uid="uid://cc6r06vkngkrt" path="res://601. ShopUI/Assets/shop assets/top_Shop.png" id="3_rx7so"]
 [ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://404. Start Menu/Assets/wood_button.tres" id="5_534oe"]
 [ext_resource type="Script" path="res://405. Start Area/Scripts/back_game.gd" id="6_1mkv6"]
 [ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_gsrfx"]
-[ext_resource type="Texture2D" uid="uid://cn1f85rel1iu4" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
+[ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_odmr6"]
+[ext_resource type="Texture2D" uid="uid://c68y4cdg1ntrp" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
+[ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_8tskl"]
+[ext_resource type="PackedScene" uid="uid://dab8h5kweq6dg" path="res://100. Fishing and Fish/Scenes/time_gui.tscn" id="11_6s524"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvkql"]
 texture = ExtResource("3_rx7so")
@@ -151,7 +154,7 @@ tile_map_data = PackedByteArray("AAACAP7/AAABAAAAAAADAP7/AAABAAAAAAACAP//AAABAAA
 tile_set = SubResource("TileSet_wvf3u")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("1_hdbb7")]
-position = Vector2(73, -128)
+position = Vector2(265, 375)
 
 [node name="Back" type="Button" parent="."]
 offset_left = -39.0
@@ -230,6 +233,21 @@ script = ExtResource("7_gsrfx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boat_entering_Area"]
 position = Vector2(1, 459)
 shape = SubResource("RectangleShape2D_2m2ce")
+
+[node name="Shoptext" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(2, 407)
+rotation = -1.57079
+scale = Vector2(2.27953, 2.27953)
+texture = ExtResource("9_odmr6")
+
+[node name="BoatPixelart" type="Sprite2D" parent="."]
+position = Vector2(678, 290)
+scale = Vector2(0.444545, 0.444545)
+texture = ExtResource("10_8tskl")
+
+[node name="TimeGUI" parent="." instance=ExtResource("11_6s524")]
+z_index = 7
 
 [connection signal="pressed" from="Back" to="CharacterBody2D2" method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]

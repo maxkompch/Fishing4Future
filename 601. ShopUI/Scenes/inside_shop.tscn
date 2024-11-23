@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bclcy4nao7giv"]
+[gd_scene load_steps=8 format=3 uid="uid://bclcy4nao7giv"]
 
 [ext_resource type="Script" path="res://601. ShopUI/Scripts/backtoshop.gd" id="2_qmvxl"]
 [ext_resource type="Script" path="res://601. ShopUI/Scripts/control_inside.gd" id="3_xis08"]
-[ext_resource type="FontFile" path="res://1000. Old or unused/Old Shop with Logging/13. ShopUI/Assets/font/joystix.otf" id="4_32hmx"]
-[ext_resource type="AudioStream" path="res://1000. Old or unused/Old Shop with Logging/13. ShopUI/Assets/shop assets/purchased.wav" id="4_p3ke8"]
-[ext_resource type="AudioStream" path="res://1000. Old or unused/Old Shop with Logging/13. ShopUI/Assets/shop assets/notenough.wav" id="5_g6srk"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="4_32hmx"]
+[ext_resource type="AudioStream" uid="uid://cbod4bo0gcvv1" path="res://601. ShopUI/Assets/shop assets/purchased.wav" id="4_p3ke8"]
+[ext_resource type="AudioStream" uid="uid://demvdgaw402x" path="res://601. ShopUI/Assets/shop assets/notenough.wav" id="5_g6srk"]
+[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/time_gui.gd" id="6_ynq3r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qsn7u"]
 load_path = "res://.godot/imported/inside_shop.png-99aa8a6bc4863dcd524a9b96e6eccab6.ctex"
@@ -23,6 +24,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_xis08")
+
+[node name="FishSell" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 305.0
+offset_right = 798.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 20
+text = "Sell All fish that you have"
 
 [node name="Back_Button" type="Button" parent="Control"]
 layout_mode = 0
@@ -156,6 +167,21 @@ volume_db = -24.0
 stream = ExtResource("5_g6srk")
 volume_db = -24.0
 
+[node name="TimeGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 88.0
+offset_bottom = 65.0
+script = ExtResource("6_ynq3r")
+
+[node name="TimeShow" type="Label" parent="TimeGUI"]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 13.0
+offset_right = 966.0
+offset_bottom = 93.0
+
+[connection signal="pressed" from="Control/FishSell" to="Control" method="_on_fish_sell_pressed"]
 [connection signal="button_up" from="Control/Back_Button" to="Sprite2D" method="_on_button_button_up"]
 [connection signal="pressed" from="Control/Rod1" to="Control" method="_on_rod_1_pressed"]
 [connection signal="pressed" from="Control/Rod2" to="Control" method="_on_rod_2_pressed"]

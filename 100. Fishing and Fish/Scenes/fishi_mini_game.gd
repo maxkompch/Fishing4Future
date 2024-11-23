@@ -13,10 +13,11 @@ var currentState = Ministate.running
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameData.load_data()
 	HookPosition.append_array(find_children("Position*","",true,true))
 	Positionamount = HookPosition.size()
 	winposition = floor(Positionamount * randf())
-	print(str(winposition) + "is the Winpositon")
+	print(str(winposition) + " is the Winpositon")
 	logger.logdata("winposition",str(winposition))
 	HookPosition[winposition].modulate = Color(0,1,0,1)
 	logger.logdata("minigamestart","start")
@@ -41,11 +42,23 @@ func _on_timer_timeout() -> void:
 
 func Fishfang() -> void:
 	if(currentPosition == winposition):
-		label.text = "you won"
+		GameData.fish_caught_func()
+		GameData.save_data()
+		label.text = "Congratulation! You have caught " + str(GameData.fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
 		logger.logdata("playerhit","you win")
+		if(GameData.fish_caught >= GameData.max_fish):
+			GameData.fish_reset_func()
+			GameData.save_data()
+			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
 	else:
-		label.text = "you lose"
+		GameData.fish_failed_func()
+		GameData.save_data()
+		label.text = "                Uh Oh! You have lost " + str(GameData.failed_fish) + " times. Auto close after losing " + str(GameData.max_fail-GameData.failed_fish) + " times."
 		logger.logdata("playerhit","you lose")
+		if(GameData.failed_fish >= GameData.max_fail):
+			GameData.fail_reset_func()
+			GameData.save_data()
+			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
 
 func _on_hook_the_fish_button_up() -> void:
 	match currentState:
@@ -54,7 +67,6 @@ func _on_hook_the_fish_button_up() -> void:
 			currentState = Ministate.stopped
 			pass
 		Ministate.stopped:
-			label.text = "MiniGame running"
 			currentState = Ministate.running
 			logger.logdata("minigamestart","restart")
 			mytimer.start()

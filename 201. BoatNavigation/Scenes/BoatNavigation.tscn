@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://ck00y8tcc0p7q"]
+[gd_scene load_steps=16 format=4 uid="uid://ck00y8tcc0p7q"]
 
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_d0lxn"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/slow_area.gd" id="4_gfy3y"]
-[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://201. BoatNavigation/Assets/water_tile.tres" id="5_dteif"]
+[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="5_dteif"]
 [ext_resource type="Texture2D" uid="uid://1xeiij74qbuu" path="res://201. BoatNavigation/Assets/whirle.jpg" id="6_3pyl2"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
 [ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_m1cad"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
+[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://100. Fishing and Fish/Assets/Old/violet fish.png" id="9_h7gu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okyxk"]
 size = Vector2(37, 32)
@@ -135,4 +136,24 @@ position = Vector2(-790.5, 432.5)
 scale = Vector2(2.28125, 2.28125)
 texture = ExtResource("8_4ddid")
 
-[connection signal="body_entered" from="Boat_exit_Area" to="Boat_exit_Area" method="on_ship_entered"]
+[node name="VioletFish" type="Sprite2D" parent="."]
+position = Vector2(333, 158)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[node name="VioletFish2" type="Sprite2D" parent="."]
+position = Vector2(329, -99)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[node name="VioletFish3" type="Sprite2D" parent="."]
+position = Vector2(-429, 247)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[node name="VioletFish4" type="Sprite2D" parent="."]
+position = Vector2(-414, -76)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[connection signal="body_entered" from="Boat_exit_Area" to="Boat_exit_Area" method="_on_ship_exited"]
