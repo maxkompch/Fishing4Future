@@ -13,6 +13,9 @@ var currentState = Ministate.running
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameData.fish_reset_func()
+	GameData.fail_reset_func()
+	GameData.save_data()
 	GameData.load_data()
 	HookPosition.append_array(find_children("Position*","",true,true))
 	Positionamount = HookPosition.size()
@@ -43,8 +46,9 @@ func _on_timer_timeout() -> void:
 func Fishfang() -> void:
 	if(currentPosition == winposition):
 		GameData.fish_caught_func()
+		GameData.total_caught_func()
 		GameData.save_data()
-		label.text = "Congratulation! You have caught " + str(GameData.fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
+		label.text = "Congratulation! You have caught " + str(GameData.total_fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
 		logger.logdata("playerhit","you win")
 		if(GameData.fish_caught >= GameData.max_fish):
 			GameData.fish_reset_func()

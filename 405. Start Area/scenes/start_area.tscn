@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_odmr6"]
 [ext_resource type="Texture2D" uid="uid://c68y4cdg1ntrp" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_8tskl"]
-[ext_resource type="PackedScene" uid="uid://dab8h5kweq6dg" path="res://100. Fishing and Fish/Scenes/time_gui.tscn" id="11_6s524"]
+[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/time_gui.gd" id="11_gc6se"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvkql"]
 texture = ExtResource("3_rx7so")
@@ -246,8 +246,26 @@ position = Vector2(678, 290)
 scale = Vector2(0.444545, 0.444545)
 texture = ExtResource("10_8tskl")
 
-[node name="TimeGUI" parent="." instance=ExtResource("11_6s524")]
-z_index = 7
+[node name="TimeGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 88.0
+offset_bottom = 65.0
+script = ExtResource("11_gc6se")
+
+[node name="TimeShow" type="Label" parent="TimeGUI"]
+layout_mode = 0
+offset_left = 567.0
+offset_top = -75.0
+offset_right = 858.0
+offset_bottom = 5.0
+
+[node name="FishBar" type="Label" parent="TimeGUI"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = -66.0
+offset_right = 642.0
+offset_bottom = 19.0
 
 [connection signal="pressed" from="Back" to="CharacterBody2D2" method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]

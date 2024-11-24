@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ck00y8tcc0p7q"]
+[gd_scene load_steps=17 format=4 uid="uid://ck00y8tcc0p7q"]
 
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_d0lxn"]
@@ -8,7 +8,8 @@
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
 [ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_m1cad"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
-[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://100. Fishing and Fish/Assets/Old/violet fish.png" id="9_h7gu2"]
+[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
+[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/time_gui.gd" id="10_l44gj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okyxk"]
 size = Vector2(37, 32)
@@ -155,5 +156,26 @@ texture = ExtResource("9_h7gu2")
 position = Vector2(-414, -76)
 scale = Vector2(2.1875, 2.1875)
 texture = ExtResource("9_h7gu2")
+
+[node name="TimeGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 88.0
+offset_bottom = 65.0
+script = ExtResource("10_l44gj")
+
+[node name="TimeShow" type="Label" parent="TimeGUI"]
+layout_mode = 0
+offset_left = -144.0
+offset_top = -309.0
+offset_right = 147.0
+offset_bottom = -229.0
+
+[node name="FishBar" type="Label" parent="TimeGUI"]
+layout_mode = 0
+offset_left = -419.0
+offset_top = -307.0
+offset_right = -130.0
+offset_bottom = -222.0
 
 [connection signal="body_entered" from="Boat_exit_Area" to="Boat_exit_Area" method="_on_ship_exited"]

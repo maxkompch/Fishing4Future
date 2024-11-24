@@ -176,10 +176,17 @@ script = ExtResource("6_ynq3r")
 
 [node name="TimeShow" type="Label" parent="TimeGUI"]
 layout_mode = 0
-offset_left = 675.0
+offset_left = 562.0
 offset_top = 13.0
-offset_right = 966.0
+offset_right = 853.0
 offset_bottom = 93.0
+
+[node name="FishBar" type="Label" parent="TimeGUI"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 6.0
+offset_right = 594.0
+offset_bottom = 91.0
 
 [connection signal="pressed" from="Control/FishSell" to="Control" method="_on_fish_sell_pressed"]
 [connection signal="button_up" from="Control/Back_Button" to="Sprite2D" method="_on_button_button_up"]

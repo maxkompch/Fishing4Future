@@ -2,7 +2,7 @@ extends Node
 		
 func _ready():
 	GameData.load_data()
-	$FishSell.text = "Sell " + str(GameData.fish_caught) + " Fish That You Have"
+	$FishSell.text = "Sell " + str(GameData.total_fish_caught) + " Fish That You Have"
 	$Label.text = "$" + str(GameData.player_money)
 	$Label.visible = true
 	$Rod1.disabled = GameData.rod1_purchased
@@ -47,14 +47,14 @@ func show_notenough_popup() -> void:
 
 func _on_fish_sell_pressed() -> void:
 	var current_time = time_system.get_time()
-	if GameData.fish_caught > 0:
-		var earnings = GameData.fish_caught * 100  # Example: Each fish is worth 10 coins
+	if GameData.total_fish_caught > 0:
+		var earnings = GameData.total_fish_caught * 10  # Example: Each fish is worth 10 coins
 		GameData.add_money(earnings)
 		update_coin_display()
-		print(current_time + " || Sold " + str(GameData.fish_caught) + " fish for $" + str(earnings) + ", current money = $" + str(GameData.player_money))
-		GameData.fish_reset_func()
+		print(current_time + " || Sold " + str(GameData.total_fish_caught) + " fish for $" + str(earnings) + ", current money = $" + str(GameData.player_money))
+		GameData.total_reset_func()
 		GameData.save_data()
-		$FishSell.text = "Sell " + str(GameData.fish_caught) + " Fish That You Have"
+		$FishSell.text = "Sell " + str(GameData.total_fish_caught) + " Fish That You Have"
 	else:
 		print(current_time + " || No fish to sell! current money = $" + str(GameData.player_money))
 
