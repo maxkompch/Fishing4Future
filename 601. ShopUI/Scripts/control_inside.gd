@@ -3,8 +3,6 @@ extends Node
 func _ready():
 	GameData.load_data()
 	$FishSell.text = "Sell " + str(GameData.total_fish_caught) + " Fish That You Have"
-	$Label.text = "$" + str(GameData.player_money)
-	$Label.visible = true
 	$Rod1.disabled = GameData.rod1_purchased
 	$Rod2.disabled = not GameData.rod1_purchased or GameData.rod2_purchased
 	$Rod3.disabled = not GameData.rod2_purchased or GameData.rod3_purchased
@@ -25,7 +23,6 @@ func _ready():
 		$Net3.text = "Bought"
 
 func update_coin_display() -> void:
-	$Label.text = "$" + str(GameData.player_money)
 	$ColorRect.visible = false
 	$ColorRect2.visible = false
 

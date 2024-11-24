@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dycu68liw4y6w"]
+[gd_scene load_steps=14 format=3 uid="uid://dycu68liw4y6w"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_5hcqv"]
@@ -8,7 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dx5tqpmf2bauo" path="res://100. Fishing and Fish/Assets/FisingBackground.png" id="5_ow07b"]
 [ext_resource type="Texture2D" uid="uid://dhm0itk3bn2qi" path="res://100. Fishing and Fish/Assets/KeschernforBackground.png" id="6_5m1kl"]
 [ext_resource type="Texture2D" uid="uid://rx408jidtf73" path="res://100. Fishing and Fish/Assets/AngelForBackground.png" id="7_vfe67"]
-[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/time_gui.gd" id="9_ics8i"]
+[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="9_orumj"]
+[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="10_xj40i"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="11_v1x6t"]
+[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="12_cy680"]
+[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="13_if2vg"]
 
 [node name="FishiMiniGame" type="Node2D"]
 script = ExtResource("1_pvdyh")
@@ -219,26 +223,67 @@ middle = 264
 amplitide = 10
 offset = 1.6
 
-[node name="TimeGUI" type="Control" parent="."]
+[node name="ResourceGUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 88.0
-offset_bottom = 65.0
-script = ExtResource("9_ics8i")
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_orumj")
 
-[node name="TimeShow" type="Label" parent="TimeGUI"]
+[node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
-offset_left = 562.0
-offset_top = 13.0
-offset_right = 853.0
-offset_bottom = 93.0
+offset_left = 205.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 71.0
+theme_override_constants/separation = 40
+alignment = 1
 
-[node name="FishBar" type="Label" parent="TimeGUI"]
-layout_mode = 0
-offset_left = 305.0
-offset_top = 6.0
-offset_right = 594.0
-offset_bottom = 91.0
+[node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+texture = ExtResource("10_xj40i")
+expand_mode = 3
+flip_h = true
+
+[node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_v1x6t")
+theme_override_font_sizes/font_size = 25
+text = "hiiiiii"
+
+[node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+theme_override_constants/separation = -7
+alignment = 1
+
+[node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+texture = ExtResource("12_cy680")
+expand_mode = 3
+
+[node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_v1x6t")
+theme_override_font_sizes/font_size = 25
+text = "Hello"
+vertical_alignment = 1
+
+[node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+texture = ExtResource("13_if2vg")
+expand_mode = 3
+
+[node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_v1x6t")
+theme_override_font_sizes/font_size = 25
+text = "THIRSDAY 12:12:12"
 
 [connection signal="tree_exited" from="Logger" to="Logger" method="_on_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

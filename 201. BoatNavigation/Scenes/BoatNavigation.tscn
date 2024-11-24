@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ck00y8tcc0p7q"]
+[gd_scene load_steps=21 format=4 uid="uid://ck00y8tcc0p7q"]
 
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_d0lxn"]
@@ -9,7 +9,11 @@
 [ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_m1cad"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
 [ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
-[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/time_gui.gd" id="10_l44gj"]
+[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="10_i6ms5"]
+[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="11_de20e"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="12_4c4ps"]
+[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="13_2trar"]
+[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="14_dyqoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okyxk"]
 size = Vector2(37, 32)
@@ -157,25 +161,66 @@ position = Vector2(-414, -76)
 scale = Vector2(2.1875, 2.1875)
 texture = ExtResource("9_h7gu2")
 
-[node name="TimeGUI" type="Control" parent="."]
+[node name="ResourceGUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 88.0
-offset_bottom = 65.0
-script = ExtResource("10_l44gj")
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_i6ms5")
 
-[node name="TimeShow" type="Label" parent="TimeGUI"]
+[node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
-offset_left = -144.0
-offset_top = -309.0
-offset_right = 147.0
-offset_bottom = -229.0
+offset_left = -506.0
+offset_top = -315.0
+offset_right = 433.0
+offset_bottom = -252.0
+theme_override_constants/separation = 40
+alignment = 1
 
-[node name="FishBar" type="Label" parent="TimeGUI"]
-layout_mode = 0
-offset_left = -419.0
-offset_top = -307.0
-offset_right = -130.0
-offset_bottom = -222.0
+[node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+texture = ExtResource("11_de20e")
+expand_mode = 3
+flip_h = true
+
+[node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_4c4ps")
+theme_override_font_sizes/font_size = 25
+text = "hiiiiii"
+
+[node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+theme_override_constants/separation = -7
+alignment = 1
+
+[node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+texture = ExtResource("13_2trar")
+expand_mode = 3
+
+[node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_4c4ps")
+theme_override_font_sizes/font_size = 25
+text = "Hello"
+vertical_alignment = 1
+
+[node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+texture = ExtResource("14_dyqoa")
+expand_mode = 3
+
+[node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_4c4ps")
+theme_override_font_sizes/font_size = 25
+text = "THIRSDAY 12:12:12"
 
 [connection signal="body_entered" from="Boat_exit_Area" to="Boat_exit_Area" method="_on_ship_exited"]
