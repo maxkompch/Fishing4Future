@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://5ck62a2tbapj"]
+[gd_scene load_steps=7 format=3 uid="uid://kldr1hidoofl"]
 
 [ext_resource type="PackedScene" uid="uid://ck00y8tcc0p7q" path="res://201. BoatNavigation/Scenes/BoatNavigation.tscn" id="1_06rq3"]
 [ext_resource type="Script" path="res://413. Tutorial/Scripts/sea_area_tutorial.gd" id="1_dwdy5"]
