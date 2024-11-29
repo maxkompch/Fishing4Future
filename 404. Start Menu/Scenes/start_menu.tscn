@@ -16,13 +16,25 @@ grow_vertical = 2
 position = Vector2(552, 301)
 
 [node name="Title" type="Sprite2D" parent="."]
-position = Vector2(567, 205)
+position = Vector2(538, 212)
 scale = Vector2(5.54688, 5.54688)
 texture = ExtResource("2_t34wo")
 
 [node name="MarginContainer" parent="." instance=ExtResource("3_gj747")]
 layout_mode = 1
+<<<<<<< Updated upstream
 offset_left = -226.0
 offset_top = 474.0
 offset_right = 262.0
 offset_bottom = 524.0
+=======
+anchors_preset = -1
+anchor_left = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = 468.0
+offset_right = -324.0
+offset_bottom = -111.0
+grow_vertical = 2
+>>>>>>> Stashed changes

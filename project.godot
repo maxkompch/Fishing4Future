@@ -17,7 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+<<<<<<< Updated upstream
 Global="*res://413. Tutorial/Scripts/global.gd"
+=======
+time_system="*res://602. Global Variables/Scripts/time_system.gd"
+GameData="*res://602. Global Variables/Scripts/GameData.gd"
+date_time="*res://602. Global Variables/Scripts/date_time.gd"
+tutorial_var="*res://602. Global Variables/Scripts/tutorial_var.gd"
+SceneTransition="*res://406. Scene Transitions/Scenes/scene_transition.tscn"
+SceneTransitionLight="*res://406. Scene Transitions/Scenes/scene_transition_light.tscn"
+>>>>>>> Stashed changes
 
 [display]
 

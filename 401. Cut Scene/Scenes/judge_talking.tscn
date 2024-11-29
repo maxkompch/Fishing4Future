@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://x11w8rw0w452"]
+
+[ext_resource type="Texture2D" uid="uid://bxso07df75v1r" path="res://401. Cut Scene/Assets/Judge.png" id="1_adi6y"]
+[ext_resource type="Texture2D" uid="uid://coccu3n8pxs8f" path="res://412. Tutorial_Talk/Assets/talking_bubble.png" id="2_m1blo"]
+[ext_resource type="Texture2D" uid="uid://dwjimq0da5ust" path="res://102. Icons/Assets/Skip_E.png" id="3_hyr87"]
+
+[node name="judgeTalking" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="judge" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(222, 325)
+scale = Vector2(2.46875, 2.46875)
+texture = ExtResource("1_adi6y")
+
+[node name="TalkingBubble" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(547, 363)
+scale = Vector2(3.4082, 2.09375)
+texture = ExtResource("2_m1blo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = -74.0
+offset_top = -76.0
+offset_right = 1213.0
+offset_bottom = 718.0
+color = Color(0, 0, 0, 0.635294)
+
+[node name="SkipE" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(902, 625)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("3_hyr87")

@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://f5tjopyi841o"]
+
+[ext_resource type="PackedScene" uid="uid://1opmwwww0dwa" path="res://405. Start Area/scenes/end_start_area.tscn" id="1_lu4bj"]
+[ext_resource type="PackedScene" uid="uid://dlqow4miioyl0" path="res://412. Tutorial_Talk/Scenes/shop_end.tscn" id="1_mknii"]
+[ext_resource type="Texture2D" uid="uid://dwbwgqqtg01nq" path="res://102. Icons/Assets/Press E.png" id="3_0je0l"]
+[ext_resource type="Script" path="res://413. Tutorial/Scripts/police_npc_route_end.gd" id="3_hkova"]
+[ext_resource type="Texture2D" uid="uid://domsjgg1g3ymk" path="res://102. Icons/Assets/action_icon.png" id="4_e7ig3"]
+[ext_resource type="PackedScene" uid="uid://6a1e0e6i15s1" path="res://410. Police NPC/Scenes/police_npc.tscn" id="5_cywoc"]
+
+[sub_resource type="Curve2D" id="Curve2D_0s4v8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 648, 500, 0, 0, 0, 0, 210, 503, 0, 0, 0, 0, 205, -77)
+}
+point_count = 3
+
+[node name="EndStartAreaTutorial" type="Node2D"]
+
+[node name="Control" parent="." instance=ExtResource("1_mknii")]
+
+[node name="startArea" parent="." instance=ExtResource("1_lu4bj")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_0s4v8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(648, 500)
+rotation = 1.23579
+rotates = false
+loop = false
+script = ExtResource("3_hkova")
+
+[node name="PressE" type="Sprite2D" parent="Path2D/PathFollow2D"]
+visible = false
+position = Vector2(-80.6035, -27.0015)
+rotation = -1.23579
+scale = Vector2(0.210938, 0.210938)
+texture = ExtResource("3_0je0l")
+
+[node name="ActionIcon" type="Sprite2D" parent="Path2D/PathFollow2D"]
+visible = false
+z_index = 2
+position = Vector2(-80.9323, -26.0571)
+rotation = -1.23046
+scale = Vector2(0.197069, 0.197069)
+texture = ExtResource("4_e7ig3")
+
+[node name="PoliceNpc" parent="Path2D/PathFollow2D" instance=ExtResource("5_cywoc")]
+position = Vector2(-188.963, 83.5165)
+rotation = -1.25489

@@ -24,6 +24,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if tutorial_var.is_tutorial == true and tutorial_var.sixth_finished == false:
+		$fishingGenerally.visible = true
+		$wrongFishing.visible = false
 	hook.position = HookPosition[currentPosition].position
 	match currentState:
 		Ministate.running:
@@ -43,9 +46,37 @@ func Fishfang() -> void:
 	if(currentPosition == winposition):
 		label.text = "you won"
 		logger.logdata("playerhit","you win")
+<<<<<<< Updated upstream
+=======
+		if tutorial_var.is_tutorial == true:
+			if tutorial_var.sixth_finished == false and tutorial_var.fifth_finished == true and tutorial_var.fished_once == true:
+				tutorial_var.plastic_fished = true
+			else:
+				tutorial_var.fished_once = true
+			
+		if(GameData.fish_caught >= GameData.max_fish):
+			GameData.fish_reset_func()
+			GameData.save_data()
+			if tutorial_var.is_tutorial == true:
+				get_tree().change_scene_to_file("res://413. Tutorial/Scenes/sea_area_tutorial.tscn")
+				tutorial_var.fish_spot_exited = true
+			else:
+				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+>>>>>>> Stashed changes
 	else:
 		label.text = "you lose"
 		logger.logdata("playerhit","you lose")
+<<<<<<< Updated upstream
+=======
+		if(GameData.failed_fish >= GameData.max_fail):
+			GameData.fail_reset_func()
+			GameData.save_data()
+			if tutorial_var.is_tutorial == true:
+				get_tree().change_scene_to_file("res://413. Tutorial/Scenes/sea_area_tutorial.tscn")
+				tutorial_var.fish_spot_exited = true
+			else:
+				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+>>>>>>> Stashed changes
 
 func _on_hook_the_fish_button_up() -> void:
 	match currentState:

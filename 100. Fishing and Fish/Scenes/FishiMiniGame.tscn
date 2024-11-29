@@ -1,9 +1,15 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=9 format=3 uid="uid://dycu68liw4y6w"]
+=======
+[gd_scene load_steps=19 format=3 uid="uid://dycu68liw4y6w"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_5hcqv"]
+[ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="2_lslca"]
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/node.gd" id="2_p2dnt"]
 [ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="3_5cpbh"]
+[ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="3_48xpr"]
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/bubblemovement.gd" id="3_adg62"]
 [ext_resource type="Texture2D" uid="uid://dx5tqpmf2bauo" path="res://100. Fishing and Fish/Assets/FisingBackground.png" id="5_ow07b"]
 [ext_resource type="Texture2D" uid="uid://dhm0itk3bn2qi" path="res://100. Fishing and Fish/Assets/KeschernforBackground.png" id="6_5m1kl"]
@@ -11,6 +17,10 @@
 
 [node name="FishiMiniGame" type="Node2D"]
 script = ExtResource("1_pvdyh")
+
+[node name="fishingGenerally" parent="." instance=ExtResource("2_lslca")]
+
+[node name="wrongFishing" parent="." instance=ExtResource("3_48xpr")]
 
 [node name="Logger" type="Node" parent="."]
 script = ExtResource("2_p2dnt")

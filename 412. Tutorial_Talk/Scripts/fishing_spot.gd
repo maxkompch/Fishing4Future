@@ -1,7 +1,9 @@
 extends Control
 
-var Dialog_text = ["Go to the first fishing spot there", 
-			"Press E to start fishing and get us some plastic",
+var Dialog_text = ["So, we wanna go to your first fishing spot... exciting right?",
+				"To enter the fishing spot, you just have to drive into it.",
+				"And too make sure you ain't missing it, I marked it." ,
+				"If you miss that you can start thinking about jail",
 			 ]
 var Anzahl_an_Dialog_text
 var DialogPlatz = 0
@@ -17,14 +19,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released("action"):
-		wordCount = 0
-		Text.visible_characters = wordCount
-		DialogPlatz += 1
-		if (DialogPlatz > Anzahl_an_Dialog_text-1):
-			DialogPlatz = 0
-		Text.text = Dialog_text[DialogPlatz]
-	pass
+	$".".visible = false
+	if tutorial_var.third_finished == false and tutorial_var.second_finished == true:
+		$".".visible = true
+		if Input.is_action_just_released("action"):
+			wordCount = 0
+			Text.visible_characters = wordCount
+			DialogPlatz += 1
+			if (DialogPlatz > Anzahl_an_Dialog_text-1):
+				DialogPlatz = 0
+				tutorial_var.third_finished = true
+				$".".visible = false
+			Text.text = Dialog_text[DialogPlatz]
+
 
 
 func _on_timer_timeout() -> void:

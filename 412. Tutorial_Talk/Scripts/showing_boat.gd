@@ -1,7 +1,7 @@
 extends Control
 
-var Dialog_text = ["This is your boat. Press E to enter", 
-			"This is your boat. Press E to enter", 
+var Dialog_text = ["", 
+			"This is your boat. Just walk into it to sail the ocean", 
 			"You start and end your day here",
 			"Because this is your first time, I'll come with ya",
 			 ]
@@ -19,9 +19,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Global.next_dialog == false:
+	if tutorial_var.first_finished == false:
 		$".".visible = false
-	elif Global.dialog_finished == false:
+	elif tutorial_var.next_dialog == true:
 		$".".visible = true
 		if Input.is_action_just_released("action"):
 			wordCount = 0
@@ -29,10 +29,13 @@ func _process(delta):
 			DialogPlatz += 1
 			if (DialogPlatz > Anzahl_an_Dialog_text-1):
 				DialogPlatz = 0
-				Global.dialog_finished = true
+				tutorial_var.second_finished = true
 				$".".visible = false
+				tutorial_var.next_dialog = false
+				$"../BarrierBoat/CollisionShape2D".disabled = true
 			Text.text = Dialog_text[DialogPlatz]
-	pass
+	else:
+		$".".visible = false
 
 
 func _on_timer_timeout() -> void:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://6a1e0e6i15s1"]
 
-[ext_resource type="Script" path="res://410. Police NPC/Scenes/police_npc.gd" id="1_tw1xd"]
+[ext_resource type="Script" path="res://410. Police NPC/Scripts/police_npc.gd" id="1_tw1xd"]
 [ext_resource type="Texture2D" uid="uid://duvbpt1jw6qb5" path="res://410. Police NPC/Assets/police.png" id="2_bu4si"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejj3b"]

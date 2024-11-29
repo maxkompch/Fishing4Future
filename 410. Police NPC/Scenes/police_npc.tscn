@@ -1,32 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://6a1e0e6i15s1"]
+[gd_scene load_steps=2 format=3 uid="uid://6a1e0e6i15s1"]
 
-[ext_resource type="Script" path="res://410. Police NPC/Scenes/police_npc.gd" id="1_tw1xd"]
 [ext_resource type="Texture2D" uid="uid://duvbpt1jw6qb5" path="res://410. Police NPC/Assets/police.png" id="2_bu4si"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ejj3b"]
-radius = 17.2627
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_d8t31"]
-radius = 54.1202
-
 [node name="PoliceNpc" type="Node2D"]
-script = ExtResource("1_tw1xd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(177, 138)
 scale = Vector2(0.511719, 0.511719)
 texture = ExtResource("2_bu4si")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(141, 160)
-shape = SubResource("CircleShape2D_ejj3b")
-one_way_collision = true
-
-[node name="chat_area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_area"]
-position = Vector2(142, 142)
-shape = SubResource("CircleShape2D_d8t31")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

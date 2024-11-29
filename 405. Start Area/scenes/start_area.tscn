@@ -1,12 +1,18 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=23 format=4 uid="uid://cwybpflbp4cuu"]
+=======
+[gd_scene load_steps=31 format=4 uid="uid://cwybpflbp4cuu"]
+>>>>>>> Stashed changes
 
 [ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_e85y6"]
 [ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://402. Player/Scenes/player.tscn" id="1_hdbb7"]
+[ext_resource type="Script" path="res://405. Start Area/Scripts/start_area.gd" id="1_o7a2d"]
 [ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://405. Start Area/Assets/wooden_deck.png" id="2_xxc4i"]
 [ext_resource type="Texture2D" uid="uid://ca2unuouhc4ia" path="res://200. Navigation/assets/sky.png" id="3_3uwke"]
 [ext_resource type="Texture2D" uid="uid://cc6r06vkngkrt" path="res://601. ShopUI/Assets/shop assets/top_Shop.png" id="3_rx7so"]
 [ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://404. Start Menu/Assets/wood_button.tres" id="5_534oe"]
 [ext_resource type="Script" path="res://405. Start Area/Scripts/back_game.gd" id="6_1mkv6"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_gsrfx"]
 [ext_resource type="Texture2D" uid="uid://cn1f85rel1iu4" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
 
@@ -45,6 +51,18 @@ texture_region_size = Vector2i(64, 64)
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+=======
+[ext_resource type="Script" path="res://405. Start Area/Scripts/shop_area.gd" id="7_gsrfx"]
+[ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_odmr6"]
+[ext_resource type="Texture2D" uid="uid://c68y4cdg1ntrp" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
+[ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_8tskl"]
+[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="11_vmhbd"]
+[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="12_17s26"]
+[ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="12_megss"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="13_stnse"]
+[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="14_xxaim"]
+[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="15_t0p8u"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvkql"]
 texture = ExtResource("3_rx7so")
@@ -166,6 +184,7 @@ size = Vector2(126, 256)
 
 [node name="startArea" type="Node2D"]
 position = Vector2(63, 104)
+script = ExtResource("1_o7a2d")
 
 [node name="Water" type="TileMapLayer" parent="."]
 position = Vector2(257, -40)
@@ -186,13 +205,18 @@ tile_map_data = PackedByteArray("AAACAP7/AAABAAAAAAADAP7/AAABAAAAAAACAP//AAABAAA
 tile_set = SubResource("TileSet_wvf3u")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("1_hdbb7")]
+<<<<<<< Updated upstream
 position = Vector2(73, -128)
+=======
+position = Vector2(-36, -136)
+>>>>>>> Stashed changes
 
 [node name="Back" type="Button" parent="."]
-offset_left = -39.0
-offset_top = -88.0
-offset_right = 66.0
-offset_bottom = -39.0
+z_index = 2
+offset_left = 959.0
+offset_top = 483.0
+offset_right = 1064.0
+offset_bottom = 532.0
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme = ExtResource("5_534oe")

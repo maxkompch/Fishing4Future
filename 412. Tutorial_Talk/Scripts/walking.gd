@@ -24,7 +24,7 @@ func _process(delta):
 		DialogPlatz += 1
 		if (DialogPlatz > Anzahl_an_Dialog_text-1):
 			DialogPlatz = 0
-			Global.dialog_finished = true
+			tutorial_var.first_finished = true
 			$".".visible = false
 		Text.text = Dialog_text[DialogPlatz]
 	pass

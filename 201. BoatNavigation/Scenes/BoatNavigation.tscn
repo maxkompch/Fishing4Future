@@ -1,0 +1,235 @@
+[gd_scene load_steps=22 format=4 uid="uid://ck00y8tcc0p7q"]
+
+[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
+[ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_d0lxn"]
+[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/slow_area.gd" id="4_gfy3y"]
+[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="5_dteif"]
+[ext_resource type="Texture2D" uid="uid://1xeiij74qbuu" path="res://201. BoatNavigation/Assets/whirle.jpg" id="6_3pyl2"]
+[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
+[ext_resource type="Script" path="res://405. Start Area/Scripts/shop_area.gd" id="7_m1cad"]
+[ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
+[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
+[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="10_i6ms5"]
+[ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="11_8rk2q"]
+[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="11_de20e"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="12_4c4ps"]
+[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="13_2trar"]
+[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="14_dyqoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okyxk"]
+size = Vector2(37, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6vuf8"]
+radius = 26.0768
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7co1"]
+radius = 123.147
+
+[sub_resource type="Gradient" id="Gradient_kcxno"]
+offsets = PackedFloat32Array(0, 0.351351, 0.594595, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.14902, 0.305882, 0.509804, 1, 0.14902, 0.305882, 0.509804, 1, 0.14902, 0.305882, 0.509804, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_supkc"]
+gradient = SubResource("Gradient_kcxno")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_im7hp"]
+size = Vector2(128, 8)
+
+[node name="BoatNavigation" type="Node2D"]
+position = Vector2(708, 320)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+visibility_layer = 524290
+z_index = 1
+position = Vector2(-113, 267)
+script = ExtResource("1_donbu")
+
+[node name="Boat" type="Sprite2D" parent="Player"]
+visibility_layer = 524290
+z_index = 1
+position = Vector2(0.999994, -1)
+scale = Vector2(0.284545, 0.276786)
+texture = ExtResource("2_d0lxn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-4.5, 8)
+shape = SubResource("RectangleShape2D_okyxk")
+
+[node name="FishingArea" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-415, -109)
+script = ExtResource("4_gfy3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea"]
+position = Vector2(1, 37)
+shape = SubResource("CircleShape2D_6vuf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="FishingArea"]
+
+[node name="FishingArea2" type="Area2D" parent="."]
+position = Vector2(-430, 214)
+script = ExtResource("4_gfy3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea2"]
+position = Vector2(-88, -53)
+shape = SubResource("CircleShape2D_6vuf8")
+
+[node name="WasteArea" type="Area2D" parent="."]
+position = Vector2(333, 116)
+script = ExtResource("4_gfy3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WasteArea"]
+position = Vector2(0, 42)
+shape = SubResource("CircleShape2D_6vuf8")
+
+[node name="WasteArea2" type="Area2D" parent="."]
+position = Vector2(325, -141)
+script = ExtResource("4_gfy3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WasteArea2"]
+position = Vector2(4, 41)
+shape = SubResource("CircleShape2D_6vuf8")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+show_behind_parent = true
+light_mask = 2
+position = Vector2(10, -10)
+tile_map_data = PackedByteArray("AAD1//v/AAAAAAAAAAD1//z/AAAAAAEAAAD1//3/AAAAAAEAAAD1//7/AAAAAAAAAAD1////AAABAAEAAAD1/wAAAAAAAAEAAAD1/wEAAAAAAAAAAAD1/wIAAAAAAAEAAAD1/wMAAAAAAAEAAAD1/wQAAAAAAAAAAAD2//v/AAAAAAAAAAD2//z/AAAAAAAAAAD2//3/AAABAAEAAAD2//7/AAAAAAAAAAD2////AAAAAAAAAAD2/wAAAAAAAAEAAAD2/wEAAAAAAAEAAAD2/wIAAAABAAEAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAAAAAD3//v/AAAAAAEAAAD3//z/AAAAAAEAAAD3//3/AAAAAAAAAAD3//7/AAAAAAEAAAD3////AAABAAEAAAD3/wAAAAAAAAEAAAD3/wEAAAABAAEAAAD3/wIAAAAAAAEAAAD3/wMAAAABAAEAAAD3/wQAAAABAAEAAAD4//v/AAAAAAAAAAD4//z/AAABAAEAAAD4//3/AAAAAAEAAAD4//7/AAAAAAEAAAD4////AAAAAAEAAAD4/wAAAAABAAEAAAD4/wEAAAAAAAEAAAD4/wIAAAAAAAEAAAD4/wMAAAABAAEAAAD4/wQAAAAAAAEAAAD5//v/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAEAAAD5//7/AAAAAAEAAAD5////AAAAAAAAAAD5/wAAAAAAAAAAAAD5/wEAAAABAAEAAAD5/wIAAAAAAAAAAAD5/wMAAAABAAEAAAD5/wQAAAABAAEAAAD6//v/AAAAAAAAAAD6//z/AAAAAAAAAAD6//3/AAABAAEAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAABAAEAAAD6/wIAAAAAAAAAAAD6/wMAAAABAAEAAAD6/wQAAAAAAAEAAAD7//v/AAAAAAAAAAD7//z/AAABAAEAAAD7//3/AAABAAEAAAD7//7/AAAAAAAAAAD7////AAAAAAEAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAEAAAD7/wQAAAAAAAAAAAD8//v/AAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AAABAAEAAAD8//7/AAAAAAEAAAD8////AAABAAEAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAEAAAD8/wIAAAABAAEAAAD8/wMAAAABAAEAAAD8/wQAAAAAAAAAAAD9//v/AAABAAEAAAD9//z/AAAAAAAAAAD9//3/AAAAAAEAAAD9//7/AAAAAAEAAAD9////AAAAAAAAAAD9/wAAAAAAAAEAAAD9/wEAAAAAAAEAAAD9/wIAAAABAAEAAAD9/wMAAAAAAAAAAAD9/wQAAAABAAEAAAD+//v/AAABAAEAAAD+//z/AAABAAEAAAD+//3/AAAAAAAAAAD+//7/AAABAAEAAAD+////AAAAAAAAAAD+/wAAAAAAAAEAAAD+/wEAAAABAAEAAAD+/wIAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wQAAAAAAAAAAAD///v/AAAAAAAAAAD///z/AAABAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAABAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAAAAAD//wMAAAAAAAEAAAD//wQAAAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAABAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAPv/AAAAAAEAAAABAPz/AAAAAAEAAAABAP3/AAAAAAEAAAABAP7/AAAAAAEAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAACAPv/AAABAAEAAAACAPz/AAABAAEAAAACAP3/AAABAAEAAAACAP7/AAAAAAAAAAACAP//AAAAAAEAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAABAAEAAAACAAMAAAAAAAEAAAACAAQAAAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAABAAEAAAADAP3/AAAAAAAAAAADAP7/AAABAAEAAAADAP//AAAAAAEAAAADAAAAAAABAAEAAAADAAEAAAAAAAEAAAADAAIAAAABAAEAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAPv/AAAAAAAAAAAEAPz/AAAAAAAAAAAEAP3/AAABAAEAAAAEAP7/AAAAAAAAAAAEAP//AAABAAEAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAFAPv/AAABAAEAAAAFAPz/AAAAAAEAAAAFAP3/AAABAAEAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAEAAAAFAAEAAAABAAEAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAEAAAAFAAQAAAAAAAAAAAAGAPv/AAAAAAEAAAAGAPz/AAABAAEAAAAGAP3/AAAAAAAAAAAGAP7/AAAAAAEAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAEAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAEAAAAGAAQAAAAAAAAAAAD9/wUABQAAAAAAAAD+/wUABQAAAAAAAAD//wUAAAAAAAAAAAD8/wUAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAD7/wUAAAAAAAAAAAD6/wUAAAAAAAAAAAD5/wUAAAAAAAAAAAD4/wUAAAAAAAAAAAD3/wUAAAAAAAAAAAD2/wUAAAAAAAAAAAD1/wUAAAAAAAAAAAD0/wQAAAAAAAAAAAD0/wIAAAAAAAAAAAD0/wEAAAAAAAAAAAD0/wAAAAAAAAAAAAD0////AAAAAAAAAAD0//3/AAAAAAAAAAD0//z/AAAAAAAAAAD0//v/AAAAAAAAAAACAAUAAAABAAEAAAD0/wMAAAABAAEAAAD0//7/AAAAAAEAAAD0/wUAAAAAAAAAAAA=")
+tile_set = ExtResource("5_dteif")
+collision_enabled = false
+navigation_enabled = false
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+show_behind_parent = true
+light_mask = 2
+tile_map_data = PackedByteArray("AAD0//v/AAAAAAEAAAD0//z/AAAAAAEAAAD0//3/AAAAAAEAAAD0//7/AAAAAAEAAAD0////AAAAAAEAAAD0/wAAAAAAAAEAAAD0/wEAAAAAAAEAAAD0/wIAAAAAAAEAAAD0/wMAAAAAAAEAAAD0/wQAAAAAAAEAAAD0/wUAAAAAAAEAAAD1/wUAAAAAAAEAAAD2/wUAAAAAAAEAAAD3/wUAAAAAAAEAAAD4/wUAAAAAAAEAAAD5/wUAAAAAAAEAAAD6/wUAAAAAAAEAAAD7/wUAAAAAAAEAAAD8/wUAAAAAAAEAAAD9/wUAAAAAAAEAAAD+/wUAAAAAAAEAAAD//wUAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAHAAQAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAEAAAAAAAEAAAAHAAAAAAAAAAEAAAAHAP//AAAAAAEAAAAHAP7/AAAAAAEAAAAHAP3/AAAAAAEAAAAHAPz/AAAAAAEAAAAHAPv/AAAAAAEAAAAHAPr/AAAAAAEAAAAGAPr/AAAAAAEAAAAFAPr/AAAAAAEAAAAEAPr/AAAAAAEAAAADAPr/AAAAAAEAAAACAPr/AAAAAAEAAAABAPr/AAAAAAEAAAAAAPr/AAAAAAEAAAD///r/AAAAAAEAAAD+//r/AAAAAAEAAAD9//r/AAAAAAEAAAD8//r/AAAAAAEAAAD7//r/AAAAAAEAAAD6//r/AAAAAAEAAAD5//r/AAAAAAEAAAD4//r/AAAAAAEAAAD3//r/AAAAAAEAAAD2//r/AAAAAAEAAAD1//r/AAAAAAEAAAD0//r/AAAAAAEAAAA=")
+tile_set = ExtResource("5_dteif")
+navigation_enabled = false
+
+[node name="Storm" type="Area2D" parent="."]
+position = Vector2(-136.107, -25.706)
+rotation = 1.83259
+script = ExtResource("6_cfceq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Storm"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_k7co1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Storm"]
+show_behind_parent = true
+position = Vector2(0.913136, 0.680153)
+scale = Vector2(4.26209, 4.32651)
+texture = SubResource("GradientTexture2D_supkc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Storm/Sprite2D"]
+show_behind_parent = true
+position = Vector2(0.0607252, 0.22326)
+scale = Vector2(0.052585, 0.0511774)
+texture = ExtResource("6_3pyl2")
+
+[node name="Boat_exit_Area" type="Area2D" parent="."]
+position = Vector2(671, -155)
+script = ExtResource("7_m1cad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat_exit_Area"]
+position = Vector2(-791, 467)
+shape = SubResource("RectangleShape2D_im7hp")
+
+[node name="Pfeil" type="Sprite2D" parent="Boat_exit_Area"]
+visible = false
+position = Vector2(-790.5, 432.5)
+scale = Vector2(2.28125, 2.28125)
+texture = ExtResource("8_4ddid")
+
+[node name="VioletFish" type="Sprite2D" parent="."]
+position = Vector2(333, 158)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[node name="VioletFish2" type="Sprite2D" parent="."]
+position = Vector2(329, -99)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[node name="VioletFish3" type="Sprite2D" parent="."]
+position = Vector2(-518, 165)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[node name="VioletFish4" type="Sprite2D" parent="."]
+position = Vector2(-414, -76)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[node name="ResourceGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_i6ms5")
+
+[node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
+layout_mode = 0
+offset_left = -568.0
+offset_top = -316.0
+offset_right = 329.0
+offset_bottom = -265.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Waterry" type="Sprite2D" parent="ResourceGUI/Resources"]
+position = Vector2(455, 22)
+scale = Vector2(0.582812, 0.0777778)
+texture = ExtResource("11_8rk2q")
+
+[node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+texture = ExtResource("11_de20e")
+expand_mode = 3
+flip_h = true
+
+[node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_4c4ps")
+theme_override_font_sizes/font_size = 25
+text = "hiiiiii"
+
+[node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+theme_override_constants/separation = -7
+alignment = 1
+
+[node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+texture = ExtResource("13_2trar")
+expand_mode = 3
+
+[node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_4c4ps")
+theme_override_font_sizes/font_size = 25
+text = "Hello"
+vertical_alignment = 1
+
+[node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+texture = ExtResource("14_dyqoa")
+expand_mode = 3
+
+[node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_4c4ps")
+theme_override_font_sizes/font_size = 25
+text = "THIRSDAY 12:12:12"
+
+[connection signal="body_entered" from="Boat_exit_Area" to="Boat_exit_Area" method="_on_ship_exited"]
