@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://casmp3itxnaty"]
+[gd_scene load_steps=4 format=3 uid="uid://rgyyebedaar7"]
 
-[ext_resource type="Texture2D" uid="uid://c3pb45onx76th" path="res://401. Cut Scene/Assets/court.jpg" id="1_heh01"]
-[ext_resource type="Texture2D" uid="uid://dku688piuhvxx" path="res://401. Cut Scene/Assets/home.jpg" id="2_j6qfl"]
-[ext_resource type="Texture2D" uid="uid://d38tiecfy3mrt" path="res://401. Cut Scene/Assets/supermarket.jpg" id="3_a6gi7"]
-[ext_resource type="PackedScene" uid="uid://x11w8rw0w452" path="res://401. Cut Scene/Scenes/judge_talking.tscn" id="4_sxi8g"]
+[ext_resource type="Texture2D" uid="uid://2ilg2aw0lyyh" path="res://401. Cut Scene/Assets/court.jpg" id="1_heh01"]
+[ext_resource type="PackedScene" uid="uid://b154m8fee7fdc" path="res://401. Cut Scene/Scenes/judge_talking.tscn" id="4_sxi8g"]
 [ext_resource type="Script" path="res://401. Cut Scene/Scenes/court_scene3.gd" id="6_758a6"]
 
 [node name="CutScene" type="Node2D"]
@@ -12,18 +10,6 @@
 position = Vector2(579, 323)
 scale = Vector2(1.27821, 0.866002)
 texture = ExtResource("1_heh01")
-
-[node name="Home" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(581, 322)
-scale = Vector2(1.28348, 0.876957)
-texture = ExtResource("2_j6qfl")
-
-[node name="Supermarket" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(580.25, 318)
-scale = Vector2(1.28007, 0.87472)
-texture = ExtResource("3_a6gi7")
 
 [node name="judgeTalking" parent="." instance=ExtResource("4_sxi8g")]
 script = ExtResource("6_758a6")

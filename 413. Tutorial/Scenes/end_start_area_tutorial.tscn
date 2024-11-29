@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1tqo4k76d1cc"]
 
-[ext_resource type="PackedScene" path="res://405. Start Area/scenes/end_start_area.tscn" id="1_lu4bj"]
+[ext_resource type="PackedScene" uid="uid://1opmwwww0dwa" path="res://405. Start Area/scenes/end_start_area.tscn" id="1_lu4bj"]
 [ext_resource type="PackedScene" uid="uid://dlqow4miioyl0" path="res://412. Tutorial_Talk/Scenes/shop_end.tscn" id="1_mknii"]
 [ext_resource type="Texture2D" uid="uid://dwbwgqqtg01nq" path="res://102. Icons/Assets/Press E.png" id="3_0je0l"]
-[ext_resource type="Script" path="res://413. Tutorial/Scripts/police_npc_route_end.gd" id="3_hkova"]
+[ext_resource type="Script" path="res://413. Tutorial/Scripts/police_npc_route_end.gd" id="3_gaepl"]
 [ext_resource type="Texture2D" uid="uid://domsjgg1g3ymk" path="res://102. Icons/Assets/action_icon.png" id="4_e7ig3"]
 [ext_resource type="PackedScene" uid="uid://6a1e0e6i15s1" path="res://410. Police NPC/Scenes/police_npc.tscn" id="5_cywoc"]
 
@@ -27,7 +27,7 @@ position = Vector2(648, 500)
 rotation = 1.23579
 rotates = false
 loop = false
-script = ExtResource("3_hkova")
+script = ExtResource("3_gaepl")
 
 [node name="PressE" type="Sprite2D" parent="Path2D/PathFollow2D"]
 visible = false

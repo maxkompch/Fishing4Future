@@ -2,6 +2,7 @@ extends Node
 
 const SAVE_PATH = "user://save_data.cfg"
 var player_money: float = 100.0
+
 var game_exists = false
 
 # Variables to track purchased upgrades

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1q67sxsefv7e"
-path="res://.godot/imported/Judge.png-47d5d70a949ef19e513caa51671d7fe4.ctex"
+uid="uid://1iv0v7e00v6j"
+path="res://.godot/imported/waterry.png-24f85da90445bed6a55c3caffebd912a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://401. Cut Scene/Assets/Judge.png"
-dest_files=["res://.godot/imported/Judge.png-47d5d70a949ef19e513caa51671d7fe4.ctex"]
+source_file="res://100. Fishing and Fish/Assets/waterry.png"
+dest_files=["res://.godot/imported/waterry.png-24f85da90445bed6a55c3caffebd912a.ctex"]
 
 [params]
 

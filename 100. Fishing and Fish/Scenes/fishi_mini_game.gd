@@ -46,8 +46,7 @@ func Fishfang() -> void:
 	if(currentPosition == winposition):
 		label.text = "you won"
 		logger.logdata("playerhit","you win")
-<<<<<<< Updated upstream
-=======
+		
 		if tutorial_var.is_tutorial == true:
 			if tutorial_var.sixth_finished == false and tutorial_var.fifth_finished == true and tutorial_var.fished_once == true:
 				tutorial_var.plastic_fished = true
@@ -62,12 +61,11 @@ func Fishfang() -> void:
 				tutorial_var.fish_spot_exited = true
 			else:
 				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
->>>>>>> Stashed changes
+
 	else:
 		label.text = "you lose"
 		logger.logdata("playerhit","you lose")
-<<<<<<< Updated upstream
-=======
+
 		if(GameData.failed_fish >= GameData.max_fail):
 			GameData.fail_reset_func()
 			GameData.save_data()
@@ -76,7 +74,6 @@ func Fishfang() -> void:
 				tutorial_var.fish_spot_exited = true
 			else:
 				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
->>>>>>> Stashed changes
 
 func _on_hook_the_fish_button_up() -> void:
 	match currentState:

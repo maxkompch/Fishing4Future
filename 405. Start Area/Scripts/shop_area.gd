@@ -18,8 +18,8 @@ func _on_body_entered(body):
 
 func on_ship_entered(body):
 	if tutorial_var.is_tutorial == true:
-		SceneTransition.transition()
-		await SceneTransition.on_transition_finished
+		#SceneTransition.transition()
+		#await SceneTransition.on_transition_finished
 		get_tree().change_scene_to_file("res://413. Tutorial/Scenes/sea_area_tutorial.tscn")
 	else:
 		SceneTransition.transition()

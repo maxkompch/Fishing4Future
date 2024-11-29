@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dycu68liw4y6w"]
+[gd_scene load_steps=10 format=3 uid="uid://dycu68liw4y6w"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_5hcqv"]
@@ -8,16 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dx5tqpmf2bauo" path="res://100. Fishing and Fish/Assets/FisingBackground.png" id="5_ow07b"]
 [ext_resource type="Texture2D" uid="uid://dhm0itk3bn2qi" path="res://100. Fishing and Fish/Assets/KeschernforBackground.png" id="6_5m1kl"]
 [ext_resource type="Texture2D" uid="uid://rx408jidtf73" path="res://100. Fishing and Fish/Assets/AngelForBackground.png" id="7_vfe67"]
-[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="9_orumj"]
-[ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="10_hrbv2"]
-[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="10_xj40i"]
-[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="11_v1x6t"]
-[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="12_cy680"]
-[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="13_if2vg"]
-[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/return_button.gd" id="14_ya05a"]
-[ext_resource type="Texture2D" uid="uid://xbycuyi73j66" path="res://100. Fishing and Fish/Assets/return.png" id="15_kt3ek"]
-[ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="17_7nd2r"]
-[ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="18_5k4v3"]
+[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/time_gui.gd" id="9_ics8i"]
 
 [node name="FishiMiniGame" type="Node2D"]
 script = ExtResource("1_pvdyh")
@@ -150,10 +141,10 @@ wait_time = 0.14
 autostart = true
 
 [node name="HookTheFish" type="Button" parent="."]
-offset_left = 273.0
-offset_top = 516.0
-offset_right = 529.0
-offset_bottom = 580.0
+offset_left = 466.0
+offset_top = 521.0
+offset_right = 722.0
+offset_bottom = 585.0
 text = "Hook the Fish!"
 
 [node name="Label" type="Label" parent="."]
@@ -228,88 +219,19 @@ middle = 264
 amplitide = 10
 offset = 1.6
 
-[node name="ResourceGUI" type="Control" parent="."]
+[node name="TimeGUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("9_orumj")
+offset_right = 88.0
+offset_bottom = 65.0
+script = ExtResource("9_ics8i")
 
-[node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
+[node name="TimeShow" type="Label" parent="TimeGUI"]
 layout_mode = 0
-offset_left = 141.0
+offset_left = 675.0
 offset_top = 13.0
-offset_right = 1060.0
-offset_bottom = 71.0
-theme_override_constants/separation = 40
-alignment = 1
-
-[node name="Waterry" type="Sprite2D" parent="ResourceGUI/Resources"]
-position = Vector2(462, 26.5)
-scale = Vector2(0.601562, 0.0902778)
-texture = ExtResource("10_hrbv2")
-
-[node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
-layout_mode = 2
-
-[node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
-layout_mode = 2
-texture = ExtResource("10_xj40i")
-expand_mode = 3
-flip_h = true
-
-[node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("11_v1x6t")
-theme_override_font_sizes/font_size = 25
-text = "hiiiiii"
-
-[node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
-layout_mode = 2
-theme_override_constants/separation = -7
-alignment = 1
-
-[node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
-layout_mode = 2
-texture = ExtResource("12_cy680")
-expand_mode = 3
-
-[node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("11_v1x6t")
-theme_override_font_sizes/font_size = 25
-text = "Hello"
-vertical_alignment = 1
-
-[node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
-layout_mode = 2
-
-[node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
-layout_mode = 2
-texture = ExtResource("13_if2vg")
-expand_mode = 3
-
-[node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("11_v1x6t")
-theme_override_font_sizes/font_size = 25
-text = "THIRSDAY 12:12:12"
-
-[node name="return button" type="Button" parent="."]
-offset_left = 692.0
-offset_top = 522.0
-offset_right = 878.0
-offset_bottom = 581.0
-script = ExtResource("14_ya05a")
-
-[node name="Return" type="Sprite2D" parent="return button"]
-position = Vector2(91.5, 25.5)
-scale = Vector2(0.344891, 0.120879)
-texture = ExtResource("15_kt3ek")
-
-[node name="wrongFishing" parent="." instance=ExtResource("17_7nd2r")]
-
-[node name="fishingGenerally" parent="." instance=ExtResource("18_5k4v3")]
+offset_right = 966.0
+offset_bottom = 93.0
 
 [connection signal="tree_exited" from="Logger" to="Logger" method="_on_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

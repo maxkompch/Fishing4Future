@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1q67sxsefv7e"
-path="res://.godot/imported/Judge.png-47d5d70a949ef19e513caa51671d7fe4.ctex"
+uid="uid://ckcjnevpod0e4"
+path="res://.godot/imported/Pfeil.png-becb797dae2ad8be47685899608fdfc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://401. Cut Scene/Assets/Judge.png"
-dest_files=["res://.godot/imported/Judge.png-47d5d70a949ef19e513caa51671d7fe4.ctex"]
+source_file="res://201. BoatNavigation/Assets/Pfeil.png"
+dest_files=["res://.godot/imported/Pfeil.png-becb797dae2ad8be47685899608fdfc8.ctex"]
 
 [params]
 
