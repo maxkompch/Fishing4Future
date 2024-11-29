@@ -1,68 +1,22 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=23 format=4 uid="uid://cwybpflbp4cuu"]
-=======
 [gd_scene load_steps=31 format=4 uid="uid://cwybpflbp4cuu"]
->>>>>>> Stashed changes
 
-[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_e85y6"]
+[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_1hdie"]
 [ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://402. Player/Scenes/player.tscn" id="1_hdbb7"]
 [ext_resource type="Script" path="res://405. Start Area/Scripts/start_area.gd" id="1_o7a2d"]
 [ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://405. Start Area/Assets/wooden_deck.png" id="2_xxc4i"]
-[ext_resource type="Texture2D" uid="uid://ca2unuouhc4ia" path="res://200. Navigation/assets/sky.png" id="3_3uwke"]
 [ext_resource type="Texture2D" uid="uid://cc6r06vkngkrt" path="res://601. ShopUI/Assets/shop assets/top_Shop.png" id="3_rx7so"]
 [ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://404. Start Menu/Assets/wood_button.tres" id="5_534oe"]
 [ext_resource type="Script" path="res://405. Start Area/Scripts/back_game.gd" id="6_1mkv6"]
-<<<<<<< Updated upstream
-[ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_gsrfx"]
-[ext_resource type="Texture2D" uid="uid://cn1f85rel1iu4" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2eite"]
-texture = ExtResource("3_3uwke")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-=======
 [ext_resource type="Script" path="res://405. Start Area/Scripts/shop_area.gd" id="7_gsrfx"]
 [ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_odmr6"]
-[ext_resource type="Texture2D" uid="uid://c68y4cdg1ntrp" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
+[ext_resource type="Texture2D" uid="uid://cn1f85rel1iu4" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_8tskl"]
 [ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="11_vmhbd"]
-[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="12_17s26"]
-[ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="12_megss"]
+[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/fish.png" id="12_17s26"]
+[ext_resource type="Texture2D" path="res://100. Fishing and Fish/Assets/waterry.png" id="12_megss"]
 [ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="13_stnse"]
-[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="14_xxaim"]
-[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="15_t0p8u"]
->>>>>>> Stashed changes
+[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/money.png" id="14_xxaim"]
+[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/time.png" id="15_t0p8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvkql"]
 texture = ExtResource("3_rx7so")
@@ -83,7 +37,6 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_hkny8"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_2eite")
 sources/1 = SubResource("TileSetAtlasSource_uvkql")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w0uix"]
@@ -182,6 +135,9 @@ size = Vector2(172, 246)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bj8m8"]
 size = Vector2(126, 256)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m2ce"]
+size = Vector2(194.5, 78)
+
 [node name="startArea" type="Node2D"]
 position = Vector2(63, 104)
 script = ExtResource("1_o7a2d")
@@ -189,7 +145,7 @@ script = ExtResource("1_o7a2d")
 [node name="Water" type="TileMapLayer" parent="."]
 position = Vector2(257, -40)
 tile_map_data = PackedByteArray("AAABAP//AAAAAAAAAAACAP//AAAAAAEAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAEAAAAPAP//AAAAAAAAAAAQAP//AAABAAEAAAARAP//AAAAAAAAAAARAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAMAAAAAAAAAAEAAAALAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAEAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAADAAAAAAAAAAAAAAACAAAAAAAAAAEAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAABAAEAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAEAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAEAAAARAAEAAAAAAAAAAAARAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAPAAIAAAAAAAEAAAAOAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAMAAIAAAAAAAEAAAALAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAAJAAIAAAABAAEAAAAIAAIAAAAAAAEAAAAHAAIAAAABAAEAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAEAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAABAAEAAAAKAAMAAAAAAAEAAAALAAMAAAABAAEAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAEAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAABAAEAAAARAAMAAAAAAAAAAAAHAAMAAAAAAAEAAAAGAAMAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAABAAEAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAQAAAABAAEAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAcAAAAAAAEAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAEAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAABAAEAAAAMAAcAAAAAAAAAAAAKAAUAAAAAAAEAAAAKAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAYAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAEAAAAEAAUAAAABAAEAAAADAAUAAAAAAAAAAAACAAUAAAAAAAEAAAABAAUAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAABAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAEAAAAJAAgAAAAAAAAAAAD7/wkAAAABAAEAAAD8/wkAAAAAAAAAAAD9/wkAAAAAAAAAAAD+/wkAAAABAAEAAAD//wkAAAABAAEAAAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAABAAEAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAABAAEAAAD7//7/AAAAAAEAAAD8//7/AAAAAAEAAAD9//7/AAAAAAEAAAD+//7/AAAAAAEAAAD///7/AAAAAAEAAAAAAP7/AAAAAAEAAAABAP7/AAAAAAEAAAD6////AAAAAAEAAAD6/wAAAAAAAAEAAAD6/wEAAAAAAAEAAAD6/wIAAAAAAAEAAAD6/wMAAAAAAAEAAAD6/wQAAAAAAAEAAAD6/wUAAAAAAAEAAAD6/wgAAAAAAAEAAAD6/wcAAAAAAAEAAAD6/wYAAAAAAAEAAAA=")
-tile_set = ExtResource("1_e85y6")
+tile_set = ExtResource("1_1hdie")
 collision_enabled = false
 
 [node name="shops" type="TileMapLayer" parent="."]
@@ -205,11 +161,7 @@ tile_map_data = PackedByteArray("AAACAP7/AAABAAAAAAADAP7/AAABAAAAAAACAP//AAABAAA
 tile_set = SubResource("TileSet_wvf3u")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("1_hdbb7")]
-<<<<<<< Updated upstream
-position = Vector2(73, -128)
-=======
 position = Vector2(-36, -136)
->>>>>>> Stashed changes
 
 [node name="Back" type="Button" parent="."]
 z_index = 2
@@ -282,7 +234,95 @@ texture = ExtResource("9_x5ysd")
 position = Vector2(-33, 0)
 shape = SubResource("RectangleShape2D_bj8m8")
 
+[node name="Boat_entering_Area" type="Area2D" parent="."]
+position = Vector2(671, -155)
+script = ExtResource("7_gsrfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat_entering_Area"]
+position = Vector2(1, 459)
+shape = SubResource("RectangleShape2D_2m2ce")
+
+[node name="Shoptext" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(2, 407)
+rotation = -1.57079
+scale = Vector2(2.27953, 2.27953)
+texture = ExtResource("9_odmr6")
+
+[node name="BoatPixelart" type="Sprite2D" parent="."]
+position = Vector2(678, 290)
+scale = Vector2(0.444545, 0.444545)
+texture = ExtResource("10_8tskl")
+
+[node name="ResourceGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_vmhbd")
+
+[node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = -104.0
+offset_right = 1109.0
+offset_bottom = -60.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Waterry" type="Sprite2D" parent="ResourceGUI/Resources"]
+position = Vector2(445, 21.5)
+scale = Vector2(0.564062, 0.0625)
+texture = ExtResource("12_megss")
+
+[node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+texture = ExtResource("12_17s26")
+expand_mode = 3
+flip_h = true
+
+[node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_stnse")
+theme_override_font_sizes/font_size = 25
+text = "hiiiiii"
+
+[node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+theme_override_constants/separation = -7
+alignment = 1
+
+[node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+texture = ExtResource("14_xxaim")
+expand_mode = 3
+
+[node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_stnse")
+theme_override_font_sizes/font_size = 25
+text = "Hello"
+vertical_alignment = 1
+
+[node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+texture = ExtResource("15_t0p8u")
+expand_mode = 3
+
+[node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_stnse")
+theme_override_font_sizes/font_size = 25
+text = "THIRSDAY 12:12:12"
+
 [connection signal="pressed" from="Back" to="CharacterBody2D2" method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]
 [connection signal="area_entered" from="ShopArea" to="ShopArea" method="_on_area_entered"]
 [connection signal="body_entered" from="ShopArea" to="ShopArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Boat_entering_Area" to="Boat_entering_Area" method="on_ship_entered"]

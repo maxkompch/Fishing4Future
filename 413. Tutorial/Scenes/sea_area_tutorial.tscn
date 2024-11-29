@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ck00y8tcc0p7q" path="res://201. BoatNavigation/Scenes/BoatNavigation.tscn" id="1_06rq3"]
 [ext_resource type="Script" path="res://413. Tutorial/Scripts/sea_area_tutorial.gd" id="1_dwdy5"]
-[ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="2_j0hy4"]
+[ext_resource type="Texture2D" path="res://201. BoatNavigation/Assets/Pfeil.png" id="2_j0hy4"]
 [ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="3_on1yu"]
 [ext_resource type="PackedScene" uid="uid://dws7ux58h1bvf" path="res://412. Tutorial_Talk/Scenes/fishing_spot.tscn" id="4_wvh27"]
 [ext_resource type="PackedScene" uid="uid://du0ptatxwafmv" path="res://412. Tutorial_Talk/Scenes/fishing_plastic.tscn" id="5_2olim"]
