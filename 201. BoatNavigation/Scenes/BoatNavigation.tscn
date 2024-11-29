@@ -1,20 +1,11 @@
-[gd_scene load_steps=22 format=4 uid="uid://ck00y8tcc0p7q"]
+[gd_scene load_steps=13 format=4 uid="uid://ck00y8tcc0p7q"]
 
-[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_d0lxn"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/slow_area.gd" id="4_gfy3y"]
 [ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="5_dteif"]
-[ext_resource type="Texture2D" path="res://201. BoatNavigation/Assets/whirle.jpg" id="6_3pyl2"]
-[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
 [ext_resource type="Script" path="res://405. Start Area/Scripts/shop_area.gd" id="7_m1cad"]
-[ext_resource type="Texture2D" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
 [ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
-[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="10_i6ms5"]
-[ext_resource type="Texture2D" path="res://100. Fishing and Fish/Assets/waterry.png" id="11_8rk2q"]
-[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/fish.png" id="11_de20e"]
 [ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="12_4c4ps"]
-[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/money.png" id="13_2trar"]
-[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/time.png" id="14_dyqoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okyxk"]
 size = Vector2(37, 32)
@@ -45,7 +36,7 @@ position = Vector2(708, 320)
 visibility_layer = 524290
 z_index = 1
 position = Vector2(-113, 267)
-script = ExtResource("1_donbu")
+script = ExtResource("4_gfy3y")
 
 [node name="Boat" type="Sprite2D" parent="Player"]
 visibility_layer = 524290
@@ -113,7 +104,6 @@ navigation_enabled = false
 [node name="Storm" type="Area2D" parent="."]
 position = Vector2(-136.107, -25.706)
 rotation = 1.83259
-script = ExtResource("6_cfceq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Storm"]
 position = Vector2(1, 1)
@@ -129,7 +119,6 @@ texture = SubResource("GradientTexture2D_supkc")
 show_behind_parent = true
 position = Vector2(0.0607252, 0.22326)
 scale = Vector2(0.052585, 0.0511774)
-texture = ExtResource("6_3pyl2")
 
 [node name="Boat_exit_Area" type="Area2D" parent="."]
 position = Vector2(671, -155)
@@ -143,7 +132,6 @@ shape = SubResource("RectangleShape2D_im7hp")
 visible = false
 position = Vector2(-790.5, 432.5)
 scale = Vector2(2.28125, 2.28125)
-texture = ExtResource("8_4ddid")
 
 [node name="VioletFish" type="Sprite2D" parent="."]
 position = Vector2(333, 158)
@@ -170,7 +158,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("10_i6ms5")
 
 [node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
@@ -184,14 +171,12 @@ alignment = 1
 [node name="Waterry" type="Sprite2D" parent="ResourceGUI/Resources"]
 position = Vector2(455, 22)
 scale = Vector2(0.582812, 0.0777778)
-texture = ExtResource("11_8rk2q")
 
 [node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
 
 [node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
 layout_mode = 2
-texture = ExtResource("11_de20e")
 expand_mode = 3
 flip_h = true
 
@@ -208,7 +193,6 @@ alignment = 1
 
 [node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
 layout_mode = 2
-texture = ExtResource("13_2trar")
 expand_mode = 3
 
 [node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
@@ -223,7 +207,6 @@ layout_mode = 2
 
 [node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
 layout_mode = 2
-texture = ExtResource("14_dyqoa")
 expand_mode = 3
 
 [node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]

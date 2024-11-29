@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cwybpflbp4cuu"]
+[gd_scene load_steps=26 format=4 uid="uid://cwybpflbp4cuu"]
 
 [ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_1hdie"]
 [ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://402. Player/Scenes/player.tscn" id="1_hdbb7"]
@@ -11,12 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_odmr6"]
 [ext_resource type="Texture2D" uid="uid://cn1f85rel1iu4" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_8tskl"]
-[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="11_vmhbd"]
-[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/fish.png" id="12_17s26"]
-[ext_resource type="Texture2D" path="res://100. Fishing and Fish/Assets/waterry.png" id="12_megss"]
 [ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="13_stnse"]
-[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/money.png" id="14_xxaim"]
-[ext_resource type="Texture2D" path="res://601. ShopUI/Assets/shop assets/time.png" id="15_t0p8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvkql"]
 texture = ExtResource("3_rx7so")
@@ -259,7 +254,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("11_vmhbd")
 
 [node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
@@ -273,14 +267,12 @@ alignment = 1
 [node name="Waterry" type="Sprite2D" parent="ResourceGUI/Resources"]
 position = Vector2(445, 21.5)
 scale = Vector2(0.564062, 0.0625)
-texture = ExtResource("12_megss")
 
 [node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
 
 [node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
 layout_mode = 2
-texture = ExtResource("12_17s26")
 expand_mode = 3
 flip_h = true
 
@@ -297,7 +289,6 @@ alignment = 1
 
 [node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
 layout_mode = 2
-texture = ExtResource("14_xxaim")
 expand_mode = 3
 
 [node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
@@ -312,7 +303,6 @@ layout_mode = 2
 
 [node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
 layout_mode = 2
-texture = ExtResource("15_t0p8u")
 expand_mode = 3
 
 [node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
