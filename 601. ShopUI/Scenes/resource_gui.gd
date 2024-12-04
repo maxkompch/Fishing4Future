@@ -28,3 +28,4 @@ func update_fish_display() -> void:
 func update_money_display() -> void:
 	GameData.load_data()
 	$Resources/MoneyContainer/Money.text = "$" + str(GameData.player_money)
+	

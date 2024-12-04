@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cwybpflbp4cuu" path="res://405. Start Area/scenes/start_area.tscn" id="1_puil3"]
 [ext_resource type="Script" path="res://413. Tutorial/Scripts/police_npc_route_start.gd" id="2_q22yy"]
-[ext_resource type="PackedScene" uid="uid://6a1e0e6i15s1" path="res://403. Options/Scenes/10. Police NPC/Scenes/police_npc.tscn" id="2_u0418"]
+[ext_resource type="PackedScene" uid="uid://6a1e0e6i15s1" path="res://410. Police NPC/Scenes/police_npc.tscn" id="2_u0418"]
 [ext_resource type="PackedScene" uid="uid://b3c3hb5pplv1p" path="res://412. Tutorial_Talk/Scenes/walking.tscn" id="4_q8xp0"]
 [ext_resource type="PackedScene" uid="uid://rsa63sb5nqjg" path="res://412. Tutorial_Talk/Scenes/showing_boat.tscn" id="5_xdp0d"]
 

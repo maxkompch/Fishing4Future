@@ -116,3 +116,22 @@ func purchase_net2():
 func purchase_net3():
 	if not net3_purchased and net2_purchased:
 		net3_purchased = true
+
+## Day and Money
+enum States {START, IDLE, END}
+var state: States = States.END
+
+var strike_counter = 0
+
+func auto_deduction():
+	if state == States.END:
+		player_money -= 80
+		if player_money < 0:
+			player_money = 0
+			strike_counter += 1
+			save_data()
+			
+			return false
+	else:
+		return true
+			

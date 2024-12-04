@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://loqttddtfsrh"]
+
+[ext_resource type="Script" path="res://414. Day End/Scene/day_end.gd" id="1_ssykh"]
+[ext_resource type="Texture2D" uid="uid://btlwngssfbyxj" path="res://102. Icons/Assets/Skip_E.png" id="2_uku4i"]
+[ext_resource type="Texture2D" uid="uid://djlythr64jq44" path="res://102. Icons/Assets/strike_grey.png" id="3_rky16"]
+[ext_resource type="Texture2D" uid="uid://ll0r0nod6rj3" path="res://102. Icons/Assets/strike_red.png" id="4_l64l5"]
+
+[node name="DayEnd" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ssykh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.025
+autostart = true
+
+[node name="SkipE" type="Sprite2D" parent="."]
+position = Vector2(1064, 610)
+scale = Vector2(0.523438, 0.523438)
+texture = ExtResource("2_uku4i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 275.0
+offset_right = 902.0
+offset_bottom = 392.0
+text = "Test"
+
+[node name="StrikeGrey2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(513.125, 514.125)
+scale = Vector2(0.219727, 0.219727)
+texture = ExtResource("3_rky16")
+
+[node name="StrikeGrey" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(465.125, 514.125)
+scale = Vector2(0.219727, 0.219727)
+texture = ExtResource("3_rky16")
+
+[node name="StrikeGrey3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(556.125, 514.125)
+scale = Vector2(0.219727, 0.219727)
+texture = ExtResource("3_rky16")
+
+[node name="StrikeRed2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(513.125, 514.125)
+scale = Vector2(0.219727, 0.219727)
+texture = ExtResource("4_l64l5")
+
+[node name="StrikeRed" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(465.125, 514.125)
+scale = Vector2(0.219727, 0.219727)
+texture = ExtResource("4_l64l5")
+
+[node name="StrikeRed3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(556.125, 514.125)
+scale = Vector2(0.219727, 0.219727)
+texture = ExtResource("4_l64l5")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

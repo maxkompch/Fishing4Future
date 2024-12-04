@@ -12,13 +12,16 @@ func _process(delta):
 
 func _on_body_entered(body):
 	get_tree().change_scene_to_file("res://601. ShopUI/Scenes/shop.tscn")
+	GameData.state = GameData.States.IDLE
 	pass # Replace with function body.
 
 func on_ship_entered(body):
 	get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+	GameData.state = GameData.States.START
 	pass
 	
 
 func _on_ship_exited(body):
-	get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
+	get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
+	GameData.state = GameData.States.END
 	pass # Replace with function body.
