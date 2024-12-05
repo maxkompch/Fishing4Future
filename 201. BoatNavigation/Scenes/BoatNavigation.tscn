@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
 [ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_m1cad"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
-[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://100. Fishing and Fish/Assets/Old/violet fish.png" id="9_h7gu2"]
+[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
 [ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="10_i6ms5"]
 [ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="11_8rk2q"]
 [ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="11_de20e"]

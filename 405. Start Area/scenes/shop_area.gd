@@ -22,7 +22,7 @@ func on_ship_entered(body):
 	
 
 func _on_ship_exited(body):
-	get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
+	get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
 	GameData.state = GameData.States.END
 	time_system.log("exit boat navigation")
 	time_system.log("start scene")
