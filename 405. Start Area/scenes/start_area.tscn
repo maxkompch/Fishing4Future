@@ -258,19 +258,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_vmhbd")
 
+[node name="Waterry" type="Sprite2D" parent="ResourceGUI"]
+position = Vector2(706.5, -82.5)
+scale = Vector2(0.602343, 0.0625)
+texture = ExtResource("12_megss")
+
 [node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
-offset_left = 237.0
-offset_top = -104.0
-offset_right = 1109.0
-offset_bottom = -60.0
+offset_left = 269.0
+offset_top = -106.0
+offset_right = 1141.0
+offset_bottom = -62.0
 theme_override_constants/separation = 40
 alignment = 1
-
-[node name="Waterry" type="Sprite2D" parent="ResourceGUI/Resources"]
-position = Vector2(445, 21.5)
-scale = Vector2(0.564062, 0.0625)
-texture = ExtResource("12_megss")
 
 [node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
@@ -284,8 +284,8 @@ flip_h = true
 [node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("13_stnse")
-theme_override_font_sizes/font_size = 25
-text = "hiiiiii"
+theme_override_font_sizes/font_size = 20
+text = "999"
 
 [node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
@@ -300,8 +300,8 @@ expand_mode = 3
 [node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("13_stnse")
-theme_override_font_sizes/font_size = 25
-text = "Hello"
+theme_override_font_sizes/font_size = 20
+text = "$10000"
 vertical_alignment = 1
 
 [node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
@@ -315,8 +315,8 @@ expand_mode = 3
 [node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("13_stnse")
-theme_override_font_sizes/font_size = 25
-text = "THIRSDAY 12:12:12"
+theme_override_font_sizes/font_size = 20
+text = "WEDNESDAY 12:12:12"
 
 [connection signal="pressed" from="Back" to="CharacterBody2D2" method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]

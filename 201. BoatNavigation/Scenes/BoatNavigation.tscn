@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
 [ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_m1cad"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
-[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
+[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://100. Fishing and Fish/Assets/Old/violet fish.png" id="9_h7gu2"]
 [ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="10_i6ms5"]
 [ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="11_8rk2q"]
 [ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="11_de20e"]
@@ -165,23 +165,25 @@ texture = ExtResource("9_h7gu2")
 [node name="ResourceGUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -825.0
+offset_top = -207.0
+offset_right = -785.0
+offset_bottom = -167.0
 script = ExtResource("10_i6ms5")
+
+[node name="Waterry" type="Sprite2D" parent="ResourceGUI"]
+position = Vector2(706.5, -82.5)
+scale = Vector2(0.602343, 0.0625)
+texture = ExtResource("11_8rk2q")
 
 [node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
-offset_left = -568.0
-offset_top = -316.0
-offset_right = 329.0
-offset_bottom = -265.0
+offset_left = 269.0
+offset_top = -106.0
+offset_right = 1141.0
+offset_bottom = -62.0
 theme_override_constants/separation = 40
 alignment = 1
-
-[node name="Waterry" type="Sprite2D" parent="ResourceGUI/Resources"]
-position = Vector2(455, 22)
-scale = Vector2(0.582812, 0.0777778)
-texture = ExtResource("11_8rk2q")
 
 [node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
@@ -195,8 +197,8 @@ flip_h = true
 [node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("12_4c4ps")
-theme_override_font_sizes/font_size = 25
-text = "hiiiiii"
+theme_override_font_sizes/font_size = 20
+text = "999"
 
 [node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
@@ -211,8 +213,8 @@ expand_mode = 3
 [node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("12_4c4ps")
-theme_override_font_sizes/font_size = 25
-text = "Hello"
+theme_override_font_sizes/font_size = 20
+text = "$10000"
 vertical_alignment = 1
 
 [node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
@@ -226,7 +228,7 @@ expand_mode = 3
 [node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("12_4c4ps")
-theme_override_font_sizes/font_size = 25
-text = "THIRSDAY 12:12:12"
+theme_override_font_sizes/font_size = 20
+text = "WEDNESDAY 12:12:12"
 
 [connection signal="body_entered" from="Boat_exit_Area" to="Boat_exit_Area" method="_on_ship_exited"]

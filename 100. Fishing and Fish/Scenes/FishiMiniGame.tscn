@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dycu68liw4y6w"]
+[gd_scene load_steps=16 format=3 uid="uid://dycu68liw4y6w"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_5hcqv"]
-[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/node.gd" id="2_p2dnt"]
-[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="3_5cpbh"]
+[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://100. Fishing and Fish/Assets/Old/violet fish.png" id="3_5cpbh"]
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/bubblemovement.gd" id="3_adg62"]
 [ext_resource type="Texture2D" uid="uid://dx5tqpmf2bauo" path="res://100. Fishing and Fish/Assets/FisingBackground.png" id="5_ow07b"]
 [ext_resource type="Texture2D" uid="uid://dhm0itk3bn2qi" path="res://100. Fishing and Fish/Assets/KeschernforBackground.png" id="6_5m1kl"]
@@ -19,9 +18,6 @@
 
 [node name="FishiMiniGame" type="Node2D"]
 script = ExtResource("1_pvdyh")
-
-[node name="Logger" type="Node" parent="."]
-script = ExtResource("2_p2dnt")
 
 [node name="Hook" type="Sprite2D" parent="."]
 z_index = 1
@@ -226,26 +222,40 @@ middle = 264
 amplitide = 10
 offset = 1.6
 
+[node name="return button" type="Button" parent="."]
+offset_left = 692.0
+offset_top = 522.0
+offset_right = 878.0
+offset_bottom = 581.0
+script = ExtResource("14_ya05a")
+
+[node name="Return" type="Sprite2D" parent="return button"]
+position = Vector2(91.5, 25.5)
+scale = Vector2(0.344891, 0.120879)
+texture = ExtResource("15_kt3ek")
+
 [node name="ResourceGUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -120.0
+offset_top = 136.0
+offset_right = -80.0
+offset_bottom = 176.0
 script = ExtResource("9_orumj")
+
+[node name="Waterry" type="Sprite2D" parent="ResourceGUI"]
+position = Vector2(706.5, -82.5)
+scale = Vector2(0.602343, 0.0625)
+texture = ExtResource("10_hrbv2")
 
 [node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
-offset_left = 141.0
-offset_top = 13.0
-offset_right = 1060.0
-offset_bottom = 71.0
+offset_left = 269.0
+offset_top = -106.0
+offset_right = 1141.0
+offset_bottom = -62.0
 theme_override_constants/separation = 40
 alignment = 1
-
-[node name="Waterry" type="Sprite2D" parent="ResourceGUI/Resources"]
-position = Vector2(462, 26.5)
-scale = Vector2(0.601562, 0.0902778)
-texture = ExtResource("10_hrbv2")
 
 [node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
@@ -259,8 +269,8 @@ flip_h = true
 [node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_v1x6t")
-theme_override_font_sizes/font_size = 25
-text = "hiiiiii"
+theme_override_font_sizes/font_size = 20
+text = "999"
 
 [node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
@@ -275,8 +285,8 @@ expand_mode = 3
 [node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_v1x6t")
-theme_override_font_sizes/font_size = 25
-text = "Hello"
+theme_override_font_sizes/font_size = 20
+text = "$10000"
 vertical_alignment = 1
 
 [node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
@@ -290,21 +300,8 @@ expand_mode = 3
 [node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_v1x6t")
-theme_override_font_sizes/font_size = 25
-text = "THIRSDAY 12:12:12"
+theme_override_font_sizes/font_size = 20
+text = "WEDNESDAY 12:12:12"
 
-[node name="return button" type="Button" parent="."]
-offset_left = 692.0
-offset_top = 522.0
-offset_right = 878.0
-offset_bottom = 581.0
-script = ExtResource("14_ya05a")
-
-[node name="Return" type="Sprite2D" parent="return button"]
-position = Vector2(91.5, 25.5)
-scale = Vector2(0.344891, 0.120879)
-texture = ExtResource("15_kt3ek")
-
-[connection signal="tree_exited" from="Logger" to="Logger" method="_on_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]

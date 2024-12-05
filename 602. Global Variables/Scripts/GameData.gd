@@ -20,6 +20,18 @@ var total_failed_fish: int = 0
 var max_fish: int = 3
 var max_fail: int = 3
 
+var max_plastic: int = 3
+var max_plastic_fail: int = 3
+
+var plastic_caught: int = 0
+var failed_plastic: int = 0
+
+var total_plastic_caught: int = 0
+var total_failed_plastic: int = 0
+
+var plastic_population: int = 0
+var fish_population: int = 0
+
 # Save data to a file
 func save_data():
 	var config = ConfigFile.new()
@@ -32,6 +44,12 @@ func save_data():
 	config.set_value("Upgrades", "Net1", net1_purchased)
 	config.set_value("Upgrades", "Net2", net2_purchased)
 	config.set_value("Upgrades", "Net3", net3_purchased)
+	
+	config.set_value("Fish", "Caught", fish_caught)
+	config.set_value("Fish", "Failed", failed_fish)
+	
+	config.set_value("Total", "Caught", total_fish_caught)
+	config.set_value("Total", "Failed", total_failed_fish)
 	
 	config.set_value("Fish", "Caught", fish_caught)
 	config.set_value("Fish", "Failed", failed_fish)
@@ -116,7 +134,6 @@ func purchase_net2():
 func purchase_net3():
 	if not net3_purchased and net2_purchased:
 		net3_purchased = true
-
 ## Day and Money
 enum States {START, IDLE, END}
 var state: States = States.END

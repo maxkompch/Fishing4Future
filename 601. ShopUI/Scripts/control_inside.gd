@@ -43,21 +43,21 @@ func show_notenough_popup() -> void:
 	$notenough.visible = false
 
 func _on_fish_sell_pressed() -> void:
-	var current_time = time_system.get_time()
+
 	if GameData.total_fish_caught > 0:
 		var earnings = GameData.total_fish_caught * 10  # Example: Each fish is worth 10 coins
 		GameData.add_money(earnings)
-		update_coin_display()
-		print(current_time + " || Sold " + str(GameData.total_fish_caught) + " fish for $" + str(earnings) + ", current money = $" + str(GameData.player_money))
 		GameData.total_reset_func()
 		GameData.save_data()
+		time_system.log("sold all fish for $" + str(earnings))
+		$purchasedaudio.play()
 		$FishSell.text = "Sell " + str(GameData.total_fish_caught) + " Fish That You Have"
 	else:
-		print(current_time + " || No fish to sell! current money = $" + str(GameData.player_money))
+		time_system.log("sell attempt failed")
+		$notenoughaudio.play()
 
 func _on_rod_1_pressed() -> void:
 	var item_cost = 100
-	var current_time = time_system.get_time()
 	if GameData.player_money >= item_cost and not GameData.rod1_purchased:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_rod1()
@@ -67,14 +67,13 @@ func _on_rod_1_pressed() -> void:
 		$Rod1.disabled = true
 		$Rod2.disabled = false
 		$Rod1.text = "Bought"
-		print(current_time + " || Bought Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("bought rod lv 1")
 	else:
 		show_notenough_popup()
-		print(current_time + " || Unsuccessful upgrade of Rod Lv. 1 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("failed rod lv 1")		
 
 func _on_rod_2_pressed() -> void:
 	var item_cost = 200 
-	var current_time = time_system.get_time()
 	if GameData.player_money >= item_cost and GameData.rod1_purchased and not GameData.rod2_purchased:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_rod2()
@@ -84,14 +83,13 @@ func _on_rod_2_pressed() -> void:
 		$Rod2.disabled = true
 		$Rod3.disabled = false
 		$Rod2.text = "Bought"
-		print(current_time + " || Bought Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("bought rod lv 2")
 	else:
 		show_notenough_popup()
-		print(current_time + " || Unsuccessful upgrade of Rod Lv. 2 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("failed rod lv 2")		
 		
 func _on_rod_3_pressed() -> void:
 	var item_cost = 300
-	var current_time = time_system.get_time()
 	if GameData.player_money >= item_cost and GameData.rod1_purchased and GameData.rod2_purchased and not GameData.rod3_purchased:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_rod3()
@@ -100,16 +98,13 @@ func _on_rod_3_pressed() -> void:
 		show_purchase_popup()
 		$Rod3.disabled = true
 		$Rod3.text = "Bought"
-		print(current_time + " || Bought Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("bought rod lv 3")
 	else:
 		show_notenough_popup()
-		print(current_time + " || Unsuccessful upgrade of Rod Lv. 3 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
-		
-
+		time_system.log("failed rod lv 3")		
 
 func _on_net_1_pressed() -> void:
 	var item_cost = 100
-	var current_time = time_system.get_time()
 	if GameData.player_money >= item_cost and not GameData.net1_purchased:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_net1()
@@ -119,14 +114,13 @@ func _on_net_1_pressed() -> void:
 		$Net1.disabled = true
 		$Net2.disabled = false
 		$Net1.text = "Bought"
-		print(current_time + " || Bought Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("bought net lv 1")
 	else:
 		show_notenough_popup()
-		print(current_time + " || Unsuccessful upgrade of Net Lv. 1 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("failed net lv 1")
 		
 func _on_net_2_pressed() -> void:
 	var item_cost = 200
-	var current_time = time_system.get_time()
 	if GameData.player_money >= item_cost and GameData.net1_purchased and not GameData.net2_purchased:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_net2()
@@ -136,14 +130,13 @@ func _on_net_2_pressed() -> void:
 		$Net2.disabled = true
 		$Net3.disabled = false
 		$Net2.text = "Bought"
-		print(current_time + " || Bought Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("bought net lv 2")
 	else:
 		show_notenough_popup()
-		print(current_time + " || Unsuccessful upgrade of Net Lv. 2 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
-	
+		time_system.log("failed net lv 2")
+			
 func _on_net_3_pressed() -> void:
 	var item_cost = 300
-	var current_time = time_system.get_time()
 	if GameData.player_money >= item_cost and GameData.net1_purchased and GameData.net2_purchased and not GameData.net3_purchased:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_net3()
@@ -152,7 +145,7 @@ func _on_net_3_pressed() -> void:
 		show_purchase_popup()
 		$Net3.disabled = true
 		$Net3.text = "Bought"
-		print(current_time + " || Bought Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("bought net lv 3")
 	else:
 		show_notenough_popup()
-		print(current_time + " || Unsuccessful upgrade of Net Lv. 3 for $" + str(item_cost) + ", current money = $" + str(GameData.player_money))
+		time_system.log("failed net lv 3")

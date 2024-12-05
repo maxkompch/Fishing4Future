@@ -2,7 +2,7 @@ class_name DateTime extends Resource
 
 @export_range(0,59) var seconds: int = 0
 @export_range(0,59) var minutes: int = 0
-@export_range(0,23) var hours: int = 8
+@export_range(0,23) var hours: int = 0
 @export_range(1,7) var days: int = 1
 
 var formatted_time: String = ""

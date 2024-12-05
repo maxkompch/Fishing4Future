@@ -167,16 +167,18 @@ volume_db = -24.0
 [node name="ResourceGUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 47.0
+offset_top = 119.0
+offset_right = 87.0
+offset_bottom = 159.0
 script = ExtResource("7_p1gjj")
 
 [node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
-offset_left = 209.0
-offset_top = 3.0
-offset_right = 1148.0
-offset_bottom = 66.0
+offset_left = 296.0
+offset_top = -99.0
+offset_right = 1168.0
+offset_bottom = -55.0
 theme_override_constants/separation = 40
 alignment = 1
 
@@ -192,8 +194,8 @@ flip_h = true
 [node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 25
-text = "hiiiiii"
+theme_override_font_sizes/font_size = 20
+text = "999"
 
 [node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
 layout_mode = 2
@@ -208,8 +210,8 @@ expand_mode = 3
 [node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 25
-text = "Hello"
+theme_override_font_sizes/font_size = 20
+text = "$10000"
 vertical_alignment = 1
 
 [node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
@@ -223,8 +225,8 @@ expand_mode = 3
 [node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 25
-text = "THIRSDAY 12:12:12"
+theme_override_font_sizes/font_size = 20
+text = "WEDNESDAY 12:12:12"
 
 [connection signal="pressed" from="Control/FishSell" to="Control" method="_on_fish_sell_pressed"]
 [connection signal="button_up" from="Control/Back_Button" to="Sprite2D" method="_on_button_button_up"]

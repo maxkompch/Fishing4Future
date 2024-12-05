@@ -21,9 +21,9 @@ func _ready() -> void:
 	Positionamount = HookPosition.size()
 	winposition = floor(Positionamount * randf())
 	print(str(winposition) + " is the Winpositon")
-	logger.logdata("winposition",str(winposition))
+	time_system.log("winposition = "  + str(winposition))
 	HookPosition[winposition].modulate = Color(0,1,0,1)
-	logger.logdata("minigamestart","start")
+	time_system.log("minigame start")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,7 +49,7 @@ func Fishfang() -> void:
 		GameData.total_caught_func()
 		GameData.save_data()
 		label.text = "Congratulation! You have caught " + str(GameData.total_fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
-		logger.logdata("playerhit","you win")
+		time_system.log("fish caught")
 		if(GameData.fish_caught >= GameData.max_fish):
 			GameData.fish_reset_func()
 			GameData.save_data()
@@ -58,7 +58,7 @@ func Fishfang() -> void:
 		GameData.fish_failed_func()
 		GameData.save_data()
 		label.text = "                Uh Oh! You have lost " + str(GameData.failed_fish) + " times. Auto close after losing " + str(GameData.max_fail-GameData.failed_fish) + " times."
-		logger.logdata("playerhit","you lose")
+		time_system.log("catching fish failed")
 		if(GameData.failed_fish >= GameData.max_fail):
 			GameData.fail_reset_func()
 			GameData.save_data()
@@ -72,7 +72,7 @@ func _on_hook_the_fish_button_up() -> void:
 			pass
 		Ministate.stopped:
 			currentState = Ministate.running
-			logger.logdata("minigamestart","restart")
+			time_system.log("minigame restart")
 			mytimer.start()
 			pass
 	pass # Replace with function body.
