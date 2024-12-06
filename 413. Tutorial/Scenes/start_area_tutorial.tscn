@@ -37,8 +37,10 @@ position = Vector2(-190.414, 66.6284)
 rotation = -1.13446
 
 [node name="WalkingTutorial" parent="." instance=ExtResource("4_q8xp0")]
+visible = false
 
 [node name="ShowBoat" parent="." instance=ExtResource("5_xdp0d")]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

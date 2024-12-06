@@ -121,17 +121,21 @@ func purchase_net3():
 enum States {START, IDLE, END}
 var state: States = States.END
 
-var strike_counter = 2
+var strike_counter = 0
 
 func auto_deduction():
-	if state == States.END:
-		player_money -= 80
+	if GameData.state == States.END:
+		GameData.subtract_money(80)
+		GameData.save_data()
 		if player_money < 0:
 			player_money = 0
-			strike_counter += 1
-			save_data()
+			GameData.strike_counter += 1
+			GameData.save_data()
+			
 			
 			return false
+		else:
+			return true
 	else:
 		return true
 			
