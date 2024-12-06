@@ -1,14 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bclcy4nao7giv"]
+[gd_scene load_steps=8 format=3 uid="uid://bclcy4nao7giv"]
 
 [ext_resource type="Script" path="res://601. ShopUI/Scripts/backtoshop.gd" id="2_qmvxl"]
 [ext_resource type="Script" path="res://601. ShopUI/Scripts/control_inside.gd" id="3_xis08"]
 [ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="4_32hmx"]
 [ext_resource type="AudioStream" uid="uid://cbod4bo0gcvv1" path="res://601. ShopUI/Assets/shop assets/purchased.wav" id="4_p3ke8"]
 [ext_resource type="AudioStream" uid="uid://demvdgaw402x" path="res://601. ShopUI/Assets/shop assets/notenough.wav" id="5_g6srk"]
-[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="7_0627y"]
-[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="7_p1gjj"]
-[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="7_yo4gj"]
-[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="9_hi7xb"]
+[ext_resource type="PackedScene" uid="uid://cau8ribq3iuaw" path="res://603. ResourceGUI/ResouceGUIPlain.tscn" id="6_ylh6k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qsn7u"]
 load_path = "res://.godot/imported/inside_shop.png-99aa8a6bc4863dcd524a9b96e6eccab6.ctex"
@@ -164,69 +161,12 @@ volume_db = -24.0
 stream = ExtResource("5_g6srk")
 volume_db = -24.0
 
-[node name="ResourceGUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 47.0
-offset_top = 119.0
-offset_right = 87.0
-offset_bottom = 159.0
-script = ExtResource("7_p1gjj")
-
-[node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
-layout_mode = 0
-offset_left = 296.0
-offset_top = -99.0
-offset_right = 1168.0
-offset_bottom = -55.0
-theme_override_constants/separation = 40
-alignment = 1
-
-[node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
-layout_mode = 2
-
-[node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
-layout_mode = 2
-texture = ExtResource("7_yo4gj")
-expand_mode = 3
-flip_h = true
-
-[node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "999"
-
-[node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
-layout_mode = 2
-theme_override_constants/separation = -7
-alignment = 1
-
-[node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
-layout_mode = 2
-texture = ExtResource("7_0627y")
-expand_mode = 3
-
-[node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "$10000"
-vertical_alignment = 1
-
-[node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
-layout_mode = 2
-
-[node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
-layout_mode = 2
-texture = ExtResource("9_hi7xb")
-expand_mode = 3
-
-[node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "WEDNESDAY 12:12:12"
+[node name="ResouceGuiPlain" parent="Control" instance=ExtResource("6_ylh6k")]
+layout_mode = 1
+offset_left = -65.0
+offset_top = -4.0
+offset_right = -65.0
+offset_bottom = -4.0
 
 [connection signal="pressed" from="Control/FishSell" to="Control" method="_on_fish_sell_pressed"]
 [connection signal="button_up" from="Control/Back_Button" to="Sprite2D" method="_on_button_button_up"]

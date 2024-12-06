@@ -26,6 +26,8 @@ var max_plastic_fail: int = 3
 var plastic_caught: int = 0
 var failed_plastic: int = 0
 
+var plastic_target: int = 7
+
 var total_plastic_caught: int = 0
 var total_failed_plastic: int = 0
 
