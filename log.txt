@@ -107,3 +107,54 @@
 2024-12-05T18:13:58 || Thursday 02:01:13 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || boat navigation
 2024-12-05T18:14:01 || Thursday 22:27:53 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || exit boat navigation
 2024-12-05T18:14:01 || Thursday 22:27:53 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || start scene
+2024-12-05T18:16:38 || Monday 00:08:03 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-05T18:16:47 || Tuesday 12:42:58 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || exit boat navigation
+2024-12-05T18:16:47 || Tuesday 12:42:58 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || start scene
+2024-12-06T08:45:41 || Monday 20:40:56 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T08:45:45 || Wednesday 00:53:56 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || exit boat navigation
+2024-12-06T08:45:45 || Wednesday 00:53:56 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || start scene
+2024-12-06T09:36:26 || Monday 01:51:46 || money = $20, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T09:38:50 || Monday 00:10:22 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T09:39:05 || Tuesday 10:39:51 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T09:39:07 || Wednesday 06:05:44 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || exit boat navigation
+2024-12-06T09:39:07 || Wednesday 06:05:44 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || start scene
+2024-12-06T09:41:12 || Monday 18:25:57 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T09:41:15 || Tuesday 15:38:00 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || exit boat navigation
+2024-12-06T09:41:15 || Tuesday 15:38:00 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || start scene
+2024-12-06T09:43:42 || Monday 17:33:26 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T09:43:46 || Tuesday 16:26:17 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || exit boat navigation
+2024-12-06T09:43:46 || Tuesday 16:26:17 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || start scene
+2024-12-06T09:48:07 || Monday 17:34:30 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T09:48:10 || Tuesday 13:00:22 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || exit boat navigation
+2024-12-06T09:48:10 || Tuesday 13:00:22 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || start scene
+2024-12-06T09:54:18 || Monday 04:08:36 || money = $20, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T10:40:58 || Wednesday 22:52:40 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || enter minigame
+2024-12-06T10:40:58 || Wednesday 22:59:20 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || winposition = 7
+2024-12-06T10:40:58 || Wednesday 22:59:20 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || minigame start
+2024-12-06T10:41:01 || Thursday 19:11:14 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || catching fish failed
+2024-12-06T10:41:02 || Friday 00:57:54 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || minigame restart
+2024-12-06T10:41:03 || Friday 10:31:14 || money = $100, f_pop = 0, f_caught = 1, p_pop = 0, p_caught = 0 || fish caught
+2024-12-06T10:41:04 || Friday 17:24:34 || money = $100, f_pop = 0, f_caught = 1, p_pop = 0, p_caught = 0 || minigame restart
+2024-12-06T10:41:06 || Saturday 01:31:14 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || fish caught
+2024-12-06T10:41:07 || Saturday 07:51:14 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || minigame restart
+2024-12-06T10:41:08 || Saturday 18:11:14 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || exit minigame
+2024-12-06T10:41:08 || Saturday 18:11:14 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || boat navigation
+2024-12-06T10:41:12 || Sunday 18:07:55 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || enter minigame
+2024-12-06T10:41:12 || Sunday 18:14:35 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || winposition = 2
+2024-12-06T10:41:12 || Sunday 18:14:35 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || minigame start
+2024-12-06T10:41:13 || Monday 03:14:31 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || catching fish failed
+2024-12-06T10:41:13 || Monday 03:54:31 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || minigame restart
+2024-12-06T10:41:14 || Monday 07:21:11 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || catching fish failed
+2024-12-06T10:41:15 || Monday 14:54:31 || money = $100, f_pop = 0, f_caught = 2, p_pop = 0, p_caught = 0 || minigame restart
+2024-12-06T10:41:16 || Monday 21:14:31 || money = $100, f_pop = 0, f_caught = 3, p_pop = 0, p_caught = 0 || fish caught
+2024-12-06T10:41:17 || Tuesday 03:01:11 || money = $100, f_pop = 0, f_caught = 3, p_pop = 0, p_caught = 0 || minigame restart
+2024-12-06T10:41:19 || Tuesday 21:47:51 || money = $100, f_pop = 0, f_caught = 3, p_pop = 0, p_caught = 0 || catching fish failed
+2024-12-06T11:01:38 || Monday 00:17:11 || money = $100, f_pop = 0, f_caught = 3, p_pop = 0, p_caught = 0 || shop transition
+2024-12-06T11:01:40 || Monday 00:26:07 || money = $100, f_pop = 0, f_caught = 3, p_pop = 0, p_caught = 0 || entered shop
+2024-12-06T11:01:41 || Monday 00:32:26 || money = $130, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || sold all fish for $30
+2024-12-06T11:02:09 || Monday 01:05:29 || money = $130, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || shop transition
+2024-12-06T11:02:12 || Monday 01:14:25 || money = $130, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || entered shop
+2024-12-06T11:05:31 || Monday 01:26:56 || money = $130, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || shop transition
+2024-12-06T11:05:33 || Monday 01:35:52 || money = $130, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || entered shop
+2024-12-06T11:07:55 || Monday 00:11:35 || money = $130, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || exit boat navigation
+2024-12-06T11:07:55 || Monday 00:11:35 || money = $130, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || start scene

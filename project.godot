@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fishing4Future"
-run/main_scene="res://413. Tutorial/Scenes/start_area_tutorial.tscn"
+run/main_scene="res://401. Cut Scene/Scenes/court_scene1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,9 @@ time_system="*res://602. Global Variables/Scripts/time_system.gd"
 GameData="*res://602. Global Variables/Scripts/GameData.gd"
 date_time="*res://602. Global Variables/Scripts/date_time.gd"
 Global="*res://413. Tutorial/Scripts/global.gd"
+SceneTransitionLight="*res://406. Scene Transitions/Scenes/scene_transition_light.tscn"
+SceneTransition="*res://406. Scene Transitions/Scenes/scene_transition.tscn"
+tutorial_var="*res://602. Global Variables/Scripts/tutorial_var.gd"
 
 [display]
 

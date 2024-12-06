@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dycu68liw4y6w"]
+[gd_scene load_steps=16 format=3 uid="uid://dycu68liw4y6w"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_5hcqv"]
@@ -15,8 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="13_if2vg"]
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/return_button.gd" id="14_ya05a"]
 [ext_resource type="Texture2D" uid="uid://xbycuyi73j66" path="res://100. Fishing and Fish/Assets/return.png" id="15_kt3ek"]
-[ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="16_q0rtp"]
-[ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="17_c4qh3"]
 
 [node name="FishiMiniGame" type="Node2D"]
 script = ExtResource("1_pvdyh")
@@ -304,10 +302,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("11_v1x6t")
 theme_override_font_sizes/font_size = 20
 text = "WEDNESDAY 12:12:12"
-
-[node name="wrongFishing" parent="." instance=ExtResource("16_q0rtp")]
-
-[node name="fishingGenerally" parent="." instance=ExtResource("17_c4qh3")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]

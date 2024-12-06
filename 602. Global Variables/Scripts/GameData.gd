@@ -142,13 +142,15 @@ var strike_counter = 0
 
 func auto_deduction():
 	if state == States.END:
-		player_money -= 80
+		GameData.subtract_money(80)
+		GameData.save_data()
 		if player_money < 0:
 			player_money = 0
 			strike_counter += 1
-			save_data()
-			
+			GameData.save_data()
 			return false
+		else:
+			return true
 	else:
 		return true
 			

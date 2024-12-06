@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://whtai6488g5"]
+
+[ext_resource type="Texture2D" uid="uid://bx8gkgk33l00h" path="res://6022. Fishing and plastic status/Assets/green arrow up.png" id="1_lcosu"]
+[ext_resource type="Texture2D" uid="uid://bvrk5xtmw6ah5" path="res://6022. Fishing and plastic status/Assets/goodjob.png" id="2_t6yyl"]
+[ext_resource type="Texture2D" uid="uid://dju53b5xyvgsk" path="res://6022. Fishing and plastic status/Assets/aFish.png" id="3_avngh"]
+
+[node name="FishStatus" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 1154.0
+offset_bottom = 652.0
+texture = ExtResource("1_lcosu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(952, 269)
+scale = Vector2(0.674455, 0.80814)
+texture = ExtResource("2_t6yyl")
+
+[node name="AFish" type="Sprite2D" parent="Control"]
+position = Vector2(943, 144)
+scale = Vector2(0.285605, 0.209424)
+texture = ExtResource("3_avngh")

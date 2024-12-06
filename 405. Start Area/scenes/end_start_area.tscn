@@ -1,24 +1,24 @@
-[gd_scene load_steps=30 format=4 uid="uid://cwybpflbp4cuu"]
+[gd_scene load_steps=30 format=4 uid="uid://1opmwwww0dwa"]
 
-[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_1hdie"]
-[ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://402. Player/Scenes/player.tscn" id="1_hdbb7"]
-[ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://405. Start Area/Assets/wooden_deck.png" id="2_xxc4i"]
-[ext_resource type="Texture2D" uid="uid://cc6r06vkngkrt" path="res://601. ShopUI/Assets/shop assets/top_Shop.png" id="3_rx7so"]
-[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://404. Start Menu/Assets/wood_button.tres" id="5_534oe"]
-[ext_resource type="Script" path="res://405. Start Area/Scripts/back_game.gd" id="6_1mkv6"]
-[ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_gsrfx"]
-[ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_odmr6"]
-[ext_resource type="Texture2D" uid="uid://c68y4cdg1ntrp" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
-[ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_8tskl"]
-[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="11_vmhbd"]
-[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="12_17s26"]
-[ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="12_megss"]
-[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="13_stnse"]
-[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="14_xxaim"]
-[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="15_t0p8u"]
+[ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_axc0s"]
+[ext_resource type="Texture2D" uid="uid://cc6r06vkngkrt" path="res://601. ShopUI/Assets/shop assets/top_Shop.png" id="2_ylnx2"]
+[ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://405. Start Area/Assets/wooden_deck.png" id="3_oi3x5"]
+[ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://402. Player/Scenes/player.tscn" id="4_ohpqv"]
+[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://404. Start Menu/Assets/wood_button.tres" id="5_s5hil"]
+[ext_resource type="Script" path="res://405. Start Area/Scripts/back_game.gd" id="6_n3ipa"]
+[ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_euu8g"]
+[ext_resource type="Texture2D" uid="uid://c68y4cdg1ntrp" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="8_a1ea7"]
+[ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_c83q0"]
+[ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_l7ixn"]
+[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="11_eq4l4"]
+[ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="12_vfd6e"]
+[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="13_sll00"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="14_m3mnm"]
+[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="15_7i0qh"]
+[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="16_8crt8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvkql"]
-texture = ExtResource("3_rx7so")
+texture = ExtResource("2_ylnx2")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -39,7 +39,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_uvkql")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w0uix"]
-texture = ExtResource("2_xxc4i")
+texture = ExtResource("3_oi3x5")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -137,13 +137,13 @@ size = Vector2(126, 256)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m2ce"]
 size = Vector2(194.5, 78)
 
-[node name="startArea" type="Node2D"]
+[node name="endStartArea" type="Node2D"]
 position = Vector2(63, 104)
 
 [node name="Water" type="TileMapLayer" parent="."]
 position = Vector2(257, -40)
 tile_map_data = PackedByteArray("AAABAP//AAAAAAAAAAACAP//AAAAAAEAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAEAAAAPAP//AAAAAAAAAAAQAP//AAABAAEAAAARAP//AAAAAAAAAAARAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAMAAAAAAAAAAEAAAALAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAEAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAADAAAAAAAAAAAAAAACAAAAAAAAAAEAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAABAAEAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAEAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAEAAAARAAEAAAAAAAAAAAARAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAPAAIAAAAAAAEAAAAOAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAMAAIAAAAAAAEAAAALAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAAJAAIAAAABAAEAAAAIAAIAAAAAAAEAAAAHAAIAAAABAAEAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAEAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAABAAEAAAAKAAMAAAAAAAEAAAALAAMAAAABAAEAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAEAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAABAAEAAAARAAMAAAAAAAAAAAAHAAMAAAAAAAEAAAAGAAMAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAABAAEAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAQAAAABAAEAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAcAAAAAAAEAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAEAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAABAAEAAAAMAAcAAAAAAAAAAAAKAAUAAAAAAAEAAAAKAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAYAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAEAAAAEAAUAAAABAAEAAAADAAUAAAAAAAAAAAACAAUAAAAAAAEAAAABAAUAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAABAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAEAAAAJAAgAAAAAAAAAAAD7/wkAAAABAAEAAAD8/wkAAAAAAAAAAAD9/wkAAAAAAAAAAAD+/wkAAAABAAEAAAD//wkAAAABAAEAAAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAABAAEAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAABAAEAAAD7//7/AAAAAAEAAAD8//7/AAAAAAEAAAD9//7/AAAAAAEAAAD+//7/AAAAAAEAAAD///7/AAAAAAEAAAAAAP7/AAAAAAEAAAABAP7/AAAAAAEAAAD6////AAAAAAEAAAD6/wAAAAAAAAEAAAD6/wEAAAAAAAEAAAD6/wIAAAAAAAEAAAD6/wMAAAAAAAEAAAD6/wQAAAAAAAEAAAD6/wUAAAAAAAEAAAD6/wgAAAAAAAEAAAD6/wcAAAAAAAEAAAD6/wYAAAAAAAEAAAA=")
-tile_set = ExtResource("1_1hdie")
+tile_set = ExtResource("1_axc0s")
 collision_enabled = false
 
 [node name="shops" type="TileMapLayer" parent="."]
@@ -158,19 +158,20 @@ position = Vector2(1, 24)
 tile_map_data = PackedByteArray("AAACAP7/AAABAAAAAAADAP7/AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAACAAEAAAAAAAAAAAADAAEAAAABAAAAAAACAAIAAAABAAAAAAADAAIAAAAAAAAAAAACAAMAAAABAAAAAAADAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAYAAAABAAAAAAADAAYAAAABAAAAAAACAAcAAAAAAAAAAAADAAcAAAABAAEAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAABAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAABAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAABAAAAAAAEAAYAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAAGAAcAAAAAAAEAAAAHAAcAAAABAAEAAAAIAAYAAAAAAAEAAAAJAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAYAAAABAAEAAAALAAYAAAABAAEAAAAKAAcAAAAAAAEAAAALAAcAAAABAAEAAAAMAAYAAAABAAEAAAAMAAcAAAAAAAEAAAAFAAUAAAABAAEAAAAGAAUAAAABAAEAAAAHAAUAAAABAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAABAAEAAAAKAAUAAAAAAAEAAAALAAUAAAAAAAEAAAAMAAUAAAAAAAEAAAABAAMAAAAAAAEAAAAAAAMAAAAAAAEAAAD//wMAAAABAAEAAAABAAIAAAABAAEAAAAAAAIAAAAAAAEAAAD//wIAAAABAAEAAAABAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAUAAAAAAAEAAAABAAQAAAAAAAEAAAABAAEAAAAAAAEAAAABAAAAAAAAAAEAAAABAP//AAAAAAEAAAABAP7/AAAAAAEAAAAAAAEAAAAAAAEAAAD//wEAAAAAAAEAAAD//wAAAAAAAAEAAAAAAAAAAAAAAAEAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAD///7/AAAAAAEAAAAAAP7/AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_wvf3u")
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("1_hdbb7")]
-position = Vector2(112, -50)
+[node name="CharacterBody2D2" parent="." instance=ExtResource("4_ohpqv")]
+position = Vector2(511, 312)
 
 [node name="Back" type="Button" parent="."]
-offset_left = -39.0
-offset_top = -88.0
-offset_right = 66.0
-offset_bottom = -39.0
+z_index = 2
+offset_left = 959.0
+offset_top = 483.0
+offset_right = 1064.0
+offset_bottom = 532.0
 size_flags_horizontal = 8
 size_flags_vertical = 4
-theme = ExtResource("5_534oe")
+theme = ExtResource("5_s5hil")
 text = "Back"
-script = ExtResource("6_1mkv6")
+script = ExtResource("6_n3ipa")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(625, 240)
@@ -214,7 +215,7 @@ position = Vector2(-69, 213.5)
 shape = SubResource("RectangleShape2D_cc3jf")
 
 [node name="ShopArea" type="Area2D" parent="."]
-script = ExtResource("7_gsrfx")
+script = ExtResource("7_euu8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
 z_index = -1
@@ -223,7 +224,7 @@ shape = SubResource("RectangleShape2D_7env7")
 
 [node name="Buildng" type="Sprite2D" parent="."]
 position = Vector2(33, 24)
-texture = ExtResource("9_x5ysd")
+texture = ExtResource("8_a1ea7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Buildng"]
 
@@ -233,7 +234,7 @@ shape = SubResource("RectangleShape2D_bj8m8")
 
 [node name="Boat_entering_Area" type="Area2D" parent="."]
 position = Vector2(671, -155)
-script = ExtResource("7_gsrfx")
+script = ExtResource("7_euu8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boat_entering_Area"]
 position = Vector2(1, 459)
@@ -244,24 +245,26 @@ z_index = 4
 position = Vector2(2, 407)
 rotation = -1.57079
 scale = Vector2(2.27953, 2.27953)
-texture = ExtResource("9_odmr6")
+texture = ExtResource("9_c83q0")
 
 [node name="BoatPixelart" type="Sprite2D" parent="."]
 position = Vector2(678, 290)
 scale = Vector2(0.444545, 0.444545)
-texture = ExtResource("10_8tskl")
+texture = ExtResource("10_l7ixn")
 
 [node name="ResourceGUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("11_vmhbd")
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 42.0
+offset_bottom = 44.0
+script = ExtResource("11_eq4l4")
 
 [node name="Waterry" type="Sprite2D" parent="ResourceGUI"]
 position = Vector2(706.5, -82.5)
 scale = Vector2(0.602343, 0.0625)
-texture = ExtResource("12_megss")
+texture = ExtResource("12_vfd6e")
 
 [node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
 layout_mode = 0
@@ -277,13 +280,13 @@ layout_mode = 2
 
 [node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
 layout_mode = 2
-texture = ExtResource("12_17s26")
+texture = ExtResource("13_sll00")
 expand_mode = 3
 flip_h = true
 
 [node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("13_stnse")
+theme_override_fonts/font = ExtResource("14_m3mnm")
 theme_override_font_sizes/font_size = 20
 text = "999"
 
@@ -294,12 +297,12 @@ alignment = 1
 
 [node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
 layout_mode = 2
-texture = ExtResource("14_xxaim")
+texture = ExtResource("15_7i0qh")
 expand_mode = 3
 
 [node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("13_stnse")
+theme_override_fonts/font = ExtResource("14_m3mnm")
 theme_override_font_sizes/font_size = 20
 text = "$10000"
 vertical_alignment = 1
@@ -309,12 +312,12 @@ layout_mode = 2
 
 [node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
 layout_mode = 2
-texture = ExtResource("15_t0p8u")
+texture = ExtResource("16_8crt8")
 expand_mode = 3
 
 [node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("13_stnse")
+theme_override_fonts/font = ExtResource("14_m3mnm")
 theme_override_font_sizes/font_size = 20
 text = "WEDNESDAY 12:12:12"
 
