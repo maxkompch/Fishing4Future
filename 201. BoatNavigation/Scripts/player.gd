@@ -1,14 +1,12 @@
 extends CharacterBody2D
 
 # Boat Attributes
-@export var plastics_capacity: float = 100.0
-@export var fish_capacity: float = 200.0
+@export var plastics_capacity: float = 20.0
+@export var fish_capacity: float = 20.0
 @export var health: float = 100.0
 @export var max_speed: float = 150.0
 @export var acceleration: float = 200.0
 @export var deceleration: float = 150.0
-@export var fishing_speed: float = 1.0
-@export var fishing_skill: float = 1.0
 
 # Speed modifier
 var speed_modifier: float = 1.0
@@ -22,8 +20,8 @@ var input_vector = Vector2.ZERO
 var current_speed = Vector2.ZERO
 var whirl_vector = Vector2.ZERO
 var whirl_center = Vector2.ZERO
-var in_whirl = false
 var whirl_strength = 0.0
+var prompt_label: Label
 
 # Signals
 signal capacity_full
@@ -33,13 +31,35 @@ signal entered_slow_area
 signal exited_slow_area
 signal entered_whirl_area
 signal exited_whirl_area
+signal entered_fishing_area
+signal exited_fishing_area
+signal entered_trash_area
+signal exited_trash_area
 
 # State tracking
-var is_fishing: bool = false
-var fishing_timer: float = 0.0
+var in_fishing_area = false
+var in_trash_area = false
+var in_return_home_area = false
+var in_whirl = false
 
 func _ready():
 	add_to_group("player")
+	prompt_label = Label.new()
+	prompt_label.text = "Press E"
+	prompt_label.z_index = 5
+	prompt_label.visible = false
+	add_child(prompt_label)
+	
+func _process(delta: float) -> void:
+	
+	if in_fishing_area and Input.is_action_just_released("action"):
+		get_tree().change_scene_to_file("res://100. Fishing and Fish/Scenes/FishiMiniGame.tscn")
+		
+	if in_trash_area and Input.is_action_just_released("action"):
+		get_tree().change_scene_to_file("res://100. Fishing and Fish/Scenes/FishiMiniGame.tscn")
+		
+	if in_return_home_area and Input.is_action_just_released("action"):
+		get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
 
 func _physics_process(delta):
 	# Get input vector from the built-in actions
@@ -73,10 +93,6 @@ func _physics_process(delta):
 	# Apply movement
 	velocity = current_speed
 	move_and_slide()
-	
-	# Process fishing if active
-	if is_fishing:
-		process_fishing(delta)
 
 func enter_slow_area(vmax_factor: float):
 	target_modifier = vmax_factor
@@ -86,6 +102,36 @@ func exit_slow_area():
 	target_modifier = 1.0
 	emit_signal("exited_slow_area")
 
+func enter_fishing_area():
+	emit_signal("entered_fishing_area")
+	in_fishing_area = true
+	prompt_label.visible = true
+
+func exit_fishing_area():
+	emit_signal("exited_fishing_area")
+	in_fishing_area = false
+	prompt_label.visible = false
+	
+func enter_trash_area():
+	emit_signal("entered_trash_area")
+	in_trash_area = true
+	prompt_label.visible = true
+
+func exit_trash_area():
+	emit_signal("exited_slow_area")
+	in_trash_area = false
+	prompt_label.visible = false
+	
+func enter_return_home_area():
+	emit_signal("entered_return_home_area")
+	in_return_home_area = true
+	prompt_label.visible = true
+
+func exit_return_home_area():
+	emit_signal("exited_return_home_area")
+	in_return_home_area = false
+	prompt_label.visible = false
+	
 func enter_whirl_area(center: Vector2, acc_factor: float, vmax_factor: float):
 	whirl_center = center
 	whirl_strength = acc_factor
@@ -98,33 +144,6 @@ func exit_whirl_area():
 	whirl_vector = Vector2.ZERO
 	target_modifier = 1.0
 	emit_signal("exited_whirl_area")
-
-func start_fishing():
-	if not is_fishing:
-		is_fishing = true
-		fishing_timer = 0.0
-
-func stop_fishing():
-	is_fishing = false
-	fishing_timer = 0.0
-
-func process_fishing(delta):
-	if not is_fishing:
-		return
-		
-	fishing_timer += delta
-	if fishing_timer >= fishing_speed:
-		attempt_catch()
-		fishing_timer = 0.0
-
-func attempt_catch():
-	var success_chance = randf() * fishing_skill
-	if success_chance > 0.5:
-		var catch_type = determine_catch_type()
-		add_to_cargo(catch_type)
-
-func determine_catch_type():
-	return "fish" if randf() > 0.3 else "plastics"
 
 func add_to_cargo(item_type: String):
 	match item_type:
@@ -141,6 +160,7 @@ func add_to_cargo(item_type: String):
 			else:
 				emit_signal("capacity_full")
 
+# TODO add damage threw objects
 func take_damage(amount: float):
 	health = max(0.0, health - amount)
 	emit_signal("health_changed", health)
@@ -159,18 +179,3 @@ func unload_cargo() -> Dictionary:
 	current_fish = 0.0
 	current_plastics = 0.0
 	return cargo
-
-func upgrade_attribute(attribute: String, amount: float):
-	match attribute:
-		"plastics_capacity":
-			plastics_capacity += amount
-		"fish_capacity":
-			fish_capacity += amount
-		"max_speed":
-			max_speed += amount
-		"acceleration":
-			acceleration += amount
-		"fishing_speed":
-			fishing_speed = max(0.1, fishing_speed - amount)
-		"fishing_skill":
-			fishing_skill += amount
