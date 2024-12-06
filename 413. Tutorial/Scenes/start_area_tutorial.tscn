@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://chmyj6b15gp8t"]
+
+[ext_resource type="PackedScene" uid="uid://cwybpflbp4cuu" path="res://405. Start Area/scenes/start_area.tscn" id="1_puil3"]
+[ext_resource type="Script" path="res://413. Tutorial/Scripts/police_npc_route_start.gd" id="2_q22yy"]
+[ext_resource type="PackedScene" uid="uid://6a1e0e6i15s1" path="res://410. Police NPC/Scenes/police_npc.tscn" id="2_u0418"]
+[ext_resource type="Texture2D" uid="uid://dwbwgqqtg01nq" path="res://102. Icons/Assets/Press E.png" id="3_n8s2t"]
+[ext_resource type="Texture2D" uid="uid://domsjgg1g3ymk" path="res://102. Icons/Assets/action_icon.png" id="3_nuprv"]
+[ext_resource type="PackedScene" uid="uid://b3c3hb5pplv1p" path="res://412. Tutorial_Talk/Scenes/walking.tscn" id="4_q8xp0"]
+[ext_resource type="PackedScene" uid="uid://rsa63sb5nqjg" path="res://412. Tutorial_Talk/Scenes/showing_boat.tscn" id="5_xdp0d"]
+[ext_resource type="PackedScene" uid="uid://dgy83opgp0gv3" path="res://402. Player/Scenes/player.tscn" id="7_t73ng"]
+
+[sub_resource type="Curve2D" id="Curve2D_tgplg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 274, 60, 0, 0, 0, 0, 325, 499, 0, 0, 0, 0, 843, 473)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8v2c"]
+size = Vector2(5, 284)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc1ww"]
+size = Vector2(188.75, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikp4n"]
+size = Vector2(310.44, 4)
+
+[node name="StartAreaTutorial" type="Node2D"]
+
+[node name="startArea" parent="." instance=ExtResource("1_puil3")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_tgplg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(274, 60)
+rotation = 1.23579
+rotates = false
+loop = false
+script = ExtResource("2_q22yy")
+
+[node name="PressE" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-80.6035, -27.0015)
+rotation = -1.23579
+scale = Vector2(0.210938, 0.210938)
+texture = ExtResource("3_n8s2t")
+
+[node name="ActionIcon" type="Sprite2D" parent="Path2D/PathFollow2D"]
+visible = false
+z_index = 2
+position = Vector2(-80.9323, -26.0571)
+rotation = -1.23046
+scale = Vector2(0.197069, 0.197069)
+texture = ExtResource("3_nuprv")
+
+[node name="PoliceNpc" parent="Path2D/PathFollow2D" instance=ExtResource("2_u0418")]
+position = Vector2(-197.505, 83.7195)
+rotation = -1.25489
+
+[node name="WalkingTutorial" parent="." instance=ExtResource("4_q8xp0")]
+z_index = 20
+offset_left = 19.0
+offset_top = 10.0
+offset_right = 19.0
+offset_bottom = 10.0
+
+[node name="ShowBoat" parent="." instance=ExtResource("5_xdp0d")]
+z_index = 20
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 18.0
+offset_bottom = 15.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(193.5, 512)
+shape = SubResource("RectangleShape2D_g8v2c")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(8, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(85.625, 374)
+shape = SubResource("RectangleShape2D_lc1ww")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_t73ng")]
+position = Vector2(27, -33)
+
+[node name="BarrierBoat" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierBoat"]
+position = Vector2(742, 455)
+shape = SubResource("RectangleShape2D_ikp4n")
