@@ -57,13 +57,12 @@ func _process(delta):
 				if GameData.auto_deduction():
 					Dialog_text = yes_dialog
 				else: 
-					if GameData.strike_counter < 3:
+					if GameData.strike_counter < 4 and GameData.strike_counter > 0:
 						Dialog_text = no_dialog
 						print(GameData.strike_counter)
-						red_strike[GameData.strike_counter-1].visible = true
-					else:
+						red_strike[GameData.strike_counter].visible = true
+					elif GameData.strike_counter < 4:
 						Dialog_text = strike_dialog
-						red_strike
 						
 				Anzahl_an_Dialog_text = Dialog_text.size()
 				Text.text = Dialog_text[0]

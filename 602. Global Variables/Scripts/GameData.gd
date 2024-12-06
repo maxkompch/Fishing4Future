@@ -121,7 +121,7 @@ func purchase_net3():
 enum States {START, IDLE, END}
 var state: States = States.END
 
-var strike_counter = 0
+var strike_counter = 2
 
 func auto_deduction():
 	if state == States.END:
