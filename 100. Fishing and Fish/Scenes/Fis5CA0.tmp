@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dycu68liw4y6w"]
+[gd_scene load_steps=17 format=3 uid="uid://dycu68liw4y6w"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_5hcqv"]
@@ -16,8 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="13_if2vg"]
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/return_button.gd" id="14_ya05a"]
 [ext_resource type="Texture2D" uid="uid://xbycuyi73j66" path="res://100. Fishing and Fish/Assets/return.png" id="15_kt3ek"]
-[ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="17_7nd2r"]
-[ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="18_5k4v3"]
 
 [node name="FishiMiniGame" type="Node2D"]
 script = ExtResource("1_pvdyh")
@@ -306,10 +304,6 @@ script = ExtResource("14_ya05a")
 position = Vector2(91.5, 25.5)
 scale = Vector2(0.344891, 0.120879)
 texture = ExtResource("15_kt3ek")
-
-[node name="wrongFishing" parent="." instance=ExtResource("17_7nd2r")]
-
-[node name="fishingGenerally" parent="." instance=ExtResource("18_5k4v3")]
 
 [connection signal="tree_exited" from="Logger" to="Logger" method="_on_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

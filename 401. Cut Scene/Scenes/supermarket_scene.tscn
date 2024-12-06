@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw84bb7kryfht"]
+[gd_scene load_steps=6 format=3 uid="uid://crgvmn840g7v1"]
 
-[ext_resource type="Texture2D" uid="uid://c3pb45onx76th" path="res://401. Cut Scene/Assets/court.jpg" id="1_f5iv4"]
+[ext_resource type="Texture2D" path="res://401. Cut Scene/Assets/court.jpg" id="1_f5iv4"]
 [ext_resource type="Script" path="res://401. Cut Scene/Scenes/supermarket_scene.gd" id="1_yfxmv"]
-[ext_resource type="Texture2D" uid="uid://dku688piuhvxx" path="res://401. Cut Scene/Assets/home.jpg" id="2_4grho"]
-[ext_resource type="Texture2D" uid="uid://d38tiecfy3mrt" path="res://401. Cut Scene/Assets/supermarket.jpg" id="3_j15bk"]
-[ext_resource type="PackedScene" uid="uid://x11w8rw0w452" path="res://401. Cut Scene/Scenes/judge_talking.tscn" id="4_wj86d"]
+[ext_resource type="Texture2D" path="res://401. Cut Scene/Assets/home.jpg" id="2_4grho"]
+[ext_resource type="Texture2D" path="res://401. Cut Scene/Assets/supermarket.jpg" id="3_j15bk"]
+[ext_resource type="PackedScene" path="res://401. Cut Scene/Scenes/judge_talking.tscn" id="4_wj86d"]
 
 [node name="CutScene" type="Node2D"]
 script = ExtResource("1_yfxmv")

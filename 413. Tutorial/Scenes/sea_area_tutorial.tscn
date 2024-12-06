@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://5ck62a2tbapj"]
+[gd_scene load_steps=6 format=3 uid="uid://dnf2pf4cr52xe"]
 
 [ext_resource type="PackedScene" uid="uid://ck00y8tcc0p7q" path="res://201. BoatNavigation/Scenes/BoatNavigation.tscn" id="1_06rq3"]
 [ext_resource type="Script" path="res://413. Tutorial/Scripts/sea_area_tutorial.gd" id="1_dwdy5"]
-[ext_resource type="Texture2D" path="res://201. BoatNavigation/Assets/Pfeil.png" id="2_j0hy4"]
-[ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="3_on1yu"]
+[ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="3_grmp3"]
 [ext_resource type="PackedScene" uid="uid://dws7ux58h1bvf" path="res://412. Tutorial_Talk/Scenes/fishing_spot.tscn" id="4_wvh27"]
 [ext_resource type="PackedScene" uid="uid://du0ptatxwafmv" path="res://412. Tutorial_Talk/Scenes/fishing_plastic.tscn" id="5_2olim"]
-[ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="6_47xer"]
 
 [node name="SeaAreaTutorial" type="Node2D"]
 script = ExtResource("1_dwdy5")
@@ -16,30 +14,20 @@ script = ExtResource("1_dwdy5")
 [node name="Pfeil" type="Sprite2D" parent="."]
 position = Vector2(191, 432)
 scale = Vector2(1.8125, 1.8125)
-texture = ExtResource("2_j0hy4")
-
-[node name="Timer" type="Timer" parent="."]
+texture = ExtResource("3_grmp3")
 
 [node name="Pfeil2" type="Sprite2D" parent="."]
 position = Vector2(1038, 177)
 scale = Vector2(1.90625, 1.90625)
-texture = ExtResource("2_j0hy4")
+texture = ExtResource("3_grmp3")
 
 [node name="Pfeil3" type="Sprite2D" parent="."]
 position = Vector2(587, 596)
 scale = Vector2(1.90625, 1.90625)
-texture = ExtResource("2_j0hy4")
-
-[node name="fishing_generally" parent="." instance=ExtResource("3_on1yu")]
-visible = false
-z_index = 2
+texture = ExtResource("3_grmp3")
 
 [node name="fishing_spot" parent="." instance=ExtResource("4_wvh27")]
 z_index = 2
 
 [node name="fishing_plastic" parent="." instance=ExtResource("5_2olim")]
-z_index = 2
-
-[node name="wrong_fishing" parent="." instance=ExtResource("6_47xer")]
-visible = false
 z_index = 2
