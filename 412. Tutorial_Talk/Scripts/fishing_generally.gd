@@ -12,9 +12,14 @@ var wordCount = 0
  
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Anzahl_an_Dialog_text = Dialog_text.size()
-	Text.text = Dialog_text[0]
-	pass # Replace with function body.
+	GameData.load_data()
+	if not GameData.fishingGenerally_shown:  # Show dialog only if it hasn't been shown yet
+		Anzahl_an_Dialog_text = Dialog_text.size()
+		Text.text = Dialog_text[0]
+		GameData.fishingGenerally_shown = true
+		GameData.save_data()
+	else:
+		end_dialog()
  
  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +28,12 @@ func _process(delta):
 	if tutorial_var.third_finished == false and tutorial_var.second_finished == true:
 		$".".visible = true
 		if Input.is_action_just_released("action"):
+			if DialogPlatz >= Anzahl_an_Dialog_text - 1 and wordCount >= Dialog_text[DialogPlatz].length():
+				end_dialog()
+				GameData.fishingGenerally_shown = true
+				GameData.save_data()
+				DialogPlatz = 0
+				return
 			wordCount = 0
 			Text.visible_characters = wordCount
 			DialogPlatz += 1
@@ -37,3 +48,6 @@ func _on_timer_timeout() -> void:
 	if(wordCount < 1000):
 		wordCount += 1
 		Text.visible_characters = wordCount
+
+func end_dialog():
+	self.queue_free()

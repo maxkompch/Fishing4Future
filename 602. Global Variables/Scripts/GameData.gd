@@ -1,5 +1,10 @@
 extends Node
 
+# Strictly do not touch the above lines unless you are working with tutorials
+var wrongFishing_shown = false
+var fishingGenerally_shown = false
+# Strictly do not touch the above lines unless you are working with tutorials
+
 const SAVE_PATH = "user://save_data.cfg"
 var player_money: float = 100.0
 
@@ -59,6 +64,9 @@ func save_data():
 	config.set_value("Total", "Caught", total_fish_caught)
 	config.set_value("Total", "Failed", total_failed_fish)
 	
+	config.set_value("Wrong", "Fishing", wrongFishing_shown)
+	config.set_value("Generally", "Fishing", fishingGenerally_shown)
+	
 	config.save(SAVE_PATH)
 
 # Load data from a file
@@ -80,6 +88,9 @@ func load_data():
 
 		fish_caught = config.get_value("Fish", "Caught", 0)  # Default to 0 if not found
 		failed_fish = config.get_value("Fish", "Failed", 0)  # Default to 0 if not found
+		
+		wrongFishing_shown = config.get_value("Wrong", "Fishing", false)
+		fishingGenerally_shown = config.get_value("Generally", "Fishing", false)
 # Function to add money
 func add_money(amount: float):
 	player_money += amount
