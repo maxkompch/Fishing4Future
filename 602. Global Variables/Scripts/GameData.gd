@@ -3,6 +3,7 @@ extends Node
 # Strictly do not touch the above lines unless you are working with tutorials
 var wrongFishing_shown = false
 var fishingGenerally_shown = false
+var time_variable_use: int = 0
 # Strictly do not touch the above lines unless you are working with tutorials
 
 const SAVE_PATH = "user://save_data.cfg"
@@ -39,6 +40,8 @@ var total_failed_plastic: int = 0
 var plastic_population: int = 0
 var fish_population: int = 0
 
+var current_time_str: String = "Monday 00:00:00"
+
 # Save data to a file
 func save_data():
 	var config = ConfigFile.new()
@@ -58,14 +61,21 @@ func save_data():
 	config.set_value("Total", "Caught", total_fish_caught)
 	config.set_value("Total", "Failed", total_failed_fish)
 	
-	config.set_value("Fish", "Caught", fish_caught)
-	config.set_value("Fish", "Failed", failed_fish)
 	
-	config.set_value("Total", "Caught", total_fish_caught)
-	config.set_value("Total", "Failed", total_failed_fish)
+	
+	config.set_value("Plastic", "Caught", plastic_caught)
+	config.set_value("Plastic", "Failed", failed_plastic)
+	
+	config.set_value("TotalPlastic", "Caught", total_plastic_caught)
+	config.set_value("TotalPlastic", "Failed", total_failed_plastic)
+	
 	
 	config.set_value("Wrong", "Fishing", wrongFishing_shown)
 	config.set_value("Generally", "Fishing", fishingGenerally_shown)
+	
+	config.set_value("Current", "Time", current_time_str)
+	
+	config.set_value("Time", "Variable", time_variable_use)
 	
 	config.save(SAVE_PATH)
 
@@ -86,15 +96,34 @@ func load_data():
 		total_fish_caught = config.get_value("Total", "Caught",0)
 		total_failed_fish = config.get_value("Total", "Failed",0)
 
-		fish_caught = config.get_value("Fish", "Caught", 0)  # Default to 0 if not found
-		failed_fish = config.get_value("Fish", "Failed", 0)  # Default to 0 if not found
+		fish_caught = config.get_value("Fish", "Caught", 0) 
+		failed_fish = config.get_value("Fish", "Failed", 0)
+		
+		total_plastic_caught = config.get_value("TotalPlastic", "Caught",0)
+		total_failed_plastic = config.get_value("TotalPlastic", "Failed",0)
+
+		plastic_caught = config.get_value("Plastic", "Caught", 0) 
+		failed_plastic = config.get_value("Plastic", "Failed", 0)
 		
 		wrongFishing_shown = config.get_value("Wrong", "Fishing", false)
 		fishingGenerally_shown = config.get_value("Generally", "Fishing", false)
-# Function to add money
+		
+		current_time_str = config.get_value("Current", "Time", "Monday 00:00:00")
+		
+		time_variable_use = config.get_value("Time", "Variable",0)
+
+#Functions to play with money variable
 func add_money(amount: float):
 	player_money += amount
 	
+func subtract_money(amount: float):
+	if player_money >= amount:
+		player_money -= amount
+		
+func get_money() -> float:
+	return player_money
+	
+# Functions to play with Fish
 func fish_caught_func():
 	fish_caught = fish_caught + 1
 	
@@ -114,14 +143,42 @@ func fish_reset_func():
 func fail_reset_func():
 	failed_fish = 0
 	
-# Function to subtract money
-func subtract_money(amount: float):
-	if player_money >= amount:
-		player_money -= amount
+	
+# Functions to play with Plastic
+func plastic_caught_func():
+	plastic_caught = plastic_caught + 1
+	
+func total_plastic_caught_func():
+	total_plastic_caught = total_plastic_caught + 1
+	
+func plastic_failed_func():
+	total_failed_plastic = total_failed_plastic + 1
+	failed_plastic = failed_plastic + 1
 
-# Function to get the current money
-func get_money() -> float:
-	return player_money
+func total_plastic_reset_func():
+	total_plastic_caught = 0
+	
+func plastic_reset_func():
+	plastic_caught = 0
+	
+func plastic_fail_reset_func():
+	failed_plastic = 0
+	
+
+# Functions to play with Time	
+func save_time():
+	current_time_str = time_system.get_time()
+	
+func _exit_tree() -> void:
+	print("_exit_tree")
+	GameData.save_time()
+	time_variable_use = 0
+	GameData.save_data()
+	
+func time_variable():
+	time_variable_use = time_variable_use + 1
+	GameData.save_data()
+
 
 # Functions to update purchased states
 func purchase_rod1():
@@ -147,6 +204,7 @@ func purchase_net2():
 func purchase_net3():
 	if not net3_purchased and net2_purchased:
 		net3_purchased = true
+
 ## Day and Money
 enum States {START, IDLE, END}
 var state: States = States.END
@@ -166,4 +224,3 @@ func auto_deduction():
 			return true
 	else:
 		return true
-			
