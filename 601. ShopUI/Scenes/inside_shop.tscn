@@ -1,5 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bclcy4nao7giv"]
 
+[ext_resource type="Texture2D" uid="uid://8mkvhsk5qn2c" path="res://601. ShopUI/Assets/shop assets/background up.png" id="1_c4uv4"]
 [ext_resource type="Script" path="res://601. ShopUI/Scripts/backtoshop.gd" id="2_qmvxl"]
 [ext_resource type="Script" path="res://601. ShopUI/Scripts/control_inside.gd" id="3_xis08"]
 [ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="4_32hmx"]
@@ -7,15 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://demvdgaw402x" path="res://601. ShopUI/Assets/shop assets/notenough.wav" id="5_g6srk"]
 [ext_resource type="PackedScene" uid="uid://cau8ribq3iuaw" path="res://603. ResourceGUI/ResouceGUIPlain.tscn" id="6_ylh6k"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qsn7u"]
-load_path = "res://.godot/imported/inside_shop.png-99aa8a6bc4863dcd524a9b96e6eccab6.ctex"
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(580, 324.5)
-scale = Vector2(1.60833, 1.60247)
-texture = SubResource("CompressedTexture2D_qsn7u")
+position = Vector2(579, 322)
+scale = Vector2(1.18427, 1.34583)
+texture = ExtResource("1_c4uv4")
 script = ExtResource("2_qmvxl")
 
 [node name="Control" type="Control" parent="."]
@@ -27,10 +25,10 @@ script = ExtResource("3_xis08")
 
 [node name="FishSell" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 343.0
-offset_top = 305.0
-offset_right = 798.0
-offset_bottom = 361.0
+offset_left = 332.0
+offset_top = 330.0
+offset_right = 787.0
+offset_bottom = 386.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
 text = "Sell All fish that you have"
@@ -47,68 +45,68 @@ text = "Back"
 
 [node name="Rod1" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 103.0
-offset_top = 216.0
-offset_right = 257.0
-offset_bottom = 272.0
+offset_left = 96.0
+offset_top = 244.0
+offset_right = 250.0
+offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Rod lV. 1
+text = "B lV. 1
 $100"
 
 [node name="Rod2" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 482.0
-offset_top = 218.0
-offset_right = 636.0
-offset_bottom = 274.0
+offset_left = 512.0
+offset_top = 241.0
+offset_right = 666.0
+offset_bottom = 297.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Rod lV. 2
+text = "B lV. 2
 $200"
 
 [node name="Rod3" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 873.0
-offset_top = 218.0
-offset_right = 1027.0
-offset_bottom = 274.0
+offset_left = 913.0
+offset_top = 249.0
+offset_right = 1067.0
+offset_bottom = 305.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Rod LV. 3
+text = "B LV. 3
 $300"
 
 [node name="Net1" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 527.0
-offset_right = 266.0
-offset_bottom = 583.0
+offset_left = 101.0
+offset_top = 561.0
+offset_right = 255.0
+offset_bottom = 617.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Net LV. 1
+text = "Speed LV. 1
 $100"
 
 [node name="Net2" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 482.0
-offset_top = 524.0
-offset_right = 636.0
-offset_bottom = 580.0
+offset_left = 491.0
+offset_top = 565.0
+offset_right = 678.0
+offset_bottom = 621.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Net LV. 2
+text = "Speed LV. 2
 $200"
 
 [node name="Net3" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 875.0
-offset_top = 524.0
-offset_right = 1029.0
-offset_bottom = 580.0
+offset_left = 890.0
+offset_top = 558.0
+offset_right = 1077.0
+offset_bottom = 614.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Net LV. 3
+text = "Speed LV. 3
 $300"
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
