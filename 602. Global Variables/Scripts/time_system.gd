@@ -47,7 +47,7 @@ func print_time() -> void:
 func get_time() -> String:
 	if date_time:
 		return date_time.formatted_time
-	return "Time not initialized"
+	return "Monday 00:00:00"
 	
 # Custom logging function
 func log(message: String) -> void:

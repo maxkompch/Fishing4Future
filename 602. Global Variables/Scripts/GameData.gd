@@ -170,10 +170,13 @@ func save_time():
 	current_time_str = time_system.get_time()
 	
 func _exit_tree() -> void:
-	print("_exit_tree")
+	time_system.log("game closed")
 	GameData.save_time()
 	time_variable_use = 0
 	GameData.save_data()
+	
+func _enter_tree() -> void:
+	time_system.log("game started")
 	
 func time_variable():
 	time_variable_use = time_variable_use + 1
