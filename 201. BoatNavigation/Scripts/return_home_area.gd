@@ -1,6 +1,5 @@
-extends Area2D
+extends "res://201. BoatNavigation/Scripts/slow_area.gd"
 
-@export var vmax_factor: float = 0.2  # How much to slow the player (0.5 = 50% speed)
 
 func _ready():
 	# Connect the area's signals
@@ -10,7 +9,9 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.enter_slow_area(vmax_factor)
+		body.enter_return_home_area()
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		body.exit_slow_area()
+		body.exit_return_home_area()

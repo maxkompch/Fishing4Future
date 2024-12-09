@@ -164,6 +164,13 @@ func plastic_reset_func():
 func plastic_fail_reset_func():
 	failed_plastic = 0
 	
+# Function to get the current money
+func get_fish() -> float:
+	return fish_caught
+	
+# Function to get the current money
+func get_plastics() -> float:
+		return plastic_caught
 
 # Functions to play with Time	
 func save_time():
