@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ck00y8tcc0p7q"]
+[gd_scene load_steps=19 format=4 uid="uid://ck00y8tcc0p7q"]
 
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_d0lxn"]
@@ -11,12 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
 [ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="10_jnieh"]
+[ext_resource type="Texture2D" uid="uid://bgj5xjpgppjpc" path="res://100. Fishing and Fish/Assets/plastic1.png" id="11_lasyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okyxk"]
 size = Vector2(37, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6vuf8"]
-radius = 26.0768
+radius = 50.01
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k7co1"]
 radius = 123.147
@@ -56,7 +57,7 @@ shape = SubResource("RectangleShape2D_okyxk")
 [node name="FishingArea" type="Area2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-415, -109)
+position = Vector2(-466, -158)
 script = ExtResource("4_gfy3y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea"]
@@ -74,7 +75,7 @@ position = Vector2(2, 35)
 shape = SubResource("CircleShape2D_6vuf8")
 
 [node name="FishingArea2" type="Area2D" parent="."]
-position = Vector2(333, 116)
+position = Vector2(315, 136)
 script = ExtResource("4_gfy3y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea2"]
@@ -138,25 +139,26 @@ position = Vector2(-790.5, 432.5)
 scale = Vector2(2.28125, 2.28125)
 texture = ExtResource("8_4ddid")
 
-[node name="VioletFish" type="Sprite2D" parent="."]
-position = Vector2(333, 158)
-scale = Vector2(2.1875, 2.1875)
+[node name="VioletFishRight" type="Sprite2D" parent="."]
+position = Vector2(313, 176)
+scale = Vector2(4.21875, 4.32813)
 texture = ExtResource("9_h7gu2")
 
-[node name="VioletFish2" type="Sprite2D" parent="."]
-position = Vector2(329, -99)
-scale = Vector2(2.1875, 2.1875)
+[node name="PlasticBottleLeft" type="Sprite2D" parent="."]
+position = Vector2(-431, 248)
+scale = Vector2(0.430436, 0.433349)
+texture = ExtResource("11_lasyf")
+
+[node name="VioletFishLeft" type="Sprite2D" parent="."]
+position = Vector2(-468, -124)
+scale = Vector2(4.03125, 4.875)
 texture = ExtResource("9_h7gu2")
 
-[node name="VioletFish3" type="Sprite2D" parent="."]
-position = Vector2(-429, 247)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("9_h7gu2")
-
-[node name="VioletFish4" type="Sprite2D" parent="."]
-position = Vector2(-414, -76)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("9_h7gu2")
+[node name="PlaticBottleRight" type="Sprite2D" parent="."]
+position = Vector2(326, -100)
+scale = Vector2(0.40314, 0.427229)
+texture = ExtResource("11_lasyf")
+flip_h = true
 
 [node name="ResourceGUI" parent="." instance=ExtResource("10_jnieh")]
 offset_left = -836.0

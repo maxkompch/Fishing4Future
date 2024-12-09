@@ -215,15 +215,16 @@ var state: States = States.END
 var strike_counter = 0
 
 func auto_deduction():
+	var deduct: int = 80
 	if state == States.END:
-		GameData.subtract_money(80)
-		GameData.save_data()
-		if player_money < 0:
+		if player_money < deduct:
 			player_money = 0
 			strike_counter += 1
 			GameData.save_data()
 			return false
 		else:
+			GameData.subtract_money(80)
+			GameData.save_data()
 			return true
 	else:
 		return true

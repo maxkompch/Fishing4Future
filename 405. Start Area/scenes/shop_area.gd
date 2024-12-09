@@ -1,12 +1,12 @@
 extends Area2D
 
 var current_day: int = 1
-var date_time: DateTime
+var previous_day = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	date_time = DateTime.new()
+	previous_day = time_system.get_time().split(" ")[0]
 	GameData.load_data()
-	pass # Replace with function body.
+	set_process(true) # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,14 +39,14 @@ func _on_ship_exited(body):
 		await SceneTransition.on_transition_finished
 		get_tree().change_scene_to_file("res://413. Tutorial/Scenes/end_start_area_tutorial.tscn")
 	else:
-		if date_time.days != current_day:
-			current_day = date_time.days
+		var current_day = time_system.get_time().split(" ")[0]
+		if current_day != previous_day:
+			previous_day = current_day
 			SceneTransition.transition()
 			await SceneTransition.on_transition_finished
 			get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
 			GameData.state = GameData.States.END
 			time_system.log("day end")
-			GameData.state = GameData.States.END
 		else:
 			get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
 			time_system.log("exit boat navigation")

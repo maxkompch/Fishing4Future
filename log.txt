@@ -1,0 +1,9 @@
+2024-12-09T16:16:08 || Monday 00:00:00 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || game started
+2024-12-09T16:16:13 || Monday 00:18:36 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || exit boat navigation
+2024-12-09T16:16:13 || Monday 00:18:36 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || start scene
+2024-12-09T16:16:14 || Monday 00:23:02 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || game closed
+2024-12-09T16:16:16 || Monday 00:00:00 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || game started
+2024-12-09T16:16:23 || Monday 00:48:24 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || enter fishing minigame
+2024-12-09T16:16:23 || Monday 00:48:28 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || fishing winposition = 5
+2024-12-09T16:16:23 || Monday 00:48:28 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || fishing minigame start
+2024-12-09T16:16:28 || Monday 01:10:05 || money = $100, f_pop = 0, f_caught = 0, p_pop = 0, p_caught = 0 || game closed
