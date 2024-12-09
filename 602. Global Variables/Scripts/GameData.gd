@@ -13,6 +13,7 @@ var net3_purchased = false
 
 var fish_caught: int = 0
 var failed_fish: int = 0
+var player_plastics: int = 0
 
 var max_fish: int = 3
 var max_fail: int = 3
@@ -75,6 +76,14 @@ func subtract_money(amount: float):
 # Function to get the current money
 func get_money() -> float:
 	return player_money
+	
+# Function to get the current money
+func get_fish() -> float:
+	return fish_caught
+	
+	# Function to get the current money
+func get_plastics() -> float:
+	return player_plastics
 
 # Functions to update purchased states
 func purchase_rod1():

@@ -1,8 +1,8 @@
-2024-12-06T23:37:47,tes1,test2
-2024-12-06T23:37:47,0,winposition,6
-2024-12-06T23:37:47,1,minigamestart,start
-2024-12-06T23:37:47,2,playerhit,you lose
-2024-12-06T23:37:47,3,minigamestart,restart
-2024-12-06T23:37:47,4,playerhit,you lose
-2024-12-06T23:37:47,5,minigamestart,restart
-2024-12-06T23:37:47,6,playerhit,you win
+2024-12-07T13:16:21,tes1,test2
+2024-12-07T13:16:21,0,winposition,7
+2024-12-07T13:16:21,1,minigamestart,start
+2024-12-07T13:16:21,2,playerhit,you lose
+2024-12-07T13:16:21,3,minigamestart,restart
+2024-12-07T13:16:21,4,playerhit,you win
+2024-12-07T13:16:21,5,minigamestart,restart
+2024-12-07T13:16:21,6,playerhit,you lose

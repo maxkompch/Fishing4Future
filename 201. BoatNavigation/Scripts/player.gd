@@ -14,8 +14,8 @@ var target_modifier: float = 1.0
 var modifier_change_rate: float = 2.0  # How fast the speed modifier changes
 
 # Variables
-var current_plastics: float = 0.0
-var current_fish: float = 0.0
+var current_plastics = GameData.get_plastics()
+var current_fish = GameData.get_fish()
 var input_vector = Vector2.ZERO
 var current_speed = Vector2.ZERO
 var whirl_vector = Vector2.ZERO
