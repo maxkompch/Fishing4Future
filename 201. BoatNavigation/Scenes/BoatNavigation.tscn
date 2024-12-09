@@ -59,7 +59,7 @@ shape = SubResource("RectangleShape2D_okyxk")
 [node name="FishingArea" type="Area2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-415, -109)
+position = Vector2(-415, 144)
 script = ExtResource("3_2ks1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea"]
@@ -71,8 +71,38 @@ position = Vector2(-2, 37)
 scale = Vector2(2.1875, 2.1875)
 texture = ExtResource("9_h7gu2")
 
+[node name="FishingArea3" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-479, -206)
+script = ExtResource("3_2ks1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea3"]
+position = Vector2(1, 37)
+shape = SubResource("CircleShape2D_6vuf8")
+
+[node name="VioletFish" type="Sprite2D" parent="FishingArea3"]
+position = Vector2(-2, 37)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
+[node name="FishingArea2" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(353, -239)
+script = ExtResource("3_2ks1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea2"]
+position = Vector2(1, 37)
+shape = SubResource("CircleShape2D_6vuf8")
+
+[node name="VioletFish" type="Sprite2D" parent="FishingArea2"]
+position = Vector2(-2, 37)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("9_h7gu2")
+
 [node name="TrashArea" type="Area2D" parent="."]
-position = Vector2(333, 116)
+position = Vector2(283, 55)
 script = ExtResource("5_5r4wy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrashArea"]
@@ -95,6 +125,35 @@ skew = -0.0128365
 texture = ExtResource("5_6ugnj")
 
 [node name="Sprite2D3" type="Sprite2D" parent="TrashArea"]
+position = Vector2(5.76219, 41.927)
+rotation = 0.261799
+scale = Vector2(0.275727, 0.284937)
+texture = ExtResource("5_6ugnj")
+
+[node name="TrashArea2" type="Area2D" parent="."]
+position = Vector2(-321, -211)
+script = ExtResource("5_5r4wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashArea2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, 42)
+shape = SubResource("CircleShape2D_6vuf8")
+debug_color = Color(0, 0.0862745, 0.109804, 0.647059)
+
+[node name="Sprite2D" type="Sprite2D" parent="TrashArea2"]
+position = Vector2(-6.99999, 20)
+scale = Vector2(0.335938, 0.340278)
+texture = ExtResource("5_6ugnj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="TrashArea2"]
+position = Vector2(-13, 48)
+rotation = -2.34978
+scale = Vector2(0.27696, 0.292137)
+skew = -0.0128365
+texture = ExtResource("5_6ugnj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="TrashArea2"]
 position = Vector2(5.76219, 41.927)
 rotation = 0.261799
 scale = Vector2(0.275727, 0.284937)
