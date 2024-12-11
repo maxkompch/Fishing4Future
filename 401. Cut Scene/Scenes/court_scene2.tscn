@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqxpb5h10uv28"]
 
-[ext_resource type="Texture2D" path="res://401. Cut Scene/Assets/court.jpg" id="1_w7tid"]
-[ext_resource type="Texture2D" path="res://401. Cut Scene/Assets/home.jpg" id="2_8lqpc"]
-[ext_resource type="Texture2D" path="res://401. Cut Scene/Assets/supermarket.jpg" id="3_5hqrc"]
-[ext_resource type="PackedScene" path="res://401. Cut Scene/Scenes/judge_talking.tscn" id="4_pltlg"]
+[ext_resource type="Texture2D" uid="uid://dfxt2ajsnb40l" path="res://401. Cut Scene/Assets/court.jpg" id="1_w7tid"]
+[ext_resource type="Texture2D" uid="uid://df23wi645kn7s" path="res://401. Cut Scene/Assets/home.jpg" id="2_8lqpc"]
+[ext_resource type="Texture2D" uid="uid://n6ewcjtj3ayc" path="res://401. Cut Scene/Assets/supermarket.jpg" id="3_5hqrc"]
+[ext_resource type="PackedScene" uid="uid://b154m8fee7fdc" path="res://401. Cut Scene/Scenes/judge_talking.tscn" id="4_pltlg"]
 [ext_resource type="Script" path="res://401. Cut Scene/Scenes/court_scene2.gd" id="5_iwc4l"]
 
 [node name="CutScene" type="Node2D"]

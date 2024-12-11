@@ -45,15 +45,20 @@ func _on_timer_timeout() -> void:
 
 func Fishfang() -> void:
 	if(currentPosition == winposition):
-		GameData.plastic_caught_func()
-		GameData.total_plastic_caught_func()
-		GameData.save_data()
-		label.text = "Congratulation! You have caught " + str(GameData.total_plastic_caught) + " plastic(s). Auto close after catching " + str(GameData.max_plastic-GameData.plastic_caught) + " more plastics."
-		time_system.log("plastic caught")
-		if(GameData.plastic_caught >= GameData.max_plastic):
-			GameData.plastic_reset_func()
+		if(GameData.plastic_population >= 1):
+			GameData.plastic_caught_func()
+			GameData.total_plastic_caught_func()
+			GameData.plastic_population_func()
 			GameData.save_data()
-			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+			label.text = "Congratulation! You have caught " + str(GameData.total_plastic_caught) + " plastic(s). Auto close after catching " + str(GameData.max_plastic-GameData.plastic_caught) + " more plastics."
+			time_system.log("plastic caught")
+			if(GameData.plastic_caught >= GameData.max_plastic):
+				GameData.plastic_reset_func()
+				GameData.save_data()
+				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+		else:
+			label.text = "                           Nice! No more plastic left to catch.                           "
+			time_system.log("no plastic left")
 	else:
 		GameData.plastic_failed_func()
 		GameData.save_data()

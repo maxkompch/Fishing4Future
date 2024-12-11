@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
 [ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
-[ext_resource type="Texture2D" uid="uid://bimlxuogh5j7v" path="res://201. BoatNavigation/Assets/whirle.png" id="9_onf23"]
+[ext_resource type="Texture2D" uid="uid://1xeiij74qbuu" path="res://201. BoatNavigation/Assets/whirle.jpg" id="9_onf23"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/return_home_area.gd" id="10_my2jo"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/GUI.gd" id="12_ba7g3"]
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="13_yku71"]

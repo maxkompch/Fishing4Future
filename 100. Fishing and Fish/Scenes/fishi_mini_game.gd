@@ -45,16 +45,21 @@ func _on_timer_timeout() -> void:
 
 func Fishfang() -> void:
 	if(currentPosition == winposition):
-		GameData.fish_caught_func()
-		GameData.total_caught_func()
-		GameData.save_data()
-		label.text = "Congratulation! You have caught " + str(GameData.total_fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
-		time_system.log("fish caught")
-		if(GameData.fish_caught >= GameData.max_fish):
-			GameData.fish_reset_func()
+		if(GameData.fish_population >= 1):
+			GameData.fish_caught_func()
+			GameData.total_caught_func()
+			GameData.fish_population_func()
 			GameData.save_data()
-			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
-	else:
+			label.text = "Congratulation! You have caught " + str(GameData.total_fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
+			time_system.log("fish caught")
+			if(GameData.fish_caught >= GameData.max_fish):
+				GameData.fish_reset_func()
+				GameData.save_data()
+				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+		else:
+			label.text = "                           Uh Oh! No fish left to catch.                           "
+			time_system.log("no fish left")
+	else:	
 		GameData.fish_failed_func()
 		GameData.save_data()
 		label.text = "                Uh Oh! You have lost " + str(GameData.failed_fish) + " times. Auto close after losing " + str(GameData.max_fail-GameData.failed_fish) + " times."

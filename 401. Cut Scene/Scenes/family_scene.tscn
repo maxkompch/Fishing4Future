@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://rqhj6rog6c5r"]
 
 [ext_resource type="Script" path="res://401. Cut Scene/Scenes/family_scene.gd" id="1_cdanp"]
-[ext_resource type="Texture2D" uid="uid://cds5j4f2wft4w" path="res://401. Cut Scene/Assets/home.jpg" id="2_fui1b"]
+[ext_resource type="Texture2D" uid="uid://df23wi645kn7s" path="res://401. Cut Scene/Assets/home.jpg" id="2_fui1b"]
 
 [node name="CutScene" type="Node2D"]
 script = ExtResource("1_cdanp")

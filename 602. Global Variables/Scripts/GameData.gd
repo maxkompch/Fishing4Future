@@ -8,6 +8,13 @@ var time_variable_use: int = 0
 
 const SAVE_PATH = "user://save_data.cfg"
 var player_money: float = 100.0
+var plastic_population: int = 5
+var plastic_target: int = 7
+var plastic_growth_rate: float = 1.3
+var fish_population: int = 5
+var fish_growth_rate: float = 1.3
+var fish_price: float = 10
+var fish_health: float = 1
 
 # Variables to track purchased upgrades
 var rod1_purchased = false
@@ -32,13 +39,8 @@ var max_plastic_fail: int = 3
 var plastic_caught: int = 0
 var failed_plastic: int = 0
 
-var plastic_target: int = 7
-
 var total_plastic_caught: int = 0
 var total_failed_plastic: int = 0
-
-var plastic_population: int = 0
-var fish_population: int = 0
 
 var current_time_str: String = "Monday 00:00:00"
 
@@ -57,25 +59,27 @@ func save_data():
 	
 	config.set_value("Fish", "Caught", fish_caught)
 	config.set_value("Fish", "Failed", failed_fish)
+	config.set_value("Fish", "TotalCaught", total_fish_caught)
+	config.set_value("Fish", "TotalFailed", total_failed_fish)
+	config.set_value("Fish", "Price", fish_price)
+	config.set_value("Fish", "Health", fish_health)
+	config.set_value("Fish", "GrowthRate", fish_growth_rate)
+	config.set_value("Fish", "Population", fish_population)
 	
-	config.set_value("Total", "Caught", total_fish_caught)
-	config.set_value("Total", "Failed", total_failed_fish)
-	
-	
-	
+
 	config.set_value("Plastic", "Caught", plastic_caught)
 	config.set_value("Plastic", "Failed", failed_plastic)
+	config.set_value("Plastic", "TotalCaught", total_plastic_caught)
+	config.set_value("Plastic", "TotalFailed", total_failed_plastic)
+	config.set_value("Plastic", "GrowthRate", plastic_growth_rate)
+	config.set_value("Plastic", "Population", plastic_population)
 	
-	config.set_value("TotalPlastic", "Caught", total_plastic_caught)
-	config.set_value("TotalPlastic", "Failed", total_failed_plastic)
 	
+	config.set_value("FishingTutorial", "Wrong", wrongFishing_shown)
+	config.set_value("FishingTutorial", "Generally", fishingGenerally_shown)
 	
-	config.set_value("Wrong", "Fishing", wrongFishing_shown)
-	config.set_value("Generally", "Fishing", fishingGenerally_shown)
-	
-	config.set_value("Current", "Time", current_time_str)
-	
-	config.set_value("Time", "Variable", time_variable_use)
+	config.set_value("CurrentTime", "Time", current_time_str)
+	config.set_value("CurrentTime", "VariableUsed", time_variable_use)
 	
 	config.save(SAVE_PATH)
 
@@ -83,9 +87,8 @@ func save_data():
 func load_data():
 	var config = ConfigFile.new()
 	if config.load(SAVE_PATH) == OK:
-		player_money = config.get_value("Player", "Money", 1000.0)  # Default to 1000 if not found
+		player_money = config.get_value("Player", "Money", 100.0)  # Default to 1000 if not found
 		
-		# Load purchased upgrades
 		rod1_purchased = config.get_value("Upgrades", "Rod1", false)
 		rod2_purchased = config.get_value("Upgrades", "Rod2", false)
 		rod3_purchased = config.get_value("Upgrades", "Rod3", false)
@@ -93,24 +96,27 @@ func load_data():
 		net2_purchased = config.get_value("Upgrades", "Net2", false)
 		net3_purchased = config.get_value("Upgrades", "Net3", false)
 		
-		total_fish_caught = config.get_value("Total", "Caught",0)
-		total_failed_fish = config.get_value("Total", "Failed",0)
-
 		fish_caught = config.get_value("Fish", "Caught", 0) 
 		failed_fish = config.get_value("Fish", "Failed", 0)
+		total_fish_caught = config.get_value("Fish", "TotalCaught", 0)
+		total_failed_fish = config.get_value("Fish", "TotalFailed", 0)
+		fish_price = config.get_value("Fish", "Price", 10)
+		fish_health = config.get_value("Fish", "Health", 1)
+		fish_growth_rate = config.get_value("Fish", "GrowthRate", 1.3)
+		fish_population = config.get_value("Fish", "Population", 5)
 		
-		total_plastic_caught = config.get_value("TotalPlastic", "Caught",0)
-		total_failed_plastic = config.get_value("TotalPlastic", "Failed",0)
-
 		plastic_caught = config.get_value("Plastic", "Caught", 0) 
 		failed_plastic = config.get_value("Plastic", "Failed", 0)
+		total_plastic_caught = config.get_value("Plastic", "TotalCaught", 0)
+		total_failed_plastic = config.get_value("Plastic", "TotalFailed", 0)
+		plastic_growth_rate = config.get_value("Plastic", "GrowthRate", 1.3)
+		plastic_population = config.get_value("Plastic", "Population", 5)
 		
-		wrongFishing_shown = config.get_value("Wrong", "Fishing", false)
-		fishingGenerally_shown = config.get_value("Generally", "Fishing", false)
+		wrongFishing_shown = config.get_value("FishingTutorial", "Wrong", false)
+		fishingGenerally_shown = config.get_value("FishingTutorial", "Generally", false)
 		
-		current_time_str = config.get_value("Current", "Time", "Monday 00:00:00")
-		
-		time_variable_use = config.get_value("Time", "Variable",0)
+		current_time_str = config.get_value("CurrentTime", "Time", "Monday 00:00:00")
+		time_variable_use = config.get_value("CurrentTime", "VariableUsed", 0)
 
 #Functions to play with money variable
 func add_money(amount: float):
@@ -122,6 +128,28 @@ func subtract_money(amount: float):
 		
 func get_money() -> float:
 	return player_money
+	
+
+
+func fish_population_func():
+	fish_population = fish_population - 1
+	
+func fish_growth_func():
+	fish_population = round(fish_population * fish_growth_rate)
+	
+func fish_health_func():
+	fish_health = fish_population / plastic_population
+	
+func fish_price_func():
+	fish_price = fish_price * fish_health
+	
+func plastic_population_func():
+	plastic_population = plastic_population - 1
+	
+func plastic_growth_func():
+	plastic_population = plastic_population * plastic_growth_rate
+	
+	
 	
 # Functions to play with Fish
 func fish_caught_func():

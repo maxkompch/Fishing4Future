@@ -45,7 +45,7 @@ func show_notenough_popup() -> void:
 func _on_fish_sell_pressed() -> void:
 
 	if GameData.total_fish_caught > 0:
-		var earnings = GameData.total_fish_caught * 10  # Example: Each fish is worth 10 coins
+		var earnings = GameData.total_fish_caught * GameData.fish_price
 		GameData.add_money(earnings)
 		GameData.total_reset_func()
 		GameData.save_data()
