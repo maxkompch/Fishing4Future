@@ -1,9 +1,6 @@
 extends Control
  
-var Dialog_text = ["So, we wanna go to your first fishing spot... exciting right?",
-				"To enter the fishing spot, you just have to drive into it.",
-				"And too make sure you ain't missing it, I marked it." ,
-				"If you miss that you can start thinking about jail",
+var Dialog_text = ["Press the button to fish",
 			 ]
 var Anzahl_an_Dialog_text
 var DialogPlatz = 0
@@ -25,10 +22,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$".".visible = false
-	if tutorial_var.third_finished == false and tutorial_var.second_finished == true:
+	if tutorial_var.third_finished == true and tutorial_var.fourth_finished == false:
 		$".".visible = true
 		if Input.is_action_just_released("action"):
 			if DialogPlatz >= Anzahl_an_Dialog_text - 1 and wordCount >= Dialog_text[DialogPlatz].length():
+				tutorial_var.fourth_finished = true
+				$".".visible = false
 				end_dialog()
 				GameData.fishingGenerally_shown = true
 				GameData.save_data()
@@ -39,8 +38,7 @@ func _process(delta):
 			DialogPlatz += 1
 			if (DialogPlatz > Anzahl_an_Dialog_text-1):
 				DialogPlatz = 0
-				tutorial_var.third_finished = true
-				$".".visible = false
+				
 			Text.text = Dialog_text[DialogPlatz]
  
  

@@ -59,7 +59,10 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://100. Fishing and Fish/Scenes/PlasticMiniGame.tscn")
 		
 	if in_return_home_area and Input.is_action_just_released("action"):
-		get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
+		if tutorial_var.is_tutorial:
+			get_tree().change_scene_to_file("res://413. Tutorial/Scenes/end_start_area_tutorial.tscn")
+		else:
+			get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
 
 func _physics_process(delta):
 	# Get input vector from the built-in actions

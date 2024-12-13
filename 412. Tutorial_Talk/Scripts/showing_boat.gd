@@ -31,6 +31,8 @@ func _process(delta):
 				DialogPlatz = 0
 				Global.dialog_finished = true
 				$".".visible = false
+				$"../StaticBody2D3/CollisionShape2D".disabled = true
+				tutorial_var.second_finished = true
 			Text.text = Dialog_text[DialogPlatz]
 	pass
 

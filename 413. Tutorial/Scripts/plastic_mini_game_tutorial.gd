@@ -1,5 +1,5 @@
 extends Node2D
- 
+
 var HookPosition = [] 
 var Positionamount = 0
 var currentPosition = 0
@@ -10,23 +10,24 @@ var winposition = 0
 @onready var logger = $Logger
 enum Ministate{running, stopped}
 var currentState = Ministate.running
- 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameData.plastic_reset_func()
+	GameData.plastic_fail_reset_func()
+	GameData.save_data()
+	GameData.load_data()
 	HookPosition.append_array(find_children("Position*","",true,true))
 	Positionamount = HookPosition.size()
 	winposition = floor(Positionamount * randf())
-	print(str(winposition) + "is the Winpositon")
-	logger.logdata("winposition",str(winposition))
+	print(str(winposition) + " is the plastic Winpositon")
+	time_system.log("plastic winposition = "  + str(winposition))
 	HookPosition[winposition].modulate = Color(0,1,0,1)
-	logger.logdata("minigamestart","start")
+	time_system.log("plastic minigame start")
 	pass # Replace with function body.
- 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if tutorial_var.is_tutorial == true and tutorial_var.sixth_finished == false:
-		$fishingGenerally.visible = true
-		$wrongFishing.visible = false
 	hook.position = HookPosition[currentPosition].position
 	match currentState:
 		Ministate.running:
@@ -34,44 +35,40 @@ func _process(delta: float) -> void:
 		Ministate.stopped:
 			mytimer.stop()
 	pass
- 
+
 func _on_timer_timeout() -> void:
 	currentPosition += 1
 	if(currentPosition >= Positionamount):
 		currentPosition = 0
+	
 	pass # Replace with function body.
- 
+
 func Fishfang() -> void:
 	if(currentPosition == winposition):
-		label.text = "you won"
-		logger.logdata("playerhit","you win")
-		if tutorial_var.is_tutorial == true:
-			if tutorial_var.sixth_finished == false and tutorial_var.fifth_finished == true and tutorial_var.fished_once == true:
-				tutorial_var.plastic_fished = true
-			else:
-				tutorial_var.fished_once = true
-		if(GameData.fish_caught >= GameData.max_fish):
-			GameData.fish_reset_func()
+		if(GameData.plastic_population >= 1):
+			GameData.plastic_caught_func()
+			GameData.total_plastic_caught_func()
+			GameData.plastic_population_func()
 			GameData.save_data()
-			if tutorial_var.is_tutorial == true:
-				get_tree().change_scene_to_file("res://413. Tutorial/Scenes/sea_area_tutorial.tscn")
-				tutorial_var.fish_spot_exited = true
-			else:
+			label.text = "Congratulation! You have caught " + str(GameData.total_plastic_caught) + " plastic(s). Auto close after catching " + str(GameData.max_plastic-GameData.plastic_caught) + " more plastics."
+			time_system.log("plastic caught")
+			if(GameData.plastic_caught >= GameData.max_plastic):
+				GameData.plastic_reset_func()
+				GameData.save_data()
 				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
- 
+		else:
+			label.text = "                           Nice! No more plastic left to catch.                           "
+			time_system.log("no plastic left")
 	else:
-		label.text = "you lose"
-		logger.logdata("playerhit","you lose")
- 
-		if(GameData.failed_fish >= GameData.max_fail):
-			GameData.fail_reset_func()
+		GameData.plastic_failed_func()
+		GameData.save_data()
+		label.text = "                Uh Oh! You have lost " + str(GameData.failed_plastic) + " times. Auto close after losing " + str(GameData.max_plastic_fail-GameData.failed_plastic) + " times."
+		time_system.log("catching plastic failed")
+		if(GameData.failed_plastic >= GameData.max_plastic_fail):
+			GameData.plastic_fail_reset_func()
 			GameData.save_data()
-			if tutorial_var.is_tutorial == true:
-				get_tree().change_scene_to_file("res://413. Tutorial/Scenes/sea_area_tutorial.tscn")
-				tutorial_var.fish_spot_exited = true
-			else:
-				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
- 
+			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+
 func _on_hook_the_fish_button_up() -> void:
 	match currentState:
 		Ministate.running:
@@ -79,9 +76,8 @@ func _on_hook_the_fish_button_up() -> void:
 			currentState = Ministate.stopped
 			pass
 		Ministate.stopped:
-			label.text = "MiniGame running"
 			currentState = Ministate.running
-			logger.logdata("minigamestart","restart")
+			time_system.log("plastic minigame restart")
 			mytimer.start()
 			pass
 	pass # Replace with function body.

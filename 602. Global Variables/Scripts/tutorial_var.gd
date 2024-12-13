@@ -1,6 +1,7 @@
 extends Node
 
-var is_tutorial = false
+var is_tutorial = true
+
 var fish_spot_exited = false
 var fish_spot_entered = false
 var fished_once = false

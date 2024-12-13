@@ -1,0 +1,233 @@
+2024-12-12T22:29:14 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:29:16 || Monday 00:07:44 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T22:29:20 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:31:20 || Monday 07:59:53 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T22:33:22 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:33:36 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:33:37 || Monday 00:01:46 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T22:33:38 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:33:50 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:34:00 || Monday 00:39:15 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-12T22:34:03 || Monday 00:51:15 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T22:34:58 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:35:03 || Monday 01:11:46 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T22:36:26 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:39:01 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T22:39:17 || Monday 01:02:15 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:15:21 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:15:31 || Monday 01:41:46 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-12T23:15:32 || Monday 01:45:54 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:17:17 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:17:24 || Monday 02:11:13 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:17:40 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:17:40 || Monday 02:13:50 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-12T23:17:42 || Monday 02:21:36 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:18:24 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:18:33 || Monday 02:57:14 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:18:50 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:19:05 || Monday 03:57:56 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:20:41 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:20:59 || Monday 05:06:58 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:21:22 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:21:39 || Monday 06:12:45 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:22:17 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:22:31 || Monday 07:09:08 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:24:28 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:24:35 || Monday 07:35:54 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-12T23:25:13 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-12T23:25:26 || Monday 08:29:53 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-12T23:25:59 || Monday 10:40:17 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:13:13 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:13:23 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:13:34 || Monday 00:43:19 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:14:25 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:14:34 || Monday 01:18:29 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T01:14:37 || Monday 01:30:39 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:15:16 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:15:23 || Monday 01:58:41 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:16:01 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:16:17 || Monday 03:02:20 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:17:09 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:17:27 || Monday 04:17:39 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:18:21 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:18:22 || Monday 00:05:11 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:18:27 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:18:43 || Monday 01:11:18 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:19:48 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:20:02 || Monday 02:05:24 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:21:09 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:21:40 || Monday 04:05:24 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:23:50 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:24:37 || Monday 07:15:31 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:25:10 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:25:33 || Monday 08:50:01 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 0
+2024-12-13T01:25:33 || Monday 08:50:01 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T01:25:42 || Monday 09:25:49 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T01:25:43 || Monday 09:27:41 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T01:25:43 || Monday 09:28:25 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T01:25:45 || Monday 09:37:01 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T01:25:45 || Monday 09:37:01 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T01:25:49 || Monday 09:53:34 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:43:08 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:43:28 || Monday 11:15:58 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing winposition = 1
+2024-12-13T01:43:28 || Monday 11:15:58 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T01:43:32 || Monday 11:29:48 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:45:51 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:45:52 || Monday 11:33:55 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:45:56 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:46:16 || Monday 12:53:24 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing winposition = 4
+2024-12-13T01:46:16 || Monday 12:53:24 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T01:49:18 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:49:43 || Monday 01:42:09 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing winposition = 1
+2024-12-13T01:49:43 || Monday 01:42:09 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T01:49:53 || Monday 02:23:50 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:54:01 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:54:01 || Monday 00:00:00 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing winposition = 4
+2024-12-13T01:54:01 || Monday 00:00:00 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T01:54:03 || Monday 02:31:32 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T01:54:03 || Monday 02:33:48 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T01:54:05 || Monday 02:38:28 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T01:54:05 || Monday 02:40:44 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T01:54:05 || Monday 02:40:44 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T01:54:07 || Monday 02:46:37 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:59:33 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T01:59:33 || Monday 00:00:00 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing winposition = 3
+2024-12-13T01:59:33 || Monday 00:00:00 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T01:59:34 || Monday 02:53:19 || money = $100, f_pop = 3, f_caught = 2, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T01:59:35 || Monday 02:57:11 || money = $100, f_pop = 3, f_caught = 2, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T01:59:35 || Monday 02:57:11 || money = $100, f_pop = 3, f_caught = 2, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T01:59:39 || Monday 03:11:51 || money = $100, f_pop = 3, f_caught = 2, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T01:59:59 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T02:00:02 || Monday 03:21:42 || money = $100, f_pop = 3, f_caught = 2, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:24:40 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:25:19 || Monday 02:36:27 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 3
+2024-12-13T09:25:19 || Monday 02:36:27 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:25:33 || Monday 03:32:29 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T09:25:35 || Monday 03:38:17 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T09:25:36 || Monday 03:42:37 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T09:25:37 || Monday 03:47:21 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T09:25:37 || Monday 03:47:21 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T09:25:44 || Monday 04:16:31 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:27:31 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:27:51 || Monday 01:20:17 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 1
+2024-12-13T09:27:51 || Monday 01:20:17 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:28:02 || Monday 02:05:54 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:30:54 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:31:17 || Monday 01:34:40 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 1
+2024-12-13T09:31:17 || Monday 01:34:40 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:31:43 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:31:49 || Monday 00:22:11 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:32:03 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:32:23 || Monday 01:20:34 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 1
+2024-12-13T09:32:23 || Monday 01:20:34 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:34:51 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:35:12 || Monday 01:23:31 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 2
+2024-12-13T09:35:12 || Monday 01:23:31 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:37:15 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:37:51 || Monday 02:23:06 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 5
+2024-12-13T09:37:51 || Monday 02:23:06 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:37:56 || Monday 02:43:52 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T09:38:01 || Monday 03:05:12 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T09:38:01 || Monday 03:05:12 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T09:39:21 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:39:22 || Monday 00:08:15 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:39:33 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:40:03 || Monday 02:00:21 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 6
+2024-12-13T09:40:03 || Monday 02:00:21 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:40:07 || Monday 02:17:47 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T09:40:08 || Monday 02:20:11 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T09:40:09 || Monday 02:24:23 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T09:40:13 || Monday 02:37:47 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T09:40:13 || Monday 02:37:47 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T09:40:16 || Monday 02:52:11 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:43:15 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:43:35 || Monday 01:21:03 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 6
+2024-12-13T09:43:35 || Monday 01:21:03 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:43:42 || Monday 01:48:55 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:45:49 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:46:09 || Monday 01:20:40 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 2
+2024-12-13T09:46:09 || Monday 01:20:40 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:46:14 || Monday 01:40:50 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:47:16 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:47:34 || Monday 01:09:54 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 0
+2024-12-13T09:47:34 || Monday 01:09:54 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:47:43 || Monday 01:46:19 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:50:23 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:50:44 || Monday 01:22:03 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 2
+2024-12-13T09:50:44 || Monday 01:22:03 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:50:59 || Monday 02:21:39 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:53:29 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:53:47 || Monday 01:12:44 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 5
+2024-12-13T09:53:47 || Monday 01:12:44 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:53:51 || Monday 01:29:22 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T09:53:58 || Monday 01:59:02 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T09:53:58 || Monday 01:59:02 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T09:54:01 || Monday 02:08:38 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:55:32 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:55:50 || Monday 01:10:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 7
+2024-12-13T09:55:50 || Monday 01:10:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:55:53 || Monday 01:22:50 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T09:55:53 || Monday 01:24:42 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T09:55:54 || Monday 01:25:26 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T09:56:07 || Monday 02:17:58 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T09:56:07 || Monday 02:17:58 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T09:56:16 || Monday 02:54:10 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T09:57:13 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T09:57:36 || Monday 01:34:17 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 0
+2024-12-13T09:57:36 || Monday 01:34:17 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T09:57:43 || Monday 02:02:12 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T09:57:44 || Monday 02:04:08 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T09:57:45 || Monday 02:08:24 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T09:57:51 || Monday 02:34:40 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T09:57:51 || Monday 02:34:40 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T09:57:54 || Monday 02:44:59 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T10:01:52 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T10:02:19 || Monday 01:45:17 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 2
+2024-12-13T10:02:19 || Monday 01:45:17 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T10:02:21 || Monday 01:55:31 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T10:02:30 || Monday 02:32:31 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T10:02:30 || Monday 02:32:31 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T10:02:43 || Monday 03:22:03 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T10:06:23 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T10:06:40 || Monday 01:08:18 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 5
+2024-12-13T10:06:40 || Monday 01:08:18 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T10:06:44 || Monday 01:24:39 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T10:06:58 || Monday 02:22:19 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T10:06:58 || Monday 02:22:19 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T10:07:21 || Monday 03:52:47 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T10:09:50 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T10:10:06 || Monday 01:03:27 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 3
+2024-12-13T10:10:06 || Monday 01:03:27 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T10:10:09 || Monday 01:14:48 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T10:10:10 || Monday 01:16:56 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T10:10:11 || Monday 01:20:56 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T10:10:15 || Monday 01:39:44 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T10:10:15 || Monday 01:39:44 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T10:10:30 || Monday 02:39:26 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2024-12-13T10:11:56 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T10:12:31 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T10:12:46 || Monday 01:00:14 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 2
+2024-12-13T10:12:46 || Monday 01:00:14 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T10:12:49 || Monday 01:10:47 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T10:13:01 || Monday 01:58:11 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T10:13:01 || Monday 01:58:11 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T10:22:18 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T10:22:33 || Monday 01:01:02 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 0
+2024-12-13T10:22:33 || Monday 01:01:02 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T10:22:36 || Monday 01:15:30 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T10:22:37 || Monday 01:17:30 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T10:22:38 || Monday 01:21:50 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T10:22:43 || Monday 01:41:18 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T10:22:43 || Monday 01:41:18 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T10:23:29 || Monday 00:00:00 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || game started
+2024-12-13T10:23:45 || Monday 01:03:53 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing winposition = 2
+2024-12-13T10:23:45 || Monday 01:03:53 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame start
+2024-12-13T10:23:50 || Monday 01:22:36 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || catching fish failed
+2024-12-13T10:23:50 || Monday 01:24:36 || money = $100, f_pop = 5, f_caught = 0, p_pop = 5, p_caught = 0 || fishing minigame restart
+2024-12-13T10:23:51 || Monday 01:25:20 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || fish caught
+2024-12-13T10:23:57 || Monday 01:50:48 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit minigame
+2024-12-13T10:23:57 || Monday 01:50:48 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || boat navigation
+2024-12-13T10:24:18 || Monday 03:13:44 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || shop transition
+2024-12-13T10:24:20 || Monday 03:22:40 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || entered shop
+2024-12-13T10:24:22 || Monday 03:30:46 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || exit shop
+2024-12-13T10:24:27 || Monday 03:51:46 || money = $100, f_pop = 4, f_caught = 1, p_pop = 5, p_caught = 0 || game closed

@@ -13,6 +13,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qyi1x")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 0.431373)
+
 [node name="Police" type="Sprite2D" parent="."]
 position = Vector2(408, 328)
 scale = Vector2(2.46875, 2.46875)
@@ -26,10 +32,10 @@ texture = ExtResource("3_btewc")
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 246.0
-offset_top = 528.0
-offset_right = 892.0
-offset_bottom = 610.0
+offset_left = 233.0
+offset_top = 500.0
+offset_right = 879.0
+offset_bottom = 582.0
 theme_override_font_sizes/bold_italics_font_size = 25
 theme_override_font_sizes/italics_font_size = 25
 theme_override_font_sizes/mono_font_size = 25

@@ -10,9 +10,15 @@ var winposition = 0
 @onready var logger = $Logger
 enum Ministate{running, stopped}
 var currentState = Ministate.running
+var back_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if tutorial_var.is_tutorial:
+		back_scene= "res://413. Tutorial/Scenes/sea_area_tutorial.tscn"
+	else:
+		back_scene = "res://201. BoatNavigation/Scenes/BoatNavigation.tscn"
+		
 	GameData.fish_reset_func()
 	GameData.fail_reset_func()
 	GameData.save_data()
@@ -50,12 +56,16 @@ func Fishfang() -> void:
 			GameData.total_caught_func()
 			GameData.fish_population_func()
 			GameData.save_data()
+			
+			if tutorial_var.is_tutorial == true:
+				tutorial_var.fished_once = true
+			
 			label.text = "Congratulation! You have caught " + str(GameData.total_fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
 			time_system.log("fish caught")
 			if(GameData.fish_caught >= GameData.max_fish):
 				GameData.fish_reset_func()
 				GameData.save_data()
-				get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+				get_tree().change_scene_to_file(back_scene)
 		else:
 			label.text = "                           Uh Oh! No fish left to catch.                           "
 			time_system.log("no fish left")
@@ -67,7 +77,7 @@ func Fishfang() -> void:
 		if(GameData.failed_fish >= GameData.max_fail):
 			GameData.fail_reset_func()
 			GameData.save_data()
-			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+			get_tree().change_scene_to_file(back_scene)
 
 func _on_hook_the_fish_button_up() -> void:
 	match currentState:

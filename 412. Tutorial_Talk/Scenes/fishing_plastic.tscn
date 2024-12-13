@@ -13,6 +13,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nwq2w")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 0.431373)
+
 [node name="Police" type="Sprite2D" parent="."]
 position = Vector2(408, 328)
 scale = Vector2(2.46875, 2.46875)
