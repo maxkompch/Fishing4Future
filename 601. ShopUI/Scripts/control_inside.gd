@@ -2,7 +2,8 @@ extends Node
 		
 func _ready():
 	GameData.load_data()
-	$FishSell.text = "Sell " + str(GameData.total_fish_caught) + " Fish That You Have"
+	$FishSell.text = "Sell " + str(GameData.total_fish_caught) + " Fish\nThat You Have"
+	$info_fish.text = "Fish Price \nis $" + str(GameData.fish_price) + ",\nYour Fish\nare worth\n$" + str(GameData.fish_price*GameData.total_fish_caught)
 	$Fish2.disabled = GameData.fish_bubbles_2
 	$Fish3.disabled = not GameData.fish_bubbles_2 or GameData.fish_bubbles_3
 	$Plastic2.disabled = GameData.plastic_bubbles_2
@@ -45,7 +46,8 @@ func _on_fish_sell_pressed() -> void:
 		GameData.save_data()
 		time_system.log("sold all fish for $" + str(earnings))
 		$purchasedaudio.play()
-		$FishSell.text = "Sell " + str(GameData.total_fish_caught) + " Fish That You Have"
+		$FishSell.text = "Sell " + str(GameData.total_fish_caught) + " Fish\nThat You Have"
+		$info_fish.text = "Fish Price \nis $" + str(GameData.fish_price) + ",\nYour Fish\nare worth\n$" + str(GameData.fish_price*GameData.total_fish_caught)
 	else:
 		time_system.log("sell attempt failed")
 		$notenoughaudio.play()
@@ -92,10 +94,10 @@ func _on_plastic_2_pressed() -> void:
 		$Plastic2.disabled = true
 		$Plastic3.disabled = false
 		$Plastic2.text = "Bought"
-		time_system.log("bought 2 fish bubbles")
+		time_system.log("bought 2 plastic bubbles")
 	else:
 		show_notenough_popup()
-		time_system.log("failed 2 fish bubbles")
+		time_system.log("failed 2 plastic bubbles")
 
 func _on_plastic_3_pressed() -> void:
 	var item_cost = 25
