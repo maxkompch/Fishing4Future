@@ -1,16 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://luqs6sto400f"]
+[gd_scene load_steps=13 format=3 uid="uid://luqs6sto400f"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/plastic_mini_game.gd" id="1_7t3d0"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_pdaox"]
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/bubblemovement.gd" id="3_ughm7"]
 [ext_resource type="Texture2D" uid="uid://dx5tqpmf2bauo" path="res://100. Fishing and Fish/Assets/FisingBackground.png" id="4_ft7yr"]
 [ext_resource type="Texture2D" uid="uid://dhm0itk3bn2qi" path="res://100. Fishing and Fish/Assets/KeschernforBackground.png" id="5_fewju"]
-[ext_resource type="Texture2D" uid="uid://rx408jidtf73" path="res://100. Fishing and Fish/Assets/AngelForBackground.png" id="6_5atww"]
-[ext_resource type="Texture2D" uid="uid://o5xtescdmy5e" path="res://100. Fishing and Fish/Assets/plastic3.png" id="7_hs1of"]
-[ext_resource type="Texture2D" uid="uid://bgj5xjpgppjpc" path="res://100. Fishing and Fish/Assets/plastic1.png" id="7_tvb0u"]
-[ext_resource type="Texture2D" uid="uid://denxti5l0th1i" path="res://100. Fishing and Fish/Assets/plastic2.png" id="8_r4e6x"]
-[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/return_button.gd" id="8_uoejl"]
-[ext_resource type="Texture2D" uid="uid://xbycuyi73j66" path="res://100. Fishing and Fish/Assets/return.png" id="9_b4mqw"]
+[ext_resource type="Texture2D" uid="uid://b3g43c24jfeik" path="res://100. Fishing and Fish/Assets/plastic 1.png" id="6_uakjf"]
+[ext_resource type="Texture2D" uid="uid://drk2gi5euw61i" path="res://100. Fishing and Fish/Assets/plastic 2.png" id="7_ekpfx"]
+[ext_resource type="Texture2D" uid="uid://04xwtieeh0x6" path="res://100. Fishing and Fish/Assets/plastic 3.png" id="8_sqkh0"]
+[ext_resource type="PackedScene" uid="uid://dv17vn7autv2h" path="res://100. Fishing and Fish/Scenes/return_button.tscn" id="9_h4ui7"]
 [ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="10_3ml0y"]
 [ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="11_i2u5h"]
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="12_q225s"]
@@ -169,17 +167,11 @@ position = Vector2(480, 312)
 scale = Vector2(3, 3)
 texture = ExtResource("5_fewju")
 
-[node name="AngelForBackground" type="Sprite2D" parent="."]
-position = Vector2(576, 312)
-scale = Vector2(3, 3)
-texture = ExtResource("6_5atww")
-metadata/_edit_lock_ = true
-
 [node name="PlasticItem" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(825, 425)
-scale = Vector2(0.264269, 0.285628)
-texture = ExtResource("7_hs1of")
+scale = Vector2(4, 4)
+texture = ExtResource("6_uakjf")
 offset = 0.4
 script = ExtResource("3_ughm7")
 middle = 384
@@ -189,48 +181,38 @@ offset = 0.4
 [node name="PlasticItem2" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(822, 249)
-scale = Vector2(0.249393, 0.24706)
-texture = ExtResource("7_tvb0u")
-offset = 0.4
+scale = Vector2(4, 4)
+texture = ExtResource("7_ekpfx")
+offset = 1.0
 script = ExtResource("3_ughm7")
 middle = 320
 amplitide = 10
-offset = 0.4
+offset = 1.0
 
 [node name="PlasticItem3" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(825, 305)
-scale = Vector2(0.251387, 0.282249)
-texture = ExtResource("7_tvb0u")
-offset = 0.4
+scale = Vector2(4, 4)
+texture = ExtResource("7_ekpfx")
+offset = 1.5
 flip_h = true
 script = ExtResource("3_ughm7")
 middle = 440
 amplitide = 10
-offset = 0.4
+offset = 1.5
 
 [node name="PlasticItem4" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(828, 362)
-scale = Vector2(0.268599, 0.273737)
-texture = ExtResource("8_r4e6x")
-offset = 0.4
+scale = Vector2(4, 4)
+texture = ExtResource("8_sqkh0")
+offset = 1.6
 script = ExtResource("3_ughm7")
 middle = 264
 amplitide = 10
-offset = 0.4
+offset = 1.6
 
-[node name="return button" type="Button" parent="."]
-offset_left = 692.0
-offset_top = 522.0
-offset_right = 878.0
-offset_bottom = 581.0
-script = ExtResource("8_uoejl")
-
-[node name="Return" type="Sprite2D" parent="return button"]
-position = Vector2(91.5, 25.5)
-scale = Vector2(0.344891, 0.120879)
-texture = ExtResource("9_b4mqw")
+[node name="return button" parent="." instance=ExtResource("9_h4ui7")]
 
 [node name="wrongFishing" parent="." instance=ExtResource("10_3ml0y")]
 visible = false

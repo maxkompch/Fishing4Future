@@ -27,7 +27,10 @@ func on_ship_entered(body):
 	else:
 		SceneTransition.transition()
 		await SceneTransition.on_transition_finished
-		get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+		if(GameData.current_day_str != time_system.get_time().split(" ")[0]):
+			GameData.next_day()
+		else:
+			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
 		time_system.log("boat navigation")
 	GameData.state = GameData.States.START
 	pass
@@ -44,9 +47,9 @@ func _on_ship_exited(body):
 			previous_day = current_day
 			SceneTransition.transition()
 			await SceneTransition.on_transition_finished
-			get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
 			GameData.state = GameData.States.END
 			time_system.log("day end")
+			GameData.end_day()
 		else:
 			get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
 			time_system.log("exit boat navigation")

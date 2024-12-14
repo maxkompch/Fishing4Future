@@ -2,27 +2,34 @@ extends Node2D
 
 var HookPosition = [] 
 var Positionamount = 0
-var currentPosition = 0
-var winposition = 0
+var currentPosition :int = 0
+var winposition = [0,0,0,0]
 @onready var hook = $Hook
 @onready var label = $Label
 @onready var mytimer = $Timer
 @onready var logger = $Logger
 enum Ministate{running, stopped}
 var currentState = Ministate.running
+var amount_Green_bubbles: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	amount_Green_bubbles = GameData.plastic_bubbles_amount
+	
 	GameData.plastic_reset_func()
 	GameData.plastic_fail_reset_func()
 	GameData.save_data()
 	GameData.load_data()
 	HookPosition.append_array(find_children("Position*","",true,true))
 	Positionamount = HookPosition.size()
-	winposition = floor(Positionamount * randf())
-	print(str(winposition) + " is the plastic Winpositon")
-	time_system.log("plastic winposition = "  + str(winposition))
-	HookPosition[winposition].modulate = Color(0,1,0,1)
+	
+	for i in range(amount_Green_bubbles):
+		winposition[i] = int(floor(Positionamount * randf()))
+		print(str(winposition) + " is the plastic Winpositon")
+		time_system.log("plastic winposition "+ str(i) + "= "  + str(winposition[i]))
+		HookPosition[winposition[i]].modulate = Color(0,1,0,1)
+	
 	time_system.log("plastic minigame start")
 	pass # Replace with function body.
 
@@ -44,7 +51,7 @@ func _on_timer_timeout() -> void:
 	pass # Replace with function body.
 
 func Fishfang() -> void:
-	if(currentPosition == winposition):
+	if(currentPosition in winposition):
 		if(GameData.plastic_population >= 1):
 			GameData.plastic_caught_func()
 			GameData.total_plastic_caught_func()

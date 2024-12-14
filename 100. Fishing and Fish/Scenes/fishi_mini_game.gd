@@ -2,8 +2,8 @@ extends Node2D
 
 var HookPosition = [] 
 var Positionamount = 0
-var currentPosition = 0
-var winposition = 0
+var currentPosition:int = 0
+var winposition = [0,0,0,0]
 @onready var hook = $Hook
 @onready var label = $Label
 @onready var mytimer = $Timer
@@ -11,6 +11,8 @@ var winposition = 0
 enum Ministate{running, stopped}
 var currentState = Ministate.running
 var back_scene
+var amount_Green_bubbles: int = 1
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,16 +21,20 @@ func _ready() -> void:
 	else:
 		back_scene = "res://201. BoatNavigation/Scenes/BoatNavigation.tscn"
 		
+	amount_Green_bubbles = GameData.fish_bubbles_amount
 	GameData.fish_reset_func()
 	GameData.fail_reset_func()
 	GameData.save_data()
 	GameData.load_data()
 	HookPosition.append_array(find_children("Position*","",true,true))
 	Positionamount = HookPosition.size()
-	winposition = floor(Positionamount * randf())
-	print(str(winposition) + " is the fishing Winpositon")
-	time_system.log("fishing winposition = "  + str(winposition))
-	HookPosition[winposition].modulate = Color(0,1,0,1)
+	
+	for i in range(amount_Green_bubbles):
+		winposition[i] = int(floor(Positionamount * randf()))
+		print(str(winposition) + " is the fishing Winpositon")
+		time_system.log("fishing winposition "+ str(i) + "= "  + str(winposition[i]))
+		HookPosition[winposition[i]].modulate = Color(0,1,0,1)
+	
 	time_system.log("fishing minigame start")
 	pass # Replace with function body.
 
@@ -50,7 +56,7 @@ func _on_timer_timeout() -> void:
 	pass # Replace with function body.
 
 func Fishfang() -> void:
-	if(currentPosition == winposition):
+	if(currentPosition in winposition):
 		if(GameData.fish_population >= 1):
 			GameData.fish_caught_func()
 			GameData.total_caught_func()
@@ -70,6 +76,8 @@ func Fishfang() -> void:
 			label.text = "                           Uh Oh! No fish left to catch.                           "
 			time_system.log("no fish left")
 	else:	
+		print("current postion is :" + str(currentPosition))
+		print("current win is :" + str(currentPosition in winposition))
 		GameData.fish_failed_func()
 		GameData.save_data()
 		label.text = "                Uh Oh! You have lost " + str(GameData.failed_fish) + " times. Auto close after losing " + str(GameData.max_fail-GameData.failed_fish) + " times."

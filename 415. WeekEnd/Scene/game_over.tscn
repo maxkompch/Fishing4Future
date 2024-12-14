@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://p64cdn3qe2jq"]
+
+[ext_resource type="PackedScene" uid="uid://fwpoha041lo0" path="res://415. WeekEnd/Scene/return_button_GameOver.tscn" id="1_qksea"]
+
+[node name="WeekEnd" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 275.0
+offset_right = 902.0
+offset_bottom = 392.0
+text = "GameOver"
+
+[node name="return button" parent="." instance=ExtResource("1_qksea")]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 555.0
+offset_right = 1090.0
+offset_bottom = 614.0

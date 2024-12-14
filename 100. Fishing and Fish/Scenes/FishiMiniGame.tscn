@@ -17,8 +17,12 @@
 script = ExtResource("1_pvdyh")
 
 [node name="wrongFishing" parent="." instance=ExtResource("16_q0rtp")]
+visible = false
+z_index = 5
 
 [node name="fishingGenerally" parent="." instance=ExtResource("17_c4qh3")]
+visible = false
+z_index = 5
 
 [node name="Hook" type="Sprite2D" parent="."]
 z_index = 1

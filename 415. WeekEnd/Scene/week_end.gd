@@ -1,17 +1,17 @@
 extends Control
-
+@onready var plasticgoaltext: RichTextLabel =  $"Plastic Goal"
 var Dialog_text = ["test"]
-var begin_text = ["After a long week of fishing, you come home to your family", 
-			"You put away your fishing gear and meet your partner in the kitchen",
-			"'Do you have enough money for today?' she asked looking at you with hopeful eyes [80$]",
+var begin_text = ["After a long week of fishing, you will be judged if you reached your quota on plastic", 
+			"You stand before the unintrested policeman, who will judge your results",
+			"'Lets see how much plastic you collected and if I need to put you back behind bars?' he says",
 			 ]
 
-var yes_dialog = ["'I was able to get it'. Your partner sighs a breath of relieve.",
-			"You and your family didn't go hungry tonight"
+var yes_dialog = ["'You collected enough'. the policemen says: 'you can walk around freely for another week'.",
+			"You were able to hit your quota, but next week is already started"
 			]
 
-var no_dialog = ["You shake your head slowly and gave the last money you owned to your wife",
-			"You and your family went hungry tonight",
+var no_dialog = ["He shakes his head slowly and brings you behind bars",
+			"You are a free man no more",
 			]
 			
 var strike_dialog = [ "You shake your head slowly.",
@@ -23,6 +23,7 @@ var strike_dialog = [ "You shake your head slowly.",
 
 var answer = yes_dialog
 var answer_finished = false
+var game_over = false
 var Anzahl_an_Dialog_text
 var DialogPlatz = 0
 var wordCount = 0
@@ -34,6 +35,8 @@ func _ready():
 	Dialog_text = begin_text
 	Anzahl_an_Dialog_text = Dialog_text.size()
 	Text.text = Dialog_text[0]
+	
+	plasticgoaltext.text = "This Week Plastic caught: "+ str(GameData.total_plastic_caught) + "/" + str(GameData.plastic_target)
 	
 	for strike in red_strike.size():
 		if strike < GameData.strike_counter:
@@ -52,22 +55,21 @@ func _process(delta):
 		if (DialogPlatz > Anzahl_an_Dialog_text-1):
 			DialogPlatz = 0
 			if answer_finished:
-				get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
+				GameData.resetDaycounter()
+				GameData.next_day()
+			elif game_over:
+				get_tree().change_scene_to_file("res://415. WeekEnd/Scene/game_over.tscn")
 			else:
-				if GameData.auto_deduction():
-					Dialog_text = yes_dialog
-				else: 
-					if GameData.strike_counter < 3 and GameData.strike_counter > 0:
-						Dialog_text = no_dialog
-						print(GameData.strike_counter)
-						red_strike[GameData.strike_counter].visible = true
-					elif GameData.strike_counter < 4:
-						Dialog_text = strike_dialog
-						red_strike[GameData.strike_counter].visible = true
-						
-				Anzahl_an_Dialog_text = Dialog_text.size()
-				Text.text = Dialog_text[0]
-				answer_finished = true
+				if GameData.check_plastic_amount(): ###check quota
+					Dialog_text = yes_dialog  ### ennough plast
+					Anzahl_an_Dialog_text = Dialog_text.size()
+					Text.text = Dialog_text[0]
+					answer_finished = true
+				else: #no engough
+					Dialog_text = no_dialog
+					Anzahl_an_Dialog_text = Dialog_text.size()
+					Text.text = Dialog_text[0]
+					game_over = true
 		Text.text = Dialog_text[DialogPlatz]
 	pass
 

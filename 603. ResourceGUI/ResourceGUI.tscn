@@ -22,12 +22,11 @@ texture = ExtResource("2_yhoyg")
 
 [node name="Resources" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 269.0
+offset_left = 327.0
 offset_top = -106.0
-offset_right = 1141.0
+offset_right = 1165.07
 offset_bottom = -62.0
 theme_override_constants/separation = 20
-alignment = 1
 
 [node name="FishContainer" type="HBoxContainer" parent="Resources"]
 layout_mode = 2

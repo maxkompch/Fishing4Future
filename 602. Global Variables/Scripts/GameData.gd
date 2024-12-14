@@ -43,6 +43,15 @@ var total_plastic_caught: int = 0
 var total_failed_plastic: int = 0
 
 var current_time_str: String = "Monday 00:00:00"
+var current_day_str : String = "Monday"
+var current_day_int : int = 0 #0,1,2,3,4,5,6
+var days_of_the_week = ["Monday","Thuesday","Wendsday", "Thursday","Friday", "Saturday","Sunday"]
+
+#minigameUpgrades
+#rod upgrade values should be 1,2,3,4
+var fish_bubbles_amount : int = 1
+#net upgrade values should be 1,2,3,4
+var plastic_bubbles_amount : int = 1
 
 # Save data to a file
 func save_data():
@@ -263,3 +272,27 @@ func auto_deduction():
 			return true
 	else:
 		return true
+
+func next_day():
+	current_day_int = current_day_int + 1
+	if(current_day_int >= 7):
+		end_of_the_week()
+	else:
+		current_day_str = days_of_the_week[current_day_int]
+		end_day()
+
+func resetDaycounter():
+	current_day_int = -1
+	current_day_str = days_of_the_week[current_day_int]
+
+func end_day():
+	get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
+	print("day Ended")
+	
+func end_of_the_week():
+	current_day_int = 0
+	get_tree().change_scene_to_file("res://415. WeekEnd/Scene/week_end.tscn")
+	print("End of the Week")
+	
+func check_plastic_amount():
+	return total_plastic_caught >= plastic_target

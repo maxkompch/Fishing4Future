@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv17vn7autv2h"]
+
+[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/return_button.gd" id="1_cbivi"]
+[ext_resource type="Texture2D" uid="uid://xbycuyi73j66" path="res://100. Fishing and Fish/Assets/return.png" id="2_70bmw"]
+
+[node name="return button" type="Button"]
+offset_left = 692.0
+offset_top = 522.0
+offset_right = 878.0
+offset_bottom = 581.0
+script = ExtResource("1_cbivi")
+
+[node name="Return" type="Sprite2D" parent="."]
+position = Vector2(91.5, 25.5)
+scale = Vector2(0.344891, 0.120879)
+texture = ExtResource("2_70bmw")

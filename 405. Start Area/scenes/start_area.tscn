@@ -212,7 +212,7 @@ shape = SubResource("RectangleShape2D_cc3jf")
 script = ExtResource("7_gsrfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
-z_index = -1
+z_index = 4
 position = Vector2(36, 406)
 shape = SubResource("RectangleShape2D_7env7")
 

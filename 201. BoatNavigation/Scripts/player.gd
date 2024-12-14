@@ -62,7 +62,10 @@ func _process(delta: float) -> void:
 		if tutorial_var.is_tutorial:
 			get_tree().change_scene_to_file("res://413. Tutorial/Scenes/end_start_area_tutorial.tscn")
 		else:
-			get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
+			if(GameData.current_day_str != time_system.get_time().split(" ")[0]):
+				get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
+			else:
+				get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
 
 func _physics_process(delta):
 	# Get input vector from the built-in actions
