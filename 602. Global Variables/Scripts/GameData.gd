@@ -14,6 +14,7 @@ var plastic_growth_rate: int = 3
 var fish_population: int = 10
 var fish_growth_rate: float = 1.5
 var fish_price: float = 20
+var fish_base_price: float = 20
 var fish_health: float = 1
 
 var fish_caught: int = 0
@@ -155,7 +156,7 @@ func fish_health_func():
 	fish_health = clamp(fish_health, 0, 1)
 	
 func fish_price_func():
-	fish_price = fish_price * fish_health
+	fish_price = fish_base_price * fish_health
 	
 func plastic_population_func():
 	plastic_population = plastic_population - 1
