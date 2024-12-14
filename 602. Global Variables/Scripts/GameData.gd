@@ -9,20 +9,12 @@ var time_variable_use: int = 0
 const SAVE_PATH = "user://save_data.cfg"
 var player_money: float = 100.0
 var plastic_population: int = 5
-var plastic_target: int = 7
-var plastic_growth_rate: float = 1.3
-var fish_population: int = 5
-var fish_growth_rate: float = 1.3
-var fish_price: float = 10
+var plastic_target: int = 21
+var plastic_growth_rate: int = 3
+var fish_population: int = 10
+var fish_growth_rate: float = 1.5
+var fish_price: float = 20
 var fish_health: float = 1
-
-# Variables to track purchased upgrades
-var rod1_purchased = false
-var rod2_purchased = false
-var rod3_purchased = false
-var net1_purchased = false
-var net2_purchased = false
-var net3_purchased = false
 
 var fish_caught: int = 0
 var failed_fish: int = 0
@@ -45,26 +37,31 @@ var total_failed_plastic: int = 0
 var current_time_str: String = "Monday 00:00:00"
 var current_day_str : String = "Monday"
 var current_day_int : int = 0 #0,1,2,3,4,5,6
-var days_of_the_week = ["Monday","Thuesday","Wendsday", "Thursday","Friday", "Saturday","Sunday"]
+var days_of_the_week = ["Monday","Tuesday","Wednesday", "Thursday","Friday", "Saturday","Sunday"]
 
 #minigameUpgrades
 #rod upgrade values should be 1,2,3,4
 var fish_bubbles_amount : int = 1
-#net upgrade values should be 1,2,3,4
 var plastic_bubbles_amount : int = 1
+var fish_bubbles_2 = false
+var fish_bubbles_3 = false
+var plastic_bubbles_2 = false
+var plastic_bubbles_3 = false
+
 
 # Save data to a file
 func save_data():
 	var config = ConfigFile.new()
 	config.set_value("Player", "Money", player_money)
 	
-	# Save purchased upgrades
-	config.set_value("Upgrades", "Rod1", rod1_purchased)
-	config.set_value("Upgrades", "Rod2", rod2_purchased)
-	config.set_value("Upgrades", "Rod3", rod3_purchased)
-	config.set_value("Upgrades", "Net1", net1_purchased)
-	config.set_value("Upgrades", "Net2", net2_purchased)
-	config.set_value("Upgrades", "Net3", net3_purchased)
+	config.set_value("Upgrades", "fish_bubbles_2", fish_bubbles_2)
+	config.set_value("Upgrades", "fish_bubbles_3", fish_bubbles_3)
+	config.set_value("Upgrades", "current_fish_bubbles", fish_bubbles_amount)
+	
+	config.set_value("Upgrades", "plastic_bubbles_2", plastic_bubbles_2)
+	config.set_value("Upgrades", "plastic_bubbles_3", plastic_bubbles_3)
+	config.set_value("Upgrades", "current_plastic_bubbles", plastic_bubbles_amount)
+	
 	
 	config.set_value("Fish", "Caught", fish_caught)
 	config.set_value("Fish", "Failed", failed_fish)
@@ -90,6 +87,9 @@ func save_data():
 	config.set_value("CurrentTime", "Time", current_time_str)
 	config.set_value("CurrentTime", "VariableUsed", time_variable_use)
 	
+	config.set_value("DayWeekEnd", "current_day_int", current_day_int)
+	config.set_value("DayWeekEnd", "current_day_str", current_day_str)
+	
 	config.save(SAVE_PATH)
 
 # Load data from a file
@@ -98,27 +98,28 @@ func load_data():
 	if config.load(SAVE_PATH) == OK:
 		player_money = config.get_value("Player", "Money", 100.0)  # Default to 1000 if not found
 		
-		rod1_purchased = config.get_value("Upgrades", "Rod1", false)
-		rod2_purchased = config.get_value("Upgrades", "Rod2", false)
-		rod3_purchased = config.get_value("Upgrades", "Rod3", false)
-		net1_purchased = config.get_value("Upgrades", "Net1", false)
-		net2_purchased = config.get_value("Upgrades", "Net2", false)
-		net3_purchased = config.get_value("Upgrades", "Net3", false)
+		fish_bubbles_2 = config.get_value("Upgrades", "fish_bubbles_2", false)
+		fish_bubbles_3 = config.get_value("Upgrades", "fish_bubbles_3", false)
+		fish_bubbles_amount = config.get_value("Upgrades", "current_fish_bubbles", 1)
+		
+		plastic_bubbles_2 = config.get_value("Upgrades", "plastic_bubbles_2", false)
+		plastic_bubbles_3 = config.get_value("Upgrades", "plastic_bubbles_3", false)
+		plastic_bubbles_amount = config.get_value("Upgrades", "current_plastic_bubbles", 1)
 		
 		fish_caught = config.get_value("Fish", "Caught", 0) 
 		failed_fish = config.get_value("Fish", "Failed", 0)
 		total_fish_caught = config.get_value("Fish", "TotalCaught", 0)
 		total_failed_fish = config.get_value("Fish", "TotalFailed", 0)
-		fish_price = config.get_value("Fish", "Price", 10)
+		fish_price = config.get_value("Fish", "Price", 20)
 		fish_health = config.get_value("Fish", "Health", 1)
-		fish_growth_rate = config.get_value("Fish", "GrowthRate", 1.3)
-		fish_population = config.get_value("Fish", "Population", 5)
+		fish_growth_rate = config.get_value("Fish", "GrowthRate", 1.5)
+		fish_population = config.get_value("Fish", "Population", 10)
 		
 		plastic_caught = config.get_value("Plastic", "Caught", 0) 
 		failed_plastic = config.get_value("Plastic", "Failed", 0)
 		total_plastic_caught = config.get_value("Plastic", "TotalCaught", 0)
 		total_failed_plastic = config.get_value("Plastic", "TotalFailed", 0)
-		plastic_growth_rate = config.get_value("Plastic", "GrowthRate", 1.3)
+		plastic_growth_rate = config.get_value("Plastic", "GrowthRate", 3)
 		plastic_population = config.get_value("Plastic", "Population", 5)
 		
 		wrongFishing_shown = config.get_value("FishingTutorial", "Wrong", false)
@@ -126,6 +127,9 @@ func load_data():
 		
 		current_time_str = config.get_value("CurrentTime", "Time", "Monday 00:00:00")
 		time_variable_use = config.get_value("CurrentTime", "VariableUsed", 0)
+		
+		current_day_int = config.get_value("DayWeekEnd", "current_day_int", 0)
+		current_day_str = config.get_value("DayWeekEnd", "current_day_str", "Monday")
 
 #Functions to play with money variable
 func add_money(amount: float):
@@ -147,7 +151,8 @@ func fish_growth_func():
 	fish_population = round(fish_population * fish_growth_rate)
 	
 func fish_health_func():
-	fish_health = fish_population / plastic_population
+	fish_health = fish_health - (plastic_population*0.05) # as per Pratik's python file
+	fish_health = clamp(fish_health, 0, 1)
 	
 func fish_price_func():
 	fish_price = fish_price * fish_health
@@ -156,7 +161,7 @@ func plastic_population_func():
 	plastic_population = plastic_population - 1
 	
 func plastic_growth_func():
-	plastic_population = plastic_population * plastic_growth_rate
+	plastic_population = plastic_population + plastic_growth_rate
 	
 	
 	
@@ -227,30 +232,25 @@ func time_variable():
 	GameData.save_data()
 
 
-# Functions to update purchased states
-func purchase_rod1():
-	if not rod1_purchased:
-		rod1_purchased = true
+func purchase_fishbubble2():
+	if not fish_bubbles_2:
+		fish_bubbles_2 = true
+		fish_bubbles_amount = 2
 
-func purchase_rod2():
-	if not rod2_purchased and rod1_purchased:
-		rod2_purchased = true
+func purchase_fishbubble3():
+	if not fish_bubbles_3 and fish_bubbles_2:
+		fish_bubbles_3 = true
+		fish_bubbles_amount = 3
+		
+func purchase_plasticbubble2():
+	if not plastic_bubbles_2:
+		plastic_bubbles_2 = true
+		plastic_bubbles_amount = 2
 
-func purchase_rod3():
-	if not rod3_purchased and rod2_purchased:
-		rod3_purchased = true
-
-func purchase_net1():
-	if not net1_purchased:
-		net1_purchased = true
-
-func purchase_net2():
-	if not net2_purchased and net1_purchased:
-		net2_purchased = true
-
-func purchase_net3():
-	if not net3_purchased and net2_purchased:
-		net3_purchased = true
+func purchase_plasticbubble3():
+	if not plastic_bubbles_3 and plastic_bubbles_2:
+		plastic_bubbles_3 = true
+		plastic_bubbles_amount = 3
 
 ## Day and Money
 enum States {START, IDLE, END}
@@ -258,8 +258,9 @@ var state: States = States.END
 
 var strike_counter = 0
 
+
 func auto_deduction():
-	var deduct: int = 80
+	var deduct: int = 50
 	if state == States.END:
 		if player_money < deduct:
 			player_money = 0
@@ -267,7 +268,7 @@ func auto_deduction():
 			GameData.save_data()
 			return false
 		else:
-			GameData.subtract_money(80)
+			GameData.subtract_money(deduct)
 			GameData.save_data()
 			return true
 	else:
@@ -277,8 +278,11 @@ func next_day():
 	current_day_int = current_day_int + 1
 	if(current_day_int >= 7):
 		end_of_the_week()
+		save_data()
 	else:
 		current_day_str = days_of_the_week[current_day_int]
+		auto_deduction()
+		save_data()
 		end_day()
 
 func resetDaycounter():
@@ -287,7 +291,8 @@ func resetDaycounter():
 
 func end_day():
 	get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
-	print("day Ended")
+	current_day_int = current_day_int + 1
+	save_data()
 	
 func end_of_the_week():
 	current_day_int = 0

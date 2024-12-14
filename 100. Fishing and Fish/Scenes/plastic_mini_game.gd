@@ -3,7 +3,7 @@ extends Node2D
 var HookPosition = [] 
 var Positionamount = 0
 var currentPosition :int = 0
-var winposition = [0,0,0,0]
+var winposition = []
 @onready var hook = $Hook
 @onready var label = $Label
 @onready var mytimer = $Timer
@@ -24,11 +24,17 @@ func _ready() -> void:
 	HookPosition.append_array(find_children("Position*","",true,true))
 	Positionamount = HookPosition.size()
 	
-	for i in range(amount_Green_bubbles):
-		winposition[i] = int(floor(Positionamount * randf()))
-		print(str(winposition) + " is the plastic Winpositon")
-		time_system.log("plastic winposition "+ str(i) + "= "  + str(winposition[i]))
-		HookPosition[winposition[i]].modulate = Color(0,1,0,1)
+	var used_positions := []
+	while winposition.size() < amount_Green_bubbles and winposition.size() < Positionamount:
+		var rand_position = int(floor(Positionamount * randf()))
+		if rand_position not in used_positions:
+			winposition.append(rand_position)
+			used_positions.append(rand_position)
+	
+	print(str(winposition) + " is the plastic winpostion")
+	for i in winposition:
+		HookPosition[i].modulate = Color(0, 1, 0, 1)
+		time_system.log("Plastic winposition " + str(i))
 	
 	time_system.log("plastic minigame start")
 	pass # Replace with function body.

@@ -1,10 +1,6 @@
 extends Area2D
 
-var current_day: int = 1
-var previous_day = ""
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	previous_day = time_system.get_time().split(" ")[0]
 	GameData.load_data()
 	set_process(true) # Replace with function body.
 
@@ -29,6 +25,7 @@ func on_ship_entered(body):
 		await SceneTransition.on_transition_finished
 		if(GameData.current_day_str != time_system.get_time().split(" ")[0]):
 			GameData.next_day()
+			GameData.save_data()
 		else:
 			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
 		time_system.log("boat navigation")
@@ -42,13 +39,15 @@ func _on_ship_exited(body):
 		await SceneTransition.on_transition_finished
 		get_tree().change_scene_to_file("res://413. Tutorial/Scenes/end_start_area_tutorial.tscn")
 	else:
-		var current_day = time_system.get_time().split(" ")[0]
-		if current_day != previous_day:
-			previous_day = current_day
+		if (GameData.current_day_str != time_system.get_time().split(" ")[0]):
+			GameData.current_day_int = GameData.current_day_int + 1
+			GameData.current_day_str = GameData.days_of_the_week[GameData.current_day_int]
 			SceneTransition.transition()
 			await SceneTransition.on_transition_finished
 			GameData.state = GameData.States.END
 			time_system.log("day end")
+			GameData.auto_deduction()
+			GameData.save_data()
 			GameData.end_day()
 		else:
 			get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")

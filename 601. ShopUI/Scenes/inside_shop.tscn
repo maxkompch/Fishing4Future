@@ -1,5 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bclcy4nao7giv"]
 
+[ext_resource type="Texture2D" uid="uid://dumvxx85gq5h3" path="res://601. ShopUI/Assets/shop assets/new_shop.png" id="1_ugk4f"]
 [ext_resource type="Script" path="res://601. ShopUI/Scripts/backtoshop.gd" id="2_qmvxl"]
 [ext_resource type="Script" path="res://601. ShopUI/Scripts/control_inside.gd" id="3_xis08"]
 [ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="4_32hmx"]
@@ -7,15 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://demvdgaw402x" path="res://601. ShopUI/Assets/shop assets/notenough.wav" id="5_g6srk"]
 [ext_resource type="PackedScene" uid="uid://cau8ribq3iuaw" path="res://603. ResourceGUI/ResouceGUIPlain.tscn" id="6_ylh6k"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qsn7u"]
-load_path = "res://.godot/imported/inside_shop.png-99aa8a6bc4863dcd524a9b96e6eccab6.ctex"
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(580, 324.5)
-scale = Vector2(1.60833, 1.60247)
-texture = SubResource("CompressedTexture2D_qsn7u")
+position = Vector2(571, 324.5)
+scale = Vector2(0.596875, 0.599074)
+texture = ExtResource("1_ugk4f")
 script = ExtResource("2_qmvxl")
 
 [node name="Control" type="Control" parent="."]
@@ -25,15 +23,60 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_xis08")
 
+[node name="Fish3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 236.0
+offset_right = 762.0
+offset_bottom = 335.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 22
+text = "3 Fish Bubbles
+$200"
+
+[node name="Fish2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 234.0
+offset_right = 368.0
+offset_bottom = 333.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 22
+text = "2 Fish Bubbles
+$150"
+
+[node name="Plastic3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 462.0
+offset_right = 771.0
+offset_bottom = 561.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 22
+text = "3 Plastic Bubbles
+$200"
+
+[node name="Plastic2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 458.0
+offset_right = 372.0
+offset_bottom = 557.0
+theme_override_fonts/font = ExtResource("4_32hmx")
+theme_override_font_sizes/font_size = 22
+text = "2 Plastic Bubbles
+$150"
+
 [node name="FishSell" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 343.0
-offset_top = 305.0
-offset_right = 798.0
-offset_bottom = 361.0
+offset_left = 838.0
+offset_top = 439.0
+offset_right = 1077.0
+offset_bottom = 495.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 20
-text = "Sell All fish that you have"
+text = "Sell All fish
+ that you have"
 
 [node name="Back_Button" type="Button" parent="Control"]
 layout_mode = 0
@@ -44,72 +87,6 @@ offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("4_32hmx")
 theme_override_font_sizes/font_size = 30
 text = "Back"
-
-[node name="Rod1" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 103.0
-offset_top = 216.0
-offset_right = 257.0
-offset_bottom = 272.0
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "Rod lV. 1
-$100"
-
-[node name="Rod2" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 482.0
-offset_top = 218.0
-offset_right = 636.0
-offset_bottom = 274.0
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "Rod lV. 2
-$200"
-
-[node name="Rod3" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 873.0
-offset_top = 218.0
-offset_right = 1027.0
-offset_bottom = 274.0
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "Rod LV. 3
-$300"
-
-[node name="Net1" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 527.0
-offset_right = 266.0
-offset_bottom = 583.0
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "Net LV. 1
-$100"
-
-[node name="Net2" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 482.0
-offset_top = 524.0
-offset_right = 636.0
-offset_bottom = 580.0
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "Net LV. 2
-$200"
-
-[node name="Net3" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 875.0
-offset_top = 524.0
-offset_right = 1029.0
-offset_bottom = 580.0
-theme_override_fonts/font = ExtResource("4_32hmx")
-theme_override_font_sizes/font_size = 20
-text = "Net LV. 3
-$300"
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 visible = false
@@ -168,11 +145,9 @@ offset_top = -4.0
 offset_right = -65.0
 offset_bottom = -4.0
 
+[connection signal="pressed" from="Control/Fish3" to="Control" method="_on_fish_3_pressed"]
+[connection signal="pressed" from="Control/Fish2" to="Control" method="_on_fish_2_pressed"]
+[connection signal="pressed" from="Control/Plastic3" to="Control" method="_on_plastic_3_pressed"]
+[connection signal="pressed" from="Control/Plastic2" to="Control" method="_on_plastic_2_pressed"]
 [connection signal="pressed" from="Control/FishSell" to="Control" method="_on_fish_sell_pressed"]
 [connection signal="button_up" from="Control/Back_Button" to="Sprite2D" method="_on_button_button_up"]
-[connection signal="pressed" from="Control/Rod1" to="Control" method="_on_rod_1_pressed"]
-[connection signal="pressed" from="Control/Rod2" to="Control" method="_on_rod_2_pressed"]
-[connection signal="pressed" from="Control/Rod3" to="Control" method="_on_rod_3_pressed"]
-[connection signal="pressed" from="Control/Net1" to="Control" method="_on_net_1_pressed"]
-[connection signal="pressed" from="Control/Net2" to="Control" method="_on_net_2_pressed"]
-[connection signal="pressed" from="Control/Net3" to="Control" method="_on_net_3_pressed"]
