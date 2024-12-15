@@ -7,15 +7,17 @@ var time_variable_use: int = 0
 # Strictly do not touch the above lines unless you are working with tutorials
 
 const SAVE_PATH = "user://save_data.cfg"
-var player_money: float = 100.0
+var player_money: float = 150.0
 var plastic_population: int = 5
-var plastic_target: int = 21
+var plastic_target: int = 15
 var plastic_growth_rate: int = 3
 var fish_population: int = 10
+var fish_initial_population: int = 10
 var fish_growth_rate: float = 1.5
 var fish_price: float = 20
 var fish_base_price: float = 20
 var fish_health: float = 1
+var fish_base_health: float = 1
 
 var fish_caught: int = 0
 var failed_fish: int = 0
@@ -90,6 +92,7 @@ func save_data():
 	
 	config.set_value("DayWeekEnd", "current_day_int", current_day_int)
 	config.set_value("DayWeekEnd", "current_day_str", current_day_str)
+	config.set_value("DayWeekEnd", "strike_counter", strike_counter)
 	
 	config.save(SAVE_PATH)
 
@@ -131,6 +134,8 @@ func load_data():
 		
 		current_day_int = config.get_value("DayWeekEnd", "current_day_int", 0)
 		current_day_str = config.get_value("DayWeekEnd", "current_day_str", "Monday")
+		
+		strike_counter = config.get_value("DayWeekEnd", "strike_counter", 0)
 
 #Functions to play with money variable
 func add_money(amount: float):
@@ -152,7 +157,7 @@ func fish_growth_func():
 	fish_population = round(fish_population * fish_growth_rate)
 	
 func fish_health_func():
-	fish_health = fish_health - (plastic_population*0.05) # as per Pratik's python file
+	fish_health = fish_base_health - (plastic_population*0.01) 
 	fish_health = clamp(fish_health, 0, 1)
 	
 func fish_price_func():
@@ -261,44 +266,45 @@ var strike_counter = 0
 
 
 func auto_deduction():
-	var deduct: int = 50
-	if state == States.END:
-		if player_money < deduct:
-			player_money = 0
-			strike_counter += 1
-			GameData.save_data()
-			return false
-		else:
-			GameData.subtract_money(deduct)
-			GameData.save_data()
-			return true
+	var deduct: float = 50
+	if player_money < deduct:
+		player_money = 0
+		strike_counter = strike_counter + 1
+		GameData.save_data()
+		time_system.log("failed to pay, stikes = " + str(GameData.strike_counter))
+		return false
 	else:
+		GameData.subtract_money(deduct)
+		GameData.save_data()
+		time_system.log("paid money to family")
 		return true
+	pass
 
-func next_day():
+func resetDaycounter():
+	current_day_int = 6
+	current_day_str = days_of_the_week[current_day_int]
+
+func end_day():
 	current_day_int = current_day_int + 1
+	current_day_str = days_of_the_week[current_day_int]
+	save_data()
 	if(current_day_int >= 7):
 		end_of_the_week()
 		save_data()
 	else:
-		current_day_str = days_of_the_week[current_day_int]
+		print("debug")
 		auto_deduction()
+		get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
 		save_data()
-		end_day()
-
-func resetDaycounter():
-	current_day_int = -1
-	current_day_str = days_of_the_week[current_day_int]
-
-func end_day():
-	get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
-	current_day_int = current_day_int + 1
-	save_data()
 	
 func end_of_the_week():
-	current_day_int = 0
+	GameData.auto_deduction()
+	GameData.save_data()
+	time_system.log("end of week")
 	get_tree().change_scene_to_file("res://415. WeekEnd/Scene/week_end.tscn")
-	print("End of the Week")
 	
 func check_plastic_amount():
 	return total_plastic_caught >= plastic_target
+	
+func check_fish_amount():
+	return fish_population >= fish_initial_population

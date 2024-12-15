@@ -53,18 +53,35 @@ func _ready():
 func _process(delta: float) -> void:
 	
 	if in_fishing_area and Input.is_action_just_released("action"):
+		time_system.log("enter fishing minigame")
 		get_tree().change_scene_to_file("res://100. Fishing and Fish/Scenes/FishiMiniGame.tscn")
 		
 	if in_trash_area and Input.is_action_just_released("action"):
+		time_system.log("enter plastic minigame")
 		get_tree().change_scene_to_file("res://100. Fishing and Fish/Scenes/PlasticMiniGame.tscn")
 		
 	if in_return_home_area and Input.is_action_just_released("action"):
 		if tutorial_var.is_tutorial:
+			time_system.log("end start area tutorial")
 			get_tree().change_scene_to_file("res://413. Tutorial/Scenes/end_start_area_tutorial.tscn")
-		else:
+		else:	
 			if(GameData.current_day_str != time_system.get_time().split(" ")[0]):
-				get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
+				if GameData.current_day_int == 6:
+					GameData.end_of_the_week()
+				else:
+					GameData.current_day_int = GameData.current_day_int + 1
+					GameData.current_day_str = GameData.days_of_the_week[GameData.current_day_int]
+					GameData.plastic_growth_func()
+					GameData.fish_growth_func()
+					GameData.fish_health_func()
+					GameData.fish_price_func()
+					GameData.save_data()
+					time_system.log("exit boat navigation")
+					time_system.log("start scene")
+					get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
 			else:
+				time_system.log("exit boat navigation")
+				time_system.log("start scene")
 				get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
 
 func _physics_process(delta):

@@ -24,6 +24,7 @@ offset_bottom = 40.0
 script = ExtResource("3_xis08")
 
 [node name="info_fish" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 847.0
 offset_top = 240.0
 offset_right = 1071.0

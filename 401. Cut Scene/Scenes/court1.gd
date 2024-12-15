@@ -12,6 +12,7 @@ var wordCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	time_system.log("court scene")
 	Anzahl_an_Dialog_text = Dialog_text.size()
 	Text.text = Dialog_text[0]
 	pass # Replace with function body.

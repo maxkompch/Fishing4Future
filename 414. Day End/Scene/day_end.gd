@@ -1,9 +1,9 @@
 extends Control
 
 var Dialog_text = ["test"]
-var begin_text = ["After a long week of fishing, you come home to your family", 
+var begin_text = ["After a long day of fishing, you come home to your family", 
 			"You put away your fishing gear and meet your partner in the kitchen",
-			"'Do you have enough money for today?' she asked looking at you with hopeful eyes [80$]",
+			"'Do you have enough money for today?' she asked looking at you with hopeful eyes [$50]",
 			 ]
 
 var yes_dialog = ["'I was able to get it'. Your partner sighs a breath of relieve.",
@@ -19,6 +19,7 @@ var strike_dialog = [ "You shake your head slowly.",
 			"'I have to give our children a better life' She started packing her and the childrens clothes",
 			"'I'm sorry, this isn't your fault.'",
 			"This evening you went to bed in an empty home.",
+			"",
 		]
 
 var answer = yes_dialog
@@ -59,16 +60,23 @@ func _process(delta):
 				else: 
 					if GameData.strike_counter < 3 and GameData.strike_counter > 0:
 						Dialog_text = no_dialog
-						print(GameData.strike_counter)
-						red_strike[GameData.strike_counter].visible = true
-					elif GameData.strike_counter < 4:
+						red_strike[GameData.strike_counter - 1].visible = true
+					elif GameData.strike_counter >= 3:
 						Dialog_text = strike_dialog
-						red_strike[GameData.strike_counter].visible = true
+						$StrikeRed.visible = true
+						$StrikeRed2.visible = true
+						$StrikeRed3.visible = true
+						answer_finished = true
 						
 				Anzahl_an_Dialog_text = Dialog_text.size()
 				Text.text = Dialog_text[0]
 				answer_finished = true
+	else:
 		Text.text = Dialog_text[DialogPlatz]
+	
+	if Dialog_text == strike_dialog and DialogPlatz == Anzahl_an_Dialog_text -1:
+		time_system.log("trigerring game over")
+		get_tree().change_scene_to_file("res://415. WeekEnd/Scene/game_over.tscn")
 	pass
 
 func _on_timer_timeout():

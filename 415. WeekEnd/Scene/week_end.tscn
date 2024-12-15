@@ -27,10 +27,10 @@ texture = ExtResource("2_5rb5y")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 237.0
-offset_top = 275.0
-offset_right = 902.0
-offset_bottom = 392.0
+offset_left = 239.0
+offset_top = 166.0
+offset_right = 904.0
+offset_bottom = 283.0
 text = "Test"
 
 [node name="StrikeGrey2" type="Sprite2D" parent="."]

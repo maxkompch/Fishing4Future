@@ -3,7 +3,7 @@ extends Control
 var Dialog_text = [				"...", 
 				"I have decided, that you will not be punished with 3 years in prison...", 
 				"BUT", 
-				"because we have a high pollution problem, you will have to fish plastic out of the ocean for 1 Month.",
+				"because we have a high pollution problem, you will have to fish plastic out of the ocean for 1 Week.",
 				"Of course, if you can't reach your daily goals, prison will be the only choice for you.",  
 				"So please do your work diligently", 
 			 ]

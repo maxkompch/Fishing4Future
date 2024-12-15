@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b154m8fee7fdc"]
 
-[ext_resource type="Texture2D" uid="uid://1q67sxsefv7e" path="res://401. Cut Scene/Assets/Judge.png" id="1_32yu0"]
+[ext_resource type="Texture2D" uid="uid://cvfqo6p6dqclx" path="res://401. Cut Scene/Assets/Judge.png" id="1_32yu0"]
 [ext_resource type="Texture2D" uid="uid://coccu3n8pxs8f" path="res://412. Tutorial_Talk/Assets/talking_bubble.png" id="2_m1blo"]
-[ext_resource type="Texture2D" uid="uid://dwjimq0da5ust" path="res://102. Icons/Assets/Skip_E.png" id="3_hyr87"]
+[ext_resource type="Texture2D" uid="uid://btlwngssfbyxj" path="res://102. Icons/Assets/Skip_E.png" id="3_hyr87"]
 
 [node name="judgeTalking" type="Control"]
 layout_mode = 3

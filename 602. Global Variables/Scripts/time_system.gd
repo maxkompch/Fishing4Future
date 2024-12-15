@@ -1,7 +1,7 @@
 class_name TimeSystem extends Node
 
 @export var date_time: DateTime
-@export var ticks_index: int = 1
+@export var ticks_index: int = 2
 @export var ticks_per_Sec_options: Array[int] = [120, 240, 480, 960, 1920, 24000]
 
 const AUDIO_FILES: Array[String] = [
@@ -54,7 +54,7 @@ func log(message: String) -> void:
 	var time_msg = Time.get_datetime_string_from_system() + " || " + get_time() + " || "
 	#var resource_msg = "money = $" + str(GameData.player_money) + " || " + "f_pop = " + str(GameData.fish_population) + " || " + "f_caught = " + str(GameData.total_fish_caught) + " || " + "p_pop = " + str(GameData.plastic_population) + " || " + "p_caught = " + str(GameData.total_plastic_caught) + " || "
 
-	var resource_msg = "money = $" + str(GameData.player_money) + ", f_pop = " + str(GameData.fish_population) + ", f_caught = " + str(GameData.total_fish_caught) + ", p_pop = " + str(GameData.plastic_population) + ", p_caught = " + str(GameData.total_plastic_caught) + " || "
+	var resource_msg = "money = $" + str(GameData.player_money) + ", f_pop = " + str(GameData.fish_population) + ", f_caught = " + str(GameData.total_fish_caught) + ", p_pop = " + str(GameData.plastic_population) + ", p_caught = " + str(GameData.total_plastic_caught) + ", health = " + str(GameData.fish_health) + ", price = " + str(GameData.fish_price) + " || "
 	var combined_log = time_msg + resource_msg + message
 	var file = FileAccess.open("res://log.txt", FileAccess.READ_WRITE)
 	if file:

@@ -7,4 +7,4 @@ func _ready():
 func _on_button_pressed():
 	# Change scene back to main.tscn
 	get_tree().change_scene_to_file("res://404. Start Menu/Scenes/start_menu.tscn")
-	time_system.log("GameOver")
+	time_system.log("start menu")

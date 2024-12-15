@@ -53,7 +53,7 @@ func _on_fish_sell_pressed() -> void:
 		$notenoughaudio.play()
 
 func _on_fish_2_pressed() -> void:
-	var item_cost = 15
+	var item_cost = 150
 	if GameData.player_money >= item_cost and not GameData.fish_bubbles_2:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_fishbubble2()
@@ -69,7 +69,7 @@ func _on_fish_2_pressed() -> void:
 		time_system.log("failed 2 fish bubbles")
 		
 func _on_fish_3_pressed() -> void:
-	var item_cost = 25
+	var item_cost = 200
 	if GameData.player_money >= item_cost and GameData.fish_bubbles_2 and not GameData.fish_bubbles_3:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_fishbubble3()
@@ -84,7 +84,7 @@ func _on_fish_3_pressed() -> void:
 		time_system.log("failed 3 fish bubbles")			
 		
 func _on_plastic_2_pressed() -> void:
-	var item_cost = 15
+	var item_cost = 150
 	if GameData.player_money >= item_cost and not GameData.plastic_bubbles_2:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_plasticbubble2()
@@ -100,7 +100,7 @@ func _on_plastic_2_pressed() -> void:
 		time_system.log("failed 2 plastic bubbles")
 
 func _on_plastic_3_pressed() -> void:
-	var item_cost = 25
+	var item_cost = 200
 	if GameData.player_money >= item_cost and GameData.plastic_bubbles_2 and not GameData.plastic_bubbles_3:
 		GameData.subtract_money(item_cost)
 		GameData.purchase_plasticbubble3()
