@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://p64cdn3qe2jq"]
+[gd_scene load_steps=3 format=3 uid="uid://p64cdn3qe2jq"]
 
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="1_o84jg"]
 [ext_resource type="PackedScene" uid="uid://fwpoha041lo0" path="res://415. WeekEnd/Scene/return_button_GameOver.tscn" id="1_qksea"]
 
 [node name="WeekEnd" type="Control"]
@@ -12,15 +13,20 @@ offset_right = 1153.0
 offset_bottom = 649.0
 color = Color(0, 0, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 237.0
-offset_top = 275.0
-offset_right = 902.0
-offset_bottom = 392.0
-text = "GameOver"
+offset_left = 469.0
+offset_top = 233.0
+offset_right = 676.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("1_o84jg")
+theme_override_font_sizes/font_size = 25
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="return button" parent="." instance=ExtResource("1_qksea")]
+visible = false
 layout_mode = 0
 offset_left = 904.0
 offset_top = 555.0

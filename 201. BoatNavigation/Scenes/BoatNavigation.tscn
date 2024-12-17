@@ -1,24 +1,25 @@
-[gd_scene load_steps=20 format=4 uid="uid://ck00y8tcc0p7q"]
+[gd_scene load_steps=21 format=4 uid="uid://ck00y8tcc0p7q"]
 
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
-[ext_resource type="Texture2D" uid="uid://bwlrox63rmsgr" path="res://201. BoatNavigation/Assets/BoatVersion3.png" id="2_0gckb"]
+[ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_wt70f"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/fishing_area.gd" id="3_2ks1s"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/trash_area.gd" id="5_5r4wy"]
-[ext_resource type="Texture2D" uid="uid://c8w8j7rfij5rb" path="res://201. BoatNavigation/Assets/bottle.png" id="5_6ugnj"]
 [ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="5_dteif"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
+[ext_resource type="Texture2D" uid="uid://04xwtieeh0x6" path="res://100. Fishing and Fish/Assets/plastic 3.png" id="7_mv70d"]
+[ext_resource type="Texture2D" uid="uid://drk2gi5euw61i" path="res://100. Fishing and Fish/Assets/plastic 2.png" id="7_p2by8"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
+[ext_resource type="Texture2D" uid="uid://bnkasmwvii6un" path="res://201. BoatNavigation/Assets/whirle-nobg.png" id="9_0upm4"]
 [ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
-[ext_resource type="Texture2D" uid="uid://1xeiij74qbuu" path="res://201. BoatNavigation/Assets/whirle.jpg" id="9_onf23"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/return_home_area.gd" id="10_my2jo"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/GUI.gd" id="12_ba7g3"]
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="13_yku71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okyxk"]
-size = Vector2(37, 32)
+size = Vector2(77, 40)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6vuf8"]
-radius = 26.0768
+radius = 32.0156
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k7co1"]
 radius = 123.147
@@ -48,12 +49,12 @@ script = ExtResource("1_donbu")
 [node name="Boat" type="Sprite2D" parent="Player"]
 visibility_layer = 524290
 z_index = 1
-position = Vector2(-3.42777, -8.69301)
-scale = Vector2(0.088726, 0.0863066)
-texture = ExtResource("2_0gckb")
+position = Vector2(-24.807, -36.5309)
+scale = Vector2(0.386858, 0.376309)
+texture = ExtResource("2_wt70f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1, -5)
+position = Vector2(-29, -23)
 shape = SubResource("RectangleShape2D_okyxk")
 
 [node name="FishingArea" type="Area2D" parent="."]
@@ -67,8 +68,8 @@ position = Vector2(1, 37)
 shape = SubResource("CircleShape2D_6vuf8")
 
 [node name="VioletFish" type="Sprite2D" parent="FishingArea"]
-position = Vector2(-2, 37)
-scale = Vector2(2.1875, 2.1875)
+position = Vector2(0.999997, 37)
+scale = Vector2(2.75, 2.75)
 texture = ExtResource("9_h7gu2")
 
 [node name="FishingArea3" type="Area2D" parent="."]
@@ -83,7 +84,7 @@ shape = SubResource("CircleShape2D_6vuf8")
 
 [node name="VioletFish" type="Sprite2D" parent="FishingArea3"]
 position = Vector2(-2, 37)
-scale = Vector2(2.1875, 2.1875)
+scale = Vector2(2.75, 2.75)
 texture = ExtResource("9_h7gu2")
 
 [node name="FishingArea2" type="Area2D" parent="."]
@@ -98,7 +99,7 @@ shape = SubResource("CircleShape2D_6vuf8")
 
 [node name="VioletFish" type="Sprite2D" parent="FishingArea2"]
 position = Vector2(-2, 37)
-scale = Vector2(2.1875, 2.1875)
+scale = Vector2(2.75, 2.75)
 texture = ExtResource("9_h7gu2")
 
 [node name="TrashArea" type="Area2D" parent="."]
@@ -112,23 +113,16 @@ position = Vector2(0, 42)
 shape = SubResource("CircleShape2D_6vuf8")
 debug_color = Color(0, 0.0862745, 0.109804, 0.647059)
 
-[node name="Sprite2D" type="Sprite2D" parent="TrashArea"]
-position = Vector2(-6.99999, 20)
-scale = Vector2(0.335938, 0.340278)
-texture = ExtResource("5_6ugnj")
+[node name="RedBottle" type="Sprite2D" parent="TrashArea"]
+position = Vector2(-10, 32)
+scale = Vector2(4.20454, 4.20454)
+texture = ExtResource("7_p2by8")
 
-[node name="Sprite2D2" type="Sprite2D" parent="TrashArea"]
-position = Vector2(-13, 48)
-rotation = -2.34978
-scale = Vector2(0.27696, 0.292137)
-skew = -0.0128365
-texture = ExtResource("5_6ugnj")
-
-[node name="Sprite2D3" type="Sprite2D" parent="TrashArea"]
-position = Vector2(5.76219, 41.927)
-rotation = 0.261799
-scale = Vector2(0.275727, 0.284937)
-texture = ExtResource("5_6ugnj")
+[node name="WhiteBottle" type="Sprite2D" parent="TrashArea"]
+position = Vector2(5.99997, 48)
+rotation = -1.03652
+scale = Vector2(3.77273, 3.77273)
+texture = ExtResource("7_mv70d")
 
 [node name="TrashArea2" type="Area2D" parent="."]
 position = Vector2(-321, -211)
@@ -141,23 +135,16 @@ position = Vector2(0, 42)
 shape = SubResource("CircleShape2D_6vuf8")
 debug_color = Color(0, 0.0862745, 0.109804, 0.647059)
 
-[node name="Sprite2D" type="Sprite2D" parent="TrashArea2"]
-position = Vector2(-6.99999, 20)
-scale = Vector2(0.335938, 0.340278)
-texture = ExtResource("5_6ugnj")
+[node name="RedBottle" type="Sprite2D" parent="TrashArea2"]
+position = Vector2(-10, 32)
+scale = Vector2(4.20454, 4.20454)
+texture = ExtResource("7_p2by8")
 
-[node name="Sprite2D2" type="Sprite2D" parent="TrashArea2"]
-position = Vector2(-13, 48)
-rotation = -2.34978
-scale = Vector2(0.27696, 0.292137)
-skew = -0.0128365
-texture = ExtResource("5_6ugnj")
-
-[node name="Sprite2D3" type="Sprite2D" parent="TrashArea2"]
-position = Vector2(5.76219, 41.927)
-rotation = 0.261799
-scale = Vector2(0.275727, 0.284937)
-texture = ExtResource("5_6ugnj")
+[node name="WhiteBottle" type="Sprite2D" parent="TrashArea2"]
+position = Vector2(5.99997, 48)
+rotation = -1.03652
+scale = Vector2(3.77273, 3.77273)
+texture = ExtResource("7_mv70d")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 show_behind_parent = true
@@ -192,7 +179,7 @@ texture = SubResource("GradientTexture2D_supkc")
 show_behind_parent = true
 position = Vector2(0.596535, -0.15745)
 scale = Vector2(0.0688602, 0.067017)
-texture = ExtResource("9_onf23")
+texture = ExtResource("9_0upm4")
 
 [node name="ReturnHomeArea" type="Area2D" parent="."]
 position = Vector2(-133, 257)

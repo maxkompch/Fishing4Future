@@ -31,7 +31,7 @@ curve = SubResource("Curve2D_tgplg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(227, 56)
-rotation = 1.23579
+rotation = 1.12028
 rotates = false
 loop = false
 script = ExtResource("2_q22yy")

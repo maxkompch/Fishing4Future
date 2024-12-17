@@ -8,8 +8,10 @@ var time_variable_use: int = 0
 
 const SAVE_PATH = "user://save_data.cfg"
 var player_money: float = 150.0
+
 var plastic_population: int = 5
 var plastic_target: int = 15
+
 var plastic_growth_rate: int = 3
 var fish_population: int = 10
 var fish_initial_population: int = 10
@@ -157,7 +159,7 @@ func fish_growth_func():
 	fish_population = round(fish_population * fish_growth_rate)
 	
 func fish_health_func():
-	fish_health = fish_base_health - (plastic_population*0.01) 
+	fish_health = fish_base_health - (plastic_population*0.01)
 	fish_health = clamp(fish_health, 0, 1)
 	
 func fish_price_func():
