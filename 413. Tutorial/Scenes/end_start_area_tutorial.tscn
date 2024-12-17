@@ -262,6 +262,7 @@ curve = SubResource("Curve2D_k33x8")
 position = Vector2(571, 361)
 rotation = 3.10466
 rotates = false
+loop = false
 script = ExtResource("3_gaepl")
 
 [node name="Police" type="Sprite2D" parent="Path2D/PathFollow2D"]

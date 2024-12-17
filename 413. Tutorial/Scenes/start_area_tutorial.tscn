@@ -38,18 +38,20 @@ script = ExtResource("2_q22yy")
 
 [node name="PressE" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-59.7427, -26.0924)
-rotation = -1.23579
+rotation = -1.11701
 scale = Vector2(0.253906, 0.253906)
 texture = ExtResource("3_7pqfy")
 
 [node name="PoliceNpc" parent="Path2D/PathFollow2D" instance=ExtResource("2_u0418")]
 position = Vector2(-190.414, 66.6284)
-rotation = -1.13446
+rotation = -1.09956
 
 [node name="WalkingTutorial" parent="." instance=ExtResource("4_q8xp0")]
+visible = false
 z_index = 4
 
 [node name="ShowBoat" parent="." instance=ExtResource("5_xdp0d")]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

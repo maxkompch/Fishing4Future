@@ -2,7 +2,7 @@ extends Control
  
 var Dialog_text = [
 				"We have to end our day, because I'm quite busy", 
-				"Keep in mind to also fish plastic to fill your daily quota", 
+				"Keep in mind to also fish plastic to fill your weekly quota", 
 				"go to the red arrow on the bottom to end the day", 
 			 ]
 var Anzahl_an_Dialog_text
