@@ -1,8 +1,8 @@
 class_name TimeSystem extends Node
 
 @export var date_time: DateTime
-@export var ticks_index: int = 2
-@export var ticks_per_Sec_options: Array[int] = [120, 240, 480, 960, 1920, 24000]
+@export var ticks_index: int = 5
+@export var ticks_per_Sec_options: Array[int] = [120, 240, 480, 960, 1920, 1440]
 
 const AUDIO_FILES: Array[String] = [
 	"res://602. Global Variables/Scripts/960dec.wav",
@@ -79,27 +79,28 @@ func play_audio(file_index: int) -> void:
 		print("Audio file not found at path:", AUDIO_FILES[file_index])
 	
 func handle_input() -> void:
-	if Input.is_action_just_pressed("dec_speed"):
-		ticks_index -= 1
-		if ticks_index == 0:
-			play_audio(3)
-		elif ticks_index == 1:
-			play_audio(2)
-		elif ticks_index == 2:
-			play_audio(1)
-		elif ticks_index == 3:
-			play_audio(0)
+	#if Input.is_action_just_pressed("dec_speed"):
+		#ticks_index -= 1
+		#if ticks_index == 0:
+			#play_audio(3)
+		#elif ticks_index == 1:
+			#play_audio(2)
+		#elif ticks_index == 2:
+			#play_audio(1)
+		#elif ticks_index == 3:
+			#play_audio(0)
+			#
+	#if Input.is_action_just_pressed("inc_speed"):
+		#ticks_index += 1
+		#if ticks_index == 1:
+			#play_audio(4)
+		#elif ticks_index == 2:
+			#play_audio(5)
+		#elif ticks_index == 3:
+			#play_audio(6)
+		#elif ticks_index == 4:
+			#play_audio(7)
 			
-	if Input.is_action_just_pressed("inc_speed"):
-		ticks_index += 1
-		if ticks_index == 1:
-			play_audio(4)
-		elif ticks_index == 2:
-			play_audio(5)
-		elif ticks_index == 3:
-			play_audio(6)
-		elif ticks_index == 4:
-			play_audio(7)
 	if Input.is_action_just_pressed("pause_time"):
 		if not is_paused:
 			is_paused = true
