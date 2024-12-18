@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_c83q0"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_l7ixn"]
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="11_wtagc"]
-[ext_resource type="Texture2D" uid="uid://duvbpt1jw6qb5" path="res://410. Police NPC/Assets/police.png" id="13_s3ceg"]
+[ext_resource type="Texture2D" uid="uid://duvbpt1jw6qb5" path="res://403. Options/Scenes/10. Police NPC/Assets/police.png" id="13_s3ceg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvkql"]
 texture = ExtResource("2_ylnx2")

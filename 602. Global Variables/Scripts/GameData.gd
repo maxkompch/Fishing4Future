@@ -24,6 +24,8 @@ var fish_base_health: float = 1
 var fish_caught: int = 0
 var failed_fish: int = 0
 
+var total_fish_caught_week: int = 0
+
 var total_fish_caught: int = 0
 var total_failed_fish: int = 0
 
@@ -76,6 +78,7 @@ func save_data():
 	config.set_value("Fish", "Health", fish_health)
 	config.set_value("Fish", "GrowthRate", fish_growth_rate)
 	config.set_value("Fish", "Population", fish_population)
+	config.set_value("Fish", "TotalInTheWeek", total_fish_caught_week)
 	
 
 	config.set_value("Plastic", "Caught", plastic_caught)
@@ -120,7 +123,8 @@ func load_data():
 		fish_health = config.get_value("Fish", "Health", 1)
 		fish_growth_rate = config.get_value("Fish", "GrowthRate", 1.5)
 		fish_population = config.get_value("Fish", "Population", 10)
-		
+		total_fish_caught_week = config.get_value("Fish", "TotalInTheWeek", 0)
+
 		plastic_caught = config.get_value("Plastic", "Caught", 0) 
 		failed_plastic = config.get_value("Plastic", "Failed", 0)
 		total_plastic_caught = config.get_value("Plastic", "TotalCaught", 0)
@@ -179,6 +183,7 @@ func fish_caught_func():
 	
 func total_caught_func():
 	total_fish_caught = total_fish_caught + 1
+	total_fish_caught_week = total_fish_caught_week + 1
 	
 func fish_failed_func():
 	total_failed_fish = total_failed_fish + 1
@@ -233,6 +238,7 @@ func _exit_tree() -> void:
 	GameData.save_data()
 	
 func _enter_tree() -> void:
+	GameData.load_data()
 	time_system.log("game started")
 	
 func time_variable():

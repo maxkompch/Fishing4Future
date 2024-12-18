@@ -18,7 +18,7 @@ const AUDIO_FILES: Array[String] = [
 
 # AudioStreamPlayer instance
 var audio_player: AudioStreamPlayer
-var is_paused:bool = false
+var is_paused:bool = true
 var previous_scene = null
 var current_day: int = -1
 
@@ -54,7 +54,7 @@ func log(message: String) -> void:
 	var time_msg = Time.get_datetime_string_from_system() + " || " + get_time() + " || "
 	#var resource_msg = "money = $" + str(GameData.player_money) + " || " + "f_pop = " + str(GameData.fish_population) + " || " + "f_caught = " + str(GameData.total_fish_caught) + " || " + "p_pop = " + str(GameData.plastic_population) + " || " + "p_caught = " + str(GameData.total_plastic_caught) + " || "
 
-	var resource_msg = "money = $" + str(GameData.player_money) + ", f_pop = " + str(GameData.fish_population) + ", f_caught = " + str(GameData.total_fish_caught) + ", p_pop = " + str(GameData.plastic_population) + ", p_caught = " + str(GameData.total_plastic_caught) + ", health = " + str(GameData.fish_health) + ", price = " + str(GameData.fish_price) + " || "
+	var resource_msg = "$" + str(GameData.player_money) + ", health = " + str(GameData.fish_health) + ", price = " + str(GameData.fish_price) + ", f_pop = " + str(GameData.fish_population) + ", f_current = " + str(GameData.total_fish_caught) + ", f_caught = " + str(GameData.total_fish_caught_week) + ", p_pop = " + str(GameData.plastic_population) + ", p_caught = " + str(GameData.total_plastic_caught) + " || "
 	var combined_log = time_msg + resource_msg + message
 	var file = FileAccess.open("res://log.txt", FileAccess.READ_WRITE)
 	if file:
