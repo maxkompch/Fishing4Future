@@ -77,6 +77,7 @@ func _process(delta: float) -> void:
 					GameData.fish_price_func()
 					GameData.save_data()
 					time_system.log("exit boat navigation")
+					time_system.log("day end")
 					time_system.log("start scene")
 					get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
 			else:

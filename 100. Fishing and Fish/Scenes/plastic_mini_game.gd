@@ -14,7 +14,6 @@ var amount_Green_bubbles: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	amount_Green_bubbles = GameData.plastic_bubbles_amount
 	
 	GameData.plastic_reset_func()

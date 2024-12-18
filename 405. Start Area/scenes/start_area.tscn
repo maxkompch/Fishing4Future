@@ -157,10 +157,10 @@ tile_set = SubResource("TileSet_wvf3u")
 position = Vector2(112, -50)
 
 [node name="Back" type="Button" parent="."]
-offset_left = -39.0
-offset_top = -88.0
-offset_right = 66.0
-offset_bottom = -39.0
+offset_left = -244.0
+offset_top = -83.0
+offset_right = -139.0
+offset_bottom = -34.0
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme = ExtResource("5_534oe")

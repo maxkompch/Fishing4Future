@@ -33,6 +33,7 @@ func _process(delta):
 				tutorial_var.is_tutorial = false
 			Text.text = Dialog_text[DialogPlatz]
 	else:
+		time_system.is_paused = false
 		$".".visible = false
 	pass
  

@@ -46,6 +46,7 @@ var wordCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	time_system.is_paused=true
 	if GameData.check_plastic_amount() and GameData.check_fish_amount(): 
 		time_system.log("met all criteria")
 		Dialog_text = no_prob

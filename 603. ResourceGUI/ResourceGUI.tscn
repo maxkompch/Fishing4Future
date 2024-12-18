@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1iv0v7e00v6j" path="res://100. Fishing and Fish/Assets/waterry.png" id="2_yhoyg"]
 [ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="3_aos0q"]
 [ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="4_atfy3"]
-[ext_resource type="Texture2D" uid="uid://laraas5y2dt3" path="res://6022. Fishing and plastic status/Assets/trash.png" id="5_1rj7b"]
+[ext_resource type="Texture2D" uid="uid://dv60plo0h32vy" path="res://6022. Fishing and plastic status/Assets/trash-no.png" id="5_ii4kj"]
 [ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="6_1cotj"]
 [ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="7_r42ej"]
 
@@ -26,7 +26,7 @@ offset_left = 327.0
 offset_top = -106.0
 offset_right = 1165.07
 offset_bottom = -62.0
-theme_override_constants/separation = 20
+theme_override_constants/separation = 5
 
 [node name="FishContainer" type="HBoxContainer" parent="Resources"]
 layout_mode = 2
@@ -41,14 +41,14 @@ flip_h = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_atfy3")
 theme_override_font_sizes/font_size = 20
-text = "999"
+text = "99"
 
 [node name="PlasticContainer" type="HBoxContainer" parent="Resources"]
 layout_mode = 2
 
 [node name="PlasticIcon" type="TextureRect" parent="Resources/PlasticContainer"]
 layout_mode = 2
-texture = ExtResource("5_1rj7b")
+texture = ExtResource("5_ii4kj")
 expand_mode = 3
 flip_h = true
 
@@ -56,7 +56,7 @@ flip_h = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_atfy3")
 theme_override_font_sizes/font_size = 20
-text = "999"
+text = "15/15"
 
 [node name="MoneyContainer" type="HBoxContainer" parent="Resources"]
 layout_mode = 2
@@ -72,7 +72,7 @@ expand_mode = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_atfy3")
 theme_override_font_sizes/font_size = 20
-text = "$10000"
+text = "$999.99"
 vertical_alignment = 1
 
 [node name="TimeContainer" type="HBoxContainer" parent="Resources"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="1_oxmhg"]
 [ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="2_ako6k"]
 [ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="3_j6xgt"]
-[ext_resource type="Texture2D" uid="uid://laraas5y2dt3" path="res://6022. Fishing and plastic status/Assets/trash.png" id="4_jv6fw"]
+[ext_resource type="Texture2D" uid="uid://dv60plo0h32vy" path="res://6022. Fishing and plastic status/Assets/trash-no.png" id="4_qylln"]
 [ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="5_s26ns"]
 [ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="6_nipeh"]
 
@@ -30,7 +30,7 @@ offset_left = 296.0
 offset_top = -99.0
 offset_right = 1168.0
 offset_bottom = -55.0
-theme_override_constants/separation = 40
+theme_override_constants/separation = 5
 alignment = 1
 
 [node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
@@ -53,7 +53,7 @@ layout_mode = 2
 
 [node name="PlasticIcon" type="TextureRect" parent="ResourceGUI/Resources/PlasticContainer"]
 layout_mode = 2
-texture = ExtResource("4_jv6fw")
+texture = ExtResource("4_qylln")
 expand_mode = 3
 flip_h = true
 

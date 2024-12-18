@@ -228,3 +228,4 @@ offset_bottom = 149.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]
+[connection signal="pressed" from="return button" to="return button" method="_on_button_pressed"]
