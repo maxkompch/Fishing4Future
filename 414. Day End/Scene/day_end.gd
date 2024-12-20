@@ -32,6 +32,7 @@ var wordCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	time_system.is_paused = true
 	Dialog_text = begin_text
 	Anzahl_an_Dialog_text = Dialog_text.size()
 	Text.text = Dialog_text[0]
@@ -53,6 +54,7 @@ func _process(delta):
 		if (DialogPlatz > Anzahl_an_Dialog_text-1):
 			DialogPlatz = 0
 			if answer_finished:
+				time_system.is_paused = false
 				get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
 			else:
 				if GameData.auto_deduction():

@@ -1,22 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://mb3mr5kirwig"]
+[gd_scene load_steps=11 format=3 uid="uid://mb3mr5kirwig"]
 
 [ext_resource type="Script" path="res://413. Tutorial/Scripts/sea_area_tutorial.gd" id="1_dwdy5"]
 [ext_resource type="PackedScene" uid="uid://ck00y8tcc0p7q" path="res://201. BoatNavigation/Scenes/BoatNavigation.tscn" id="2_2qjal"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="3_grmp3"]
 [ext_resource type="PackedScene" uid="uid://dws7ux58h1bvf" path="res://412. Tutorial_Talk/Scenes/fishing_spot.tscn" id="4_wvh27"]
 [ext_resource type="PackedScene" uid="uid://du0ptatxwafmv" path="res://412. Tutorial_Talk/Scenes/fishing_plastic.tscn" id="5_2olim"]
+[ext_resource type="Script" path="res://413. Tutorial/Scenes/collsion.gd" id="6_cq6ky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8ikm"]
-size = Vector2(953, 20)
+size = Vector2(429, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3x28j"]
-size = Vector2(29, 386)
+size = Vector2(33.5, 239)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s63x"]
-size = Vector2(22, 588)
+size = Vector2(26, 244)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pveo8"]
-size = Vector2(963, 20)
+size = Vector2(431, 20)
 
 [node name="SeaAreaTutorial" type="Node2D"]
 script = ExtResource("1_dwdy5")
@@ -43,27 +44,28 @@ text = "Tutorial"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-12, 567)
+script = ExtResource("6_cq6ky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(466.5, 0)
+position = Vector2(441.5, -18)
 shape = SubResource("RectangleShape2D_k8ikm")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-8, 557)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-4.5, -183)
+position = Vector2(237, -6.5)
 shape = SubResource("RectangleShape2D_3x28j")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(936, 284)
+position = Vector2(631, 557)
 shape = SubResource("RectangleShape2D_0s63x")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(277, 82)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(184, 106)
+position = Vector2(152.5, 359)
 shape = SubResource("RectangleShape2D_pveo8")

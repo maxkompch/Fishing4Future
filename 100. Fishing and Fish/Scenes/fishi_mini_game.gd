@@ -75,9 +75,27 @@ func Fishfang() -> void:
 			label.text = "Congratulation! You have caught " + str(GameData.total_fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
 			time_system.log("fish caught")
 			if(GameData.fish_caught >= GameData.max_fish):
-				GameData.fish_reset_func()
-				GameData.save_data()
-				get_tree().change_scene_to_file(back_scene)
+				if(GameData.current_day_str != time_system.get_time().split(" ")[0]):
+					if GameData.current_day_int == 6:
+						GameData.end_of_the_week()
+					else:
+						GameData.current_day_int = GameData.current_day_int + 1
+						GameData.current_day_str = GameData.days_of_the_week[GameData.current_day_int]
+						GameData.plastic_growth_func()
+						GameData.fish_growth_func()
+						GameData.fish_health_func()
+						GameData.fish_price_func()
+						GameData.save_data()
+						time_system.log("exit boat navigation")
+						time_system.log("day end")
+						time_system.log("start scene")
+						get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
+					GameData.fish_reset_func()
+					GameData.save_data()
+				else:
+					GameData.fish_reset_func()
+					GameData.save_data()
+					get_tree().change_scene_to_file(back_scene)
 		else:
 			label.text = "                           Uh Oh! No fish left to catch.                           "
 			time_system.log("no fish left")
@@ -89,9 +107,27 @@ func Fishfang() -> void:
 		label.text = "                Uh Oh! You have lost " + str(GameData.failed_fish) + " times. Auto close after losing " + str(GameData.max_fail-GameData.failed_fish) + " times."
 		time_system.log("catching fish failed")
 		if(GameData.failed_fish >= GameData.max_fail):
-			GameData.fail_reset_func()
-			GameData.save_data()
-			get_tree().change_scene_to_file(back_scene)
+			if(GameData.current_day_str != time_system.get_time().split(" ")[0]):
+				if GameData.current_day_int == 6:
+					GameData.end_of_the_week()
+				else:
+					GameData.current_day_int = GameData.current_day_int + 1
+					GameData.current_day_str = GameData.days_of_the_week[GameData.current_day_int]
+					GameData.plastic_growth_func()
+					GameData.fish_growth_func()
+					GameData.fish_health_func()
+					GameData.fish_price_func()
+					GameData.save_data()
+					time_system.log("exit boat navigation")
+					time_system.log("day end")
+					time_system.log("start scene")
+					get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
+				GameData.fail_reset_func()
+				GameData.save_data()
+			else:
+				GameData.fail_reset_func()
+				GameData.save_data()
+				get_tree().change_scene_to_file(back_scene)
 
 func _on_hook_the_fish_button_up() -> void:
 	match currentState:
