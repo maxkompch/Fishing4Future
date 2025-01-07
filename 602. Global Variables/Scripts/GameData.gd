@@ -105,7 +105,7 @@ func save_data():
 func load_data():
 	var config = ConfigFile.new()
 	if config.load(SAVE_PATH) == OK:
-		player_money = config.get_value("Player", "Money", 100.0)  # Default to 1000 if not found
+		player_money = config.get_value("Player", "Money", 150.0)  # Default to 1000 if not found
 		
 		fish_bubbles_2 = config.get_value("Upgrades", "fish_bubbles_2", false)
 		fish_bubbles_3 = config.get_value("Upgrades", "fish_bubbles_3", false)
@@ -316,3 +316,68 @@ func check_plastic_amount():
 	
 func check_fish_amount():
 	return fish_population >= fish_initial_population
+
+func new_game():
+	print("Starting a New Game...")
+	
+	var save_path = "user://save_data.cfg"
+	var dir = DirAccess.open("user://")
+
+	if dir and dir.file_exists(save_path):
+		var error = dir.remove_absolute(save_path)
+		if error == OK:
+			print("Save file successfully deleted.")
+		else:
+			print("Failed to delete the save file. Error code:", error)
+	else:
+		print("Save file not found. Nothing to delete.")
+	
+	player_money = 150.0
+	plastic_population = 5
+	plastic_target = 15
+	plastic_growth_rate = 3
+	fish_population = 10
+	fish_initial_population = 10
+	fish_growth_rate = 1.5
+	fish_price = 20
+	fish_base_price = 20
+	fish_health = 1
+	fish_base_health = 1
+	fish_caught = 0
+	failed_fish = 0
+	total_fish_caught_week = 0
+	total_fish_caught = 0
+	total_failed_fish = 0
+	max_fish = 3
+	max_fail = 3
+	max_plastic = 3
+	max_plastic_fail = 3
+	plastic_caught = 0
+	failed_plastic = 0
+	total_plastic_caught = 0
+	total_failed_plastic = 0
+	current_time_str = "Monday 00:00:00"
+	current_day_str = "Monday"
+	current_day_int = 0
+	fish_bubbles_amount = 1
+	plastic_bubbles_amount = 1
+	fish_bubbles_2 = false
+	fish_bubbles_3 = false
+	plastic_bubbles_2 = false
+	plastic_bubbles_3 = false
+	strike_counter = 0
+	wrongFishing_shown = false
+	fishingGenerally_shown = false
+	time_system.date_time.formatted_time = "Monday 00:00:00"
+	
+	save_data()
+
+# Function for Continue
+func continue_game():
+	if FileAccess.file_exists(SAVE_PATH):
+		print("Save file found. Loading game...")
+		load_data() 
+		print("Game data loaded successfully.")
+	else:
+		print("No save file found. Starting a New Game...")
+		new_game() 

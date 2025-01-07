@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://mb3mr5kirwig"]
+[gd_scene load_steps=12 format=3 uid="uid://mb3mr5kirwig"]
 
 [ext_resource type="Script" path="res://413. Tutorial/Scripts/sea_area_tutorial.gd" id="1_dwdy5"]
 [ext_resource type="PackedScene" uid="uid://ck00y8tcc0p7q" path="res://201. BoatNavigation/Scenes/BoatNavigation.tscn" id="2_2qjal"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dws7ux58h1bvf" path="res://412. Tutorial_Talk/Scenes/fishing_spot.tscn" id="4_wvh27"]
 [ext_resource type="PackedScene" uid="uid://du0ptatxwafmv" path="res://412. Tutorial_Talk/Scenes/fishing_plastic.tscn" id="5_2olim"]
 [ext_resource type="Script" path="res://413. Tutorial/Scenes/collsion.gd" id="6_cq6ky"]
+[ext_resource type="Script" path="res://413. Tutorial/Scenes/end_collision.gd" id="7_redb1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8ikm"]
 size = Vector2(429, 20)
@@ -69,3 +70,12 @@ position = Vector2(277, 82)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(152.5, 359)
 shape = SubResource("RectangleShape2D_pveo8")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-12, 567)
+script = ExtResource("7_redb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(442, 36)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_k8ikm")

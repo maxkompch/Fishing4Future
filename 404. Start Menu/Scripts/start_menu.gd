@@ -1,6 +1,7 @@
 extends Control
 
 func _on_new_game_pressed() -> void:
+	GameData.new_game()
 	get_tree().change_scene_to_file("res://401. Cut Scene/Scenes/court_scene1.tscn")
 	print("new game")
 

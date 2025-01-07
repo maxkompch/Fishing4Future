@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://ck00y8tcc0p7q"]
+[gd_scene load_steps=22 format=4 uid="uid://ck00y8tcc0p7q"]
 
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
+[ext_resource type="Script" path="res://201. BoatNavigation/Scenes/boat_navigation.gd" id="1_pfypy"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_wt70f"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/fishing_area.gd" id="3_2ks1s"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/trash_area.gd" id="5_5r4wy"]
@@ -39,6 +40,7 @@ size = Vector2(89, 78)
 
 [node name="BoatNavigation" type="Node2D"]
 position = Vector2(708, 320)
+script = ExtResource("1_pfypy")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 visibility_layer = 524290

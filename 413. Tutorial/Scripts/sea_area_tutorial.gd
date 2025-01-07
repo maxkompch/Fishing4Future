@@ -10,3 +10,4 @@ func _process(delta):
 		$StaticBody2D2/CollisionShape2D.disabled = false
 		$StaticBody2D3/CollisionShape2D.disabled = false
 		$StaticBody2D4/CollisionShape2D.disabled = false
+		$StaticBody2D5/CollisionShape2D.disabled = true

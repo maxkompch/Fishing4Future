@@ -1,8 +1,8 @@
 class_name TimeSystem extends Node
 
 @export var date_time: DateTime
-@export var ticks_index: int = 5
-@export var ticks_per_Sec_options: Array[int] = [120, 240, 480, 960, 1920, 1440]
+@export var ticks_index: int = 0
+@export var ticks_per_Sec_options: Array[int] = [1440, 2160, 2880] # 1440 is 60 seconds, 2160 is 90 seconds, 2880 is 120 seconds.
 
 const AUDIO_FILES: Array[String] = [
 	"res://602. Global Variables/Scripts/960dec.wav",
