@@ -42,7 +42,12 @@ func _ready() -> void:
 		time_system.log("Fishing winposition " + str(i))
 	
 	time_system.log("fishing minigame start")
-	pass # Replace with function body.
+	$VioletFish3.visible = false
+	if(GameData.fish_caught == 1):
+		$VioletFish4.visible = false
+	if(GameData.fish_caught == 2):
+		$VioletFish4.visible = false
+		$VioletFish2.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -52,7 +57,12 @@ func _process(delta: float) -> void:
 			pass
 		Ministate.stopped:
 			mytimer.stop()
-	pass
+	$VioletFish3.visible = false
+	if(GameData.fish_caught == 1):
+		$VioletFish4.visible = false
+	if(GameData.fish_caught == 2):
+		$VioletFish4.visible = false
+		$VioletFish2.visible = false
 
 func _on_timer_timeout() -> void:
 	currentPosition += 1

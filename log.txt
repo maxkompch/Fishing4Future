@@ -1,0 +1,19 @@
+2025-01-10T09:39:09 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 7, f_current = 3, f_caught = 3, p_pop = 0, p_caught = 7 || game started
+2025-01-10T09:39:09 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 7, f_current = 3, f_caught = 3, p_pop = 0, p_caught = 7 || Plastic winposition 0
+2025-01-10T09:39:09 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 7, f_current = 3, f_caught = 3, p_pop = 0, p_caught = 7 || plastic minigame start
+2025-01-10T09:39:11 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 7, f_current = 3, f_caught = 3, p_pop = 0, p_caught = 7 || no plastic left
+2025-01-10T09:39:14 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 7, f_current = 3, f_caught = 3, p_pop = 0, p_caught = 7 || sea area tutorial
+2025-01-10T09:39:19 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 7, f_current = 3, f_caught = 3, p_pop = 0, p_caught = 7 || enter fishing minigame
+2025-01-10T09:39:19 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 7, f_current = 3, f_caught = 3, p_pop = 0, p_caught = 7 || Fishing winposition 2
+2025-01-10T09:39:19 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 7, f_current = 3, f_caught = 3, p_pop = 0, p_caught = 7 || fishing minigame start
+2025-01-10T09:39:21 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 6, f_current = 4, f_caught = 4, p_pop = 0, p_caught = 7 || fish caught
+2025-01-10T09:39:33 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 6, f_current = 4, f_caught = 4, p_pop = 0, p_caught = 7 || fishing minigame restart
+2025-01-10T09:39:34 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 5, f_current = 5, f_caught = 5, p_pop = 0, p_caught = 7 || fish caught
+2025-01-10T09:39:35 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 5, f_current = 5, f_caught = 5, p_pop = 0, p_caught = 7 || fishing minigame restart
+2025-01-10T09:39:37 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 4, f_current = 6, f_caught = 6, p_pop = 0, p_caught = 7 || fish caught
+2025-01-10T09:39:39 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 4, f_current = 6, f_caught = 6, p_pop = 0, p_caught = 7 || game closed
+2025-01-10T09:40:01 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 4, f_current = 6, f_caught = 6, p_pop = 10, p_caught = 7 || game started
+2025-01-10T09:40:01 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 4, f_current = 6, f_caught = 6, p_pop = 10, p_caught = 7 || Plastic winposition 2
+2025-01-10T09:40:01 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 4, f_current = 6, f_caught = 6, p_pop = 10, p_caught = 7 || plastic minigame start
+2025-01-10T09:40:09 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 4, f_current = 6, f_caught = 6, p_pop = 9, p_caught = 8 || plastic caught
+2025-01-10T09:40:13 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 4, f_current = 6, f_caught = 6, p_pop = 9, p_caught = 8 || game closed

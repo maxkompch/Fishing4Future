@@ -36,7 +36,40 @@ func _ready() -> void:
 		time_system.log("Plastic winposition " + str(i))
 	
 	time_system.log("plastic minigame start")
-	pass # Replace with function body.
+	$PlasticItem3.visible = false
+	if(GameData.plastic_caught == 1):
+		$PlasticItem4.visible = false
+	if(GameData.plastic_caught == 2):
+		$PlasticItem4.visible = false
+		$PlasticItem2.visible = false
+	
+	#if GameData.plastic_population >= 3:
+		#if(GameData.plastic_caught == 1):
+			#$PlasticItem4.visible = false
+		#if(GameData.plastic_caught == 2):
+			#$PlasticItem4.visible = false
+			#$PlasticItem2.visible = false
+	#elif GameData.plastic_population == 2:
+		#$PlasticItem4.visible = false
+		#if(GameData.plastic_caught == 1):
+			#$PlasticItem4.visible = false
+			#$PlasticItem2.visible = false
+		#if(GameData.plastic_caught >= 2):
+			#$PlasticItem4.visible = false
+			#$PlasticItem2.visible = false
+			#$PlasticItem.visible = false
+	#elif GameData.plastic_population == 1:
+		#$PlasticItem2.visible = false
+		#$PlasticItem4.visible = false
+		#if(GameData.plastic_caught >= 1):
+			#$PlasticItem4.visible = false
+			#$PlasticItem2.visible = false
+			#$PlasticItem.visible = false
+	#else:
+		#$PlasticItem.visible = false
+		#$PlasticItem2.visible = false
+		#$PlasticItem4.visible = false
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,7 +79,12 @@ func _process(delta: float) -> void:
 			pass
 		Ministate.stopped:
 			mytimer.stop()
-	pass
+	$PlasticItem3.visible = false
+	if(GameData.plastic_caught == 1):
+		$PlasticItem4.visible = false
+	if(GameData.plastic_caught == 2):
+		$PlasticItem4.visible = false
+		$PlasticItem2.visible = false
 
 func _on_timer_timeout() -> void:
 	currentPosition += 1
