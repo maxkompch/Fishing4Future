@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cwybpflbp4cuu"]
+[gd_scene load_steps=26 format=4 uid="uid://cwybpflbp4cuu"]
 
 [ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_1hdie"]
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="1_a4knq"]
@@ -132,6 +132,9 @@ size = Vector2(126, 256)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m2ce"]
 size = Vector2(194.5, 78)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slloq"]
+size = Vector2(385, 8)
+
 [node name="startArea" type="Node2D"]
 position = Vector2(63, 104)
 
@@ -247,6 +250,13 @@ scale = Vector2(0.444545, 0.444545)
 texture = ExtResource("10_8tskl")
 
 [node name="ResourceGUI" parent="." instance=ExtResource("1_a4knq")]
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(-53, -113)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(182.5, 6)
+shape = SubResource("RectangleShape2D_slloq")
 
 [connection signal="pressed" from="Back" to="CharacterBody2D2" method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]

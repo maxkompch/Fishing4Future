@@ -8,9 +8,6 @@ func _process(delta):
 	$PressE.visible = false
 	if Global.dialog_finished == true :
 		progress_ratio += delta*speed
-	
-	
-	
 	if progress_ratio == 1 and Input.is_action_just_released("action") :
 		$PressE. visible = false
 		Global.next_dialog = true

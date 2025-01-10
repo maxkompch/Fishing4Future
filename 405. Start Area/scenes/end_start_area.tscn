@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://1opmwwww0dwa"]
+[gd_scene load_steps=31 format=4 uid="uid://1opmwwww0dwa"]
 
 [ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_axc0s"]
 [ext_resource type="Texture2D" uid="uid://cc6r06vkngkrt" path="res://601. ShopUI/Assets/shop assets/top_Shop.png" id="2_ylnx2"]
@@ -136,6 +136,9 @@ size = Vector2(126, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m2ce"]
 size = Vector2(194.5, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2ca1"]
+size = Vector2(396, 6)
 
 [node name="endStartArea" type="Node2D"]
 position = Vector2(63, 104)
@@ -320,6 +323,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("14_m3mnm")
 theme_override_font_sizes/font_size = 20
 text = "WEDNESDAY 12:12:12"
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(131, -104)
+shape = SubResource("RectangleShape2D_y2ca1")
 
 [connection signal="pressed" from="Back" to="CharacterBody2D2" method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]
