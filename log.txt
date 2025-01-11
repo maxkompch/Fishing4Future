@@ -1,2 +1,4 @@
 2025-01-11T15:08:07 || Monday 00:00:00 || $50, health = 0.89, price = 17.8, f_pop = 23, f_current = 0, f_caught = 0, p_pop = 11, p_caught = 0 || game started
 2025-01-11T15:08:14 || Monday 00:00:00 || $50, health = 0.89, price = 17.8, f_pop = 23, f_current = 0, f_caught = 0, p_pop = 11, p_caught = 0 || game closed
+2025-01-11T15:12:40 || Monday 00:00:00 || $50, health = 0.89, price = 17.8, f_pop = 23, f_current = 0, f_caught = 0, p_pop = 11, p_caught = 0 || game started
+2025-01-11T15:12:44 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 10, f_current = 0, f_caught = 0, p_pop = 5, p_caught = 0 || game closed

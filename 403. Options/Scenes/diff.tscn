@@ -42,11 +42,13 @@ text = "EASY
 [node name="Normal" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_gba6u")
+theme_override_fonts/font = ExtResource("4_1fi6f")
 text = "NORMAL"
 
 [node name="Hard" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_gba6u")
+theme_override_fonts/font = ExtResource("4_1fi6f")
 text = "HARD"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
