@@ -8,6 +8,7 @@ var time_variable_use: int = 0
 
 const SAVE_PATH = "user://save_data.cfg"
 var player_money: float = 150.0
+var difficulty_index: int = 2
 
 var plastic_population: int = 5
 var plastic_target: int = 15
@@ -61,6 +62,8 @@ func save_data():
 	var config = ConfigFile.new()
 	config.set_value("Player", "Money", player_money)
 	
+	config.set_value("Game", "Difficulty Index", difficulty_index)
+	
 	config.set_value("Upgrades", "fish_bubbles_2", fish_bubbles_2)
 	config.set_value("Upgrades", "fish_bubbles_3", fish_bubbles_3)
 	config.set_value("Upgrades", "current_fish_bubbles", fish_bubbles_amount)
@@ -105,7 +108,9 @@ func save_data():
 func load_data():
 	var config = ConfigFile.new()
 	if config.load(SAVE_PATH) == OK:
-		player_money = config.get_value("Player", "Money", 150.0)  # Default to 1000 if not found
+		player_money = config.get_value("Player", "Money", 150.0)  # Default to 150 if not found
+		
+		difficulty_index = config.get_value("Game", "Difficulty Index", 2)
 		
 		fish_bubbles_2 = config.get_value("Upgrades", "fish_bubbles_2", false)
 		fish_bubbles_3 = config.get_value("Upgrades", "fish_bubbles_3", false)
@@ -333,6 +338,7 @@ func new_game():
 		print("Save file not found. Nothing to delete.")
 	
 	player_money = 150.0
+	difficulty_index = 2
 	plastic_population = 5
 	plastic_target = 15
 	plastic_growth_rate = 3

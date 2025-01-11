@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://kbjjosll8erp"]
+
+[ext_resource type="Script" path="res://403. Options/Scenes/diff.gd" id="1_xj11g"]
+[ext_resource type="PackedScene" uid="uid://ckt5oaek0ekwe" path="res://404. Start Menu/Scenes/water_backround.tscn" id="2_u6umv"]
+[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://404. Start Menu/Assets/wood_button.tres" id="3_gba6u"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="4_1fi6f"]
+
+[node name="DifficultyMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xj11g")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_u6umv")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = -40.0
+offset_right = 61.0
+offset_bottom = 107.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Easy" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_gba6u")
+text = "EASY
+"
+
+[node name="Normal" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_gba6u")
+text = "NORMAL"
+
+[node name="Hard" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_gba6u")
+text = "HARD"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -171.0
+offset_top = -108.0
+offset_right = 205.0
+offset_bottom = -68.0
+theme_override_fonts/normal_font = ExtResource("4_1fi6f")
+theme_override_font_sizes/italics_font_size = 0
+text = "Choose the Difficulty Level"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Hard" to="." method="_on_hard_pressed"]

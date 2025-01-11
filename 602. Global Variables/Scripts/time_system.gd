@@ -1,8 +1,8 @@
 class_name TimeSystem extends Node
 
 @export var date_time: DateTime
-@export var ticks_index: int = 0
-@export var ticks_per_Sec_options: Array[int] = [1440, 2160, 2880] # 1440 is 60 seconds, 2160 is 90 seconds, 2880 is 120 seconds.
+@export var ticks_index: int = 2
+@export var ticks_per_Sec_options: Array[int] = [720, 1080, 1440] # 720 is 120 seconds, 1080 is 90 seconds, 1440 is 60 seconds.
 
 const AUDIO_FILES: Array[String] = [
 	"res://602. Global Variables/Scripts/960dec.wav",
@@ -24,12 +24,14 @@ var current_day: int = -1
 
 
 func _ready():
+	ticks_index = GameData.difficulty_index
 	audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
 	date_time = DateTime.new()  # Initialize DateTime here
 	# current_day = date_time.days
 
 func _process(delta: float) -> void:
+	ticks_index = GameData.difficulty_index
 	handle_input()
 	if is_paused:
 		return

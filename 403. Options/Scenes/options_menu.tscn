@@ -36,6 +36,7 @@ theme = ExtResource("2_83qf1")
 text = "Volume"
 
 [node name="Difficulty" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_83qf1")
 text = "Easy"

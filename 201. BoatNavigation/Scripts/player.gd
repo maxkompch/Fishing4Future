@@ -83,7 +83,7 @@ func _process(delta: float) -> void:
 			else:
 				time_system.log("exit boat navigation")
 				time_system.log("start scene")
-				get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
+				get_tree().change_scene_to_file("res://405. Start Area/scenes/boat_start.tscn")
 
 func _physics_process(delta):
 	# Get input vector from the built-in actions

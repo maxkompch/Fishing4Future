@@ -27,4 +27,4 @@ func _on_button_button_up() -> void:
 			get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
 	else:
 		time_system.log("exit shop")
-		get_tree().change_scene_to_file("res://405. Start Area/scenes/start_area.tscn")
+		get_tree().change_scene_to_file("res://405. Start Area/scenes/shop_start.tscn")
