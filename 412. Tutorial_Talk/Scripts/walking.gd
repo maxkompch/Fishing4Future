@@ -80,4 +80,5 @@ func _on_second_pressed() -> void:
 	tutorial_var.is_tutorial = false
 	global = false
 	$"../StaticBody2D3/CollisionShape2D".disabled = true
+	$"../StaticBody2D/CollisionShape2D".disabled = true
 	time_system.is_paused = false
