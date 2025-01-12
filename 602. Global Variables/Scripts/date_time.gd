@@ -3,6 +3,7 @@ class_name DateTime extends Resource
 @export_range(0,59) var seconds: int = 0
 @export_range(0,59) var minutes: int = 0
 @export_range(0,23) var hours: int = 0
+@export_range(0,1) var normalized_hours: float = 0
 @export_range(1,7) var days: int = 1
 
 var formatted_time: String = GameData.current_time_str
@@ -40,8 +41,9 @@ func increase_by_sec(delta_seconds: float) -> void:
 	seconds = seconds % 60
 	minutes = minutes % 60
 	hours = hours % 24
+	normalized_hours = hours * 1.00 / 24
 	days = ((days - 1) % 7) + 1
-	
+
 	var formatted_hours: String
 	if hours < 10:
 		formatted_hours = "0" + str(hours)

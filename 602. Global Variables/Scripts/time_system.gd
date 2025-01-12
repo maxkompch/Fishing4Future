@@ -22,7 +22,6 @@ var is_paused:bool = true
 var previous_scene = null
 var current_day: int = -1
 
-
 func _ready():
 	ticks_index = GameData.difficulty_index
 	audio_player = AudioStreamPlayer.new()
@@ -50,7 +49,7 @@ func get_time() -> String:
 	if date_time:
 		return date_time.formatted_time
 	return "Monday 00:00:00"
-	
+
 # Custom logging function
 func log(message: String) -> void:
 	var time_msg = Time.get_datetime_string_from_system() + " || " + get_time() + " || "
