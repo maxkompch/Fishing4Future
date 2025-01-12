@@ -8,6 +8,9 @@ var winposition = []
 @onready var label = $Label
 @onready var mytimer = $Timer
 @onready var logger = $Logger
+@onready var sound_positive = $"good sound"
+@onready var sound_negativ =$"bad sound"
+
 enum Ministate{running, stopped}
 var currentState = Ministate.running
 var back_scene
@@ -78,7 +81,7 @@ func Fishfang() -> void:
 			GameData.total_caught_func()
 			GameData.fish_population_func()
 			GameData.save_data()
-			
+			sound_positive.play()
 			if tutorial_var.is_tutorial == true:
 				tutorial_var.fished_once = true
 			
@@ -107,9 +110,11 @@ func Fishfang() -> void:
 					GameData.save_data()
 					get_tree().change_scene_to_file(back_scene)
 		else:
+			sound_positive.play()
 			label.text = "                           Uh Oh! No fish left to catch.                           "
 			time_system.log("no fish left")
 	else:	
+		sound_negativ.play()
 		print("current postion is :" + str(currentPosition))
 		print("current win is :" + str(currentPosition in winposition))
 		GameData.fish_failed_func()

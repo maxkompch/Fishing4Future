@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 @export var move_speed: float = 150
+@export var audiostream: AudioStreamPlayer2D = null
+
+func _ready():
+	audiostream.stream_paused = true
 
 func _physics_process(_delta: float) -> void:
 	# Get Input direction
@@ -9,6 +13,12 @@ func _physics_process(_delta: float) -> void:
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	
+	if(input_direction != Vector2.ZERO):
+		if(audiostream.playing == false):
+			audiostream.play()
+		audiostream.stream_paused = false
+	else:
+		audiostream.stream_paused = true
 	#print(input_direction)
 	
 	# Update velocity

@@ -8,6 +8,8 @@ var winposition = []
 @onready var label = $Label
 @onready var mytimer = $Timer
 @onready var logger = $Logger
+@onready var sound_positive = $"good sound"
+@onready var sound_negativ =$"bad sound"
 enum Ministate{running, stopped}
 var currentState = Ministate.running
 var amount_Green_bubbles: int = 1
@@ -100,6 +102,7 @@ func Fishfang() -> void:
 			GameData.total_plastic_caught_func()
 			GameData.plastic_population_func()
 			GameData.save_data()
+			sound_positive.play()
 			label.text = "Congratulation! You have caught " + str(GameData.total_plastic_caught) + " plastic(s). Auto close after catching " + str(GameData.max_plastic-GameData.plastic_caught) + " more plastics."
 			time_system.log("plastic caught")
 			if(GameData.plastic_caught >= GameData.max_plastic):
@@ -126,11 +129,13 @@ func Fishfang() -> void:
 					get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
 				
 		else:
+			sound_positive.play()
 			label.text = "                           Nice! No more plastic left to catch.                           "
 			time_system.log("no plastic left")
 	else:
 		GameData.plastic_failed_func()
 		GameData.save_data()
+		sound_negativ.play()
 		label.text = "                Uh Oh! You have lost " + str(GameData.failed_plastic) + " times. Auto close after losing " + str(GameData.max_plastic_fail-GameData.failed_plastic) + " times."
 		time_system.log("catching plastic failed")
 		if(GameData.failed_plastic >= GameData.max_plastic_fail):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://luqs6sto400f"]
+[gd_scene load_steps=15 format=3 uid="uid://luqs6sto400f"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/plastic_mini_game.gd" id="1_7t3d0"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_pdaox"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="10_3ml0y"]
 [ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="11_i2u5h"]
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="12_q225s"]
+[ext_resource type="AudioStream" uid="uid://bb850kh0s462c" path="res://103. Sounds effects/Assets/bubblepositv.wav" id="13_073dn"]
+[ext_resource type="AudioStream" uid="uid://dt1dd5fio4in0" path="res://103. Sounds effects/Assets/bubblenegativ.wav" id="14_l8l45"]
 
 [node name="PlasticMiniGame" type="Node2D"]
 script = ExtResource("1_7t3d0")
@@ -225,6 +227,12 @@ offset_left = 7.0
 offset_top = 118.0
 offset_right = 119.0
 offset_bottom = 122.0
+
+[node name="good sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_073dn")
+
+[node name="bad sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_l8l45")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]
