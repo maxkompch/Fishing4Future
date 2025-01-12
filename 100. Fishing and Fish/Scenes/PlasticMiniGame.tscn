@@ -221,10 +221,10 @@ visible = false
 visible = false
 
 [node name="ResourceGUI" parent="." instance=ExtResource("12_q225s")]
-offset_left = -145.0
-offset_top = 109.0
-offset_right = -105.0
-offset_bottom = 149.0
+offset_left = 7.0
+offset_top = 118.0
+offset_right = 119.0
+offset_bottom = 122.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]

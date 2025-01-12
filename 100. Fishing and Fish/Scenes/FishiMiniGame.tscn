@@ -240,10 +240,10 @@ scale = Vector2(0.344891, 0.120879)
 texture = ExtResource("15_kt3ek")
 
 [node name="ResourceGUI" parent="." instance=ExtResource("12_bmbv8")]
-offset_left = -145.0
-offset_top = 109.0
-offset_right = -105.0
-offset_bottom = 149.0
+offset_left = 131.0
+offset_top = 117.0
+offset_right = 171.0
+offset_bottom = 157.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]
