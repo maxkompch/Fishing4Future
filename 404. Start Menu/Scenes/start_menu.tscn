@@ -1,26 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5lr5xl3c5tep"]
+[gd_scene load_steps=12 format=3 uid="uid://b5lr5xl3c5tep"]
 
 [ext_resource type="PackedScene" uid="uid://ckt5oaek0ekwe" path="res://404. Start Menu/Scenes/water_backround.tscn" id="1_405q8"]
-[ext_resource type="Texture2D" uid="uid://bjn6hxy8c2d56" path="res://404. Start Menu/Assets/title.png" id="2_t34wo"]
 [ext_resource type="PackedScene" uid="uid://daf5role61hd3" path="res://404. Start Menu/Scenes/newMenuUI.tscn" id="3_gj747"]
+[ext_resource type="Texture2D" uid="uid://bcorp1jor1rx3" path="res://404. Start Menu/Assets/F.png" id="3_golgv"]
+[ext_resource type="Texture2D" uid="uid://4lqru6dhx1mw" path="res://404. Start Menu/Assets/I.png" id="4_t6gum"]
+[ext_resource type="Texture2D" uid="uid://clncdh2lyht8b" path="res://404. Start Menu/Assets/S.png" id="5_x2tdr"]
+[ext_resource type="Texture2D" uid="uid://b38e45k7cmbs" path="res://404. Start Menu/Assets/H.png" id="6_acqei"]
+[ext_resource type="Texture2D" uid="uid://b4efhve7w6pkx" path="res://404. Start Menu/Assets/T1.png" id="7_332eq"]
+[ext_resource type="Texture2D" uid="uid://oluw4k6b4huc" path="res://404. Start Menu/Assets/U.png" id="8_wbnta"]
+[ext_resource type="Texture2D" uid="uid://ds3nr37mv8wie" path="res://404. Start Menu/Assets/R.png" id="9_ujiqg"]
+[ext_resource type="Texture2D" uid="uid://eqx0rt5bdlha" path="res://404. Start Menu/Assets/E1.png" id="10_nc20b"]
+[ext_resource type="Texture2D" uid="uid://2tgjqeb3275o" path="res://404. Start Menu/Assets/4.png" id="11_p4fmc"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
+offset_left = -2.0
 offset_top = 15.0
+offset_right = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_405q8")]
 position = Vector2(552, 301)
-
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(567, 205)
-scale = Vector2(5.54688, 5.54688)
-texture = ExtResource("2_t34wo")
 
 [node name="MarginContainer" parent="." instance=ExtResource("3_gj747")]
 layout_mode = 1
@@ -32,3 +36,58 @@ offset_left = 404.0
 offset_top = 486.0
 offset_right = -239.0
 offset_bottom = -112.0
+
+[node name="F" type="Sprite2D" parent="."]
+position = Vector2(132, 158)
+scale = Vector2(0.402344, 0.953125)
+texture = ExtResource("3_golgv")
+
+[node name="I" type="Sprite2D" parent="."]
+position = Vector2(230, 154)
+scale = Vector2(0.597656, 1)
+texture = ExtResource("4_t6gum")
+
+[node name="S" type="Sprite2D" parent="."]
+position = Vector2(248, 153)
+scale = Vector2(0.558594, 1)
+texture = ExtResource("5_x2tdr")
+
+[node name="H" type="Sprite2D" parent="."]
+position = Vector2(337, 162)
+scale = Vector2(0.515625, 1)
+texture = ExtResource("6_acqei")
+
+[node name="T1" type="Sprite2D" parent="."]
+position = Vector2(757, 169)
+scale = Vector2(0.697266, 1.41602)
+texture = ExtResource("7_332eq")
+
+[node name="F2" type="Sprite2D" parent="."]
+position = Vector2(622, 158)
+scale = Vector2(0.402344, 0.953125)
+texture = ExtResource("3_golgv")
+
+[node name="U" type="Sprite2D" parent="."]
+position = Vector2(694, 169)
+scale = Vector2(0.5, 1)
+texture = ExtResource("8_wbnta")
+
+[node name="R" type="Sprite2D" parent="."]
+position = Vector2(923, 176)
+scale = Vector2(0.488281, 1)
+texture = ExtResource("9_ujiqg")
+
+[node name="U2" type="Sprite2D" parent="."]
+position = Vector2(846, 167)
+scale = Vector2(0.636719, 1.03906)
+texture = ExtResource("8_wbnta")
+
+[node name="E1" type="Sprite2D" parent="."]
+position = Vector2(1014, 196)
+scale = Vector2(0.980469, 1.58984)
+texture = ExtResource("10_nc20b")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(486, 163)
+scale = Vector2(0.808594, 1)
+texture = ExtResource("11_p4fmc")

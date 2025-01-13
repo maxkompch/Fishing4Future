@@ -24,3 +24,7 @@
 2025-01-12T18:26:10 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 10, f_current = 0, f_caught = 0, p_pop = 5, p_caught = 0 || game started
 2025-01-12T18:26:13 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 10, f_current = 0, f_caught = 0, p_pop = 5, p_caught = 0 || easy
 2025-01-12T18:26:41 || Monday 02:43:47 || $150, health = 1, price = 20, f_pop = 10, f_current = 0, f_caught = 0, p_pop = 5, p_caught = 0 || game closed
+2025-01-13T18:40:26 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 9, f_current = 1, f_caught = 1, p_pop = 5, p_caught = 0 || game started
+2025-01-13T18:40:32 || Monday 06:46:11 || $150, health = 1, price = 20, f_pop = 9, f_current = 1, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
+2025-01-13T18:40:43 || Monday 00:00:00 || $150, health = 1, price = 20, f_pop = 9, f_current = 1, f_caught = 1, p_pop = 5, p_caught = 0 || game started
+2025-01-13T18:40:47 || Monday 06:46:11 || $150, health = 1, price = 20, f_pop = 9, f_current = 1, f_caught = 1, p_pop = 5, p_caught = 0 || game closed
