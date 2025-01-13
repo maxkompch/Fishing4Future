@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwxmclewn32mf"]
+
+[ext_resource type="Script" path="res://416. Opening Scenes/Scripts/intro.gd" id="1_4vsjx"]
+[ext_resource type="Texture2D" uid="uid://btlwngssfbyxj" path="res://102. Icons/Assets/Skip_E.png" id="2_geowc"]
+
+[node name="intro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4vsjx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.025
+autostart = true
+
+[node name="SkipE" type="Sprite2D" parent="."]
+position = Vector2(1064, 610)
+scale = Vector2(0.523438, 0.523438)
+texture = ExtResource("2_geowc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 310.0
+offset_right = 789.0
+offset_bottom = 427.0
+text = "Test"
+scroll_following = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
