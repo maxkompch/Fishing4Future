@@ -1,6 +1,6 @@
 class_name TimeSystem extends Node
 
-@export var date_time: DateTime
+#@export var date_time: DateTime
 @export var ticks_index: int = 2
 @export var ticks_per_Sec_options: Array[int] = [720, 1080, 1440] # 720 is 120 seconds, 1080 is 90 seconds, 1440 is 60 seconds.
 
@@ -26,7 +26,7 @@ func _ready():
 	ticks_index = GameData.difficulty_index
 	audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
-	date_time = DateTime.new()  # Initialize DateTime here
+	#date_time = DateTime.new()  # Initialize DateTime here
 	# current_day = date_time.days
 
 func _process(delta: float) -> void:
@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 	if is_paused:
 		return
 	date_time.increase_by_sec(delta * ticks_per_Sec_options[ticks_index])
+	
 	 # if date_time.days != current_day:
 		#current_day = date_time.days  # Update the current day
 		#GameData.subtract_money(30)

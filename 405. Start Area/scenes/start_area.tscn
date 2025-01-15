@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cwybpflbp4cuu"]
+[gd_scene load_steps=28 format=4 uid="uid://cwybpflbp4cuu"]
 
 [ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="1_1hdie"]
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="1_a4knq"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dxx0mfkoj4w3x" path="res://601. ShopUI/Assets/shop assets/Shoptext.png" id="9_odmr6"]
 [ext_resource type="Texture2D" uid="uid://c68y4cdg1ntrp" path="res://601. ShopUI/Assets/shop assets/BUILDNG.png" id="9_x5ysd"]
 [ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="10_8tskl"]
+[ext_resource type="PackedScene" uid="uid://b7qivtqistmcp" path="res://DayNightCycle/Scene/DayNight.tscn" id="12_rstg6"]
+[ext_resource type="AudioStream" uid="uid://b4fvs0dtn8mmu" path="res://BackgroundMusic/LobbyLobster.mp3" id="13_pt68i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvkql"]
 texture = ExtResource("3_rx7so")
@@ -261,6 +263,14 @@ position = Vector2(-53, -113)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
 position = Vector2(182.5, 6)
 shape = SubResource("RectangleShape2D_slloq")
+
+[node name="Node2D" parent="." instance=ExtResource("12_rstg6")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_pt68i")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Back" to="CharacterBody2D2" method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]

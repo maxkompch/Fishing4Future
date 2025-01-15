@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dycu68liw4y6w"]
+[gd_scene load_steps=17 format=3 uid="uid://dycu68liw4y6w"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_5hcqv"]
@@ -11,7 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://bb850kh0s462c" path="res://103. Sounds effects/Assets/bubblepositv.wav" id="13_j25hf"]
 [ext_resource type="AudioStream" uid="uid://dt1dd5fio4in0" path="res://103. Sounds effects/Assets/bubblenegativ.wav" id="14_mrrek"]
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/return_button.gd" id="14_ya05a"]
+[ext_resource type="PackedScene" uid="uid://b7qivtqistmcp" path="res://DayNightCycle/Scene/DayNight.tscn" id="15_ek110"]
 [ext_resource type="Texture2D" uid="uid://xbycuyi73j66" path="res://100. Fishing and Fish/Assets/return.png" id="15_kt3ek"]
+[ext_resource type="AudioStream" uid="uid://2v40afj1v8vy" path="res://BackgroundMusic/CatchMeIfYouCan.mp3" id="16_4p4xe"]
 [ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="16_q0rtp"]
 [ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="17_c4qh3"]
 
@@ -249,9 +251,21 @@ offset_bottom = 157.0
 
 [node name="good sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_j25hf")
+volume_db = 10.0
 
 [node name="bad sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_mrrek")
+volume_db = 10.0
+
+[node name="DayNightCycle" parent="." instance=ExtResource("15_ek110")]
+position = Vector2(-5, -25)
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_4p4xe")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]

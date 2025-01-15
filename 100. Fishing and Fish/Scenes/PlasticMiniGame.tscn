@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://luqs6sto400f"]
+[gd_scene load_steps=17 format=3 uid="uid://luqs6sto400f"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/plastic_mini_game.gd" id="1_7t3d0"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_pdaox"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="12_q225s"]
 [ext_resource type="AudioStream" uid="uid://bb850kh0s462c" path="res://103. Sounds effects/Assets/bubblepositv.wav" id="13_073dn"]
 [ext_resource type="AudioStream" uid="uid://dt1dd5fio4in0" path="res://103. Sounds effects/Assets/bubblenegativ.wav" id="14_l8l45"]
+[ext_resource type="PackedScene" uid="uid://b7qivtqistmcp" path="res://DayNightCycle/Scene/DayNight.tscn" id="15_73km1"]
+[ext_resource type="AudioStream" uid="uid://2v40afj1v8vy" path="res://BackgroundMusic/CatchMeIfYouCan.mp3" id="16_q7dof"]
 
 [node name="PlasticMiniGame" type="Node2D"]
 script = ExtResource("1_7t3d0")
@@ -227,12 +229,23 @@ offset_left = 7.0
 offset_top = 118.0
 offset_right = 119.0
 offset_bottom = 122.0
+metadata/_edit_use_anchors_ = true
 
 [node name="good sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_073dn")
 
 [node name="bad sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_l8l45")
+
+[node name="DayNightCycle" parent="." instance=ExtResource("15_73km1")]
+position = Vector2(75, 25)
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_q7dof")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]
