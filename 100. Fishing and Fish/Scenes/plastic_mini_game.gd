@@ -87,6 +87,8 @@ func _process(delta: float) -> void:
 	if(GameData.plastic_caught == 2):
 		$PlasticItem4.visible = false
 		$PlasticItem2.visible = false
+	if(Input.is_action_just_released("action")):
+		_on_hook_the_fish_button_up()
 
 func _on_timer_timeout() -> void:
 	currentPosition += 1

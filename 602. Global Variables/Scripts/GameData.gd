@@ -374,7 +374,7 @@ func new_game():
 	strike_counter = 0
 	wrongFishing_shown = false
 	fishingGenerally_shown = false
-	time_system.date_time.formatted_time = "Monday 00:00:00"
+	date_time.formatted_time = "Monday 00:00:00" #time_system.
 	
 	save_data()
 

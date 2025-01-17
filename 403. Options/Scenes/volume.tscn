@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bul5p3r3enwcp"]
+[gd_scene load_steps=7 format=3 uid="uid://bul5p3r3enwcp"]
 
 [ext_resource type="Script" path="res://403. Options/Scripts/volume.gd" id="1_ts2lv"]
 [ext_resource type="Script" path="res://403. Options/Scripts/h_slider.gd" id="2_oohal"]
 [ext_resource type="PackedScene" uid="uid://ckt5oaek0ekwe" path="res://404. Start Menu/Scenes/water_backround.tscn" id="2_yk5ui"]
 [ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://404. Start Menu/Assets/wood_button.tres" id="3_8jorq"]
+[ext_resource type="AudioStream" uid="uid://2v40afj1v8vy" path="res://BackgroundMusic/CatchMeIfYouCan.mp3" id="5_216du"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mpw1a"]
 
@@ -49,10 +50,12 @@ script = ExtResource("2_oohal")
 bus_name = "Master"
 
 [node name="music_label" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Music Volume"
 
 [node name="music" type="HSlider" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 max_value = 1.0
 step = 0.001
@@ -61,10 +64,12 @@ script = ExtResource("2_oohal")
 bus_name = "Music"
 
 [node name="sfx_label" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Sound Effects Volume"
 
 [node name="sfx" type="HSlider" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 max_value = 1.0
 step = 0.001
@@ -76,5 +81,11 @@ bus_name = "sfx"
 layout_mode = 2
 theme = ExtResource("3_8jorq")
 text = "Back"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_216du")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

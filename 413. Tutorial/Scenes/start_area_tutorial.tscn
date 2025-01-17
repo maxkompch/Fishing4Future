@@ -50,6 +50,7 @@ rotation = -1.09956
 z_index = 4
 
 [node name="ShowBoat" parent="." instance=ExtResource("5_xdp0d")]
+z_index = 4
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

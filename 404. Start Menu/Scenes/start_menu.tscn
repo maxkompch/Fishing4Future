@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5lr5xl3c5tep"]
+[gd_scene load_steps=13 format=3 uid="uid://b5lr5xl3c5tep"]
 
 [ext_resource type="PackedScene" uid="uid://ckt5oaek0ekwe" path="res://404. Start Menu/Scenes/water_backround.tscn" id="1_405q8"]
 [ext_resource type="PackedScene" uid="uid://daf5role61hd3" path="res://404. Start Menu/Scenes/newMenuUI.tscn" id="3_gj747"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ds3nr37mv8wie" path="res://404. Start Menu/Assets/R.png" id="9_ujiqg"]
 [ext_resource type="Texture2D" uid="uid://eqx0rt5bdlha" path="res://404. Start Menu/Assets/E1.png" id="10_nc20b"]
 [ext_resource type="Texture2D" uid="uid://2tgjqeb3275o" path="res://404. Start Menu/Assets/4.png" id="11_p4fmc"]
+[ext_resource type="AudioStream" uid="uid://2v40afj1v8vy" path="res://BackgroundMusic/CatchMeIfYouCan.mp3" id="12_fn64a"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -91,3 +92,9 @@ texture = ExtResource("10_nc20b")
 position = Vector2(486, 163)
 scale = Vector2(0.808594, 1)
 texture = ExtResource("11_p4fmc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_fn64a")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true
