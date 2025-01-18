@@ -252,9 +252,9 @@ scale = Vector2(0.444545, 0.444545)
 texture = ExtResource("10_8tskl")
 
 [node name="ResourceGUI" parent="." instance=ExtResource("1_a4knq")]
-offset_left = 57.0
+offset_left = 13.0
 offset_top = 12.0
-offset_right = 97.0
+offset_right = 53.0
 offset_bottom = 49.0
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]

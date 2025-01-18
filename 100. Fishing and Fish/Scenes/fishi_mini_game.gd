@@ -19,6 +19,8 @@ var amount_Green_bubbles: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$HookTheFish.grab_focus() 
+	$HookTheFish.set_pressed(true) 
 	if tutorial_var.is_tutorial:
 		back_scene= "res://413. Tutorial/Scenes/sea_area_tutorial.tscn"
 	else:
@@ -66,7 +68,7 @@ func _process(delta: float) -> void:
 	if(GameData.fish_caught == 2):
 		$VioletFish4.visible = false
 		$VioletFish2.visible = false
-	if(Input.is_action_just_released("action")):
+	if(Input.is_action_just_released("catch")):
 		_on_hook_the_fish_button_up()
 
 func _on_timer_timeout() -> void:

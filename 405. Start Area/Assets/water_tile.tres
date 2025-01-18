@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=6 format=3 uid="uid://i1xgsiuwiucq"]
 
-[ext_resource type="Texture2D" uid="uid://nmwajsaf2vy1" path="res://405. Start Area/Assets/Water_ani.png" id="1_pp0v4"]
+[ext_resource type="Texture2D" uid="uid://nmwajsaf2vy1" path="res://201. BoatNavigation/Assets/Water_ani.png" id="1_pp0v4"]
 [ext_resource type="Texture2D" uid="uid://cm12uv2lon43b" path="res://405. Start Area/Assets/wooden_deck.png" id="3_gxx85"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h7c4m"]

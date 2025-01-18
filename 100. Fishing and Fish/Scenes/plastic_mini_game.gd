@@ -16,6 +16,8 @@ var amount_Green_bubbles: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$HookTheFish.grab_focus() 
+	$HookTheFish.set_pressed(true) 
 	amount_Green_bubbles = GameData.plastic_bubbles_amount
 	
 	GameData.plastic_reset_func()
@@ -87,7 +89,7 @@ func _process(delta: float) -> void:
 	if(GameData.plastic_caught == 2):
 		$PlasticItem4.visible = false
 		$PlasticItem2.visible = false
-	if(Input.is_action_just_released("action")):
+	if(Input.is_action_just_released("catch")):
 		_on_hook_the_fish_button_up()
 
 func _on_timer_timeout() -> void:

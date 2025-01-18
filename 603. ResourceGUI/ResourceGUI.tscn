@@ -94,6 +94,6 @@ theme_override_font_sizes/font_size = 20
 text = "WEDNESDAY 12:12:12"
 
 [node name="ClockBackground" type="Sprite2D" parent="."]
-position = Vector2(739.438, -90)
-scale = Vector2(2.87706, 3.5)
+position = Vector2(773.438, -90)
+scale = Vector2(3.15689, 3.5)
 texture = ExtResource("8_fub2u")
