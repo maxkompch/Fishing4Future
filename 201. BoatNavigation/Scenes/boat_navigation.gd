@@ -22,6 +22,20 @@ func _ready() -> void:
 	else:
 		$FishingArea3.visible = false  
 		$FishingArea3.get_node("CollisionShape2D").disabled = true 
+	
+	if GameData.plastic_population > 0:
+		$TrashArea.visible = true
+		$TrashArea.get_node("CollisionShape2D").disabled = false 
+	else:
+		$TrashArea.visible = false
+		$TrashArea.get_node("CollisionShape2D").disabled = true
+	
+	if GameData.plastic_population > 5:
+		$TrashArea2.visible = true
+		$TrashArea2.get_node("CollisionShape2D").disabled = false 
+	else:
+		$TrashArea2.visible = false
+		$TrashArea2.get_node("CollisionShape2D").disabled = true
 
 
 func _process(delta: float) -> void:
@@ -46,3 +60,17 @@ func _process(delta: float) -> void:
 	else:
 		$FishingArea3.visible = false
 		$FishingArea3.get_node("CollisionShape2D").disabled = true  
+
+	if GameData.plastic_population > 0:
+		$TrashArea.visible = true
+		$TrashArea.get_node("CollisionShape2D").disabled = false 
+	else:
+		$TrashArea.visible = false
+		$TrashArea.get_node("CollisionShape2D").disabled = true
+	
+	if GameData.plastic_population > 5:
+		$TrashArea2.visible = true
+		$TrashArea2.get_node("CollisionShape2D").disabled = false 
+	else:
+		$TrashArea2.visible = false
+		$TrashArea2.get_node("CollisionShape2D").disabled = true
