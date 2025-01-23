@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_scene_transition_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://601. ShopUI/Scenes/inside_shop.tscn")
-	print("timestamp: Entered Shop")
+	time_system.log("entered shop")

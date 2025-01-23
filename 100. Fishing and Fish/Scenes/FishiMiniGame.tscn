@@ -1,20 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://dycu68liw4y6w"]
+[gd_scene load_steps=17 format=3 uid="uid://dycu68liw4y6w"]
 
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/fishi_mini_game.gd" id="1_pvdyh"]
 [ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_5hcqv"]
-[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/node.gd" id="2_p2dnt"]
 [ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="3_5cpbh"]
 [ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/bubblemovement.gd" id="3_adg62"]
 [ext_resource type="Texture2D" uid="uid://dx5tqpmf2bauo" path="res://100. Fishing and Fish/Assets/FisingBackground.png" id="5_ow07b"]
 [ext_resource type="Texture2D" uid="uid://dhm0itk3bn2qi" path="res://100. Fishing and Fish/Assets/KeschernforBackground.png" id="6_5m1kl"]
 [ext_resource type="Texture2D" uid="uid://rx408jidtf73" path="res://100. Fishing and Fish/Assets/AngelForBackground.png" id="7_vfe67"]
-[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/time_gui.gd" id="9_ics8i"]
+[ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="12_bmbv8"]
+[ext_resource type="AudioStream" uid="uid://bb850kh0s462c" path="res://103. Sounds effects/Assets/bubblepositv.wav" id="13_j25hf"]
+[ext_resource type="AudioStream" uid="uid://dt1dd5fio4in0" path="res://103. Sounds effects/Assets/bubblenegativ.wav" id="14_mrrek"]
+[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/return_button.gd" id="14_ya05a"]
+[ext_resource type="PackedScene" uid="uid://b7qivtqistmcp" path="res://DayNightCycle/Scene/DayNight.tscn" id="15_ek110"]
+[ext_resource type="Texture2D" uid="uid://xbycuyi73j66" path="res://100. Fishing and Fish/Assets/return.png" id="15_kt3ek"]
+[ext_resource type="AudioStream" uid="uid://2v40afj1v8vy" path="res://BackgroundMusic/CatchMeIfYouCan.mp3" id="16_4p4xe"]
+[ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="16_q0rtp"]
+[ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="17_c4qh3"]
 
 [node name="FishiMiniGame" type="Node2D"]
 script = ExtResource("1_pvdyh")
 
-[node name="Logger" type="Node" parent="."]
-script = ExtResource("2_p2dnt")
+[node name="wrongFishing" parent="." instance=ExtResource("16_q0rtp")]
+visible = false
+z_index = 5
+
+[node name="fishingGenerally" parent="." instance=ExtResource("17_c4qh3")]
+visible = false
+z_index = 5
 
 [node name="Hook" type="Sprite2D" parent="."]
 z_index = 1
@@ -141,10 +153,10 @@ wait_time = 0.14
 autostart = true
 
 [node name="HookTheFish" type="Button" parent="."]
-offset_left = 466.0
-offset_top = 521.0
-offset_right = 722.0
-offset_bottom = 585.0
+offset_left = 273.0
+offset_top = 516.0
+offset_right = 529.0
+offset_bottom = 580.0
 text = "Hook the Fish!"
 
 [node name="Label" type="Label" parent="."]
@@ -219,20 +231,41 @@ middle = 264
 amplitide = 10
 offset = 1.6
 
-[node name="TimeGUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 88.0
-offset_bottom = 65.0
-script = ExtResource("9_ics8i")
+[node name="return button" type="Button" parent="."]
+offset_left = 692.0
+offset_top = 522.0
+offset_right = 878.0
+offset_bottom = 581.0
+script = ExtResource("14_ya05a")
 
-[node name="TimeShow" type="Label" parent="TimeGUI"]
-layout_mode = 0
-offset_left = 675.0
-offset_top = 13.0
-offset_right = 966.0
-offset_bottom = 93.0
+[node name="Return" type="Sprite2D" parent="return button"]
+position = Vector2(91.5, 25.5)
+scale = Vector2(0.344891, 0.120879)
+texture = ExtResource("15_kt3ek")
 
-[connection signal="tree_exited" from="Logger" to="Logger" method="_on_tree_exited"]
+[node name="ResourceGUI" parent="." instance=ExtResource("12_bmbv8")]
+offset_left = -7.0
+offset_top = 117.0
+offset_right = 33.0
+offset_bottom = 157.0
+
+[node name="good sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_j25hf")
+volume_db = 10.0
+
+[node name="bad sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_mrrek")
+volume_db = 10.0
+
+[node name="DayNightCycle" parent="." instance=ExtResource("15_ek110")]
+position = Vector2(-5, -25)
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_4p4xe")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]

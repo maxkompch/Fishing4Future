@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqxpb5h10uv28"]
+
+[ext_resource type="Texture2D" uid="uid://dfxt2ajsnb40l" path="res://401. Cut Scene/Assets/court.jpg" id="1_w7tid"]
+[ext_resource type="Texture2D" uid="uid://df23wi645kn7s" path="res://401. Cut Scene/Assets/home.jpg" id="2_8lqpc"]
+[ext_resource type="Texture2D" uid="uid://n6ewcjtj3ayc" path="res://401. Cut Scene/Assets/supermarket.jpg" id="3_5hqrc"]
+[ext_resource type="PackedScene" uid="uid://b154m8fee7fdc" path="res://401. Cut Scene/Scenes/judge_talking.tscn" id="4_pltlg"]
+[ext_resource type="Script" path="res://401. Cut Scene/Scenes/court_scene2.gd" id="5_iwc4l"]
+
+[node name="CutScene" type="Node2D"]
+
+[node name="Court" type="Sprite2D" parent="."]
+position = Vector2(579, 323)
+scale = Vector2(1.27821, 0.866002)
+texture = ExtResource("1_w7tid")
+
+[node name="Home" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(581, 322)
+scale = Vector2(1.28348, 0.876957)
+texture = ExtResource("2_8lqpc")
+
+[node name="Supermarket" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(580.25, 318)
+scale = Vector2(1.28007, 0.87472)
+texture = ExtResource("3_5hqrc")
+
+[node name="judgeTalking" parent="." instance=ExtResource("4_pltlg")]
+script = ExtResource("5_iwc4l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+offset_left = 246.0
+offset_top = 528.0
+offset_right = 892.0
+offset_bottom = 610.0
+theme_override_font_sizes/bold_italics_font_size = 25
+theme_override_font_sizes/italics_font_size = 25
+theme_override_font_sizes/mono_font_size = 25
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+text = "test"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.025
+autostart = true
+
+[connection signal="timeout" from="Timer" to="judgeTalking" method="_on_timer_timeout"]

@@ -21,7 +21,7 @@ func _ready():
 func _process(delta):
 	if Global.next_dialog == false:
 		$".".visible = false
-	elif Global.dialog_finished == false:
+	elif Global.dialog_finished == true and tutorial_var.second_finished == false:
 		$".".visible = true
 		if Input.is_action_just_released("action"):
 			wordCount = 0
@@ -29,8 +29,9 @@ func _process(delta):
 			DialogPlatz += 1
 			if (DialogPlatz > Anzahl_an_Dialog_text-1):
 				DialogPlatz = 0
-				Global.dialog_finished = true
 				$".".visible = false
+				$"../StaticBody2D3/CollisionShape2D".disabled = true				
+				tutorial_var.second_finished = true
 			Text.text = Dialog_text[DialogPlatz]
 	pass
 

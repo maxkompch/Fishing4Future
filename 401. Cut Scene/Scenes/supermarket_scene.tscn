@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://crgvmn840g7v1"]
+
+[ext_resource type="Texture2D" uid="uid://dfxt2ajsnb40l" path="res://401. Cut Scene/Assets/court.jpg" id="1_f5iv4"]
+[ext_resource type="Script" path="res://401. Cut Scene/Scenes/supermarket_scene.gd" id="1_yfxmv"]
+[ext_resource type="Texture2D" uid="uid://df23wi645kn7s" path="res://401. Cut Scene/Assets/home.jpg" id="2_4grho"]
+[ext_resource type="Texture2D" uid="uid://n6ewcjtj3ayc" path="res://401. Cut Scene/Assets/supermarket.jpg" id="3_j15bk"]
+[ext_resource type="PackedScene" uid="uid://b154m8fee7fdc" path="res://401. Cut Scene/Scenes/judge_talking.tscn" id="4_wj86d"]
+
+[node name="CutScene" type="Node2D"]
+script = ExtResource("1_yfxmv")
+
+[node name="Court" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(579, 323)
+scale = Vector2(1.27821, 0.866002)
+texture = ExtResource("1_f5iv4")
+
+[node name="Home" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(581, 322)
+scale = Vector2(1.28348, 0.876957)
+texture = ExtResource("2_4grho")
+
+[node name="Supermarket" type="Sprite2D" parent="."]
+position = Vector2(580.25, 318)
+scale = Vector2(1.28007, 0.87472)
+texture = ExtResource("3_j15bk")
+
+[node name="judgeTalking" parent="." instance=ExtResource("4_wj86d")]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

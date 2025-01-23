@@ -1,0 +1,252 @@
+[gd_scene load_steps=17 format=3 uid="uid://luqs6sto400f"]
+
+[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/plastic_mini_game.gd" id="1_7t3d0"]
+[ext_resource type="Texture2D" uid="uid://bnb6lhatgb0nb" path="res://100. Fishing and Fish/Assets/NewbubblesSprite.png" id="2_pdaox"]
+[ext_resource type="Script" path="res://100. Fishing and Fish/Scenes/bubblemovement.gd" id="3_ughm7"]
+[ext_resource type="Texture2D" uid="uid://dx5tqpmf2bauo" path="res://100. Fishing and Fish/Assets/FisingBackground.png" id="4_ft7yr"]
+[ext_resource type="Texture2D" uid="uid://dhm0itk3bn2qi" path="res://100. Fishing and Fish/Assets/KeschernforBackground.png" id="5_fewju"]
+[ext_resource type="Texture2D" uid="uid://b3g43c24jfeik" path="res://100. Fishing and Fish/Assets/plastic 1.png" id="6_uakjf"]
+[ext_resource type="Texture2D" uid="uid://drk2gi5euw61i" path="res://100. Fishing and Fish/Assets/plastic 2.png" id="7_ekpfx"]
+[ext_resource type="Texture2D" uid="uid://04xwtieeh0x6" path="res://100. Fishing and Fish/Assets/plastic 3.png" id="8_sqkh0"]
+[ext_resource type="PackedScene" uid="uid://dv17vn7autv2h" path="res://100. Fishing and Fish/Scenes/return_button.tscn" id="9_h4ui7"]
+[ext_resource type="PackedScene" uid="uid://dwvtxi4eomwdi" path="res://412. Tutorial_Talk/Scenes/wrong_fishing.tscn" id="10_3ml0y"]
+[ext_resource type="PackedScene" uid="uid://cau7ic4pabudc" path="res://412. Tutorial_Talk/Scenes/fishing_generally.tscn" id="11_i2u5h"]
+[ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="12_q225s"]
+[ext_resource type="AudioStream" uid="uid://bb850kh0s462c" path="res://103. Sounds effects/Assets/bubblepositv.wav" id="13_073dn"]
+[ext_resource type="AudioStream" uid="uid://dt1dd5fio4in0" path="res://103. Sounds effects/Assets/bubblenegativ.wav" id="14_l8l45"]
+[ext_resource type="PackedScene" uid="uid://b7qivtqistmcp" path="res://DayNightCycle/Scene/DayNight.tscn" id="15_73km1"]
+[ext_resource type="AudioStream" uid="uid://2v40afj1v8vy" path="res://BackgroundMusic/CatchMeIfYouCan.mp3" id="16_q7dof"]
+
+[node name="PlasticMiniGame" type="Node2D"]
+script = ExtResource("1_7t3d0")
+
+[node name="Hook" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(344, 424)
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+frame = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Position1" type="Node2D" parent="Node2D"]
+position = Vector2(344, 424)
+script = ExtResource("3_ughm7")
+middle = 344
+amplitide = 80
+offset = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Position1"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Position2" type="Node2D" parent="Node2D"]
+position = Vector2(400, 424)
+script = ExtResource("3_ughm7")
+middle = 344
+amplitide = 80
+offset = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Position2"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Position3" type="Node2D" parent="Node2D"]
+position = Vector2(456, 424)
+script = ExtResource("3_ughm7")
+middle = 344
+amplitide = 80
+offset = 0.6
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Position3"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Position4" type="Node2D" parent="Node2D"]
+position = Vector2(512, 424)
+script = ExtResource("3_ughm7")
+middle = 344
+amplitide = 80
+offset = 0.8
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Position4"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Position5" type="Node2D" parent="Node2D"]
+position = Vector2(568, 424)
+script = ExtResource("3_ughm7")
+middle = 344
+amplitide = 80
+offset = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Position5"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Position6" type="Node2D" parent="Node2D"]
+position = Vector2(624, 424)
+script = ExtResource("3_ughm7")
+middle = 344
+amplitide = 80
+offset = 1.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Position6"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Position7" type="Node2D" parent="Node2D"]
+position = Vector2(680, 424)
+script = ExtResource("3_ughm7")
+middle = 344
+amplitide = 80
+offset = 1.4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Position7"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Position8" type="Node2D" parent="Node2D"]
+position = Vector2(736, 424)
+script = ExtResource("3_ughm7")
+middle = 344
+amplitide = 80
+offset = 1.6
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Position8"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pdaox")
+hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Sea" type="Sprite2D" parent="Node2D"]
+z_index = -1
+position = Vector2(512, 184)
+scale = Vector2(0.246071, 0.246833)
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.14
+autostart = true
+
+[node name="HookTheFish" type="Button" parent="."]
+offset_left = 273.0
+offset_top = 516.0
+offset_right = 529.0
+offset_bottom = 580.0
+text = "Catch the Plastic!"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 269.0
+offset_top = 597.0
+offset_right = 881.0
+offset_bottom = 620.0
+text = "                                                                      Hello!"
+metadata/_edit_use_anchors_ = true
+
+[node name="FisingBackground" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(576, 312)
+scale = Vector2(3, 3)
+texture = ExtResource("4_ft7yr")
+metadata/_edit_lock_ = true
+
+[node name="KeschernforBackground" type="Sprite2D" parent="."]
+position = Vector2(480, 312)
+scale = Vector2(3, 3)
+texture = ExtResource("5_fewju")
+
+[node name="PlasticItem" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(825, 425)
+scale = Vector2(4, 4)
+texture = ExtResource("6_uakjf")
+offset = 0.4
+script = ExtResource("3_ughm7")
+middle = 384
+amplitide = 10
+offset = 0.4
+
+[node name="PlasticItem2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(822, 249)
+scale = Vector2(4, 4)
+texture = ExtResource("7_ekpfx")
+offset = 1.0
+script = ExtResource("3_ughm7")
+middle = 320
+amplitide = 10
+offset = 1.0
+
+[node name="PlasticItem3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(825, 305)
+scale = Vector2(4, 4)
+texture = ExtResource("7_ekpfx")
+offset = 1.5
+flip_h = true
+script = ExtResource("3_ughm7")
+middle = 440
+amplitide = 10
+offset = 1.5
+
+[node name="PlasticItem4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(828, 362)
+scale = Vector2(4, 4)
+texture = ExtResource("8_sqkh0")
+offset = 1.6
+script = ExtResource("3_ughm7")
+middle = 264
+amplitide = 10
+offset = 1.6
+
+[node name="return button" parent="." instance=ExtResource("9_h4ui7")]
+
+[node name="wrongFishing" parent="." instance=ExtResource("10_3ml0y")]
+visible = false
+
+[node name="fishingGenerally" parent="." instance=ExtResource("11_i2u5h")]
+visible = false
+
+[node name="ResourceGUI" parent="." instance=ExtResource("12_q225s")]
+offset_left = 7.0
+offset_top = 118.0
+offset_right = 119.0
+offset_bottom = 122.0
+metadata/_edit_use_anchors_ = true
+
+[node name="good sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_073dn")
+
+[node name="bad sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_l8l45")
+
+[node name="DayNightCycle" parent="." instance=ExtResource("15_73km1")]
+position = Vector2(75, 25)
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_q7dof")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_up" from="HookTheFish" to="." method="_on_hook_the_fish_button_up"]
+[connection signal="pressed" from="return button" to="return button" method="_on_button_pressed"]

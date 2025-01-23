@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://mb3mr5kirwig"]
+
+[ext_resource type="Script" path="res://413. Tutorial/Scripts/sea_area_tutorial.gd" id="1_dwdy5"]
+[ext_resource type="PackedScene" uid="uid://ck00y8tcc0p7q" path="res://201. BoatNavigation/Scenes/BoatNavigation.tscn" id="2_2qjal"]
+[ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="3_grmp3"]
+[ext_resource type="PackedScene" uid="uid://dws7ux58h1bvf" path="res://412. Tutorial_Talk/Scenes/fishing_spot.tscn" id="4_wvh27"]
+[ext_resource type="PackedScene" uid="uid://du0ptatxwafmv" path="res://412. Tutorial_Talk/Scenes/fishing_plastic.tscn" id="5_2olim"]
+[ext_resource type="Script" path="res://413. Tutorial/Scenes/collsion.gd" id="6_cq6ky"]
+[ext_resource type="Script" path="res://413. Tutorial/Scenes/end_collision.gd" id="7_redb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8ikm"]
+size = Vector2(429, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3x28j"]
+size = Vector2(33.5, 239)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s63x"]
+size = Vector2(26, 244)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pveo8"]
+size = Vector2(431, 20)
+
+[node name="SeaAreaTutorial" type="Node2D"]
+script = ExtResource("1_dwdy5")
+
+[node name="BoatNavigation" parent="." instance=ExtResource("2_2qjal")]
+
+[node name="Pfeil" type="Sprite2D" parent="."]
+position = Vector2(293, 445)
+scale = Vector2(1.8125, 1.8125)
+texture = ExtResource("3_grmp3")
+
+[node name="fishing_spot" parent="." instance=ExtResource("4_wvh27")]
+visible = false
+z_index = 2
+
+[node name="fishing_plastic" parent="." instance=ExtResource("5_2olim")]
+visible = false
+z_index = 2
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 138.0
+offset_bottom = 35.0
+text = "Tutorial"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-12, 567)
+script = ExtResource("6_cq6ky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(441.5, -18)
+shape = SubResource("RectangleShape2D_k8ikm")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-8, 557)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(237, -6.5)
+shape = SubResource("RectangleShape2D_3x28j")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(631, 557)
+shape = SubResource("RectangleShape2D_0s63x")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(277, 82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(152.5, 359)
+shape = SubResource("RectangleShape2D_pveo8")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-12, 567)
+script = ExtResource("7_redb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(442, 36)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_k8ikm")

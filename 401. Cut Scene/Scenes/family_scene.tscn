@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://rqhj6rog6c5r"]
+
+[ext_resource type="Script" path="res://401. Cut Scene/Scenes/family_scene.gd" id="1_cdanp"]
+[ext_resource type="Texture2D" uid="uid://df23wi645kn7s" path="res://401. Cut Scene/Assets/home.jpg" id="2_fui1b"]
+
+[node name="CutScene" type="Node2D"]
+script = ExtResource("1_cdanp")
+
+[node name="Home" type="Sprite2D" parent="."]
+position = Vector2(581, 322)
+scale = Vector2(1.28348, 0.876957)
+texture = ExtResource("2_fui1b")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://cau8ribq3iuaw"]
+
+[ext_resource type="Script" path="res://601. ShopUI/Scenes/resource_gui.gd" id="1_oxmhg"]
+[ext_resource type="Texture2D" uid="uid://dwrrhgxyabgrj" path="res://601. ShopUI/Assets/shop assets/fish.png" id="2_ako6k"]
+[ext_resource type="FontFile" uid="uid://chdqx1a3e1e2v" path="res://601. ShopUI/Assets/font/joystix.otf" id="3_j6xgt"]
+[ext_resource type="Texture2D" uid="uid://dv60plo0h32vy" path="res://6022. Fishing and plastic status/Assets/trash-no.png" id="4_qylln"]
+[ext_resource type="Texture2D" uid="uid://0l8d81yywyws" path="res://601. ShopUI/Assets/shop assets/money.png" id="5_s26ns"]
+[ext_resource type="Texture2D" uid="uid://cspcjdd0miwk7" path="res://601. ShopUI/Assets/shop assets/time.png" id="6_nipeh"]
+
+[node name="ResouceGuiPlain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResourceGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 47.0
+offset_top = 119.0
+offset_right = 87.0
+offset_bottom = 159.0
+script = ExtResource("1_oxmhg")
+
+[node name="Resources" type="HBoxContainer" parent="ResourceGUI"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = -99.0
+offset_right = 1168.0
+offset_bottom = -55.0
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="FishContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="FishIcon" type="TextureRect" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+texture = ExtResource("2_ako6k")
+expand_mode = 3
+flip_h = true
+
+[node name="Fish" type="Label" parent="ResourceGUI/Resources/FishContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j6xgt")
+theme_override_font_sizes/font_size = 20
+text = "999"
+
+[node name="PlasticContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="PlasticIcon" type="TextureRect" parent="ResourceGUI/Resources/PlasticContainer"]
+layout_mode = 2
+texture = ExtResource("4_qylln")
+expand_mode = 3
+flip_h = true
+
+[node name="Plastic" type="Label" parent="ResourceGUI/Resources/PlasticContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j6xgt")
+theme_override_font_sizes/font_size = 20
+text = "999"
+
+[node name="MoneyContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+theme_override_constants/separation = -7
+alignment = 1
+
+[node name="MoneyIcon" type="TextureRect" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+texture = ExtResource("5_s26ns")
+expand_mode = 3
+
+[node name="Money" type="Label" parent="ResourceGUI/Resources/MoneyContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j6xgt")
+theme_override_font_sizes/font_size = 20
+text = "$10000"
+vertical_alignment = 1
+
+[node name="TimeContainer" type="HBoxContainer" parent="ResourceGUI/Resources"]
+layout_mode = 2
+
+[node name="TimeIcon" type="TextureRect" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+texture = ExtResource("6_nipeh")
+expand_mode = 3
+
+[node name="TimeDisplay" type="Label" parent="ResourceGUI/Resources/TimeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j6xgt")
+theme_override_font_sizes/font_size = 20
+text = "WEDNESDAY 12:12:12"

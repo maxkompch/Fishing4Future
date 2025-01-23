@@ -2,26 +2,57 @@ extends Node2D
 
 var HookPosition = [] 
 var Positionamount = 0
-var currentPosition = 0
-var winposition = 0
+var currentPosition:int = 0
+var winposition = []
 @onready var hook = $Hook
 @onready var label = $Label
 @onready var mytimer = $Timer
 @onready var logger = $Logger
+@onready var sound_positive = $"good sound"
+@onready var sound_negativ =$"bad sound"
+
 enum Ministate{running, stopped}
 var currentState = Ministate.running
+var back_scene
+var amount_Green_bubbles: int = 1
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$HookTheFish.grab_focus() 
+	$HookTheFish.set_pressed(true) 
+	if tutorial_var.is_tutorial:
+		back_scene= "res://413. Tutorial/Scenes/sea_area_tutorial.tscn"
+	else:
+		back_scene = "res://201. BoatNavigation/Scenes/BoatNavigation.tscn"
+		
+	amount_Green_bubbles = GameData.fish_bubbles_amount
+	GameData.fish_reset_func()
+	GameData.fail_reset_func()
+	GameData.save_data()
 	GameData.load_data()
 	HookPosition.append_array(find_children("Position*","",true,true))
 	Positionamount = HookPosition.size()
-	winposition = floor(Positionamount * randf())
-	print(str(winposition) + " is the Winpositon")
-	logger.logdata("winposition",str(winposition))
-	HookPosition[winposition].modulate = Color(0,1,0,1)
-	logger.logdata("minigamestart","start")
-	pass # Replace with function body.
+	
+	var used_positions := []
+	while winposition.size() < amount_Green_bubbles and winposition.size() < Positionamount:
+		var rand_position = int(floor(Positionamount * randf()))
+		if rand_position not in used_positions:
+			winposition.append(rand_position)
+			used_positions.append(rand_position)
+	
+	print(str(winposition) + " is the fishing winpostion")
+	for i in winposition:
+		HookPosition[i].modulate = Color(0, 1, 0, 1)
+		time_system.log("Fishing winposition " + str(i))
+	
+	time_system.log("fishing minigame start")
+	$VioletFish3.visible = false
+	if(GameData.fish_caught == 1):
+		$VioletFish4.visible = false
+	if(GameData.fish_caught == 2):
+		$VioletFish4.visible = false
+		$VioletFish2.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -31,7 +62,14 @@ func _process(delta: float) -> void:
 			pass
 		Ministate.stopped:
 			mytimer.stop()
-	pass
+	$VioletFish3.visible = false
+	if(GameData.fish_caught == 1):
+		$VioletFish4.visible = false
+	if(GameData.fish_caught == 2):
+		$VioletFish4.visible = false
+		$VioletFish2.visible = false
+	if(Input.is_action_just_released("catch")):
+		_on_hook_the_fish_button_up()
 
 func _on_timer_timeout() -> void:
 	currentPosition += 1
@@ -41,24 +79,74 @@ func _on_timer_timeout() -> void:
 	pass # Replace with function body.
 
 func Fishfang() -> void:
-	if(currentPosition == winposition):
-		GameData.fish_caught_func()
-		GameData.save_data()
-		label.text = "Congratulation! You have caught " + str(GameData.fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
-		logger.logdata("playerhit","you win")
-		if(GameData.fish_caught >= GameData.max_fish):
-			GameData.fish_reset_func()
+	if(currentPosition in winposition):
+		if(GameData.fish_population >= 1):
+			GameData.fish_caught_func()
+			GameData.total_caught_func()
+			GameData.fish_population_func()
 			GameData.save_data()
-			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
-	else:
+			sound_positive.play()
+			if tutorial_var.is_tutorial == true:
+				tutorial_var.fished_once = true
+			
+			label.text = "Congratulation! You have caught " + str(GameData.total_fish_caught) + " fish. Auto close after catching " + str(GameData.max_fish-GameData.fish_caught) + " more fish."
+			time_system.log("fish caught")
+			if(GameData.fish_caught >= GameData.max_fish):
+				if(GameData.current_day_str != time_system.get_time().split(" ")[0]):
+					if GameData.current_day_int == 6:
+						GameData.end_of_the_week()
+					else:
+						GameData.current_day_int = GameData.current_day_int + 1
+						GameData.current_day_str = GameData.days_of_the_week[GameData.current_day_int]
+						GameData.plastic_growth_func()
+						GameData.fish_growth_func()
+						GameData.fish_health_func()
+						GameData.fish_price_func()
+						GameData.save_data()
+						time_system.log("exit boat navigation")
+						time_system.log("day end")
+						time_system.log("start scene")
+						get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
+					GameData.fish_reset_func()
+					GameData.save_data()
+				else:
+					GameData.fish_reset_func()
+					GameData.save_data()
+					get_tree().change_scene_to_file(back_scene)
+		else:
+			sound_positive.play()
+			label.text = "                           Uh Oh! No fish left to catch.                           "
+			time_system.log("no fish left")
+	else:	
+		sound_negativ.play()
+		print("current postion is :" + str(currentPosition))
+		print("current win is :" + str(currentPosition in winposition))
 		GameData.fish_failed_func()
 		GameData.save_data()
 		label.text = "                Uh Oh! You have lost " + str(GameData.failed_fish) + " times. Auto close after losing " + str(GameData.max_fail-GameData.failed_fish) + " times."
-		logger.logdata("playerhit","you lose")
+		time_system.log("catching fish failed")
 		if(GameData.failed_fish >= GameData.max_fail):
-			GameData.fail_reset_func()
-			GameData.save_data()
-			get_tree().change_scene_to_file("res://201. BoatNavigation/Scenes/BoatNavigation.tscn")
+			if(GameData.current_day_str != time_system.get_time().split(" ")[0]):
+				if GameData.current_day_int == 6:
+					GameData.end_of_the_week()
+				else:
+					GameData.current_day_int = GameData.current_day_int + 1
+					GameData.current_day_str = GameData.days_of_the_week[GameData.current_day_int]
+					GameData.plastic_growth_func()
+					GameData.fish_growth_func()
+					GameData.fish_health_func()
+					GameData.fish_price_func()
+					GameData.save_data()
+					time_system.log("exit boat navigation")
+					time_system.log("day end")
+					time_system.log("start scene")
+					get_tree().change_scene_to_file("res://414. Day End/Scene/day_end.tscn")
+				GameData.fail_reset_func()
+				GameData.save_data()
+			else:
+				GameData.fail_reset_func()
+				GameData.save_data()
+				get_tree().change_scene_to_file(back_scene)
 
 func _on_hook_the_fish_button_up() -> void:
 	match currentState:
@@ -68,7 +156,7 @@ func _on_hook_the_fish_button_up() -> void:
 			pass
 		Ministate.stopped:
 			currentState = Ministate.running
-			logger.logdata("minigamestart","restart")
+			time_system.log("fishing minigame restart")
 			mytimer.start()
 			pass
 	pass # Replace with function body.

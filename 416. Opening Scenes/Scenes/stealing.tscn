@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6egymwfr287s"]
+
+[ext_resource type="Script" path="res://416. Opening Scenes/Scripts/stealing.gd" id="1_tf476"]
+[ext_resource type="Texture2D" uid="uid://btlwngssfbyxj" path="res://102. Icons/Assets/Skip_E.png" id="2_kr4qw"]
+[ext_resource type="Texture2D" uid="uid://dx3w50enxy008" path="res://416. Opening Scenes/Assets/Stealing_scene.png" id="2_vg7h3"]
+[ext_resource type="Texture2D" uid="uid://coccu3n8pxs8f" path="res://412. Tutorial_Talk/Assets/talking_bubble.png" id="3_f6tqd"]
+[ext_resource type="Theme" uid="uid://dohrlimgek4f1" path="res://404. Start Menu/Assets/wood_button.tres" id="4_0qn3w"]
+
+[node name="stealing" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tf476")
+
+[node name="StealingScene" type="Sprite2D" parent="."]
+position = Vector2(601, 326)
+scale = Vector2(2.23828, 1.50391)
+texture = ExtResource("2_vg7h3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.025
+autostart = true
+
+[node name="SkipE" type="Sprite2D" parent="."]
+position = Vector2(1064, 610)
+scale = Vector2(0.523438, 0.523438)
+texture = ExtResource("2_kr4qw")
+
+[node name="TalkingBubble" type="Sprite2D" parent="."]
+position = Vector2(570, 359)
+scale = Vector2(3.50391, 1.84786)
+texture = ExtResource("3_f6tqd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 493.0
+offset_right = 620.0
+offset_bottom = 610.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Test"
+scroll_following = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 379.0
+offset_right = 602.0
+offset_bottom = 438.0
+
+[node name="first" type="Button" parent="MarginContainer"]
+z_index = 5
+layout_mode = 2
+theme = ExtResource("4_0qn3w")
+text = "Steal"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 377.0
+offset_right = 775.0
+offset_bottom = 436.0
+
+[node name="second" type="Button" parent="MarginContainer2"]
+z_index = 5
+layout_mode = 2
+theme = ExtResource("4_0qn3w")
+text = "Don't Steal"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="MarginContainer/first" to="." method="_on_first_pressed"]
+[connection signal="pressed" from="MarginContainer2/second" to="." method="_on_second_pressed"]

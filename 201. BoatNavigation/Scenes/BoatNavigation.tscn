@@ -1,95 +1,157 @@
-[gd_scene load_steps=16 format=4 uid="uid://ck00y8tcc0p7q"]
+[gd_scene load_steps=24 format=4 uid="uid://ck00y8tcc0p7q"]
 
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/player.gd" id="1_donbu"]
-[ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_d0lxn"]
-[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/slow_area.gd" id="4_gfy3y"]
+[ext_resource type="Script" path="res://201. BoatNavigation/Scenes/boat_navigation.gd" id="1_pfypy"]
+[ext_resource type="Texture2D" uid="uid://cwqyxw64pps3i" path="res://102. Icons/boat_pixelart.png" id="2_wt70f"]
+[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/fishing_area.gd" id="3_2ks1s"]
+[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/trash_area.gd" id="5_5r4wy"]
 [ext_resource type="TileSet" uid="uid://i1xgsiuwiucq" path="res://405. Start Area/Assets/water_tile.tres" id="5_dteif"]
-[ext_resource type="Texture2D" uid="uid://1xeiij74qbuu" path="res://201. BoatNavigation/Assets/whirle.jpg" id="6_3pyl2"]
 [ext_resource type="Script" path="res://201. BoatNavigation/Scripts/whirl_area.gd" id="6_cfceq"]
-[ext_resource type="Script" path="res://405. Start Area/scenes/shop_area.gd" id="7_m1cad"]
+[ext_resource type="Texture2D" uid="uid://04xwtieeh0x6" path="res://100. Fishing and Fish/Assets/plastic 3.png" id="7_mv70d"]
+[ext_resource type="Texture2D" uid="uid://drk2gi5euw61i" path="res://100. Fishing and Fish/Assets/plastic 2.png" id="7_p2by8"]
 [ext_resource type="Texture2D" uid="uid://ckcjnevpod0e4" path="res://201. BoatNavigation/Assets/Pfeil.png" id="8_4ddid"]
-[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://100. Fishing and Fish/Assets/Old/violet fish.png" id="9_h7gu2"]
+[ext_resource type="Texture2D" uid="uid://bnkasmwvii6un" path="res://201. BoatNavigation/Assets/whirle-nobg.png" id="9_0upm4"]
+[ext_resource type="Texture2D" uid="uid://5lyto7kdu7ir" path="res://1000. Old or unused/101. Fishing and Fish/Assets/violet fish.png" id="9_h7gu2"]
+[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/return_home_area.gd" id="10_my2jo"]
+[ext_resource type="Script" path="res://201. BoatNavigation/Scripts/GUI.gd" id="12_ba7g3"]
+[ext_resource type="PackedScene" uid="uid://06xv1a273y3p" path="res://603. ResourceGUI/ResourceGUI.tscn" id="13_yku71"]
+[ext_resource type="PackedScene" uid="uid://b7qivtqistmcp" path="res://DayNightCycle/Scene/DayNight.tscn" id="16_j4b1h"]
+[ext_resource type="AudioStream" uid="uid://b4fvs0dtn8mmu" path="res://BackgroundMusic/LobbyLobster.mp3" id="17_qoede"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okyxk"]
-size = Vector2(37, 32)
+size = Vector2(77, 40)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6vuf8"]
-radius = 26.0768
+radius = 32.0156
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k7co1"]
 radius = 123.147
 
 [sub_resource type="Gradient" id="Gradient_kcxno"]
-offsets = PackedFloat32Array(0, 0.351351, 0.594595, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.14902, 0.305882, 0.509804, 1, 0.14902, 0.305882, 0.509804, 1, 0.14902, 0.305882, 0.509804, 0)
+offsets = PackedFloat32Array(0, 0.428571, 0.649351, 0.818182)
+colors = PackedColorArray(0.14902, 0.305882, 0.509804, 0, 0.00784314, 0.176471, 0.47451, 1, 0.0588235, 0.152941, 0.270588, 0.690196, 0.054902, 0.145098, 0.258824, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_supkc"]
 gradient = SubResource("Gradient_kcxno")
 fill = 1
-fill_from = Vector2(0.5, 0.5)
+fill_from = Vector2(0.5, 0.513761)
 fill_to = Vector2(0.8, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_im7hp"]
-size = Vector2(194.5, 78)
+size = Vector2(89, 78)
 
 [node name="BoatNavigation" type="Node2D"]
 position = Vector2(708, 320)
+script = ExtResource("1_pfypy")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 visibility_layer = 524290
 z_index = 1
+position = Vector2(-119, 218)
 script = ExtResource("1_donbu")
 
 [node name="Boat" type="Sprite2D" parent="Player"]
 visibility_layer = 524290
 z_index = 1
-position = Vector2(0.999994, -1)
-scale = Vector2(0.284545, 0.276786)
-texture = ExtResource("2_d0lxn")
+position = Vector2(-24.807, -36.5309)
+scale = Vector2(0.386858, 0.376309)
+texture = ExtResource("2_wt70f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-4.5, 8)
+position = Vector2(-29, -23)
 shape = SubResource("RectangleShape2D_okyxk")
 
 [node name="FishingArea" type="Area2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-415, -109)
-script = ExtResource("4_gfy3y")
+position = Vector2(-415, 144)
+script = ExtResource("3_2ks1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea"]
 position = Vector2(1, 37)
 shape = SubResource("CircleShape2D_6vuf8")
 
-[node name="Sprite2D" type="Sprite2D" parent="FishingArea"]
+[node name="VioletFish" type="Sprite2D" parent="FishingArea"]
+position = Vector2(0.999997, 37)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("9_h7gu2")
+
+[node name="FishingArea3" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-479, -206)
+script = ExtResource("3_2ks1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea3"]
+position = Vector2(1, 37)
+shape = SubResource("CircleShape2D_6vuf8")
+
+[node name="VioletFish" type="Sprite2D" parent="FishingArea3"]
+position = Vector2(-2, 37)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("9_h7gu2")
 
 [node name="FishingArea2" type="Area2D" parent="."]
-position = Vector2(-430, 214)
-script = ExtResource("4_gfy3y")
+light_mask = 2
+visibility_layer = 2
+position = Vector2(353, -239)
+script = ExtResource("3_2ks1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea2"]
-position = Vector2(2, 35)
+position = Vector2(1, 37)
 shape = SubResource("CircleShape2D_6vuf8")
 
-[node name="WasteArea" type="Area2D" parent="."]
-position = Vector2(333, 116)
-script = ExtResource("4_gfy3y")
+[node name="VioletFish" type="Sprite2D" parent="FishingArea2"]
+position = Vector2(-2, 37)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("9_h7gu2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WasteArea"]
+[node name="TrashArea" type="Area2D" parent="."]
+position = Vector2(283, 55)
+script = ExtResource("5_5r4wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashArea"]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(0, 42)
 shape = SubResource("CircleShape2D_6vuf8")
+debug_color = Color(0, 0.0862745, 0.109804, 0.647059)
 
-[node name="WasteArea2" type="Area2D" parent="."]
-position = Vector2(325, -141)
-script = ExtResource("4_gfy3y")
+[node name="RedBottle" type="Sprite2D" parent="TrashArea"]
+position = Vector2(-10, 32)
+scale = Vector2(4.20454, 4.20454)
+texture = ExtResource("7_p2by8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WasteArea2"]
-position = Vector2(4, 41)
+[node name="WhiteBottle" type="Sprite2D" parent="TrashArea"]
+position = Vector2(5.99997, 48)
+rotation = -1.03652
+scale = Vector2(3.77273, 3.77273)
+texture = ExtResource("7_mv70d")
+
+[node name="TrashArea2" type="Area2D" parent="."]
+position = Vector2(-321, -211)
+script = ExtResource("5_5r4wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashArea2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, 42)
 shape = SubResource("CircleShape2D_6vuf8")
+debug_color = Color(0, 0.0862745, 0.109804, 0.647059)
+
+[node name="RedBottle" type="Sprite2D" parent="TrashArea2"]
+position = Vector2(-10, 32)
+scale = Vector2(4.20454, 4.20454)
+texture = ExtResource("7_p2by8")
+
+[node name="WhiteBottle" type="Sprite2D" parent="TrashArea2"]
+position = Vector2(5.99997, 48)
+rotation = -1.03652
+scale = Vector2(3.77273, 3.77273)
+texture = ExtResource("7_mv70d")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 show_behind_parent = true
-light_mask = 2
 tile_map_data = PackedByteArray("AAD1//v/AAAAAAAAAAD1//z/AAAAAAEAAAD1//3/AAAAAAEAAAD1//7/AAAAAAAAAAD1////AAABAAEAAAD1/wAAAAAAAAEAAAD1/wEAAAAAAAAAAAD1/wIAAAAAAAEAAAD1/wMAAAAAAAEAAAD1/wQAAAAAAAEAAAD2//v/AAAAAAAAAAD2//z/AAAAAAAAAAD2//3/AAABAAEAAAD2//7/AAAAAAAAAAD2////AAAAAAAAAAD2/wAAAAAAAAEAAAD2/wEAAAAAAAEAAAD2/wIAAAABAAEAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAAAAAD3//v/AAAAAAEAAAD3//z/AAAAAAEAAAD3//3/AAAAAAAAAAD3//7/AAAAAAEAAAD3////AAABAAEAAAD3/wAAAAAAAAEAAAD3/wEAAAABAAEAAAD3/wIAAAAAAAEAAAD3/wMAAAABAAEAAAD3/wQAAAABAAEAAAD4//v/AAAAAAAAAAD4//z/AAABAAEAAAD4//3/AAAAAAEAAAD4//7/AAAAAAEAAAD4////AAAAAAEAAAD4/wAAAAABAAEAAAD4/wEAAAAAAAEAAAD4/wIAAAAAAAEAAAD4/wMAAAABAAEAAAD4/wQAAAAAAAEAAAD5//v/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAEAAAD5//7/AAAAAAEAAAD5////AAAAAAAAAAD5/wAAAAAAAAAAAAD5/wEAAAABAAEAAAD5/wIAAAAAAAAAAAD5/wMAAAABAAEAAAD5/wQAAAABAAEAAAD6//v/AAAAAAAAAAD6//z/AAAAAAAAAAD6//3/AAABAAEAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAABAAEAAAD6/wIAAAAAAAAAAAD6/wMAAAABAAEAAAD6/wQAAAAAAAEAAAD7//v/AAAAAAAAAAD7//z/AAABAAEAAAD7//3/AAABAAEAAAD7//7/AAAAAAAAAAD7////AAAAAAEAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAEAAAD7/wQAAAAAAAAAAAD8//v/AAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AAABAAEAAAD8//7/AAAAAAEAAAD8////AAABAAEAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAEAAAD8/wIAAAABAAEAAAD8/wMAAAABAAEAAAD8/wQAAAAAAAAAAAD9//v/AAABAAEAAAD9//z/AAAAAAAAAAD9//3/AAAAAAEAAAD9//7/AAAAAAEAAAD9////AAAAAAAAAAD9/wAAAAAAAAEAAAD9/wEAAAAAAAEAAAD9/wIAAAABAAEAAAD9/wMAAAAAAAAAAAD9/wQAAAABAAEAAAD+//v/AAABAAEAAAD+//z/AAABAAEAAAD+//3/AAAAAAAAAAD+//7/AAABAAEAAAD+////AAAAAAAAAAD+/wAAAAAAAAEAAAD+/wEAAAABAAEAAAD+/wIAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wQAAAAAAAAAAAD///v/AAAAAAAAAAD///z/AAABAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAABAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAAAAAD//wMAAAAAAAEAAAD//wQAAAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAABAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAPv/AAAAAAEAAAABAPz/AAAAAAEAAAABAP3/AAAAAAEAAAABAP7/AAAAAAEAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAACAPv/AAABAAEAAAACAPz/AAABAAEAAAACAP3/AAABAAEAAAACAP7/AAAAAAAAAAACAP//AAAAAAEAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAABAAEAAAACAAMAAAAAAAEAAAACAAQAAAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAABAAEAAAADAP3/AAAAAAAAAAADAP7/AAABAAEAAAADAP//AAAAAAEAAAADAAAAAAABAAEAAAADAAEAAAAAAAEAAAADAAIAAAABAAEAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAPv/AAAAAAAAAAAEAPz/AAAAAAAAAAAEAP3/AAABAAEAAAAEAP7/AAAAAAAAAAAEAP//AAABAAEAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAFAPv/AAABAAEAAAAFAPz/AAAAAAEAAAAFAP3/AAABAAEAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAEAAAAFAAEAAAABAAEAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAEAAAAFAAQAAAAAAAAAAAAGAPv/AAAAAAEAAAAGAPz/AAABAAEAAAAGAP3/AAAAAAAAAAAGAP7/AAAAAAEAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAEAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAEAAAAGAAQAAAAAAAAAAAA=")
 tile_set = ExtResource("5_dteif")
 collision_enabled = false
@@ -113,47 +175,72 @@ shape = SubResource("CircleShape2D_k7co1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Storm"]
 show_behind_parent = true
-position = Vector2(0.913136, 0.680153)
-scale = Vector2(4.26209, 4.32651)
+position = Vector2(-1.2776, 0.231533)
+scale = Vector2(3.23842, 3.28737)
 texture = SubResource("GradientTexture2D_supkc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Storm/Sprite2D"]
 show_behind_parent = true
-position = Vector2(0.0607252, 0.22326)
-scale = Vector2(0.052585, 0.0511774)
-texture = ExtResource("6_3pyl2")
+position = Vector2(0.596535, -0.15745)
+scale = Vector2(0.0688602, 0.067017)
+texture = ExtResource("9_0upm4")
 
-[node name="Boat_exit_Area" type="Area2D" parent="."]
-position = Vector2(671, -155)
-script = ExtResource("7_m1cad")
+[node name="ReturnHomeArea" type="Area2D" parent="."]
+position = Vector2(-133, 257)
+script = ExtResource("10_my2jo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat_exit_Area"]
-position = Vector2(-791.5, 430.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReturnHomeArea"]
+position = Vector2(-3, 26)
 shape = SubResource("RectangleShape2D_im7hp")
 
-[node name="Pfeil" type="Sprite2D" parent="Boat_exit_Area"]
-position = Vector2(-790.5, 432.5)
+[node name="Pfeil" type="Sprite2D" parent="ReturnHomeArea"]
+position = Vector2(-1, 34)
 scale = Vector2(2.28125, 2.28125)
 texture = ExtResource("8_4ddid")
 
-[node name="VioletFish" type="Sprite2D" parent="."]
-position = Vector2(333, 158)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("9_h7gu2")
+[node name="GUI" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("12_ba7g3")
 
-[node name="VioletFish2" type="Sprite2D" parent="."]
-position = Vector2(329, -99)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("9_h7gu2")
+[node name="MarginContainer" type="MarginContainer" parent="GUI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
 
-[node name="VioletFish3" type="Sprite2D" parent="."]
-position = Vector2(-429, 247)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("9_h7gu2")
+[node name="Stats" type="HBoxContainer" parent="GUI/MarginContainer"]
+layout_direction = 1
+layout_mode = 2
 
-[node name="VioletFish4" type="Sprite2D" parent="."]
-position = Vector2(-414, -76)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("9_h7gu2")
+[node name="HealthBar" type="ProgressBar" parent="GUI/MarginContainer/Stats"]
+custom_minimum_size = Vector2(200, 20)
+layout_direction = 3
+layout_mode = 2
 
-[connection signal="body_entered" from="Boat_exit_Area" to="Boat_exit_Area" method="_on_ship_exited"]
+[node name="FishCount" type="Label" parent="GUI/MarginContainer/Stats"]
+layout_direction = 3
+layout_mode = 2
+text = "Fish: 0/20"
+
+[node name="PlasticsCount" type="Label" parent="GUI/MarginContainer/Stats"]
+layout_direction = 3
+layout_mode = 2
+text = "Plastics: 0/20"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ResourceGUI" parent="." instance=ExtResource("13_yku71")]
+offset_left = -675.0
+offset_top = -209.0
+offset_right = -457.0
+offset_bottom = -196.0
+
+[node name="DayNightCycle" parent="." instance=ExtResource("16_j4b1h")]
+position = Vector2(-797, -352)
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_qoede")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true

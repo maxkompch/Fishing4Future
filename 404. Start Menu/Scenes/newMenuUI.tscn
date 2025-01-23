@@ -20,15 +20,16 @@ focus_neighbor_left = NodePath("NewGame")
 focus_neighbor_top = NodePath("Option")
 focus_neighbor_right = NodePath("Exit")
 
-[node name="ContinueGame" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_p7jfe")
-text = "     Continue      "
-
 [node name="NewGame" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_p7jfe")
 text = "    New Game    "
+
+[node name="ContinueGame" type="Button" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_p7jfe")
+text = "     Continue      "
 
 [node name="Option" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -40,7 +41,7 @@ layout_mode = 2
 theme = ExtResource("1_p7jfe")
 text = "           Exit            "
 
-[connection signal="pressed" from="HBoxContainer/ContinueGame" to="." method="_on_continue_game_pressed"]
 [connection signal="pressed" from="HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/ContinueGame" to="." method="_on_continue_game_pressed"]
 [connection signal="pressed" from="HBoxContainer/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]
